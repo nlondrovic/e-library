@@ -27,7 +27,8 @@ viših moralnih ideja, a u svojim delima Šekspir razmatra pitanja koja se ti?
 funkcionisanja.',
                 'author_id' => 2
             ],
-            ['title' => 'Bozanstvena Komedija',
+            [
+                'title' => 'Bozanstvena Komedija',
                 'ISBN' => '456',
                 'content' => 'Dante je veliki italijanski pesnik, zalagao se za pisanje na narodnom jeziku i bio osniva? strofe od tri stiha, tzv.
 tercine. Dante se ?esto naziva ,,ocem italijanskog jezika“ i u Italiji ga oslovljavaju sa Il Sommo Poeta (vrhovni pesnik). Dante je jedan od
