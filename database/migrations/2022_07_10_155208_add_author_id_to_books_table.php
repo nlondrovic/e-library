@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->foreignId('author')->constrained('authors');
+            $table->foreignId('author_id')->constrained('authors');
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('books', function($table) {
-            $table->dropColumn('author');
+            $table->dropColumn('author_id');
         });
     }
 };
