@@ -11,7 +11,7 @@
                     <div class="ml-[25px]">
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
                             <div class="transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                <a href="/dashboard" aria-label="Dashboard">
+                                <a href="#" aria-label="Dashboard">
                                     <i class=" px-[5px] pt-[4px] pb-[5px] fas fa-tachometer-alt text-[19px] rounded-[3px] text-[#707070]"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="inline text-[15px] ml-[15px]">Dashboard</p>
@@ -26,11 +26,11 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="/librarians" aria-label="Bibliotekari">
+                                <a href="#" aria-label="Librarians">
                                     <i class="text-[25px] text-[#707070] far fa-address-book transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <div class="hidden sidebar-item">
                                         <p class=" inline text-[15px] ml-[20px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                            Bibliotekari
+                                            Librarians
                                         </p>
                                     </div>
                                 </a>
@@ -43,11 +43,12 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="/students" aria-label="Ucenici">
+                                <a href="#" aria-label="Students">
                                     <i class="text-[18px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] fas fa-users"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                            Učenici</p>
+                                            Students
+                                        </p>
                                     </div>
                                 </a>
                             </div>
@@ -59,11 +60,12 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="/bookRecords" aria-label="Knjige">
+                                <a href="#" aria-label="Books">
                                     <i class="text-[25px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] far fa-copy"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                            Knjige</p>
+                                            Books
+                                        </p>
                                     </div>
                                 </a>
                             </div>
@@ -75,11 +77,12 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="/authors" aria-label="Knjige">
+                                <a href="#" aria-label="Authors">
                                     <i class="text-[25px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] far fa-address-book"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                            Autori</p>
+                                            Authors
+                                        </p>
                                     </div>
                                 </a>
                             </div>
@@ -91,12 +94,11 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="/rentedBooks" aria-label="Knjige">
+                                <a href="#" aria-label="RentingBooks">
                                     <i class="text-[22px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] fas fa-exchange-alt"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                            Izdavanje
-                                            knjiga
+                                            Renting Books
                                         </p>
                                     </div>
                                 </a>
@@ -111,12 +113,12 @@
         <!-- Settings Icon -->
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
-                <a href="/policy" aria-label="Settngs" class="ml-[30px]">
+                <a href="#" aria-label="Settngs" class="ml-[30px]">
                         <span class="whitespace-nowrap">
                             <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog"></i>
                             <div class="hidden sidebar-item">
                                 <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                    Podešavanja</p>
+                                    Settings</p>
                             </div>
                         </span>
                 </a>
