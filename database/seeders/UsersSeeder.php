@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,8 +18,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->truncate();
-
         $users = [
             [
                 'name' => 'Nikola Londrović',
@@ -26,7 +25,8 @@ class UsersSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
                 'role_id' => 1,
-                'JMBG' => 1111111111111
+                'JMBG' => 1111111111111,
+                'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033HJXL8HM-5bb1c906a7f6-512'
             ],
             [
                 'name' => 'Nikola Kapor',
@@ -34,7 +34,8 @@ class UsersSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
                 'role_id' => 1,
-                'JMBG' => '1111111111111'
+                'JMBG' => '1111111111111',
+                'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033Y7P17LK-22e4569d0941-512'
             ],
             [
                 'name' => 'Boris Vojinović',
@@ -42,7 +43,8 @@ class UsersSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
                 'role_id' => 1,
-                'JMBG' => '1111111111111'
+                'JMBG' => '1111111111111',
+                'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033HK6EJ07-f1618f25bdd6-512'
             ],
             [
                 'name' => 'Kristijan Vuković',
@@ -50,10 +52,12 @@ class UsersSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
                 'role_id' => 3,
-                'JMBG' => '1111111111111'
+                'JMBG' => '1111111111111',
+                'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033RHEGVN2-7f2cded96618-512'
             ]
         ];
 
         DB::table('users')->insert($users);
+        User::factory(4)->create();
     }
 }
