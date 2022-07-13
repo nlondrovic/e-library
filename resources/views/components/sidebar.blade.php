@@ -21,7 +21,7 @@
                         </span>
                     </div>
                 </li>
-                <!-- Bibliotekari Icon -->
+                <!-- Librarian Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
@@ -38,12 +38,12 @@
                         </span>
                     </div>
                 </li>
-                <!-- Ucenici Icon -->
+                <!-- Students Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="#" aria-label="Students">
+                                <a href="{{ route('student.index') }}" aria-label="Students">
                                     <i class="text-[18px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] fas fa-users"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
@@ -55,7 +55,7 @@
                         </span>
                     </div>
                 </li>
-                <!-- Knjige Icon -->
+                <!-- Books Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
@@ -72,7 +72,7 @@
                         </span>
                     </div>
                 </li>
-                <!-- Autori Icon -->
+                <!-- Authors Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
@@ -89,7 +89,7 @@
                         </span>
                     </div>
                 </li>
-                <!-- Izdavanje Icon -->
+                <!-- Renting Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
