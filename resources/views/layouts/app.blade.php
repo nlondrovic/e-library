@@ -1,36 +1,56 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="en">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="content-language" content="en"/>
+    <meta name="description" content="ICT Cortex Library - project for high school students..."/>
+    <meta name="keywords" content="ict cortex, cortex, fleka, highschool, students, coding, library"/>
+    <meta name="author" content=""/>
+    <!-- End Meta -->
 
-        <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    </head>
-    <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
+    <!-- Title -->
+    <title>Library - ICT Cortex student project</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/library-favicon.ico') }}" type="image/vnd.microsoft.icon"/>
+    <!-- End Title -->
 
-        @include('components/header')
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <!-- End Styles -->
+</head>
 
-        <main class="flex flex-row small:hidden">
+<body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
+<!-- Header -->
+@include('components/header')
+<!-- End Header -->
 
-            @include('components/sidebar')
 
-            <section class="w-screen h-screen py-4 pl-[60px] text-[#212121]">
-                @yield('main')
-            </section>
+<!-- Main content -->
+<main class="flex flex-row small:hidden">
+    <!-- Sidebar -->
+    @include('components/sidebar')
+    <!-- End Sidebar -->
 
-        </main>
+    <!-- Content -->
+    <section class="w-screen h-screen py-4 pl-[60px] text-[#212121]">
+        @yield('main')
+    </section>
+    <!-- End Content -->
+</main>
+<!-- End Main content -->
 
-        <script src="{{ asset('assets/js/jquery.min.js') }}" defer=""></script>
-        <script src="{{ asset('assets/js/app.js') }}" defer=""></script>
-        <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
-        <!-- File upload -->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <script src="https://unpkg.com/create-file-list"></script>
+<!-- Notification for small devices -->
+@include('components/inProgress')
 
-    </body>
+<!-- Scripts -->
+@include('components/scripts')
+<!-- End Scripts -->
+
+</body>
+
 </html>
