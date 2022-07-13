@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
+
     <div class="heading mt-[7px]">
         <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf] ">
             Dashboard
