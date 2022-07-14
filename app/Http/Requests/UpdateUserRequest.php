@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class StoreUserRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
 
     public function authorize()
@@ -17,10 +18,11 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'jmbg' => 'required|integer|min:13|not_in:0',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required_with:password|same:password|min:8',
+            'jmbg' => 'required',
+            'email' => 'sometimes|email',
+//            TODO: Ako u formi unesemo korisnikov trenutni mejl, baci error email must be unique
+
+//            'email' => 'required,email_address,'.User::where('email', $this->email)->first()->id,
             'picture' => 'sometimes'
         ];
     }
