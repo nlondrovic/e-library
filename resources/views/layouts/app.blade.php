@@ -7,7 +7,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <link rel="stylesheet" href="{{ asset('assets/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     </head>
     <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">

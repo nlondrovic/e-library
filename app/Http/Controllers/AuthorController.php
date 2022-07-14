@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use http\Env\Request;
 
 class AuthorController extends Controller
 {
@@ -15,7 +16,9 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $authors = Author::all();
+
+        return view('master.authors.index', compact('authors'));
     }
 
     /**
@@ -25,7 +28,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('master.authors.create');
     }
 
     /**
@@ -34,9 +37,16 @@ class AuthorController extends Controller
      * @param  \App\Http\Requests\StoreAuthorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAuthorRequest $request)
+    public function store(StoreAuthorRequest $request,Author $author)
     {
-        //
+
+        $inputs = $request->validate([
+           'name' => 'required',
+            'about' => 'min:30',
+        ]);
+        Author::create($inputs);
+        //return dd($request);
+        return redirect()->route('authors.index');
     }
 
     /**
@@ -45,9 +55,11 @@ class AuthorController extends Controller
      * @param  \App\Models\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function show(Author $author)
+    public function show($id)
     {
-        //
+        $author = Author::findOrFail($id);
+
+        return view('master.authors.show', compact('author'));
     }
 
     /**
@@ -81,6 +93,8 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+
+        return redirect()->route('authors.index');
     }
 }

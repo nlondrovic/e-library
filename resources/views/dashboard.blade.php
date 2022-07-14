@@ -10,7 +10,7 @@
     <div class="pl-[30px] scroll height-dashboard overflow-auto mt-[20px] pb-[30px]">
         <div class="flex flex-row justify-between">
             <div class="mr-[30px]">
-                <h3 class="uppercase mb-[20px]">Aktivnosti</h3>
+                <h3 class="uppercase mb-[20px]">Activities</h3>
             </div>
         </div>
     </div>

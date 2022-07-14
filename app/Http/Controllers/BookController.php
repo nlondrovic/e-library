@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
@@ -15,7 +16,9 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::all();
+
+        return view('master.books.index', compact('books'));
     }
 
     /**
@@ -25,7 +28,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $authors  = Author::all();
+
+        return view('master.books.create', compact('authors'));
     }
 
     /**
@@ -36,7 +41,15 @@ class BookController extends Controller
      */
     public function store(StoreBookRequest $request)
     {
-        //
+        $inputs = $request->validate([
+            'title' => 'required',
+            'content' => 'min:30',
+            'ISBN' => 'integer',
+            'author_id' => 'required',
+        ]);
+        Book::create($inputs);
+        //return dd($request);
+        return redirect()->route('books.index');
     }
 
     /**
@@ -58,7 +71,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('master.books.edit');
     }
 
     /**
@@ -81,6 +94,8 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete()->save();
+
+        return back();
     }
 }
