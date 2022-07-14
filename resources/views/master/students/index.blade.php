@@ -14,7 +14,7 @@
         {{-- Above table --}}
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             {{-- Add student button --}}
-            <a href="{{ route('student.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+            <a href="{{ route('students.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
             ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i> New student
             </a>
@@ -72,7 +72,7 @@
                         </td>
                         <td class="flex flex-row items-center px-4 py-4">
                             <img class="object-cover w-8 h-8 mr-2 rounded-full" src="{{ $student->picture }}" alt=""/>
-                            <a href="{{route('student.show', ['student' => $student])}}">
+                            <a href="{{ route('students.show', ['student' => $student]) }}">
                                 <span class="font-medium text-center">{{ $student->name }}</span>
                             </a>
                         </td>
@@ -82,35 +82,38 @@
                             hover:text-[#606FC7]">
                                 <i class="fas fa-ellipsis-v"></i>
                             </p>
-                            <div
-                                class="relative z-10 hidden transition-all duration-300 origin-top-right transform
+                            <div class="absolute z-10 hidden transition-all duration-300 origin-top-right transform
                                 scale-95 -translate-y-2 dropdown-student">
-                                <div
-                                    class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
+                                <div class="absolute right-[50px] w-56 mt-[7px] origin-top-right bg-white border
                                     border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                                    aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117"
-                                    role="menu">
+                                     aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117"
+                                     role="menu">
                                     <div class="py-1">
-                                        <a href="#" tabindex="0"
+                                        <a href="{{ route('students.show', $student) }}" tabindex="0"
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                            outline-none hover:text-blue-600"
                                            role="menuitem">
                                             <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0">View detais</span>
+                                            <span class="px-4 py-0">Show details</span>
                                         </a>
-                                        <a href="#" tabindex="0"
+                                        <a href="{{route('students.edit', ['student' => $student])}}" tabindex="0"
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                            outline-none hover:text-blue-600"
                                            role="menuitem">
                                             <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0">Edit student</span>
                                         </a>
-                                        <a href="#" tabindex="0"
-                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                           role="menuitem">
-                                            <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0">Delete student</span>
-                                        </a>
+
+                                        <form action="{{ route('students.destroy', $student) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" href="#" tabindex="0"
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                               role="menuitem">
+                                                <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                                                <span class="px-4 py-0">Delete student</span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

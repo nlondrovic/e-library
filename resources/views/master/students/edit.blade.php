@@ -6,7 +6,7 @@
         <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf]">
             <div>
                 <h1 class="">
-                    New student
+                    Edit student
                 </h1>
             </div>
             <div>
@@ -22,7 +22,15 @@
                         </li>
                         <li>
                             <a href="#" class="text-gray-400 hover:text-blue-600">
-                                New student
+                                Edit student
+                            </a>
+                        </li>
+                        <li>
+                            <span class="mx-2">/</span>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-blue-600">
+                                ID-{{ $student->id }}
                             </a>
                         </li>
                     </ol>
@@ -34,10 +42,10 @@
     <!-- Space for content -->
     <div class="scroll height-content section-content">
 
-        <form class="text-gray-700 text-[14px] forma" action="{{ route('students.store') }}"
+        <form class="text-gray-700 text-[14px] forma" action="{{ route('students.update', ['student' => $student->id]) }}"
               method="post" enctype="multipart/form-data">
             @csrf
-            @method('post')
+            @method('put')
             <div class="flex flex-row ml-[50px]">
                 <div class="w-[50%] mb-[100px]">
 
@@ -46,23 +54,23 @@
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('name') }}"/>
+                               value="{{ $student->name }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
 
-{{--                    <div class="mt-[20px]">--}}
-{{--                        <span>User type</span>--}}
-{{--                        <select--}}
-{{--                            class="flex w-[90%] mt-2 px-2 py-2 border bg-gray-300 border-gray-300 shadow-sm--}}
-{{--                            focus:outline-none focus:ring-2 focus:ring-[#576cdf]" name="tip_korisnika" disabled--}}
-{{--                            required>--}}
-{{--                            <option value="">--}}
-{{--                                Ucenik--}}
-{{--                            </option>--}}
-{{--                        </select>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="mt-[20px]">--}}
+                    {{--                        <span>User type</span>--}}
+                    {{--                        <select--}}
+                    {{--                            class="flex w-[90%] mt-2 px-2 py-2 border bg-gray-300 border-gray-300 shadow-sm--}}
+                    {{--                            focus:outline-none focus:ring-2 focus:ring-[#576cdf]" name="tip_korisnika" disabled--}}
+                    {{--                            required>--}}
+                    {{--                            <option value="">--}}
+                    {{--                                Ucenik--}}
+                    {{--                            </option>--}}
+                    {{--                        </select>--}}
+                    {{--                    </div>--}}
 
                     {{-- TODO: Kako validirati JMBG npr. 0409003250606, zbog nule na pocetku kaze da nije integer, zato sam stavio da je tip text --}}
                     <div class="mt-[20px]">
@@ -70,7 +78,7 @@
                         <input type="text" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('jmbg') }}"/>
+                               value="{{ $student->JMBG }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
@@ -78,32 +86,12 @@
 
                     <div class="mt-[20px]">
                         <span>E-mail <span class="text-red-500">*</span></span>
-                        <input type="text" name="email" required id="studentEmail"
+                        <input type="text" name="email"  id="studentEmail"
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('email') }}"/>
+                               value="{{ $student->email }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600" id="studentEmailErrorMsg">{{ $errors->first('email') }}</span>
-                        @endif
-                    </div>
-
-                    <div class="mt-[20px]">
-                        <span>Password <span class="text-red-500">*</span></span>
-                        <input type="password" name="password" required
-                               class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
-                        @if($errors->first('password'))
-                            <span class="text-red-600">{{ $errors->first('password') }}</span>
-                        @endif
-                    </div>
-
-                    <div class="mt-[20px]">
-                        <span>Repeat password <span class="text-red-500">*</span></span>
-                        <input type="password" name="confirm_password" required
-                               class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
-                        @if($errors->first('confirm_password'))
-                            <span class="text-red-600">{{ $errors->first('confirm_password') }}</span>
                         @endif
                     </div>
                 </div>
@@ -120,9 +108,11 @@
                                     <polyline points="21 15 16 10 5 21"></polyline>
                                 </svg>
                                 <span class="px-4 py-2 mt-2 leading-normal">Add photo</span>
-                                <input type="file" name="picture" class="hidden" :accept="accept" onchange="loadFileStudent(event)"/>
+                                <input type="file" name="picture" class="hidden" :accept="accept"
+                                       onchange="loadFileStudent(event)"/>
                             </div>
-                            <img id="image-output-student" class="hidden absolute w-48 h-[188px] bottom-0"/>
+                            <img id="image-output-student" class="absolute w-48 h-[188px] bottom-0"
+                                 src="{{ $student->picture }}"/>
                         </div>
                     </label>
                 </div>

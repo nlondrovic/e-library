@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-Route::resource('/student', UserController::class)->middleware(['auth']);
+Route::resource('/students', UserController::class)->middleware(['auth']);
 
 
 

@@ -43,7 +43,7 @@
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                             <div>
-                                <a href="{{ route('student.index') }}" aria-label="Students">
+                                <a href="{{ route('students.index') }}" aria-label="Students">
                                     <i class="text-[18px] transition duration-300 ease-in group-hover:text-[#576cdf] text-[#707070] fas fa-users"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -30,26 +31,31 @@ class UserController extends Controller
             'role_id' => 3,
             'picture' => '/assets/img/user.jpg'
         ]);
-        return redirect()->route('student.index');
+        return redirect()->route('students.index');
     }
 
     public function show($id)
     {
-        return view('master.students.show', ['student' => User::find($id)]);
+        return view('master.students.show', ['student' => User::findOrFail($id)]);
     }
 
     public function edit($id)
     {
-        return view('master.students.edit');
+        return view('master.students.edit', ['student' => User::findOrFail($id)]);
     }
 
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
-        //
+        $user = User::query()->findOr($id);
+        $inputs = $request->validated();
+        $user->update($inputs);
+
+        return redirect()->route("students.show", ['student' => $user]);
     }
 
     public function destroy($id)
     {
-        //
+        User::query()->findOrFail($id)->delete();
+        return redirect()->route("students.index");
     }
 }
