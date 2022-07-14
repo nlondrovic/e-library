@@ -9,93 +9,41 @@ use App\Http\Requests\UpdateBookRequest;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        $books = Book::all();
-
-        return view('master.books.index', compact('books'));
+        return view('master.books.index', ['books' => Book::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $authors  = Author::all();
-
-        return view('master.books.create', compact('authors'));
+        return view('master.books.create', ['authors' => Author::all()]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreBookRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreBookRequest $request)
     {
-        $inputs = $request->validate([
-            'title' => 'required',
-            'content' => 'min:30',
-            'ISBN' => 'integer',
-            'author_id' => 'required',
-        ]);
+        $inputs = $request->validated();
         Book::create($inputs);
-        //return dd($request);
         return redirect()->route('books.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
     public function show(Book $book)
     {
-        //
+        return view('master.books.show', $book);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Book $book)
     {
-        return view('master.books.edit');
+        return view('master.books.edit', $book);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBookRequest  $request
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateBookRequest $request, Book $book)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Book $book)
+    public function destroy($book)
     {
-        $book->delete()->save();
-
-        return back();
+        Book::query()->findOrFail($book)->delete();
+        return redirect()->route('books.index');
     }
 }
