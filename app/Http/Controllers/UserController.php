@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $students = User::all()->where('role_id', 3);
-        return view('master.students.index', ['students' => $students]);
+        return view('master.students.index', compact('students'));
     }
 
     public function create()
@@ -34,28 +34,27 @@ class UserController extends Controller
         return redirect()->route('students.index');
     }
 
-    public function show($id)
+    public function show(User $student)
     {
-        return view('master.students.show', ['student' => User::findOrFail($id)]);
+        return view('master.students.show', compact('student'));
     }
 
-    public function edit($id)
+    public function edit(User $student)
     {
-        return view('master.students.edit', ['student' => User::findOrFail($id)]);
+        return view('master.students.edit', compact('student'));
     }
 
-    public function update(UpdateUserRequest $request, $id)
+    public function update(UpdateUserRequest $request, User $student)
     {
-        $user = User::query()->findOr($id);
         $inputs = $request->validated();
-        $user->update($inputs);
+        $student->update($inputs);
 
-        return redirect()->route("students.show", ['student' => $user]);
+        return redirect()->route("students.show", compact('student'));
     }
 
-    public function destroy(User $user)
+    public function destroy(User $student)
     {
-        $user->delete();
+        $student->delete();
         return redirect()->route("students.index");
     }
 }

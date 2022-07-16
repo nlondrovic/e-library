@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('/students', UserController::class)->middleware(['auth']);
+    Route::resource('/students', UserController::class);
 
 });
 
