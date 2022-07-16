@@ -42,12 +42,15 @@
                         class="absolute right-0 w-56 mt-[2px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                         <div class="py-1">
-                            <a href="{{route('authors.edit', $author)}}" tabindex="0"
+                            <form method="post" action="{{route('authors.edit', $author)}}">
+                                @csrf
+                                @method('get')
+                            <button href="{{route('authors.edit', $author)}}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                role="menuitem">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Edit the author</span>
-                            </a>
+                            </button>
                             <form method="post" action="{{route('authors.destroy', $author)}}">
                                 @csrf
                                 @method('delete')

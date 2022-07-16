@@ -70,7 +70,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('master.authors.edit', compact('author'));
     }
 
     /**
@@ -82,7 +82,13 @@ class AuthorController extends Controller
      */
     public function update(UpdateAuthorRequest $request, Author $author)
     {
-        //
+        $inputs = $request->validate([
+            'name' => 'required',
+            'about' => 'min:30',
+        ]);
+        $author->update($inputs);
+        //return dd($request);
+        return redirect()->route('authors.index');
     }
 
     /**

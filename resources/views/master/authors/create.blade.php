@@ -49,6 +49,7 @@
                             <div class="mt-[20px]">
                                 <p class="inline-block mb-2">About</p>
                                 <textarea name="about"
+                                          rows="6"
                                           class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"></textarea>
                             </div>
                         </div>

@@ -68,14 +68,14 @@
                                             <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0">View more</span>
                                         </a>
-                                        <form method="post" action="{{ route('authors.edit', $author) }}">
-                                            <a href="" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
+{{--                                        <form method="post" action="{{ route('authors.edit', $author) }}">--}}
+                                            <a href="{{ route('authors.edit', $author) }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
                                             text-left text-gray-700 outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Edit author</span>
                                             </a>
-                                        </form>
+{{--                                        </form>--}}
                                         <form method="post" action="{{ route('authors.destroy', $author) }}">
                                             @csrf
                                             @method('delete')
