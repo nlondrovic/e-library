@@ -15,14 +15,14 @@
                         <ol class="flex list-reset">
                             <li>
                                 <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    Record of the author
+                                    All authors
                                 </a>
                             </li>
                             <li>
                                 <span class="mx-2">/</span>
                             </li>
                             <li>
-                                <a href="#" class="text-gray-400 hover:text-blue-600">
+                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
                                     ID-{{$author->id}}
                                 </a>
                             </li>
@@ -33,11 +33,9 @@
 
             <div class="pt-[24px] pr-[30px]">
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-gray-300 dotsAutor hover:text-[#606FC7]">
-                    <i
-                        class="fas fa-ellipsis-v"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </p>
-                <div
-                    class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-autor">
+                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-autor">
                     <div
                         class="absolute right-0 w-56 mt-[2px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
