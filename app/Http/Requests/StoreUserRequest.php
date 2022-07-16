@@ -17,7 +17,7 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'jmbg' => 'required|integer|min:13|not_in:0',
+            'jmbg' => 'required|regex:/[0-9]+/|digits:13',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
             'confirm_password' => 'required_with:password|same:password|min:8',

@@ -18,11 +18,9 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'jmbg' => 'required',
+            'jmbg' => 'required|regex:/[0-9]+/|digits:13',
             'email' => 'sometimes|email',
 //            TODO: Ako u formi unesemo korisnikov trenutni mejl, baci error email must be unique
-
-//            'email' => 'required,email_address,'.User::where('email', $this->email)->first()->id,
             'picture' => 'sometimes'
         ];
     }
