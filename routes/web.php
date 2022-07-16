@@ -18,13 +18,16 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 
-Route::resource('/students', UserController::class)->middleware(['auth']);
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource('/students', UserController::class)->middleware(['auth']);
+
+});
 
 
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
