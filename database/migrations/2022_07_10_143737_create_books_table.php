@@ -6,16 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('ISBN');
+            $table->bigInteger('isbn');
             $table->string('title');
             $table->text('content');
             $table->string('picture')->nullable();
@@ -23,11 +18,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('books');
