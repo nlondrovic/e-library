@@ -17,7 +17,7 @@ class StoreAuthorRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'about' => 'sometimes',
+            'about' => 'required|min:10',
             'picture' => 'sometimes'
         ];
     }

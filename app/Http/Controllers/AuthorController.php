@@ -25,7 +25,6 @@ class AuthorController extends Controller
         $inputs = $request->validated();
         $inputs['picture'] = '/assets/img/user.jpg';
         Author::create($inputs);
-        // TODO: Vidi zasto ne stavlja sliku autoru
 
         return redirect()->route('authors.index');
     }
@@ -43,6 +42,7 @@ class AuthorController extends Controller
     public function update(UpdateAuthorRequest $request, Author $author)
     {
         $inputs = $request->validated();
+//                dd($inputs);
         $author->update($inputs);
 
         return redirect()->route('authors.show', compact('author'));
