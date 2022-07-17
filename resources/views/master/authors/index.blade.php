@@ -23,11 +23,6 @@
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
-                    <th class="px-4 py-4 leading-4 tracking-wider text-left text-blue-500">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                        </label>
-                    </th>
                     <th class="px-4 py-4 leading-4 tracking-wider text-left">Name<a href="#"></th>
                     <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">About</th>
                     <th class="px-4 py-4"></th>
@@ -36,11 +31,6 @@
                 <tbody class="bg-white">
                 @foreach($authors as $author)
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                        <td class="px-4 py-3 whitespace-no-wrap">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
-                            </label>
-                        </td>
                         <td class="flex flex-row items-center px-4 py-3">
                             <img class="object-cover w-8 mr-2 h-11" src="{{ $author->picture }}" alt=""/>
                             <a href="{{ route('authors.show', $author) }}">

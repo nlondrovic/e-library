@@ -42,7 +42,6 @@ class AuthorController extends Controller
     public function update(UpdateAuthorRequest $request, Author $author)
     {
         $inputs = $request->validated();
-//                dd($inputs);
         $author->update($inputs);
 
         return redirect()->route('authors.show', compact('author'));
