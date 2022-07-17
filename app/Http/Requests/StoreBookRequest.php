@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreBookRequest extends FormRequest
 {
-
     public function authorize()
     {
         return Auth::check();
@@ -17,9 +16,10 @@ class StoreBookRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'content' => 'min:20',
-            'ISBN' => 'integer',
+            'content' => 'required|min:20',
+            'isbn' => 'required|integer',
             'author_id' => 'required',
+            'picture' => 'sometimes'
         ];
     }
 }
