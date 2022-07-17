@@ -4,30 +4,11 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[60px] pt-[7px] flex flex-col">
+            <div class="pl-[60px] pt-[7px] pb-[21px] flex flex-col">
                 <div>
                     <h1>
                         New author
                     </h1>
-                </div>
-                <div>
-                    <nav class="w-full rounded">
-                        <ol class="flex list-reset">
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    All authors
-                                </a>
-                            </li>
-                            <li>
-                                <span class="mx-2">/</span>
-                            </li>
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    New author
-                                </a>
-                            </li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </div>
@@ -36,7 +17,7 @@
     <!-- Space for content -->
     <div class="pl-[30px] scroll height-content section-content">
 
-        <form class="text-gray-700 forma" method="post" action="{{route('authors.store')}}"
+        <form class="text-gray-700 forma" method="post" action="{{ route('authors.store') }}"
               enctype="multipart/form-data">
             @csrf
             @method('post')

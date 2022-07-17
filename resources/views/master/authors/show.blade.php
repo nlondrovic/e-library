@@ -4,30 +4,11 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] py-[10px] flex flex-col">
+            <div class="pl-[50px] py-[10px] pb-[21px] flex flex-col">
                 <div>
                     <h1>
-                        {{$author->name}}
+                        {{ $author->name }}
                     </h1>
-                </div>
-                <div>
-                    <nav class="w-full rounded">
-                        <ol class="flex list-reset">
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    All authors
-                                </a>
-                            </li>
-                            <li>
-                                <span class="mx-2">/</span>
-                            </li>
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    ID-{{$author->id}}
-                                </a>
-                            </li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
 
@@ -40,13 +21,13 @@
                         class="absolute right-0 w-56 mt-[2px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                         <div class="py-1">
-                            <a href="{{route('authors.edit', $author)}}" tabindex="0"
+                            <a href="{{ route('authors.edit', $author) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                role="menuitem">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Edit the author</span>
                             </a>
-                            <form method="post" action="{{route('authors.destroy', $author)}}">
+                            <form method="post" action="{{ route('authors.destroy', $author) }}">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" tabindex="0"
