@@ -49,7 +49,7 @@
                                 </label>
                             </td>
                             <td class="flex flex-row items-center px-4 py-3">
-                                <img class="object-cover w-8 mr-2 h-11" src="{{ $author->picture }}" alt=""/>
+                                <img class="object-cover w-8 mr-2 h-11" src="{{ $author->picture }}" alt="{{$author->picture}}"/>
                                 <a href="{{ route('authors.show', $author) }}">
                                     <span class="mr-2 font-medium text-center">{{ $author->name }}</span>
                                 </a>
@@ -72,7 +72,7 @@
                                                 <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">View more</span>
                                             </a>
-                                            <a href="{{ route('authors.edit', ['author' => $author]) }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
+                                            <a href="{{ route('authors.edit', $author) }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
                                                 text-left text-gray-700 outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>

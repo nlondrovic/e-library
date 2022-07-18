@@ -15,8 +15,11 @@ class UpdateBookRequest extends FormRequest
 
     public function rules()
     {
-        return [
-            //
-        ];
+             return [
+                 'title' => 'required',
+                 'content' => 'min:20',
+                 'ISBN' => 'integer',
+                 'author_id' => 'required',
+             ];
     }
 }

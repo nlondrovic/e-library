@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('about');
-            $table->string('picture')->nullable();
+            $table->string('picture')->default('/assets/img/user.jpg');
             $table->timestamps();
         });
     }

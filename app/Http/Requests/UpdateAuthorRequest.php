@@ -18,7 +18,7 @@ class UpdateAuthorRequest extends FormRequest
         return [
             'name' => 'required',
             'about' => 'sometimes',
-            'picture' => 'sometimes'
+            'picture' => 'sometimes',
         ];
     }
 }
