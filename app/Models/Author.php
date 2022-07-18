@@ -11,11 +11,6 @@ class Author extends Model
 
     protected $guarded = [''];
 
-    protected $fillable = [
-        'name',
-        'about'
-    ];
-
     public function books(){
         return $this->hasMany(Book::class);
     }
