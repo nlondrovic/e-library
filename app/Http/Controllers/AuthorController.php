@@ -41,7 +41,7 @@ class AuthorController extends Controller
     {
         $inputs = $request->validated();
         $author->update($inputs);
-        return redirect()->route('authors.show');
+        return redirect()->route('authors.index');
     }
 
     public function destroy(Author $author)
