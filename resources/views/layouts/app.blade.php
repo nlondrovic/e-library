@@ -10,6 +10,7 @@
     <meta name="description" content="ICT Cortex Library - project for high school students..."/>
     <meta name="keywords" content="ict cortex, cortex, fleka, highschool, students, coding, library"/>
     <meta name="author" content=""/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <!-- End Meta -->
 
     <!-- Title -->
