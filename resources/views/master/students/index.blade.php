@@ -25,13 +25,7 @@
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
-                    <th class="px-4 py-3 leading-4 tracking-wider text-left text-blue-500">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" class="form-checkbox">
-                        </label>
-                    </th>
-                    <th class="px-4 py-4 leading-4 tracking-wider text-left">Name<a href="#"><i
-                                class="ml-3 fa-lg fas fa-long-arrow-alt-down" onclick="sortTable()"></i></a></th>
+                    <th class="px-4 py-4 leading-4 tracking-wider text-left">Name</th>
                     <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Email</th>
                     <th class="px-4 py-4"></th>
                 </tr>
@@ -40,11 +34,6 @@
 
                 @foreach($students as $student)
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                        <td class="px-4 py-4 whitespace-no-wrap">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" class="form-checkbox">
-                            </label>
-                        </td>
                         <td class="flex flex-row items-center px-4 py-4">
                             <img class="object-cover w-8 h-8 mr-2 rounded-full" src="{{ $student->picture }}" alt=""/>
                             <a href="{{ route('students.show',['student' => $student]) }}">

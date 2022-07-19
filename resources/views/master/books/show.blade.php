@@ -37,7 +37,6 @@
                                     <button type="submit" class="px-4 py-0">Delete book</button>
                                 </p>
                             </form>
-
                         </div>
                     </div>
                 </div>

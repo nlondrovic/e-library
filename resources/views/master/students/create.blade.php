@@ -3,31 +3,8 @@
 
     <!-- Heading of content -->
     <div class="heading">
-        <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf]">
-            <div>
-                <h1 class="">
-                    New student
-                </h1>
-            </div>
-            <div>
-                <nav class="w-full rounded">
-                    <ol class="flex list-reset">
-                        <li>
-                            <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                All students
-                            </a>
-                        </li>
-                        <li>
-                            <span class="mx-2">/</span>
-                        </li>
-                        <li>
-                            <a href="#" class="text-gray-400 hover:text-blue-600">
-                                New student
-                            </a>
-                        </li>
-                    </ol>
-                </nav>
-            </div>
+        <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
+            <h1> New student</h1>
         </div>
     </div>
 
@@ -51,20 +28,6 @@
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
-
-{{--                    <div class="mt-[20px]">--}}
-{{--                        <span>User type</span>--}}
-{{--                        <select--}}
-{{--                            class="flex w-[90%] mt-2 px-2 py-2 border bg-gray-300 border-gray-300 shadow-sm--}}
-{{--                            focus:outline-none focus:ring-2 focus:ring-[#576cdf]" name="tip_korisnika" disabled--}}
-{{--                            required>--}}
-{{--                            <option value="">--}}
-{{--                                Ucenik--}}
-{{--                            </option>--}}
-{{--                        </select>--}}
-{{--                    </div>--}}
-
-                    {{-- TODO: Kako validirati JMBG npr. 0409003250606, zbog nule na pocetku kaze da nije integer, zato sam stavio da je tip text --}}
                     <div class="mt-[20px]">
                         <span>JMBG <span class="text-red-500">*</span></span>
                         <input type="text" name="jmbg" required
@@ -120,7 +83,8 @@
                                     <polyline points="21 15 16 10 5 21"></polyline>
                                 </svg>
                                 <span class="px-4 py-2 mt-2 leading-normal">Add photo</span>
-                                <input type="file" name="picture" class="hidden" :accept="accept" onchange="loadFileStudent(event)"/>
+                                <input type="file" name="picture" class="hidden" :accept="accept"
+                                       onchange="loadFileStudent(event)"/>
                             </div>
                             <img id="image-output-student" class="hidden absolute w-48 h-[188px] bottom-0"/>
                         </div>

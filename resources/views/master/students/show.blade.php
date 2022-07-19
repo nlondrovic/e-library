@@ -3,78 +3,47 @@
 
     <!-- Heading of content -->
     <div class="heading">
-        <div class="flex flex-row  justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] py-[10px] flex flex-col">
-                <div>
-                    <h1>
-                        {{ $student->name }}
-                    </h1>
-                </div>
-                <div>
-                    <nav class="w-full rounded">
-                        <ol class="flex list-reset">
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    All students
-                                </a>
-                            </li>
-                            <li>
-                                <span class="mx-2">/</span>
-                            </li>
-                            <li>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    ID-{{ $student->id }}
-                                </a>
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
+        <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
+            <div class="pl-[50px] pt-[10px] pb-[20px] flex flex-col">
+                <h1>{{ $student->name }}</h1>
             </div>
-            <div class="pt-[24px] pr-[30px]">
-                <a href="#" class="inline hover:text-blue-600 show-modal">
-                    <i class="fas fa-redo-alt mr-[3px]"></i>
-                    Reset password
-                </a>
-                <a href="{{route('students.edit', ['student' => $student])}}"
-                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                    <i class="fas fa-edit mr-[3px] "></i>
-                    Edit student
-                </a>
-                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-gray-300
-                dotsStudentProfile hover:text-[#606FC7]">
+
+            <div class="pt-[24px] mr-[30px]">
+                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
+                            dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
                 </p>
-                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2
-                dropdown-student-profile">
-                    <div class="absolute right-0 w-56 mt-[10px] origin-top-right bg-white border border-gray-200
-                    divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
+                            -translate-y-2 dropdown-knjiga-osnovni-detalji">
+                    <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
+                                divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                          aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-                        <form action="{{ route('students.destroy', $student) }}" method="post">
-                            @csrf
-                            @method('delete')
-                            <div class="py-1">
-                                <button type="submit" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
-                                text-left text-gray-700 outline-none hover:text-blue-600"
-                                        role="menuitem">
+
+                        <div class="py-1">
+                            <a href="{{ route('students.edit', $student) }}" tabindex="0"
+                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                               role="menuitem">
+                                <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
+                                <span class="px-4 py-0">Edit student</span>
+                            </a>
+                            <form action="{{ route('students.destroy', $student) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
+                                            text-gray-700 outline-none hover:text-blue-600" role="menuitem">
                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Delete student</span>
-                                </button>
-                            </div>
-                        </form>
+                                    <button type="submit" class="px-4 py-0">Delete student</button>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="border-b-[1px] py-4 text-gray-500 border-[#e4dfdf] pl-[50px]">
-        <a href="#" class="inline active-book-nav">
-            Basic details
-        </a>
-        <a href="#" class="inline ml-[70px] hover:text-blue-800">
-            Renting history
-        </a>
-    </div>
-    <div class="height-ucenikProfile pb-[30px] scroll">
+
+    {{-- Content --}}
+    <div class="height-ucenikProfile pb-[30px]">
         <!-- Space for content -->
         <div class="pl-[50px] section- mt-[20px]">
             <div class="flex flex-row">
