@@ -32,8 +32,8 @@
 <!-- Main content -->
 <main class="flex flex-row small:hidden">
     <!-- Sidebar -->
-    @include('components/sidebar')
-    <!-- End Sidebar -->
+@include('components/sidebar')
+<!-- End Sidebar -->
 
     <!-- Content -->
     <section class="w-screen h-screen py-4 pl-[60px] text-[#212121]">
