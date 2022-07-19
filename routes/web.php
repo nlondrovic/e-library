@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/students', UserController::class);
     Route::resource('/books', BookController::class);
+    Route::resource('/authors', AuthorController::class);
 
 });
 

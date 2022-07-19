@@ -10,8 +10,6 @@ class BookSeeder extends Seeder
 {
     public function run()
     {
-
-
         DB::table('books')->insert([
             [
                 'title' => 'Harry Potter and the Philosopher\'s Stone',
