@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\PublisherController;
+use App\Http\Controllers\BindingController;
+use App\Http\Controllers\SizeController;
+use App\Http\Controllers\ScriptController;
+
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,8 +33,17 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('/students', UserController::class);
+    Route::resource('/categories', CategoryController::class);
+    Route::resource('/genres', GenreController::class);
+    Route::resource('/publishers', PublisherController::class);
+    Route::resource('/bindings', BindingController::class);
+    Route::resource('/sizes', SizeController::class);
+    Route::resource('/scripts', ScriptController::class);
 
 });
+
+
+
 
 
 require __DIR__ . '/auth.php';

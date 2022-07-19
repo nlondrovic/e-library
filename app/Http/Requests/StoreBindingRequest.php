@@ -5,14 +5,14 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateRoleRequest extends FormRequest
+class StoreBindingRequest extends FormRequest
 {
     public function authorize()
     {
         return Auth::check();
     }
 
-    public function rules()
+      public function rules()
     {
         return [
             //
