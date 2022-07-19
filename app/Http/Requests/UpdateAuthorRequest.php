@@ -5,8 +5,9 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class UpdateRoleRequest extends FormRequest
+class UpdateAuthorRequest extends FormRequest
 {
+
     public function authorize()
     {
         return Auth::check();
@@ -15,7 +16,9 @@ class UpdateRoleRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'about' => 'required|min:10',
+            'picture' => 'sometimes'
         ];
     }
 }

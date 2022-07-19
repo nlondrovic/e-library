@@ -13,7 +13,7 @@ return new class extends Migration
             $table->bigInteger('isbn');
             $table->string('title');
             $table->text('content');
-            $table->string('picture')->nullable();
+            $table->string('picture')->default('/assets/img/book.jpg');
             $table->timestamps();
         });
     }
