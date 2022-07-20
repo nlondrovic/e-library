@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
@@ -29,6 +31,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('/students', UserController::class);
+    Route::resource('/books', BookController::class);
+    Route::resource('/authors', AuthorController::class);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/genres', GenreController::class);
     Route::resource('/publishers', PublisherController::class);
