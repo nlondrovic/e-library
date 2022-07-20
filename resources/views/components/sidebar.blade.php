@@ -1,7 +1,9 @@
-<nav id="sidebar" class="fixed z-10 flex flex-col justify-between overflow-x-hidden overflow-y-auto bg-[#EFF3F6] sidebar nav-height">
+<nav id="sidebar"
+     class="fixed z-10 flex flex-col justify-between overflow-x-hidden overflow-y-auto bg-[#EFF3F6] sidebar nav-height">
     <div class="">
         <!-- Hamburger Icon -->
-        <div class="cursor-pointer text-[#707070] pl-[30px] pt-[28px] pb-[27px] text-[25px] border-b-[1px] border-[#e4dfdf] ">
+        <div
+            class="cursor-pointer text-[#707070] pl-[30px] pt-[28px] pb-[27px] text-[25px] border-b-[1px] border-[#e4dfdf] ">
             <i id="hamburger" class="hamburger-btn fas fa-bars"></i>
         </div>
         <div class="mt-[30px]">
@@ -113,7 +115,7 @@
         <!-- Settings Icon -->
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
-                <a href="#" aria-label="Settngs" class="ml-[30px]">
+                <a href="{{ route('settings') }}" aria-label="Settngs" class="ml-[30px]">
                         <span class="whitespace-nowrap">
                             <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog"></i>
                             <div class="hidden sidebar-item">
