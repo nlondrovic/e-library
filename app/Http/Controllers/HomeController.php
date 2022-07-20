@@ -6,6 +6,6 @@ class HomeController extends Controller
 {
     public function settings()
     {
-        return view('settings');
+        return view('master.settings.policy.index');
     }
 }
