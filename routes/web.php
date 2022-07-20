@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GenreController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
 use App\Http\Controllers\SizeController;
@@ -26,12 +27,7 @@ Route::get('/', function () {
 });
 
 
-
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
     Route::resource('/students', UserController::class);
     Route::resource('/categories', CategoryController::class);
     Route::resource('/genres', GenreController::class);
@@ -40,10 +36,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/sizes', SizeController::class);
     Route::resource('/scripts', ScriptController::class);
 
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/settings', [HomeController::class, 'settings'])->name('settings');
+
 });
-
-
-
 
 
 require __DIR__ . '/auth.php';
