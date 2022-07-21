@@ -12,7 +12,7 @@
     <div class="scroll height-content section-content">
 
         <form class="text-gray-700 text-[14px] forma"
-              action="{{ route('students.update', ['student' => $student->id]) }}"
+              action="{{ route('students.update', $student) }}"
               method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
@@ -31,7 +31,7 @@
                     </div>
                     <div class="mt-[20px]">
                         <span>JMBG <span class="text-red-500">*</span></span>
-                        <input type="text" name="jmbg" required
+                        <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                                value="{{ $student->JMBG }}"/>
@@ -42,12 +42,12 @@
 
                     <div class="mt-[20px]">
                         <span>E-mail <span class="text-red-500">*</span></span>
-                        <input type="text" name="email" id="studentEmail"
+                        <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                                value="{{ $student->email }}"/>
                         @if($errors->first('email'))
-                            <span class="text-red-600" id="studentEmailErrorMsg">{{ $errors->first('email') }}</span>
+                            <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
                 </div>

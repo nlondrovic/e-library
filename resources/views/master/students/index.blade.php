@@ -36,7 +36,7 @@
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                         <td class="flex flex-row items-center px-4 py-4">
                             <img class="object-cover w-8 h-8 mr-2 rounded-full" src="{{ $student->picture }}" alt=""/>
-                            <a href="{{ route('students.show',['student' => $student]) }}">
+                            <a href="{{ route('students.show', $student) }}">
                                 <span class="font-medium text-center">{{ $student->name }}</span>
                             </a>
                         </td>
