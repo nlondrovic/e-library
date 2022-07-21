@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('isbn');
+            $table->string('isbn');
             $table->string('title');
             $table->text('content');
             $table->string('picture')->default('/assets/img/book.jpg');

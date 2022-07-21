@@ -17,7 +17,7 @@ class UpdateBookRequest extends FormRequest
         return [
             'title' => 'required',
             'content' => 'required|min:20',
-            'isbn' => 'required|integer',
+            'isbn' => 'required|regex:/[0-9]+/|digits:13',
             'author_id' => 'required',
             'picture' => 'sometimes'
         ];
