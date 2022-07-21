@@ -45,7 +45,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/settings', [HomeController::class, 'settings'])->name('settings');
+    Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
 
 });
 

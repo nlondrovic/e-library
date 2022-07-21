@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class HomeController extends Controller
 {
-    public function settings()
+    public function policy()
     {
         return view('master.settings.policy.index');
     }
