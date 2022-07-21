@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
 use App\Http\Controllers\SizeController;
@@ -39,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/bindings', BindingController::class);
     Route::resource('/sizes', SizeController::class);
     Route::resource('/scripts', ScriptController::class);
+    Route::resource('/librarians', LibrarianController::class);
 
 
     Route::get('/dashboard', function () {

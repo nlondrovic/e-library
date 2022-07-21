@@ -20,7 +20,7 @@ class UpdateUserRequest extends FormRequest
             'name' => 'required|string',
             'jmbg' => 'required|regex:/[0-9]+/|digits:13',
             'email' => 'sometimes|email',
-//            TODO: Ako u formi unesemo korisnikov trenutni mejl, baci error email must be unique
+//            TODO: Ako u formi unesemo korisnikov trenutni mejl, baci error email must be unique, a ako ne stavimo unique pravilo, baci gresku kad drugom korisniku dodijelimo postojeci mejl
             'picture' => 'sometimes'
         ];
     }
