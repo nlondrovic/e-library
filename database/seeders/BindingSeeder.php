@@ -7,11 +7,6 @@ use Illuminate\Database\Seeder;
 
 class BindingSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         //
