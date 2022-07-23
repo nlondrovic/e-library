@@ -50,7 +50,8 @@
             <!-- Space for content -->
             <div class="pl-[30px] pl-[50px] section- mt-[20px]">
                 <div class="flex flex-row justify-between">
-                    <div class="mr-[30px]">
+
+                    <div class="">
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">Title</span>
                             <p class="font-medium">{{ $book->title }}</p>
@@ -60,39 +61,54 @@
                             <p class="font-medium">{{ $book->author->name }}</p>
                         </div>
                         <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Category</span>
+                            <p class="font-medium">{{ $book->category->name }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Genre</span>
+                            <p class="font-medium">{{ $book->genre->name }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Publisher</span>
+                            <p class="font-medium">{{ $book->publisher->name }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Date of publishing</span>
+                            <p class="font-medium">{{ $book->publish_date }}</p>
+                        </div>
+                    </div>
+
+                    <div class="w-[50%]">
+                        <img class="p-2 border-2 border-gray-300" width="300px" src="{{ $book->picture }}" alt="">
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Content</span>
+                            <p class="font-medium">{{ $book->content }}</p>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">ISBN</span>
                             <p class="font-medium">{{ $book->isbn }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Category</span>
-                            <p class="font-medium">#</p>
+                            <span class="text-gray-500 text-[14px]">Number of pages</span>
+                            <p class="font-medium">{{ $book->page_count }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Genre</span>
-                            <p class="font-medium">#</p>
+                            <span class="text-gray-500 text-[14px]">Script</span>
+                            <p class="font-medium">{{ $book->script->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Publisher</span>
-                            <p class="font-medium">#</p>
+                            <span class="text-gray-500 text-[14px]">Binding</span>
+                            <p class="font-medium">{{ $book->binding->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Year of publishing</span>
-                            <p class="font-medium">#</p>
+                            <span class="text-gray-500 text-[14px]">Size</span>
+                            <p class="font-medium">{{ $book->size->name }}</p>
                         </div>
                     </div>
-                    <div class="mr-[70px] mt-[20px] flex flex-col max-w-[600px]">
-                        <div>
-                            <h4 class="text-gray-500 ">
-                                Content of the book
-                            </h4>
-                            <p class="addReadMore showlesscontent my-[10px]">
-                                {{ $book->content }}
-                            </p>
-                        </div>
-                        <div class="ml-[100px]  mt-[20px]">
-                            <img class="p-2 border-2 border-gray-300" width="300px" src="{{ $book->picture }}" alt="">
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>

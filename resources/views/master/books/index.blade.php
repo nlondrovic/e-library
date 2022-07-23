@@ -29,8 +29,11 @@
                     <tr class="border-b-[1px] border-[#e4dfdf]">
                         <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Title</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Author</th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">ISBN</th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Content</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Category</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Free</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Reserved</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checked out</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Total</th>
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
@@ -45,8 +48,11 @@
                                 </a>
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->author->name }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->isbn }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ Str::limit($book->content, 50) }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->category->name }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count - ($book->checkout_count + $book->reserved_count) }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->reserved_count }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->checkout_count }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count }}</td>
                             <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                                     <i
