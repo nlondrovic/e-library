@@ -15,7 +15,8 @@ class UpdateGenreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'icon' => 'sometimes'
         ];
     }
 }
