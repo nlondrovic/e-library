@@ -15,7 +15,7 @@ class UpdateBindingRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required'
         ];
     }
 }
