@@ -29,11 +29,6 @@ class GenreController extends Controller
         return redirect()->route('genres.index');
     }
 
-    public function show(Genre $genre)
-    {
-        //
-    }
-
     public function edit(Genre $genre)
     {
         return view('master.settings.genres.edit', compact('genre'));
