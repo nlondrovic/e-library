@@ -12,10 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('JMBG');
+            $table->string('jmbg');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('picture')->nullable();
+            $table->string('picture')->nullable()->default('/assets/img/user.jpg');
             $table->rememberToken();
             $table->timestamps();
         });
