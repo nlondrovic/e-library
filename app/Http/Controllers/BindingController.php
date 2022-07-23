@@ -29,11 +29,6 @@ class BindingController extends Controller
         return redirect()->route('bindings.index');
     }
 
-    public function show(Binding $binding)
-    {
-        //
-    }
-
     public function edit(Binding $binding)
     {
         return view('master.settings.bindings.edit', compact('binding'));
