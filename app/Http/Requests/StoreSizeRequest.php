@@ -15,7 +15,7 @@ class StoreSizeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required'
         ];
     }
 }
