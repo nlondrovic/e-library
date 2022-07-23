@@ -52,6 +52,6 @@ class GenreController extends Controller
     {
         $genre->delete();
 
-        return back();
+        return redirect()->route('genres.index');
     }
 }
