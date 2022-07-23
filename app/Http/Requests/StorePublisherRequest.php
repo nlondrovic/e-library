@@ -15,7 +15,7 @@ class StorePublisherRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required'
         ];
     }
 }
