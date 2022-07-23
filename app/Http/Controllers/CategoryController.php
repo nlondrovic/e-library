@@ -29,11 +29,6 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-    public function show(Category $category)
-    {
-
-    }
-
     public function edit(Category $category)
     {
         return view('master.settings.categories.edit', compact('category'));
