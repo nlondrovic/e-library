@@ -55,7 +55,7 @@ class UsersSeeder extends Seeder
                 'email' => 'kikovuk9@gmail.com',
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
-                'role_id' => 3,
+                'role_id' => 1,
                 'JMBG' => '1111111111111',
                 'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033RHEGVN2-7f2cded96618-512'
             ]
