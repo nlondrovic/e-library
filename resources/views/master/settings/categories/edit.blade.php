@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('main')
 
     {{-- Heading --}}
@@ -14,7 +13,7 @@
     <!-- Space for content -->
     <div class="scroll height-content section-content pl-[32px]">
         <form class="text-gray-700 forma"
-              action="{{ route('categories.update', ['category' => $category->id]) }}"
+              action="{{ route('categories.update', $category->id) }}"
               method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
@@ -49,16 +48,6 @@
                         @if($errors->first('icon'))
                             <span class="text-red-600">{{ $errors->first('icon') }}</span>
                         @endif
-
-                        <div class="mt-[20px]">
-                            <p class="inline-block">Description</p>
-                            <textarea name="about" rows="6"
-                                      class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                                      appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]">{{ $category->about }}</textarea>
-                            @if($errors->first('about'))
-                                <span class="text-red-600">{{ $errors->first('about') }}</span>
-                            @endif
-                        </div>
                     </div>
                 </div>
                 <div class="absolute bottom-0 w-full">

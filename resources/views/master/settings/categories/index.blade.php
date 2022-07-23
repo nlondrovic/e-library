@@ -17,7 +17,6 @@
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
                     <th class="px-4 py-4 leading-4 tracking-wider text-left">Category</th>
-                    <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Description</th>
                     <th class="px-4 py-4"></th>
                 </tr>
                 </thead>
@@ -28,7 +27,6 @@
                                 <i class="fas fa-utensils fa-lg text-[#707070]"></i>
                                 <p class="ml-4 text-center">{{ $category->name }}</p>
                             </td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $category->about }}</td>
                             <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsCategory hover:text-[#606FC7]">
                                     <i class="fas fa-ellipsis-v"></i>
