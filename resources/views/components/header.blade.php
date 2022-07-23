@@ -73,7 +73,7 @@
 
                 <!-- User Profile Icon -->
                 <div class="ml-[10px] relative block">
-                    <a href="#" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
+                    <a href="{{ route('librarians.show', auth()->user()) }}" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
                        aria-label="User profile">
                         <div class="flex items-center h-5">
                             <div class="w-[40px] h-[40px] mt-[15px]">
