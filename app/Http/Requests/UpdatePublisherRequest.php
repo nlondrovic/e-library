@@ -15,7 +15,7 @@ class UpdatePublisherRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required'
         ];
     }
 }
