@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->integer('reserved_count');
+            $table->integer('reserved_count')->default(0);
         });
     }
 

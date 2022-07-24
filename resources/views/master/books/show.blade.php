@@ -48,7 +48,7 @@
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[80%]">
             <!-- Space for content -->
-            <div class="pl-[30px] pl-[50px] section- mt-[20px]">
+            <div class="pl-[50px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
 
                     <div class="">
