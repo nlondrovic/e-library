@@ -57,7 +57,7 @@
                             <p class="font-medium">{{ $book->title }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Autor</span>
+                            <span class="text-gray-500 text-[14px]">Author</span>
                             <p class="font-medium">{{ $book->author->name }}</p>
                         </div>
                         <div class="mt-[40px]">
