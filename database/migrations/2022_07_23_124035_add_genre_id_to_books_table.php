@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->foreignId('genre_id')->constrained('genres');
+            $table->foreignId('genre_id')->constrained('genres')->cascadeOnDelete();
         });
     }
 
