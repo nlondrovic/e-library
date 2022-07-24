@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Author;
+use App\Models\Binding;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
+use App\Models\Genre;
+use App\Models\Publisher;
+use App\Models\Script;
+use App\Models\Size;
 
 class BookController extends Controller
 {
@@ -19,7 +24,16 @@ class BookController extends Controller
     public function create()
     {
         $authors = Author::all();
-        return view('master.books.create', compact('authors'));
+        $categories = Category::all();
+        $genres = Genre::all();
+        $publishers = Publisher::all();
+        $scripts = Script::all();
+        $sizes = Size::all();
+        $bindings = Binding::all();
+
+        return view('master.books.create',
+            compact('authors', 'categories', 'genres', 'publishers', 'scripts', 'sizes', 'bindings')
+        );
     }
 
     public function store(StoreBookRequest $request)
@@ -38,7 +52,16 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $authors = Author::all();
-        return view('master.books.edit', compact('book', 'authors'));
+        $categories = Category::all();
+        $genres = Genre::all();
+        $publishers = Publisher::all();
+        $scripts = Script::all();
+        $sizes = Size::all();
+        $bindings = Binding::all();
+
+        return view('master.books.edit',
+            compact('book', 'authors', 'categories', 'genres', 'publishers', 'scripts', 'sizes', 'bindings')
+        );
     }
 
     public function update(UpdateBookRequest $request, Book $book)

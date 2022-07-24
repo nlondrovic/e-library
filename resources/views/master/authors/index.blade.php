@@ -3,24 +3,26 @@
 
     <!-- Heading of content -->
     <div class="heading mt-[7px]">
-        <div class="border-b-[1px] pl-[30px] border-[#e4dfdf]">
-            <div class="pl-[30px] pb-[21px]">
-                <h1> Authors </h1>
-            </div>
-        </div>
+        <h1 class="pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf] ">
+            Authors
+        </h1>
     </div>
 
-    <div class="height-autori pb-[30px] pl-[30px] scroll">
-        <div class="flex items-center px-[30px] py-4 space-x-3 rounded-lg justify-between">
-            <a href="{{ route('authors.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5
-            transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
-                <i class="fas fa-plus mr-[15px]"></i> New Author
+    <!-- Space for content -->
+    <div class="scroll height-evidencija">
+        {{-- New Book --}}
+        <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
+            <a href="{{ route('authors.create') }}"
+               class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+                       ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
+                <i class="fas fa-plus mr-[15px]"></i>New author
             </a>
         </div>
 
-        <div
-            class="inline-block min-w-full px-[30px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
-            <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
+        <div class="px-[50px] pt-2 bg-white">
+            <div class="w-full mt-2">
+                <!-- Table -->
+                <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
                     <th class="px-4 py-4 leading-4 tracking-wider text-left">Name<a href="#"></a></th>
