@@ -1,18 +1,19 @@
 @extends('master.settings.index')
 @section('main-settings')
 
-    {{-- New script button --}}
-    <div class="pb-[30px] scroll">
-        <div class="flex items-center pl-[28px] py-8 space-x-3 rounded-lg">
-            <a href="{{ route('scripts.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in
-                   rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
+    {{-- New size button --}}
+    <div class="height-kategorije pb-[30px]">
+        <div class="flex items-center pl-[15px] py-[10px] space-x-3 rounded-lg">
+            <a href="{{ route('scripts.create') }}"
+               class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in
+               rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i> New script
             </a>
         </div>
 
         {{-- Table --}}
         <div
-            class="inline-block min-w-full pl-[28px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
+            class="inline-block min-w-full pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">

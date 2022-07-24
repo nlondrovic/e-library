@@ -11,6 +11,7 @@
             </a>
         </div>
 
+        {{-- Table --}}
         <div
             class="inline-block min-w-full pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
