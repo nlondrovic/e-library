@@ -49,9 +49,9 @@
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->author->name }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->category->name }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count - ($book->checkout_count + $book->reserved_count) }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count - ($book->checkouts_count + $book->reserved_count) }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->reserved_count }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->checkout_count }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->checkouts_count }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count }}</td>
                             <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">

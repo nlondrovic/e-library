@@ -10,7 +10,25 @@
                 </div>
             </div>
 
-            <div class="pt-[24px] mr-[30px]">
+            <div class="pt-[15px] mr-[30px]">
+                <a href="#" class="inline hover:text-blue-600">
+                    <i class="fas fa-level-up-alt mr-[3px]"></i>
+                    Write off
+                </a>
+                <a href="#" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                    <i class="far fa-hand-scissors mr-[3px]"></i>
+                    Check out
+                </a>
+                <a href="#"
+                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                    <i class="fas fa-redo-alt mr-[3px] "></i>
+                    Check in
+                </a>
+                <a href="#"
+                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                    <i class="far fa-calendar-check mr-[3px] "></i>
+                    Reserve
+                </a>
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
                             dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
@@ -46,9 +64,9 @@
 
     {{-- Content --}}
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
-        <div class="w-[80%]">
+        <div class="w-[100%]">
             <!-- Space for content -->
-            <div class="pl-[50px] pb-[30px] mt-[20px]">
+            <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
 
                     <div class="">
@@ -78,14 +96,6 @@
                         </div>
                     </div>
 
-                    <div class="w-[50%]">
-                        <img class="p-2 border-2 border-gray-300" width="300px" src="{{ $book->picture }}" alt="">
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Content</span>
-                            <p class="font-medium">{{ $book->content }}</p>
-                        </div>
-                    </div>
-
                     <div class="">
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">ISBN</span>
@@ -109,9 +119,20 @@
                         </div>
                     </div>
 
+                    <div class="w-[560px]">
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Content</span>
+                            <p class="font-medium">{{ $book->content }}</p>
+                        </div>
+                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="300px" src="{{ $book->picture }}" alt="">
+                    </div>
+
                 </div>
             </div>
         </div>
+
+        @include('components.book-sidebar')
+
     </div>
 
 @endsection
