@@ -25,7 +25,7 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-01",
                 'total_count' => 20,
                 'reserved_count' => 2,
-                'checkout_count' => 3,
+                'checkouts_count' => 3,
                 'category_id' => 10,
                 'genre_id' => 1
 
@@ -44,7 +44,7 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-11",
                 'total_count' => 20,
                 'reserved_count' => 1,
-                'checkout_count' => 2,
+                'checkouts_count' => 2,
                 'category_id' => 10,
                 'genre_id' => 1
             ],
@@ -62,7 +62,7 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-27",
                 'total_count' => 20,
                 'reserved_count' => 4,
-                'checkout_count' => 6,
+                'checkouts_count' => 6,
                 'category_id' => 10,
                 'genre_id' => 1
             ],
@@ -80,7 +80,7 @@ class BookSeeder extends Seeder
                 'publish_date' => "1983-02-07",
                 'total_count' => 20,
                 'reserved_count' => 4,
-                'checkout_count' => 8,
+                'checkouts_count' => 8,
                 'category_id' => 8,
                 'genre_id' => 24
             ],
@@ -98,7 +98,7 @@ class BookSeeder extends Seeder
                 'publish_date' => "1964-10-09",
                 'total_count' => 20,
                 'reserved_count' => 8,
-                'checkout_count' => 10,
+                'checkouts_count' => 10,
                 'category_id' => 8,
                 'genre_id' => 24
             ]

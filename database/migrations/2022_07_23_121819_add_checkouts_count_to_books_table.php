@@ -9,14 +9,14 @@ return new class extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->integer('checkout_count')->default(0);
+            $table->integer('checkouts_count')->default(0);
         });
     }
 
     public function down()
     {
         Schema::table('books', function($table) {
-            $table->dropColumn('checkout_count');
+            $table->dropColumn('checkouts_count');
         });
     }
 };
