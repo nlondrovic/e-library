@@ -38,4 +38,16 @@ class Book extends Model
     public function genre(){
         return $this->belongsTo(Genre::class);
     }
+
+    public function getOverdueCountAttribute()
+    {
+        $checkouts = Checkout::all()->where('book_id', $this->id);
+        $overdue_count = 0;
+
+        foreach ($checkouts as $checkout)
+            if ((strtotime($checkout->start_time) + getenv('HOLDING_TIME') * 86400) < time())
+                $overdue_count++;
+
+        return $overdue_count;
+    }
 }
