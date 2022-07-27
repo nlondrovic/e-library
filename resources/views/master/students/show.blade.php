@@ -54,11 +54,11 @@
                     </div>
                     <div class="mt-[40px]">
                         <span class="text-gray-500">User type</span>
-                        <p class="font-medium">{{ $student->role_id }}</p>
+                        <p class="font-medium">{{ $student->role->name }}</p>
                     </div>
                     <div class="mt-[40px]">
                         <span class="text-gray-500">JMBG</span>
-                        <p class="font-medium">{{ $student->JMBG }}</p>
+                        <p class="font-medium">{{ $student->jmbg }}</p>
                     </div>
                     <div class="mt-[40px]">
                         <span class="text-gray-500">Email</span>
