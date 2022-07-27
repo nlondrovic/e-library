@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -41,13 +42,15 @@ class Book extends Model
 
     public function getOverdueCountAttribute()
     {
-        $checkouts = Checkout::all()->where('book_id', $this->id);
-        $overdue_count = 0;
-
-        foreach ($checkouts as $checkout)
-            if ((strtotime($checkout->start_time) + getenv('HOLDING_TIME') * 86400) < time())
-                $overdue_count++;
+        $overdue_count = count(Checkout:: where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
+            ->where('end_time', null)
+            ->get());
 
         return $overdue_count;
+    }
+
+    public function getAvailableCountAttribute()
+    {
+        return $this->total_count - ($this->checkouts_count + $this->reserved_count);
     }
 }
