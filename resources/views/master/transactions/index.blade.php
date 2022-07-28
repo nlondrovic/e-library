@@ -56,14 +56,15 @@
                         </span>
                     </div>
                 </li>
-                <li class="mb-[4px]">
+                <hr>
+                <li class="mb-[4px] py-1">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group {{-- bg-[#EFF3F6]--}} hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="#" class="flex items-center">
+                                <a href="{{ route('reservations.active') }}" class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] text-[#707070] text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf] {{--text-[#576cdf]--}}">
-                                        Aktivne rezervacije
+                                        Active reservations
                                     </p>
                                 </a>
                             </div>
@@ -74,10 +75,24 @@
                     <div class="w-[300px] pl-[32px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="#" aria-label="Rezervacije" class="flex items-center">
+                                <a href="{{ route('reservations.archived') }}" aria-label="Rezervacije" class="flex items-center">
                                     <i class="text-[#707070] text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                        Arhivirane rezervacije
+                                        Archived reservations
+                                    </p>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+                <li class="mb-[4px]">
+                    <div class="w-[300px] pl-[32px]">
+                        <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
+                                <a href="{{ route('reservations.pending') }}" aria-label="Rezervacije" class="flex items-center">
+                                    <i class="text-[#707070] text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
+                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                        Pending reservations
                                     </p>
                                 </a>
                             </div>

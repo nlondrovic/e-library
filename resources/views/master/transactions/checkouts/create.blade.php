@@ -15,7 +15,7 @@
     {{-- Content --}}
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
-            @if($book->total_count - ($book->checkouts_count + $book->reserved_count))
+            @if($book->available_count)
                 <form action="{{ route('checkouts.store') }}" method="post">
                     @csrf
                     @method('post')
@@ -23,7 +23,6 @@
                         <div class="mt-[20px]">
                             <h3>Check out this book</h3>
                         </div>
-                        {{ $errors->first() }}
                         <div class="flex flex-row justify-start">
 
                             {{-- Book --}}
@@ -52,7 +51,7 @@
                             {{-- Start date/time --}}
                             <div class="mt-[20px] w-[268px]">
                                 <p>Checkout date<span class="text-red-500">*</span></p>
-                                <input required type="date" id="book_checkout_date" name="start_time" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                <input required type="date" id="start_time" name="start_time" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]"/>
                                 @if($errors->first('start_time'))
@@ -66,7 +65,7 @@
                                 <input type="date" id="book_return_date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
                                 bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
                                 focus:ring-[#576cdf]"/>
-                                <p>Return period: 20 days</p>
+                                <p>Return period: {{ getenv('HOLDING_TIME') }} days</p>
                             </div>
 
                         </div>

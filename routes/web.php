@@ -53,15 +53,31 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/sizes', SizeController::class);
     Route::resource('/scripts', ScriptController::class);
     Route::resource('/librarians', LibrarianController::class);
+    Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
 
-
-    Route::resource('/reservations', ReservationController::class);
-//        Route::get('/reservations/{book}', [ReservationController::class, 'create'])->name('reservations.create');
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
+
+
+    // RESERVATIONS LISTING
+
+    Route::get('/transactions/activeReservations', [ReservationController::class, 'activeReservations'])->name('reservations.active');
+    Route::get('/transactions/archivedReservations', [ReservationController::class, 'archivedReservations'])->name('reservations.archived');
+    Route::get('/transactions/pendingReservations', [ReservationController::class, 'pendingReservations'])->name('reservations.pending');
+
+    // RESERVATIONS CREATE, STORE, SHOW, CHECKOUT, CANCEL
+
+    Route::get('/transactions/createReservation', [ReservationController::class, 'create'])->name('reservations.create');
+    Route::post('/transactions/storeReservation', [ReservationController::class, 'store'])->name('reservations.store');
+    Route::post('/transactions/showReservation', [ReservationController::class, 'show'])->name('reservations.show');
+    Route::post('/transactions/checkOutReservation', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
+    Route::delete('/transactions/cancelReservation', [ReservationController::class, 'cancel'])->name('reservations.cancel');
+    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
+    Route::patch('/transactions/acceptReservation/{reservation}', [ReservationController::class, 'accept'])->name('reservations.accept');
+
+
 
     // CHECKOUTS LISTING
 
@@ -69,19 +85,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transactions/checkins', [CheckoutController::class, 'checkins'])->name('checkins.index');
     Route::get('/transactions/overdues', [CheckoutController::class, 'overdues'])->name('overdues.index');
 
-    // CHECKOUTS SHOW
-
-    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'checkout'])->name('checkouts.show');
-    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'checkout'])->name('checkins.show');
-
-    // CHECKOUTS CREATE, STORE, DELETE, WRITE OFF
+    // CHECKOUTS CREATE, STORE, SHOW, DELETE, WRITE OFF
 
     Route::get('/transactions/checkouts/create/{book}', [CheckoutController::class, 'create'])->name('checkouts.create');
     Route::post('/transactions/checkouts/store', [CheckoutController::class, 'store'])->name('checkouts.store');
+    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'checkout'])->name('checkouts.show');
+    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'checkout'])->name('checkins.show');
     Route::post('/transactions/checkin/{checkout}', [CheckoutController::class, 'checkIn'])->name('checkIn');
     Route::post('/transactions/writeOff/{checkout}', [CheckoutController::class, 'writeOff'])->name('writeOff');
     Route::delete('/transactions/checkin/delete/{checkout}', [CheckoutController::class, 'deleteCheckin'])->name('checkins.delete');
-
 
 });
 

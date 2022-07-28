@@ -17,7 +17,6 @@ class Reservation extends Model
         'end_time' => 'datetime',
     ];
 
-
     public function book (){
         return $this->belongsTo(Book::class);
     }
@@ -34,4 +33,8 @@ class Reservation extends Model
         return $this->belongsTo(ReservationEndReason::class);
     }
 
+    public function getSupposedEndTimeAttribute()
+    {
+        return date("Y-m-d H:i:s", strtotime($this->start_time) + getenv('RESERVATION_TIME') * 86400);
+    }
 }
