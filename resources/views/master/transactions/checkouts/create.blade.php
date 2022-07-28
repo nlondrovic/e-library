@@ -66,7 +66,7 @@
                                 <input type="date" id="book_return_date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
                                 bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
                                 focus:ring-[#576cdf]"/>
-                                <p>Return period: 20 days</p>
+                                <p>Return period: {{ getenv('HOLDING_TIME') }} days</p>
                             </div>
 
                         </div>
