@@ -11,13 +11,6 @@ class DatabaseSeeder extends Seeder
 
     public function run()
     {
-        DB::table('reservation_end_reasons')->insert([
-            [ 'value' => 'Reservation expired' ],
-            [ 'value' => 'Reservation denied' ],
-            [ 'value' => 'Reservation cancelled' ],
-            [ 'value' => 'Book checked out' ],
-        ]);
-
         $this->call([
             BindingSeeder::class,
             CategorySeeder::class,
@@ -25,11 +18,13 @@ class DatabaseSeeder extends Seeder
             PublisherSeeder::class,
             ScriptSeeder::class,
             SizeSeeder::class,
+            ReservationEndReasonSeeder::class,
 
             AuthorSeeder::class,
             RoleSeeder::class,
             BookSeeder::class,
             UsersSeeder::class,
+
         ]);
     }
 }

@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
@@ -20,16 +15,10 @@ return new class extends Migration
             $table->foreignId('student_id')->constrained('users')->cascadeOnDelete();
             $table->dateTime('start_time');
             $table->dateTime('end_time')->nullable();
-            $table->foreignId('reservation_end_reason_id')->nullable();
-            $table->timestamps();
+            $table->foreignId('reservation_end_reason_id')->nullable()->constrained('reservation_end_reasons')->cascadeOnDelete();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('reservations');
