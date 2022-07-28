@@ -70,9 +70,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/transactions/checkouts/create/{book}', [CheckoutController::class, 'create'])->name('checkouts.create');
     Route::post('/transactions/checkouts/store', [CheckoutController::class, 'store'])->name('checkouts.store');
-    Route::get('/transactions/checkin/{checkout}', [CheckoutController::class, 'checkIn'])->name('checkIn');
-    Route::get('/transactions/writeOff/{checkout}', [CheckoutController::class, 'writeOff'])->name('writeOff');
-    Route::get('/transactions/checkin/delete/{checkout}', [CheckoutController::class, 'deleteCheckin'])->name('checkins.delete');
+    Route::post('/transactions/checkin/{checkout}', [CheckoutController::class, 'checkIn'])->name('checkIn');
+    Route::post('/transactions/writeOff/{checkout}', [CheckoutController::class, 'writeOff'])->name('writeOff');
+    Route::delete('/transactions/checkin/delete/{checkout}', [CheckoutController::class, 'deleteCheckin'])->name('checkins.delete');
 
 
 });

@@ -54,18 +54,26 @@
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">Show details</span>
                                 </a>
-                                <a href="{{ route('checkIn', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Check in</span>
-                                </a>
-                                <a href="{{ route('writeOff', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Write off</span>
-                                </a>
+                                <form action="{{ route('checkIn', $checkout) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Check in</span>
+                                    </button>
+                                </form>
+                                <form action="{{ route('writeOff', $checkout) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Write off</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

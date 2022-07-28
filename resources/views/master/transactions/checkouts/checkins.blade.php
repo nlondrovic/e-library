@@ -61,12 +61,16 @@
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">Show details</span>
                                 </a>
-                                <a href="{{ route('checkins.delete', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="fa fa-trash mr-[6px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Delete record</span>
-                                </a>
+                                <form action="{{ route('checkins.delete', $checkout) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fa fa-trash mr-[6px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Delete record</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
