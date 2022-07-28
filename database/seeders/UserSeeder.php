@@ -9,20 +9,20 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class UsersSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     public function run()
     {
+        DB::table('users')->insert([
+            'name' => 'Admin Admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+            'role_id' => 1,
+            'jmbg' => 1111111111111
+        ]);
+
         $users = [
-            [
-                'name' => 'Admin Admin',
-                'email' => 'admin@gmail.com',
-                'email_verified_at' => Carbon::now(),
-                'password' => Hash::make('password'),
-                'role_id' => 1,
-                'jmbg' => 1111111111111,
-                'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033HJXL8HM-5bb1c906a7f6-512'
-            ],
             [
                 'name' => 'Nikola Londrović',
                 'email' => 'nikolalondrovic41@gmail.com',

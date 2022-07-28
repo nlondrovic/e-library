@@ -11,11 +11,11 @@
             </div>
 
             <div class="pt-[15px] mr-[30px]">
-                <a href="#" class="inline hover:text-blue-600">
-                    <i class="fas fa-level-up-alt mr-[3px]"></i>
-                    Write off
-                </a>
-                <a href="#" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+{{--                <a href="#" class="inline hover:text-blue-600">--}}
+{{--                    <i class="fas fa-level-up-alt mr-[3px]"></i>--}}
+{{--                    Write off--}}
+{{--                </a>--}}
+                <a href="{{ route('checkouts.create', ['book' => $book]) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     Check out
                 </a>
@@ -34,6 +34,18 @@
                         <input type="hidden" name="book_id" value="{{$book->id}}">
                     </button>
                 </form>
+
+{{--                <a href="#"--}}
+{{--                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">--}}
+{{--                    <i class="fas fa-redo-alt mr-[3px] "></i>--}}
+{{--                    Check in--}}
+{{--                </a>--}}
+                <a href="#"
+                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                    <i class="far fa-calendar-check mr-[3px] "></i>
+                    Reserve
+                </a>
+
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
                             dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>

@@ -29,6 +29,7 @@
             </div>
         </div>
     </div>
+@include('components.book-copies')
     <div class="mx-[30px] pt-[15px]">
         Recent activity...
     </div>
