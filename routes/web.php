@@ -63,7 +63,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
 
-
     // CHECKOUTS LISTING
 
     Route::get('/transactions/checkouts', [CheckoutController::class, 'checkouts'])->name('checkouts.index');

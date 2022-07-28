@@ -22,7 +22,7 @@
                     {{ $book->overdue_count }} copies
                 </p>
             </a>
-            <p class="mt-[16px] bg-purple-200 text-purple-600 rounded-[10px] px-[6px] py-[2px] text-[14px]">
+            <p class="mt-[16px] bg-gray-200 text-purple-600 rounded-[10px] px-[6px] py-[2px] text-[14px]">
                 {{ $book->total_count }} copies
             </p>
         </div>
