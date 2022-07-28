@@ -19,7 +19,6 @@
             <div class="flex flex-row overflow-auto height-osnovniDetalji">
                 <div class="pl-[30px] pl-[50px] w-[100%] mt-[20px]">
                     <div class="grid grid-cols-3">
-
                         <div class="row-1">
                             {{-- Title --}}
                             <div class="mt-[20px]">

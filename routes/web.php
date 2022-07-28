@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ScriptController;
 
@@ -42,7 +43,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/scripts', ScriptController::class);
     Route::resource('/librarians', LibrarianController::class);
 
-
+    Route::resource('/reservations', ReservationController::class);
+//        Route::get('/reservations/{book}', [ReservationController::class, 'create'])->name('reservations.create');
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

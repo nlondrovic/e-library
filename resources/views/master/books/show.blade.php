@@ -24,11 +24,16 @@
                     <i class="fas fa-redo-alt mr-[3px] "></i>
                     Check in
                 </a>
-                <a href="#"
-                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                    <i class="far fa-calendar-check mr-[3px] "></i>
-                    Reserve
-                </a>
+                <form class="inline" method="post" action="{{route('reservations.create')}}">
+                    @csrf
+                    @method('get')
+                    <button type="submit"
+                       class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                        <i class="far fa-calendar-check mr-[3px] "></i>
+                        Reserve
+                        <input type="hidden" name="book_id" value="{{$book->id}}">
+                    </button>
+                </form>
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
                             dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
