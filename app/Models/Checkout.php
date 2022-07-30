@@ -38,9 +38,28 @@ class Checkout extends Model
         return date("Y-m-d H:i:s", strtotime($this->start_time) + getenv('HOLDING_TIME') * 86400);
     }
 
+    public function getHoldingTimeAttribute()
+    {
+        if($this->end_time)
+            return Carbon::parse(strtotime($this->start_time))->diffInDays(Carbon::parse(strtotime($this->end_time))) . " days";
+
+        return  Carbon::parse(strtotime($this->start_time))->diffInDays() . " days";
+    }
+
+    public function getOverdueTimeAttribute()
+    {
+        if($this->end_time)
+            if($this->end_time > $this->supposed_end_time)
+                return $this->overdue($this->end_time) . " days";
+            else return "Not overdue";
+        else
+            if(now() > $this->supposed_end_time)
+                return $this->overdue(now()) . " days";
+            else return "Not overdue";
+    }
+
     public function overdue($time)
     {
         return Carbon::parse(strtotime($this->supposed_end_time))->diffInDays($time);
     }
-    // TODO: Implementiraj holdingFor metodu, kako ne bi to radio u blade
 }
