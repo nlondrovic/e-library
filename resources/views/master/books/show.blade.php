@@ -11,19 +11,10 @@
             </div>
 
             <div class="pt-[15px] mr-[30px]">
-{{--                <a href="#" class="inline hover:text-blue-600">--}}
-{{--                    <i class="fas fa-level-up-alt mr-[3px]"></i>--}}
-{{--                    Write off--}}
-{{--                </a>--}}
-                <a href="{{ route('checkouts.create', ['book' => $book]) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                <a href="{{ route('checkouts.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     Check out
                 </a>
-{{--                <a href="#"--}}
-{{--                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">--}}
-{{--                    <i class="fas fa-redo-alt mr-[3px] "></i>--}}
-{{--                    Check in--}}
-{{--                </a>--}}
                 <a href="#"
                    class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
                     <i class="far fa-calendar-check mr-[3px] "></i>
@@ -38,7 +29,6 @@
                     <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
                                 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
                          aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
-
                         <div class="py-1">
                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"

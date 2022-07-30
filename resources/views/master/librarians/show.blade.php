@@ -62,7 +62,7 @@
                     </div>
                     <div class="mt-[40px]">
                         <span class="text-gray-500">Email</span>
-                        <a href="#" class="block font-medium text-[#2196f3]">{{ $librarian->email }}</a>
+                        <p class="font-medium">{{ $librarian->email }}</p>
                     </div>
 
                 </div>

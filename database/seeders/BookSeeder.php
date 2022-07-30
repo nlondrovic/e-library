@@ -23,9 +23,7 @@ class BookSeeder extends Seeder
                 'binding_id' => 3,
                 'publisher_id' => 1,
                 'publish_date' => "2014-09-01",
-                'total_count' => 20,
-                'reserved_count' => 2,
-                'checkouts_count' => 3,
+                'total_count' => 10,
                 'category_id' => 10,
                 'genre_id' => 1
 
@@ -42,9 +40,7 @@ class BookSeeder extends Seeder
                 'binding_id' => 3,
                 'publisher_id' => 2,
                 'publish_date' => "2014-09-11",
-                'total_count' => 20,
-                'reserved_count' => 1,
-                'checkouts_count' => 2,
+                'total_count' => 10,
                 'category_id' => 10,
                 'genre_id' => 1
             ],
@@ -60,9 +56,7 @@ class BookSeeder extends Seeder
                 'binding_id' => 4,
                 'publisher_id' => 3,
                 'publish_date' => "2014-09-27",
-                'total_count' => 20,
-                'reserved_count' => 4,
-                'checkouts_count' => 6,
+                'total_count' => 10,
                 'category_id' => 10,
                 'genre_id' => 1
             ],
@@ -78,9 +72,7 @@ class BookSeeder extends Seeder
                 'binding_id' => 2,
                 'publisher_id' => 8,
                 'publish_date' => "1983-02-07",
-                'total_count' => 20,
-                'reserved_count' => 4,
-                'checkouts_count' => 8,
+                'total_count' => 10,
                 'category_id' => 8,
                 'genre_id' => 24
             ],
@@ -96,9 +88,7 @@ class BookSeeder extends Seeder
                 'binding_id' => 5,
                 'publisher_id' => 7,
                 'publish_date' => "1964-10-09",
-                'total_count' => 20,
-                'reserved_count' => 8,
-                'checkouts_count' => 10,
+                'total_count' => 10,
                 'category_id' => 8,
                 'genre_id' => 24
             ]
