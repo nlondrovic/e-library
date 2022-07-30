@@ -31,7 +31,7 @@
 
                             {{-- Librarian --}}
                             <input type="hidden" name="librarian_id" value="{{ auth()->id() }}">
-                            {{-- TODO: Ovo se mora popraviti --}}
+                            {{-- TODO: Ovo se mora popraviti, da se ovi podaci ne salju perko htmla --}}
 
                             {{-- Student --}}
                             <div class="mt-[20px] w-[268px]">

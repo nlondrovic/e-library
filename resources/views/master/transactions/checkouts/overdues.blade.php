@@ -41,11 +41,10 @@
                         {{ $checkout->overdue(now()) }} days
                     </p>
                 </td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">TODO{{-- TODO --}}</td>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->holding_for }}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
-                        <i
-                            class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div
                         class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
