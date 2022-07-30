@@ -4,9 +4,8 @@
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
             <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Book title</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left cursor-pointer datumDrop-toggle">Reservation date</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation due</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Status</th>
@@ -79,11 +78,6 @@
 {{--                </td>--}}
 {{--            </tr>--}}
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                <td class="px-4 py-3 whitespace-no-wrap">
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" class="form-checkbox">
-                    </label>
-                </td>
                 <td class="flex flex-row items-center px-4 py-3">
                     <img class="object-cover w-8 mr-2 h-11" src="{{ $reservation->book->picture }}" alt=""/>
                     <a href="{{ route('books.show', $reservation->book) }}">
