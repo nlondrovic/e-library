@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -36,5 +37,7 @@ class Reservation extends Model
     public function getSupposedEndTimeAttribute()
     {
         return date("Y-m-d H:i:s", strtotime($this->start_time) + getenv('RESERVATION_TIME') * 86400);
+//        dd(env('RESERVATION_TIME'));
+//          return Carbon::parse($this->start_time)->addDays(getenv('RESERVATION_TIME'));
     }
 }

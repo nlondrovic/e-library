@@ -6,26 +6,28 @@ use App\Models\Book;
 use App\Models\Reservation;
 use App\Http\Requests\StoreReservationRequest;
 use App\Models\User;
+use Carbon\Carbon;
 use \Illuminate\Http\Request;
+use function PHPUnit\Framework\isEmpty;
 
 class ReservationController extends Controller
 {
 
     public function archivedReservations()
     {
-        $reservations = Reservation::where('end_time')->get();
+        $reservations = Reservation::where('reservation_end_reason_id', '>', 0)->get();
         return view('master.transactions.reservations.archived', compact('reservations'));
     }
 
-    public function pendingReservations()
-    {
-        $reservations = Reservation::where('end_time', null)->where('is_active', false)->get();
-        return view('master.transactions.reservations.pending', compact('reservations'));
-    }
+//    public function pendingReservations()
+//    {
+//        $reservations = Reservation::where('end_time', null)->where('is_active', false)->get();
+//        return view('master.transactions.reservations.pending', compact('reservations'));
+//    }
 
     public function activeReservations()
     {
-        $reservations = Reservation::where('is_active', true)->get();
+        $reservations = Reservation::where('end_time', null)->get();
         return view('master.transactions.reservations.active', compact('reservations'));
     }
 
@@ -51,6 +53,7 @@ class ReservationController extends Controller
 
     public function checkOut(Reservation $reservation)
     {
+        $reservation->update(['reservation_end_reason_id' => 3, 'end_time' => Carbon::parse(now())]);
         // $book->reserved_count se smanjuje
         // $book->checkout_count se povecava
         // kreira se checkout sa podacima: book_id, checkout_librarian_id, student_id, start_time
@@ -58,19 +61,21 @@ class ReservationController extends Controller
 
     public function cancel(Reservation $reservation)
     {
-        // delete from table
-    }
-
-    public function deny(Reservation $reservation)
-    {
-
-    }
-
-    public function accept(Reservation $reservation)
-    {
-        $reservation->update(['is_active'=>true]);
+        $reservation->update(['reservation_end_reason_id' => 2, 'end_time' => Carbon::parse(now())]);
 //        dd($reservation);
-        return redirect()->route('reservations.pending');
+        return redirect()->route('reservations.active');
     }
+
+//    public function deny(Reservation $reservation)
+//    {
+//
+//    }
+
+//    public function accept(Reservation $reservation)
+//    {
+//        $reservation->update(['is_active'=>true]);
+////        dd($reservation);
+//        return redirect()->route('reservations.pending');
+//    }
 
 }

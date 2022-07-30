@@ -65,7 +65,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/transactions/activeReservations', [ReservationController::class, 'activeReservations'])->name('reservations.active');
     Route::get('/transactions/archivedReservations', [ReservationController::class, 'archivedReservations'])->name('reservations.archived');
-    Route::get('/transactions/pendingReservations', [ReservationController::class, 'pendingReservations'])->name('reservations.pending');
+//    Route::get('/transactions/pendingReservations', [ReservationController::class, 'pendingReservations'])->name('reservations.pending');
 
     // RESERVATIONS CREATE, STORE, SHOW, CHECKOUT, CANCEL
 
@@ -73,9 +73,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/transactions/storeReservation', [ReservationController::class, 'store'])->name('reservations.store');
     Route::post('/transactions/showReservation', [ReservationController::class, 'show'])->name('reservations.show');
     Route::post('/transactions/checkOutReservation', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
-    Route::delete('/transactions/cancelReservation', [ReservationController::class, 'cancel'])->name('reservations.cancel');
-    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
-    Route::patch('/transactions/acceptReservation/{reservation}', [ReservationController::class, 'accept'])->name('reservations.accept');
+    Route::patch('/transactions/cancelReservation/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
+//    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
+//    Route::patch('/transactions/acceptReservation/{reservation}', [ReservationController::class, 'accept'])->name('reservations.accept');
 
 
 

@@ -98,9 +98,10 @@
                     </a>
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 text-blue-900 whitespace-no-wrap">
+
                     <div
                         class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
-                        <span class="text-xs text-green-800">Knjiga rezervisana</span>
+                        <span class="text-xs text-green-800">Active book reservation</span>
                     </div>
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
@@ -118,14 +119,18 @@
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                    role="menuitem">
                                     <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Izdaj knjigu</span>
+                                    <span class="px-4 py-0">Checkout the book</span>
                                 </a>
-                                <a href="izdajKnjigu.php" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Izdaj knjigu</span>
-                                </a>
+                                <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
+                                    @csrf
+                                    @method('patch')
+                                    <button type="submit" tabindex="0"
+                                       class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                       role="menuitem">
+                                        <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Cancel the reservation</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
