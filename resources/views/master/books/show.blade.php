@@ -15,19 +15,14 @@
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     Check out
                 </a>
-                <a href="#"
-                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                    <i class="fas fa-redo-alt mr-[3px] "></i>
-                    Check in
-                </a>
                 <form class="inline" method="post" action="{{ route('reservations.create') }}">
                     @csrf
                     @method('get')
+                    <input type="hidden" name="book_id" value="{{ $book->id }}">
                     <button type="submit"
-                       class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                            class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                         <i class="far fa-calendar-check mr-[3px] "></i>
                         Reserve
-                        <input type="hidden" name="book_id" value="{{ $book->id }}">
                     </button>
                 </form>
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
@@ -125,7 +120,8 @@
                             <span class="text-gray-500 text-[14px]">Content</span>
                             <p class="font-medium">{{ $book->content }}</p>
                         </div>
-                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="300px" src="{{ $book->picture }}" alt="">
+                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="300px" src="{{ $book->picture }}"
+                             alt="">
                     </div>
 
                 </div>

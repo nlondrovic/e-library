@@ -71,7 +71,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/transactions/createReservation', [ReservationController::class, 'create'])->name('reservations.create');
     Route::post('/transactions/storeReservation', [ReservationController::class, 'store'])->name('reservations.store');
-    Route::post('/transactions/showReservation', [ReservationController::class, 'show'])->name('reservations.show');
+    Route::get('/transactions/showReservation', [ReservationController::class, 'show'])->name('reservations.show');
     Route::post('/transactions/checkOutReservation', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
     Route::patch('/transactions/cancelReservation/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
 //    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
@@ -89,8 +89,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/transactions/checkouts/create/{book}', [CheckoutController::class, 'create'])->name('checkouts.create');
     Route::post('/transactions/checkouts/store', [CheckoutController::class, 'store'])->name('checkouts.store');
-    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'checkout'])->name('checkouts.show');
-    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'checkout'])->name('checkins.show');
+    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'show'])->name('checkouts.show');
+    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'show'])->name('checkins.show');
     Route::post('/transactions/checkin/{checkout}', [CheckoutController::class, 'checkIn'])->name('checkIn');
     Route::post('/transactions/writeOff/{checkout}', [CheckoutController::class, 'writeOff'])->name('writeOff');
     Route::delete('/transactions/checkin/delete/{checkout}', [CheckoutController::class, 'deleteCheckin'])->name('checkins.delete');

@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         return view('master.transactions.checkouts.overdues', compact('checkouts'));
     }
 
-    public function checkout(Checkout $checkout)
+    public function show(Checkout $checkout)
     {
         return view('master.transactions.checkouts.show', compact('checkout'));
     }

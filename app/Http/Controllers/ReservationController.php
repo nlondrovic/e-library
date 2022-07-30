@@ -61,8 +61,20 @@ class ReservationController extends Controller
 
     public function cancel(Reservation $reservation)
     {
-        $reservation->update(['reservation_end_reason_id' => 2, 'end_time' => Carbon::parse(now())]);
-//        dd($reservation);
+        $reservation->update([
+            'reservation_end_reason_id' => 2,
+            'end_time' => Carbon::parse(now())
+        ]);
+    }
+
+    public function deny(Reservation $reservation)
+    {
+
+    }
+
+    public function accept(Reservation $reservation)
+    {
+        $reservation->update(['is_active'=>true]); // TODO: is_active zamjenjuje status?? To ne bi trebalo??
         return redirect()->route('reservations.active');
     }
 
