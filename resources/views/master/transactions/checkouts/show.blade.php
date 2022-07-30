@@ -10,17 +10,30 @@
                 </div>
             </div>
 
-            <div class="pt-[15px] mr-[30px]">
+            <div class="pt-[15px] mr-[30px] grid grid-cols-2">
                 @if(!$checkout->end_time)
-                    <a href="{{ route('checkIn', ['checkout' => $checkout]) }}" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                        <i class="fas fa-redo-alt mr-[3px] "></i>
-                        Check in
-                    </a>
-                <a href="#"
-                   class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                    <i class="far fa-calendar-check mr-[3px] "></i>
-                    Write off
-                </a>
+                    <div class="col">
+
+                    <form action="{{ route('checkIn', $checkout) }}" method="post">
+                        @csrf
+                        @method('post')
+                        <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                            <i class="fas fa-redo-alt mr-[3px] "></i>
+                            Check in
+                        </button>
+                    </form>
+                    </div>
+                <div class="col">
+
+                    <form action="{{ route('writeOff', $checkout) }}" method="post">
+                        @csrf
+                        @method('post')
+                        <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                            <i class="far fa-calendar-check mr-[3px] "></i>
+                            Write off
+                        </button>
+                    </form>
+                </div>
                 @endif
             </div>
         </div>
@@ -65,33 +78,11 @@
                         @endif
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Holding for</span>
-                            <p class="font-medium">
-                                @if($checkout->end_time)
-                                    {{ \Carbon\Carbon::parse(strtotime($checkout->start_time))->diffInDays(\Carbon\Carbon::parse(strtotime($checkout->end_time))) }}
-                                    days
-                                @else
-                                    {{ \Carbon\Carbon::parse(strtotime($checkout->start_time))->diffInDays() }} days
-                                @endif
-                            </p>
+                            <p class="font-medium">{{ $checkout->holding_time }}</p>
                         </div>
-                        {{--                        supposed: {{ $checkout->supposed_end_time }}--}}
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Overdue time</span>
-                            <p class="font-medium">
-                                @if($checkout->end_time)
-                                    @if($checkout->end_time > $checkout->supposed_end_time)
-                                        {{ $checkout->overdue($checkout->end_time) }} days
-                                    @else
-                                        Not overdue
-                                    @endif
-                                @else
-                                    @if(now() > $checkout->supposed_end_time)
-                                        {{ $checkout->overdue(now()) }} days
-                                    @else
-                                        Not overdue
-                                    @endif
-                                @endif
-                            </p>
+                            <p class="font-medium">{{ $checkout->overdue_time }}</p>
                         </div>
                     </div>
 
