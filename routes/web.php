@@ -63,8 +63,8 @@ Route::middleware(['auth'])->group(function () {
 
     // CHECKOUTS SHOW
 
-    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'checkout'])->name('checkouts.show');
-    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'checkout'])->name('checkins.show');
+    Route::get('/transactions/checkouts/{checkout}', [CheckoutController::class, 'show'])->name('checkouts.show');
+    Route::get('/transactions/checkins/{checkout}', [CheckoutController::class, 'show'])->name('checkins.show');
 
     // CHECKOUTS CREATE, STORE, DELETE, WRITE OFF
 

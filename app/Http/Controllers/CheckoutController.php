@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         return view('master.transactions.checkouts.overdues', compact('checkouts'));
     }
 
-    public function checkout(Checkout $checkout)
+    public function show(Checkout $checkout)
     {
         return view('master.transactions.checkouts.show', compact('checkout'));
     }
@@ -49,10 +49,9 @@ class CheckoutController extends Controller
         Checkout::create($request->validated());
 
         $book = Book::findOrFail($request['book_id']);
-        $book_inputs = ['checkouts_count' => ++$book->checkouts_count];
-        $book->update($book_inputs);
+        $book->update(['checkouts_count' => ++$book->checkouts_count]);
 
-        return redirect()->back();
+        return redirect()->route('books.index');
     }
 
     public function checkIn($id)
@@ -63,12 +62,15 @@ class CheckoutController extends Controller
             'checkin_librarian_id' => auth()->id()
         ]);
 
-        return redirect()->back();
+        return redirect()->route('checkouts.index');
     }
 
     public function writeOff($id)
     {
         $checkout = Checkout::findOrFail($id);
+        if ($checkout->end_date)
+            return redirect()->route('checkouts.index'); // Prevents writing off checked in books
+
         $checkout->update([
             'end_time' => date("Y-m-d H:i:s", strtotime("now")),
             'checkin_librarian_id' => auth()->id()
@@ -77,7 +79,7 @@ class CheckoutController extends Controller
         $book = Book::findOrFail($checkout->book_id);
         $book->update(['total_count' => --$book->total_count]);
 
-        return redirect()->back();
+        return redirect()->route('checkouts.index');
     }
 
     public function deleteCheckin($id)
