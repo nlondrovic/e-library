@@ -77,7 +77,7 @@
                                                 <i class="far fa-hand-scissors mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Check out</span>
                                             </a>
-                                            <a href=" route('reservations.create', $book) " tabindex="0"
+                                            <a href="{{ route('reservations.create', $book) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="far fa-calendar-check mr-[6px] ml-[5px] py-1"></i>
