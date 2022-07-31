@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCheckoutRequest;
 use App\Models\Book;
+use App\Models\Checkout;
 use App\Models\Reservation;
 use App\Http\Requests\StoreReservationRequest;
 use App\Models\User;
@@ -53,10 +55,19 @@ class ReservationController extends Controller
 
     public function checkOut(Reservation $reservation)
     {
-        $reservation->update(['reservation_end_reason_id' => 3, 'end_time' => Carbon::parse(now())]);
+//        $checkout->validated([$reservation])->get();
+//        dd($checkout);
+//        $checkout = $reservation;
+//        dd($checkout);
+        Checkout::query()->create($reservation->getAttributes());
+        $reservation->update([
+            'reservation_end_reason_id' => 3,
+            'end_time' => Carbon::parse(now())
+        ]);
         // $book->reserved_count se smanjuje
         // $book->checkout_count se povecava
         // kreira se checkout sa podacima: book_id, checkout_librarian_id, student_id, start_time
+        return redirect()->route('reservations.active');
     }
 
     public function cancel(Reservation $reservation)
@@ -65,18 +76,19 @@ class ReservationController extends Controller
             'reservation_end_reason_id' => 2,
             'end_time' => Carbon::parse(now())
         ]);
+        return redirect()->route('reservations.active');
     }
 
     public function deny(Reservation $reservation)
     {
 
     }
-
-    public function accept(Reservation $reservation)
-    {
-        $reservation->update(['is_active'=>true]); // TODO: is_active zamjenjuje status?? To ne bi trebalo??
-        return redirect()->route('reservations.active');
-    }
+    /* Accept biva zamjenjen dugmetom checkOut - is_active vise ne postoji */
+//    public function accept(Reservation $reservation)
+//    {
+//        $reservation->update(['is_active'=>true]); // TODO: is_active zamjenjuje status?? To ne bi trebalo??
+//        return redirect()->route('reservations.active');
+//    }
 
 //    public function deny(Reservation $reservation)
 //    {

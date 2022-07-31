@@ -72,7 +72,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transactions/createReservation', [ReservationController::class, 'create'])->name('reservations.create');
     Route::post('/transactions/storeReservation', [ReservationController::class, 'store'])->name('reservations.store');
     Route::get('/transactions/showReservation', [ReservationController::class, 'show'])->name('reservations.show');
-    Route::post('/transactions/checkOutReservation', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
+    Route::patch('/transactions/checkOutReservation/{reservation}', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
     Route::patch('/transactions/cancelReservation/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
 //    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
 //    Route::patch('/transactions/acceptReservation/{reservation}', [ReservationController::class, 'accept'])->name('reservations.accept');

@@ -106,7 +106,7 @@
                     @elseif($reservation->reservation_end_reason_id == 3)
                     <div
                         class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
-                        <span class="text-xs text-green-800">Reservation succesful</span>
+                        <span class="text-xs text-green-800">Reservation successful</span>
                     </div>
                     @elseif($reservation->reservation_end_reason_id == 1)
                         <div

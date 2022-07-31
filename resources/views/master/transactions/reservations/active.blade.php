@@ -109,12 +109,16 @@
                              aria-labelledby="headlessui-menu-button-1"
                              id="headlessui-menu-items-117" role="menu">
                             <div class="py-1">
-                                <a href="izdajKnjigu.php" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Checkout the book</span>
-                                </a>
+                                <form method="post" action="{{ route('reservations.checkOut', $reservation) }}" class="">
+                                    @csrf
+                                    @method('patch')
+                                    <button type="submit" tabindex="0"
+                                       class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                       role="menuitem">
+                                        <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Checkout the book</span>
+                                    </button>
+                                </form>
                                 <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
                                     @csrf
                                     @method('patch')
