@@ -21,52 +21,52 @@ class ReservationController extends Controller
         return view('master.transactions.reservations.archived', compact('reservations'));
     }
 
-//    public function pendingReservations()
-//    {
-//        $reservations = Reservation::where('end_time', null)->where('is_active', false)->get();
-//        return view('master.transactions.reservations.pending', compact('reservations'));
-//    }
-
     public function activeReservations()
     {
         $reservations = Reservation::where('end_time', null)->get();
         return view('master.transactions.reservations.active', compact('reservations'));
     }
 
-    public function create(Request $request)
+    public function create(Book $book)
     {
         $students = User::where('role_id', 3)->get();
-        $book = Book::findOrFail($request->book_id);
 
         return view('master.transactions.reservations.create', compact('students', 'book'));
     }
 
     public function store(StoreReservationRequest $request)
     {
+        $book = Book::findOrFail($request['book_id']);
+        if ($book->available_count <= 0) return redirect()->back();
+
+        $book->update(['reserved_count', ++$book->reserved_count]);
+
         Reservation::query()->create($request->validated());
 
         return redirect()->route('books.index');
     }
 
-    public function show(Reservation $reservation)
-    {
-        // za sad nista
-    }
-
     public function checkOut(Reservation $reservation)
     {
-//        $checkout->validated([$reservation])->get();
-//        dd($checkout);
-//        $checkout = $reservation;
-//        dd($checkout);
-        Checkout::query()->create($reservation->getAttributes());
         $reservation->update([
             'reservation_end_reason_id' => 3,
             'end_time' => Carbon::parse(now())
         ]);
-        // $book->reserved_count se smanjuje
-        // $book->checkout_count se povecava
-        // kreira se checkout sa podacima: book_id, checkout_librarian_id, student_id, start_time
+
+        $inputs = [
+            'book_id' => $reservation['book_id'],
+            'checkout_librarian_id' => auth()->id(),
+            'student_id' => $reservation['student_id'],
+            'start_time' => Carbon::parse(now()),
+        ];
+        Checkout::query()->create($inputs);
+
+        $book = Book::findOrFail($reservation['book_id']);
+        $book->update([
+            'reserved_count' => --$book->reserved_count,
+            'checkouts_count' => ++$book->checkouts_count
+        ]);
+
         return redirect()->route('reservations.active');
     }
 
@@ -76,6 +76,12 @@ class ReservationController extends Controller
             'reservation_end_reason_id' => 2,
             'end_time' => Carbon::parse(now())
         ]);
+
+        $book = Book::findOrFail($reservation['book_id']);
+        $book->update([
+            'reserved_count' => --$book->reserved_count
+        ]);
+
         return redirect()->route('reservations.active');
     }
 

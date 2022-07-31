@@ -116,7 +116,7 @@
                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                        role="menuitem">
                                         <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Checkout the book</span>
+                                        <span class="px-4 py-0">Checkout</span>
                                     </button>
                                 </form>
                                 <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
@@ -125,8 +125,8 @@
                                     <button type="submit" tabindex="0"
                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                        role="menuitem">
-                                        <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Cancel the reservation</span>
+                                        <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Cancel reservation</span>
                                     </button>
                                 </form>
                             </div>

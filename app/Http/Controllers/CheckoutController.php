@@ -49,6 +49,8 @@ class CheckoutController extends Controller
         Checkout::create($request->validated());
 
         $book = Book::findOrFail($request['book_id']);
+        if ($book->available_count <= 0) return redirect()->back();
+
         $book->update(['checkouts_count' => ++$book->checkouts_count]);
 
         return redirect()->route('books.index');
@@ -60,6 +62,11 @@ class CheckoutController extends Controller
         $checkout->update([
             'end_time' => date("Y-m-d H:i:s", strtotime("now")),
             'checkin_librarian_id' => auth()->id()
+        ]);
+
+        $book = Book::findOrFail($checkout['book_id']);
+        $book->update([
+            'checkouts_count' => --$book->checkouts_count
         ]);
 
         return redirect()->route('checkouts.index');
@@ -77,7 +84,10 @@ class CheckoutController extends Controller
         ]);
 
         $book = Book::findOrFail($checkout->book_id);
-        $book->update(['total_count' => --$book->total_count]);
+        $book->update([
+            'total_count' => --$book->total_count,
+            'checkouts_count' => --$book->checkouts_count
+        ]);
 
         return redirect()->route('checkouts.index');
     }

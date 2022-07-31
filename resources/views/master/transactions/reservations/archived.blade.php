@@ -4,9 +4,10 @@
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
             <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Book title</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left cursor-pointer datumDrop-toggle">Reservation date</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left cursor-pointer datumDrop-toggle">
+                Reservation date
+            </th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation due</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Status</th>
@@ -79,11 +80,6 @@
             {{--                </td>--}}
             {{--            </tr>--}}
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                <td class="px-4 py-3 whitespace-no-wrap">
-                    <label class="inline-flex items-center">
-                        <input type="checkbox" class="form-checkbox">
-                    </label>
-                </td>
                 <td class="flex flex-row items-center px-4 py-3">
                     <img class="object-cover w-8 mr-2 h-11" src="{{ $reservation->book->picture }}" alt=""/>
                     <a href="{{ route('books.show', $reservation->book) }}">
@@ -98,39 +94,39 @@
                     </a>
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 text-blue-900 whitespace-no-wrap">
-                    @if($reservation->reservation_end_reason_id == 2)
-                    <div
-                        class="inline-block px-[6px] py-[2px] font-medium bg-red-200 rounded-[10px]">
-                        <span class="text-xs text-green-800">Reservation cancelled</span>
-                    </div>
-                    @elseif($reservation->reservation_end_reason_id == 3)
-                    <div
-                        class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
-                        <span class="text-xs text-green-800">Reservation successful</span>
-                    </div>
-                    @elseif($reservation->reservation_end_reason_id == 1)
+                    @if($reservation->reservation_end_reason_id == 1)
                         <div
                             class="inline-block px-[6px] py-[2px] font-medium bg-red-600 rounded-[10px]">
                             <span class="text-xs text-green-800">Reservation expired</span>
                         </div>
+                    @elseif($reservation->reservation_end_reason_id == 2)
+                        <div
+                            class="inline-block px-[6px] py-[2px] font-medium bg-red-200 rounded-[10px]">
+                            <span class="text-xs text-green-800">Reservation cancelled</span>
+                        </div>
+                    @elseif($reservation->reservation_end_reason_id == 3)
+                        <div
+                            class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
+                            <span class="text-xs text-green-800">Reservation successful</span>
+                        </div>
                     @endif
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
-                    <p
-                        class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsArhiviraneRezervacije hover:text-[#606FC7]">
+                    <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsArhiviraneRezervacije hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div
                         class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 arhivirane-rezervacije">
-                        <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                             aria-labelledby="headlessui-menu-button-1"
-                             id="headlessui-menu-items-117" role="menu">
+                        <div
+                            class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                            aria-labelledby="headlessui-menu-button-1"
+                            id="headlessui-menu-items-117" role="menu">
                             <div class="py-1">
-                                <a href="{{ route('reservations.checkOut', $reservation) }}" tabindex="0"
+                                <a href="{{ route('reservations.show', $reservation) }}" tabindex="0"
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                    role="menuitem">
                                     <i class="fa fa-edit mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">See details...</span>
+                                    <span class="px-4 py-0">Show details</span>
                                 </a>
                             </div>
                         </div>

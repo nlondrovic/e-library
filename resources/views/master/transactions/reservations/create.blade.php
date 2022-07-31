@@ -15,7 +15,7 @@
     {{-- Content --}}
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
-            @if($book->available_count))
+            @if($book->available_count > 0)
                 <form action="{{ route('reservations.store') }}" method="post">
                     @csrf
                     @method('post')
