@@ -13,17 +13,17 @@
             </p>
             <a href="#"><p
                     class="mt-[16px] bg-yellow-200 text-yellow-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                    {{ $book->reserved_count }} copies</p></a>
+                    {{ $book->reserved_count ?? $book->reserved_count | 0 }} copies</p></a>
             <a href="#"><p
                     class="mt-[16px] bg-blue-200 text-blue-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                    {{ $book->checkouts_count }} copies</p></a>
+                    {{ $book->checkouts_count ?? $book->checkouts_count | 0 }} copies</p></a>
             <a href="#">
                 <p class="mt-[16px] bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
                     {{ $book->overdue_count }} copies
                 </p>
             </a>
             <p class="mt-[16px] bg-gray-200 text-purple-600 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                {{ $book->total_count }} copies
+                {{ $book->total_count ?? $book->total_count | 0}} copies
             </p>
         </div>
     </div>
