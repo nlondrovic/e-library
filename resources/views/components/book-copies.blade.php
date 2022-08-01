@@ -9,19 +9,13 @@
         </div>
         <div class="text-center pb-[30px]">
             <p class="bg-green-200 text-green-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                {{ $book->available_count }} copies
-            </p>
-            <a href="#"><p
-                    class="mt-[16px] bg-yellow-200 text-yellow-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                    {{ $book->reserved_count }} copies</p></a>
-            <a href="#"><p
-                    class="mt-[16px] bg-blue-200 text-blue-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                    {{ $book->checkouts_count }} copies</p></a>
-            <a href="#">
-                <p class="mt-[16px] bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
-                    {{ $book->overdue_count }} copies
-                </p>
-            </a>
+                {{ $book->available_count }} copies</p>
+            <p class="mt-[16px] bg-yellow-200 text-yellow-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
+                {{ $book->reserved_count }} copies</p>
+            <p class="mt-[16px] bg-blue-200 text-blue-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
+                {{ $book->checkouts_count }} copies</p>
+            <p class="mt-[16px] bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
+                {{ $book->overdue_count }} copies</p>
             <p class="mt-[16px] bg-gray-200 text-purple-600 rounded-[10px] px-[6px] py-[2px] text-[14px]">
                 {{ $book->total_count }} copies
             </p>

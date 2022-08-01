@@ -46,10 +46,12 @@ class CheckoutController extends Controller
 
     public function store(StoreCheckoutRequest $request)
     {
-        Checkout::create($request->validated());
-
         $book = Book::findOrFail($request['book_id']);
         if ($book->available_count <= 0) return redirect()->back();
+
+        $inputs = $request->validated();
+        $inputs['start_time'] = Carbon::parse(now());
+        Checkout::create($inputs);
 
         $book->update(['checkouts_count' => ++$book->checkouts_count]);
 

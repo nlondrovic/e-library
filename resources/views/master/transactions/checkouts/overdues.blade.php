@@ -36,7 +36,7 @@
                     </a>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->start_time }}</td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->holding_time }}</td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->overdue_time }}</td>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->overdue_time !!}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                         <i

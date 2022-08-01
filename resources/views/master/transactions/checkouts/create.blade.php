@@ -16,7 +16,10 @@
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
             @if($book->available_count > 0)
-                <form action="{{ route('checkouts.store') }}" method="post">
+                {{-- TODO: Librarian_id i Book_id se mogu izmijeniti preko inspect elementa. Fix it--}}
+                <form
+                    action="{{ route('checkouts.store', ['checkout_librarian_id' => auth()->id(), 'book_id' => $book->id]) }}"
+                    method="post">
                     @csrf
                     @method('post')
                     <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
@@ -24,12 +27,6 @@
                             <h3>Check out this book</h3>
                         </div>
                         <div class="flex flex-row justify-start">
-
-                            {{-- Book --}}
-                            <input type="hidden" name="book_id" value="{{ $book->id }}">
-
-                            {{-- Librarian --}}
-                            <input type="hidden" name="checkout_librarian_id" value="{{ auth()->id() }}">
 
                             {{-- Student --}}
                             <div class="mt-[20px] w-[268px]">
@@ -50,21 +47,19 @@
 
                             {{-- Start date/time --}}
                             <div class="mt-[20px] w-[268px]">
-                                <p>Checkout date<span class="text-red-500">*</span></p>
-                                <input required type="date" id="start_time" name="start_time" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]"/>
-                                @if($errors->first('start_time'))
-                                    <span class="text-red-600">{{ $errors->first('start_time') }}</span>
-                                @endif
+                                <p>Checkout date (today)</p>
+                                <input type="date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
+                                    bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
+                                    focus:ring-[#576cdf]" value="{{ date('Y-m-d', time()) }}"/>
                             </div>
 
                             {{-- End date --}}
                             <div class="mt-[20px] w-[268px]">
-                                <p>Return date<span class="text-red-500">*</span></p>
-                                <input type="date" id="book_return_date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
+                                <p>Return date</p>
+                                <input type="date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
                                 bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
-                                focus:ring-[#576cdf]"/>
+                                focus:ring-[#576cdf]"
+                                       value="{{ date('Y-m-d', time() + getenv('HOLDING_TIME') * 86400) }}"/>
                                 <p>Return period: {{ getenv('HOLDING_TIME') }} days</p>
                             </div>
 
