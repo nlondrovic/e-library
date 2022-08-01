@@ -18,24 +18,28 @@ class Reservation extends Model
         'end_time' => 'datetime',
     ];
 
-    public function book (){
+    public function book()
+    {
         return $this->belongsTo(Book::class);
     }
 
-    public function librarian (){
+    public function librarian()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function student (){
+    public function student()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function reservationEndReason (){
-        return $this->belongsTo(ReservationEndReason::class);
+    public function end_reason()
+    {
+        return $this->belongsTo(ReservationEndReason::class, 'reservation_end_reason_id');
     }
 
     public function getSupposedEndTimeAttribute()
     {
-          return Carbon::parse($this->start_time)->addDays(getenv('RESERVATION_TIME'));
+        return Carbon::parse($this->start_time)->addDays(getenv('RESERVATION_TIME'));
     }
 }

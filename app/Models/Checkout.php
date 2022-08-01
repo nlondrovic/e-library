@@ -52,8 +52,8 @@ class Checkout extends Model
         if ($hours / 24 < 1) // if holding less than a day
             return $hours % 24 . " hours";
 
-        if ($hours / 24 == 1) // if holding exactly 24 hours
-            return $hours / 24 . " day";
+        if ($hours % 24 == 0) // if holding exactly R days
+            return $hours / 24 . " days";
 
         // if holding more than 24 hours
         return round($hours / 24) . " days " . $hours % 24 . " hours";

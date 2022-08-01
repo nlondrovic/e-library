@@ -85,27 +85,10 @@ class ReservationController extends Controller
         return redirect()->route('reservations.active');
     }
 
-    public function deny(Reservation $reservation)
+    public function show(Reservation $reservation)
     {
-
+        $book = Book::findOrFail($reservation['book_id']);
+        return view('master.transactions.reservations.show', compact(['reservation', 'book']));
     }
-    /* Accept biva zamjenjen dugmetom checkOut - is_active vise ne postoji */
-//    public function accept(Reservation $reservation)
-//    {
-//        $reservation->update(['is_active'=>true]); // TODO: is_active zamjenjuje status?? To ne bi trebalo??
-//        return redirect()->route('reservations.active');
-//    }
-
-//    public function deny(Reservation $reservation)
-//    {
-//
-//    }
-
-//    public function accept(Reservation $reservation)
-//    {
-//        $reservation->update(['is_active'=>true]);
-////        dd($reservation);
-//        return redirect()->route('reservations.pending');
-//    }
 
 }
