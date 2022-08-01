@@ -12,7 +12,12 @@
         <div class="flex flex-row justify-between">
             <div class="mr-[30px]">
                 <h3 class="uppercase mb-[20px]">Activities</h3>
+
+                checkoukts {{ $checkouts }}
+                reserved {{ $reserved }}
+                overdues {{ $overdues }}
             </div>
+
         </div>
     </div>
 @endsection
