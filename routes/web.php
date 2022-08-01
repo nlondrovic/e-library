@@ -36,12 +36,11 @@ Route::middleware(['auth'])->group(function () {
 
     // DASHBOARD
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 
-//    BASIC CRUDs
+
+    // BASIC CRUDs
 
     Route::resource('/students', UserController::class);
     Route::resource('/books', BookController::class);
@@ -55,17 +54,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/librarians', LibrarianController::class);
     Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
 
 
     // RESERVATIONS LISTING
 
     Route::get('/transactions/activeReservations', [ReservationController::class, 'activeReservations'])->name('reservations.active');
     Route::get('/transactions/archivedReservations', [ReservationController::class, 'archivedReservations'])->name('reservations.archived');
-//    Route::get('/transactions/pendingReservations', [ReservationController::class, 'pendingReservations'])->name('reservations.pending');
 
     // RESERVATIONS CREATE, STORE, SHOW, CHECKOUT, CANCEL
 
@@ -74,8 +68,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transactions/reservations/show', [ReservationController::class, 'show'])->name('reservations.show');
     Route::patch('/transactions/reservations/checkOut/{reservation}', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
     Route::patch('/transactions/reservations/cancel/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
-//    Route::patch('/transactions/denyReservation/{reservation}', [ReservationController::class, 'deny'])->name('reservations.deny');
-//    Route::patch('/transactions/acceptReservation/{reservation}', [ReservationController::class, 'accept'])->name('reservations.accept');
 
 
 
