@@ -43,9 +43,20 @@ class Checkout extends Model
     public function getHoldingTimeAttribute()
     {
         if ($this->end_time)
-            return Carbon::parse(strtotime($this->start_time))->diffInDays(Carbon::parse(strtotime($this->end_time))) . " days";
+            return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInHours(Carbon::parse(strtotime($this->end_time))));
+        return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInHours());
+    }
 
-        return Carbon::parse(strtotime($this->start_time))->diffInDays() . " days";
+    public function formatHoldingTime($hours)
+    {
+        if ($hours / 24 < 1) // if holding less than a day
+            return $hours % 24 . " hours";
+
+        if ($hours / 24 == 1) // if holding exactly 24 hours
+            return $hours / 24 . " day";
+
+        // if holding more than 24 hours
+        return round($hours / 24) . " days " . $hours % 24 . " hours";
     }
 
     public function getOverdueTimeAttribute()
@@ -55,13 +66,13 @@ class Checkout extends Model
                 return
                     "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">"
                     . $this->overdue($this->end_time) . " days</p>";
-            else return "<p class=\"bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
+            else return "<p class=\"text-center bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
         else
             if (now() > $this->supposed_end_time)
                 return
                     "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">"
                     . $this->overdue($this->end_time) . " days</p>";
-            else return "<p class=\"bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
+            else return "<p class=\"text-center bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
     }
 
     public function overdue($time)
