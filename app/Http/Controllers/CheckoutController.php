@@ -91,12 +91,4 @@ class CheckoutController extends Controller
 
         return redirect()->route('checkouts.index');
     }
-
-    public function deleteCheckin($id)
-    {
-        $checkout = Checkout::findOrFail($id);
-        $checkout->delete();
-
-        return redirect()->route('checkins.index');
-    }
 }
