@@ -82,7 +82,7 @@
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Overdue time</span>
-                            <p class="font-medium">{{ $checkout->overdue_time }}</p>
+                            <p class="font-medium">{!! $checkout->overdue_time  !!}</p>
                         </div>
                     </div>
 
