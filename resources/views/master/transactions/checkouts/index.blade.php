@@ -34,7 +34,7 @@
                     <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
                         <span class="font-medium text-center">{{ $checkout->checkout_librarian->name }}</span>
                     </a>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->start_time }}</td>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $checkout->holding_time }}</td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->overdue_time !!}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
