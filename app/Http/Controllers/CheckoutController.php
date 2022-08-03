@@ -47,7 +47,11 @@ class CheckoutController extends Controller
     public function store(StoreCheckoutRequest $request)
     {
         $book = Book::findOrFail($request['book_id']);
-        if ($book->available_count <= 0) return redirect()->back();
+        if ($book->available_count <= 0) {
+            return redirect()->back()->withErrors([
+                'message' => 'All copies of this book are checked out or reserved.'
+            ]);
+        }
 
         $inputs = $request->validated();
         $inputs['start_time'] = Carbon::parse(now());
