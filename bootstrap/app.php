@@ -52,4 +52,6 @@ $app->singleton(
 |
 */
 
+include_once(__DIR__ . '/helpers.php');
+
 return $app;
