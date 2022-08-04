@@ -49,7 +49,7 @@
             <div class="flex flex-row">
                 <div class="mr-[30px]">
                     <div class="mt-[20px]">
-                        <span class="text-gray-500">Ime i prezime</span>
+                        <span class="text-gray-500">Name and surname</span>
                         <p class="font-medium">{{ $librarian->name }}</p>
                     </div>
                     <div class="mt-[40px]">
