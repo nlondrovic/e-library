@@ -11,7 +11,6 @@
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkin librarian</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Start date</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">End date</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Holding for</th>
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
@@ -41,7 +40,6 @@
                 </td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->end_time) }}</td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->getHoldingTime() !!}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                         <i
