@@ -47,15 +47,21 @@
                     <div class="">
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Book</span>
-                            <p class="font-medium">{{ $checkout->book->title }}</p>
+                            <a href="{{ route('books.show', $checkout->book) }}">
+                                <p class="font-medium text-[#2196f3]">{{ $checkout->book->title }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Checkout librarian</span>
-                            <p class="font-medium">{{ $checkout->checkout_librarian->name }}</p>
+                            <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
+                                <p class="font-medium text-[#2196f3]">{{ $checkout->checkout_librarian->name }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Checkout student</span>
-                            <p class="font-medium">{{ $checkout->student->name }}</p>
+                            <a href="{{ route('students.show', $checkout->student) }}">
+                                <span class="text-gray-500 text-[14px]">Checkout student</span>
+                                <p class="font-medium text-[#2196f3]">{{ $checkout->student->name }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Checkout time</span>
@@ -71,7 +77,9 @@
                             </div>
                             <div class="mt-[40px] mb-[20px]">
                                 <span class="text-gray-500 text-[14px]">Checkin librarian</span>
-                                <p class="font-medium">{{ $checkout->checkin_librarian->name }}</p>
+                                <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
+                                    <p class="font-medium text-[#2196f3]">{{ $checkout->checkin_librarian->name }}</p>
+                                </a>
                             </div>
                         @endif
                         <div class="mt-[40px]">
