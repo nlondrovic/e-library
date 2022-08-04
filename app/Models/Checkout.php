@@ -35,48 +35,48 @@ class Checkout extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function getSupposedEndTimeAttribute()
+    public function getSupposedEndTime()
     {
         return Carbon::parse($this->start_time)->addDays(getenv('HOLDING_TIME'));
     }
 
-    public function getHoldingTimeAttribute()
+    public function getHoldingTime()
     {
         if ($this->end_time)
-            return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInHours(Carbon::parse(strtotime($this->end_time))));
-        return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInHours());
+            return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInDays(Carbon::parse(strtotime($this->end_time))));
+        return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInDays());
     }
 
-    public function formatHoldingTime($hours)
+    public function formatHoldingTime($days)
     {
-        if ($hours / 24 < 1) // if holding less than a day
-            return $hours % 24 . " hours";
+        // if holding less than a day
+        if ($days < 1)
+            return "<p class=\"font-medium\">Less than 24 horus</p>";
 
-        if ($hours % 24 == 0) // if holding exactly R days
-            return $hours / 24 . " days";
+        // if checkout is overdue
+        if ($days >= getenv('HOLDING_TIME'))
+            return "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px] font-medium\">"
+                . $days . " days</p>";
 
-        // if holding more than 24 hours
-        return round($hours / 24) . " days " . $hours % 24 . " hours";
+        return "<p class=\"font-medium\">$days days</p>";
     }
 
-    public function getOverdueTimeAttribute()
+    public function getOverdueTime()
     {
+        $class_list = "text-center rounded-[10px] px-[6px] py-[2px] text-[14px] font-medium";
         if ($this->end_time)
-            if ($this->end_time > $this->supposed_end_time)
-                return
-                    "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">"
-                    . $this->overdue($this->end_time) . " days</p>";
-            else return "<p class=\"text-center bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
-        else
-            if (now() > $this->supposed_end_time)
-                return
-                    "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">"
-                    . $this->overdue($this->end_time) . " days</p>";
-            else return "<p class=\"text-center bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]\">Not overdue</p>";
+            if ($this->end_time > $this->getSupposedEndTime())
+                return "<p class=\"$class_list bg-red-200 text-red-800\">" . $this->overdue($this->end_time) . " days</p>";
+            else
+                return "<p class=\"font-medium\">Not overdue</p>";
+
+        if (now() > $this->getSupposedEndTime())
+            return "<p class=\"$class_list bg-red-200 text-red-800\">" . $this->overdue() . " days</p>";
+        else return "<p class=\"font-medium\">Not overdue</p>";
     }
 
-    public function overdue($time)
+    public function overdue($time = null)
     {
-        return Carbon::parse(strtotime($this->supposed_end_time))->diffInDays($time);
+        return Carbon::parse(strtotime($this->getSupposedEndTime()))->diffInDays($time);
     }
 }

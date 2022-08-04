@@ -13,27 +13,25 @@
             <div class="pt-[15px] mr-[30px] grid grid-cols-2">
                 @if(!$checkout->end_time)
                     <div class="col">
-
-                    <form action="{{ route('checkIn', $checkout) }}" method="post">
-                        @csrf
-                        @method('post')
-                        <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                            <i class="fas fa-redo-alt mr-[3px] "></i>
-                            Check in
-                        </button>
-                    </form>
+                        <form action="{{ route('checkIn', $checkout) }}" method="post">
+                            @csrf
+                            @method('post')
+                            <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                                <i class="fas fa-redo-alt mr-[3px] "></i>
+                                Check in
+                            </button>
+                        </form>
                     </div>
-                <div class="col">
-
-                    <form action="{{ route('writeOff', $checkout) }}" method="post">
-                        @csrf
-                        @method('post')
-                        <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
-                            <i class="far fa-calendar-check mr-[3px] "></i>
-                            Write off
-                        </button>
-                    </form>
-                </div>
+                    <div class="col">
+                        <form action="{{ route('writeOff', $checkout) }}" method="post">
+                            @csrf
+                            @method('post')
+                            <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                                <i class="far fa-calendar-check mr-[3px] "></i>
+                                Write off
+                            </button>
+                        </form>
+                    </div>
                 @endif
             </div>
         </div>
@@ -61,7 +59,7 @@
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Checkout time</span>
-                            <p class="font-medium">{{ $checkout->start_time }}</p>
+                            <p class="font-medium">{{ format_time($checkout->start_time) }}</p>
                         </div>
                     </div>
 
@@ -69,7 +67,7 @@
                         @if($checkout->end_time)
                             <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">Checkin time</span>
-                                <p class="font-medium">{{ $checkout->end_time }}</p>
+                                <p class="font-medium">{{ format_time($checkout->start_time) }}</p>
                             </div>
                             <div class="mt-[40px] mb-[20px]">
                                 <span class="text-gray-500 text-[14px]">Checkin librarian</span>
@@ -78,11 +76,11 @@
                         @endif
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Holding for</span>
-                            <p class="font-medium">{{ $checkout->holding_time }}</p>
+                            <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Overdue time</span>
-                            <p class="font-medium">{!! $checkout->overdue_time  !!}</p>
+                            <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
                         </div>
                     </div>
 
