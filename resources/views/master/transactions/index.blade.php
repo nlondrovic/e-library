@@ -18,7 +18,7 @@
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px]  flex justify-between fill-current">
                             <div class="py-[15px] px-[20px] w-[268px] cursor-pointer group hover:bg-[#EFF3F6] rounded-[10px]">
-                                <a href="{{ route('checkouts.index') }}" class="flex items-center">
+                                <a href="{{ route('checkouts.index', request()->all()) }}" class="flex items-center">
                                     <i class="text-[#707070] transition duration-300 ease-in group-hover:text-[#576cdf] far fa-copy text-[20px]"></i>
                                     <p class="transition duration-300 ease-in group-hover:text-[#576cdf]  text-[15px] ml-[18px]">
                                         Checkouts
