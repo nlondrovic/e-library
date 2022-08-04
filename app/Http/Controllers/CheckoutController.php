@@ -19,7 +19,7 @@ class CheckoutController extends Controller
 
     public function checkins()
     {
-        $checkouts = Checkout::where('end_time')->get();
+        $checkouts = Checkout::where('end_time', '!=', null)->get();
         return view('master.transactions.checkouts.checkins', compact('checkouts'));
     }
 
