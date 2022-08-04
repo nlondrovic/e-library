@@ -18,7 +18,7 @@
 
             @include('components.error-check')
 
-            <form action="{{ route('reservations.store') }}" method="post">
+            <form action="{{ route('reservations.store', ['book_id' => $book->id]) }}" method="post">
                     @csrf
                     @method('post')
                     <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
@@ -26,9 +26,6 @@
                             <h3>Reserve book</h3>
                         </div>
                         <div class="flex flex-row justify-start">
-
-                            {{-- Book --}}
-                            <input type="hidden" name="book_id" value="{{ $book->id }}">
 
                             {{-- Student --}}
                             <div class="mt-[20px] w-[268px]">
@@ -78,7 +75,7 @@
                         </div>
                     </div>
                 </form>
-            
+
         </div>
 
         <div class="min-w-[20%] border-l-[1px] border-[#e4dfdf]">
