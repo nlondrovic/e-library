@@ -12,7 +12,7 @@ class LibrarianController extends Controller
 {
     public function index()
     {
-        $librarians = User::all()->where('role_id', 2);
+        $librarians = User::where('role_id', 2)->get();
         return view('master.librarians.index', compact('librarians'));
     }
 

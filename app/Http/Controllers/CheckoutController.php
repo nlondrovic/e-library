@@ -13,13 +13,13 @@ class CheckoutController extends Controller
 {
     public function checkouts()
     {
-        $checkouts = Checkout::all()->where('end_time', null);
+        $checkouts = Checkout::where('end_time', null)->get();
         return view('master.transactions.checkouts.index', compact('checkouts'));
     }
 
     public function checkins()
     {
-        $checkouts = Checkout::all()->where('end_time');
+        $checkouts = Checkout::where('end_time')->get();
         return view('master.transactions.checkouts.checkins', compact('checkouts'));
     }
 
@@ -40,7 +40,7 @@ class CheckoutController extends Controller
     public function create(Request $request)
     {
         $book = Book::findOrFail($request['book']);
-        $students = User::all()->where('role_id', 3);
+        $students = User::where('role_id', 3)->get();
         return view('master.transactions.checkouts.create', compact('book', 'students'));
     }
 
