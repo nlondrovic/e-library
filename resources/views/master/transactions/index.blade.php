@@ -1,4 +1,7 @@
 @extends('layouts.app')
+<?php
+$route_name = \Illuminate\Support\Facades\Route::currentRouteName();
+?>
 @section('main')
 
     <!-- Heading of content -->
@@ -16,11 +19,13 @@
             <ul class="text-[#2D3B48]">
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
-                        <span class="whitespace-nowrap w-full text-[25px]  flex justify-between fill-current">
-                            <div class="py-[15px] px-[20px] w-[268px] cursor-pointer group hover:bg-[#EFF3F6] rounded-[10px]">
-                                <a href="{{ route('checkouts.index', request()->all()) }}" class="flex items-center">
-                                    <i class="text-[#707070] transition duration-300 ease-in group-hover:text-[#576cdf] far fa-copy text-[20px]"></i>
-                                    <p class="transition duration-300 ease-in group-hover:text-[#576cdf]  text-[15px] ml-[18px]">
+                        <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'checkouts')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('checkouts.index', request()->all()) }}"
+                                   class="flex items-center">
+                                    <i class="@if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] far fa-copy text-[20px]"></i>
+                                    <p class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[15px] ml-[18px]">
                                         Checkouts
                                     </p>
                                 </a>
@@ -31,10 +36,12 @@
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="{{ route('checkins.index') }}" class="flex items-center">
-                                    <i class="transition duration-300 ease-in  text-[#707070] text-[20px] fas fa-file group-hover:text-[#576cdf]"></i>
-                                    <p class="transition duration-300 ease-in  text-[15px] ml-[21px] group-hover:text-[#576cdf]">
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'checkins')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('checkins.index') }}"
+                                   class="flex items-center">
+                                    <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-file group-hover:text-[#576cdf]"></i>
+                                    <p class="transition duration-300 ease-in text-[15px] ml-[21px] group-hover:text-[#576cdf]">
                                         Checkins
                                     </p>
                                 </a>
@@ -45,9 +52,11 @@
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[28px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="{{ route('overdue.index') }}" class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] text-[#707070] text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'overdue')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('overdue.index') }}"
+                                   class="flex items-center">
+                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'overdue')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         Overdue books
                                     </p>
@@ -60,10 +69,12 @@
                 <li class="mb-[4px] py-1">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group {{-- bg-[#EFF3F6]--}} hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="{{ route('reservations.active') }}" class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] text-[#707070] text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
-                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf] {{--text-[#576cdf]--}}">
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'active')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('reservations.active') }}"
+                                   class="flex items-center">
+                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
+                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         Active reservations
                                     </p>
                                 </a>
@@ -74,9 +85,11 @@
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="{{ route('reservations.archived') }}" aria-label="Rezervacije" class="flex items-center">
-                                    <i class="text-[#707070] text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'archived')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('reservations.archived') }}"
+                                   class="flex items-center">
+                                    <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         Archived reservations
                                     </p>
@@ -85,20 +98,6 @@
                         </span>
                     </div>
                 </li>
-{{--                <li class="mb-[4px]">--}}
-{{--                    <div class="w-[300px] pl-[32px]">--}}
-{{--                        <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">--}}
-{{--                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">--}}
-{{--                                <a href="{{ route('reservations.pending') }}" aria-label="Rezervacije" class="flex items-center">--}}
-{{--                                    <i class="text-[#707070] text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>--}}
-{{--                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">--}}
-{{--                                        Pending reservations--}}
-{{--                                    </p>--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                        </span>--}}
-{{--                    </div>--}}
-{{--                </li>--}}
             </ul>
         </div>
 
