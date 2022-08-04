@@ -37,7 +37,11 @@ class ReservationController extends Controller
     public function store(StoreReservationRequest $request)
     {
         $book = Book::findOrFail($request['book_id']);
-        if ($book->available_count <= 0) return redirect()->back();
+        if ($book->available_count <= 0) {
+            return redirect()->back()->withErrors([
+                'message' => 'All copies of this book are checked out or reserved.'
+            ]);
+        }
 
         $book->update(['reserved_count', ++$book->reserved_count]);
         $inputs = $request->validated();
