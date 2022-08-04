@@ -34,7 +34,7 @@
                         <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ $student->JMBG }}"/>
+                               value="{{ $student->jmbg }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
