@@ -8,9 +8,7 @@
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation due</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Status</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
-
         </tr>
         </thead>
         <tbody class="bg-white">
@@ -27,11 +25,8 @@
                         <span class="font-medium text-center">{{ $reservation->student->name }}</span>
                     </a>
                 </td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ $reservation->start_time }}</td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ $reservation->supposed_end_time }}</td>
-                <td class="px-4 py-3 text-sm leading-5 text-blue-900 whitespace-no-wrap">
-                    <span class="text-center bg-green-200 text-green-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">Active</span>
-                </td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->start_time) }}</td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->supposed_end_time) }}</td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300
                         dotsArhiviraneRezervacije hover:text-[#606FC7]">

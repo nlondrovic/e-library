@@ -22,19 +22,25 @@
                     <div class="">
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Book</span>
-                            <p class="font-medium">{{ $reservation->book->title }}</p>
+                            <a href="{{ route('books.show', $reservation->book) }}">
+                                <p class="font-medium text-[#2196f3]">{{ $reservation->book->title }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Reservation librarian</span>
-                            <p class="font-medium">{{ $reservation->librarian->name }}</p>
+                            <a href="{{ route('librarians.show', $reservation->librarian) }}">
+                                <p class="font-medium text-[#2196f3]">{{ $reservation->librarian->name }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Reservation student</span>
-                            <p class="font-medium">{{ $reservation->student->name }}</p>
+                            <a href="{{ route('students.show', $reservation->student) }}">
+                                <p class="font-medium text-[#2196f3]">{{ $reservation->student->name }}</p>
+                            </a>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Time of reservation</span>
-                            <p class="font-medium">{{ $reservation->start_time }}</p>
+                            <p class="font-medium">{{ format_date($reservation->start_time) }}</p>
                         </div>
                     </div>
 
@@ -42,28 +48,11 @@
                         @if($reservation->end_time)
                             <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">Reservation end time</span>
-                                <p class="font-medium">{{ $reservation->end_time }}</p>
+                                <p class="font-medium">{{ format_date($reservation->end_time) }}</p>
                             </div>
                             <div class="mt-[40px] mb-[20px]">
-                                <span class="text-gray-500 text-[14px]">End reason</span>
-                                <div>
-                                    @if($reservation->end_reason->id == 1)
-                                        <p class="inline-block px-[6px] py-[2px] font-medium bg-red-600 rounded-[10px]">
-                                            <span
-                                                class="text-xs text-green-800">{{ $reservation->end_reason->value }}</span>
-                                        </p>
-                                    @elseif($reservation->end_reason->id == 2)
-                                        <p class="inline-block px-[6px] py-[2px] font-medium bg-red-200 rounded-[10px]">
-                                            <span
-                                                class="text-xs text-red-800">{{ $reservation->end_reason->value }}</span>
-                                        </p>
-                                    @elseif($reservation->end_reason->id == 3)
-                                        <p class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
-                                            <span
-                                                class="text-xs text-green-800">{{ $reservation->end_reason->value }}</span>
-                                        </p>
-                                    @endif
-                                </div>
+                                <span class="text-gray-500 text-[14px] font-medium">End reason</span>
+                                <p class="font-medium">{{ $reservation->end_reason->value }}</p>
                             </div>
                         @endif
                     </div>

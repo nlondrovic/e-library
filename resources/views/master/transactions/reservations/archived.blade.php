@@ -8,9 +8,8 @@
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End time</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Status</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End reason</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
-
         </tr>
         </thead>
         <tbody class="bg-white">
@@ -27,26 +26,9 @@
                         <span class="font-medium text-center">{{ $reservation->student->name }}</span>
                     </a>
                 </td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ $reservation->start_time }}</td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ $reservation->end_time }}</td>
-                <td class="px-4 py-3 text-sm leading-5 text-blue-900 whitespace-no-wrap">
-                    @if($reservation->end_reason->id == 1)
-                        <div
-                            class="inline-block px-[6px] py-[2px] font-medium bg-red-600 rounded-[10px]">
-                            <span class="text-xs text-green-800">{{ $reservation->end_reason->value }}</span>
-                        </div>
-                    @elseif($reservation->end_reason->id == 2)
-                        <div
-                            class="inline-block px-[6px] py-[2px] font-medium bg-red-200 rounded-[10px]">
-                            <span class="text-xs text-red-800">{{ $reservation->end_reason->value }}</span>
-                        </div>
-                    @elseif($reservation->end_reason->id == 3)
-                        <div
-                            class="inline-block px-[6px] py-[2px] font-medium bg-green-200 rounded-[10px]">
-                            <span class="text-xs text-green-800">{{ $reservation->end_reason->value }}</span>
-                        </div>
-                    @endif
-                </td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->start_time) }}</td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->end_time) }}</td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap ">{{ $reservation->end_reason->value }}</td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsArhiviraneRezervacije hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
