@@ -23,13 +23,13 @@ class CheckoutController extends Controller
         return view('master.transactions.checkouts.checkins', compact('checkouts'));
     }
 
-    public function overdues()
+    public function overdue()
     {
         $checkouts = Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
             ->where('end_time', null)
             ->get();
 
-        return view('master.transactions.checkouts.overdues', compact('checkouts'));
+        return view('master.transactions.checkouts.overdue', compact('checkouts'));
     }
 
     public function show(Checkout $checkout)

@@ -75,7 +75,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/transactions/checkouts', [CheckoutController::class, 'checkouts'])->name('checkouts.index');
     Route::get('/transactions/checkins', [CheckoutController::class, 'checkins'])->name('checkins.index');
-    Route::get('/transactions/overdues', [CheckoutController::class, 'overdues'])->name('overdues.index');
+    Route::get('/transactions/overdue', [CheckoutController::class, 'overdue'])->name('overdue.index');
 
     // CHECKOUTS CREATE, STORE, SHOW, DELETE, WRITE OFF
 

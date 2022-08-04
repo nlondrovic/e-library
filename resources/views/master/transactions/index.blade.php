@@ -46,7 +46,7 @@
                     <div class="w-[300px] pl-[28px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer">
-                                <a href="{{ route('overdues.index') }}" class="flex items-center">
+                                <a href="{{ route('overdue.index') }}" class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] text-[#707070] text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         Overdue books
