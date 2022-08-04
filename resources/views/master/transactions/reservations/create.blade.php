@@ -27,11 +27,6 @@
 
                             {{-- Book --}}
                             <input type="hidden" name="book_id" value="{{ $book->id }}">
-                            {{-- TODO: Ovo se mora popraviti --}}
-
-                            {{-- Librarian --}}
-                            <input type="hidden" name="librarian_id" value="{{ auth()->id() }}">
-                            {{-- TODO: Ovo se mora popraviti, da se ovi podaci ne salju perko htmla --}}
 
                             {{-- Student --}}
                             <div class="mt-[20px] w-[268px]">

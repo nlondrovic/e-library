@@ -16,7 +16,6 @@ class StoreReservationRequest extends FormRequest
     {
         return [
             'book_id' => 'required|exists:books,id',
-            'librarian_id' => 'required|exists:users,id',
             'student_id' => 'required|exists:users,id',
             'start_time' => 'required|after:today',
         ];

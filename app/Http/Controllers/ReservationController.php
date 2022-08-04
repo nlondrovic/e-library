@@ -40,8 +40,10 @@ class ReservationController extends Controller
         if ($book->available_count <= 0) return redirect()->back();
 
         $book->update(['reserved_count', ++$book->reserved_count]);
+        $inputs = $request->validated();
+        $inputs['librarian_id'] = auth()->id();
 
-        Reservation::query()->create($request->validated());
+        Reservation::query()->create($inputs);
 
         return redirect()->route('books.index');
     }
