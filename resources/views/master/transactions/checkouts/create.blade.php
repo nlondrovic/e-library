@@ -31,7 +31,7 @@
                 </div>
             @endif
 
-            {{-- TODO: Librarian_id i Book_id se mogu izmijeniti preko inspect elementa. Fix it--}}
+            {{-- TODO: Librarian_id i Book_id se mogu izmijeniti preko inspect elementa. Fix it: "$inputs['librarian_id'] = Auth::user()->id; u CheckoutController@store" --}}
             <form
                 action="{{ route('checkouts.store', ['checkout_librarian_id' => auth()->id(), 'book_id' => $book->id]) }}"
                 method="post">
