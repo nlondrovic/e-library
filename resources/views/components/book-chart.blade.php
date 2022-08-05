@@ -21,7 +21,7 @@
             labels: labels,
             datasets: [{
                 label: '# of books',
-                data: [{{ $checkouts }}, {{ $reserved }}, {{ $overdue }}],
+                data: [{{ $checkouts_count }}, {{ $reserved_count }}, {{ $overdue_count }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
