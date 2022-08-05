@@ -73,7 +73,7 @@
                         @if($checkout->end_time)
                             <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">Checkin time</span>
-                                <p class="font-medium">{{ format_time($checkout->start_time) }}</p>
+                                <p class="font-medium">{{ format_time($checkout->end_time) }}</p>
                             </div>
                             <div class="mt-[40px] mb-[20px]">
                                 <span class="text-gray-500 text-[14px]">Checkin librarian</span>
