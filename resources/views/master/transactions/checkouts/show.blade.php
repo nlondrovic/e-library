@@ -71,25 +71,45 @@
 
                     <div class="ml-[50px]">
                         @if($checkout->end_time)
+                            @if($checkout->end_reason->id == 2)
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Checkout end reason</span>
+                                    <p class="font-medium">{{ $checkout->end_reason->value }}</p>
+                                </div>
+                            @else
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Checkin time</span>
+                                    <p class="font-medium">{{ format_time($checkout->end_time) }}</p>
+                                </div>
+                                <div class="mt-[40px] mb-[20px]">
+                                    <span class="text-gray-500 text-[14px]">Checkin librarian</span>
+                                    <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
+                                        <p class="font-medium text-[#2196f3]">{{ $checkout->checkin_librarian->name }}</p>
+                                    </a>
+                                </div>
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Holding for</span>
+                                    <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
+                                </div>
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Overdue time</span>
+                                    <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
+                                </div>
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Checkout end reason</span>
+                                    <p class="font-medium">{{ $checkout->end_reason->value }}</p>
+                                </div>
+                            @endif
+                        @else
                             <div class="mt-[40px]">
-                                <span class="text-gray-500 text-[14px]">Checkin time</span>
-                                <p class="font-medium">{{ format_time($checkout->end_time) }}</p>
+                                <span class="text-gray-500 text-[14px]">Holding for</span>
+                                <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
                             </div>
-                            <div class="mt-[40px] mb-[20px]">
-                                <span class="text-gray-500 text-[14px]">Checkin librarian</span>
-                                <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
-                                    <p class="font-medium text-[#2196f3]">{{ $checkout->checkin_librarian->name }}</p>
-                                </a>
+                            <div class="mt-[40px]">
+                                <span class="text-gray-500 text-[14px]">Overdue time</span>
+                                <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
                             </div>
                         @endif
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Holding for</span>
-                            <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
-                        </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Overdue time</span>
-                            <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
-                        </div>
                     </div>
 
 

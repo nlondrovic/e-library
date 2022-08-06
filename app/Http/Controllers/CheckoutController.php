@@ -32,6 +32,13 @@ class CheckoutController extends Controller
         return view('master.transactions.checkouts.overdue', compact('checkouts'));
     }
 
+    public function lost()
+    {
+        $checkouts = Checkout::where('end_time', '!=', null)
+            ->where('checkout_end_reason_id', 2)->get();
+        return view('master.transactions.checkouts.lost', compact('checkouts'));
+    }
+
     public function show(Checkout $checkout)
     {
         return view('master.transactions.checkouts.show', compact('checkout'));
@@ -67,7 +74,8 @@ class CheckoutController extends Controller
         $checkout = Checkout::findOrFail($id);
         $checkout->update([
             'end_time' => date("Y-m-d H:i:s", strtotime("now")),
-            'checkin_librarian_id' => auth()->id()
+            'checkin_librarian_id' => auth()->id(),
+            'checkout_end_reason_id' => 1
         ]);
 
         $book = Book::findOrFail($checkout['book_id']);
@@ -86,7 +94,8 @@ class CheckoutController extends Controller
 
         $checkout->update([
             'end_time' => date("Y-m-d H:i:s", strtotime("now")),
-            'checkin_librarian_id' => auth()->id()
+            'checkin_librarian_id' => auth()->id(),
+            'checkout_end_reason_id' => 2
         ]);
 
         $book = Book::findOrFail($checkout->book_id);
