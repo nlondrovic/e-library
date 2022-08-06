@@ -30,8 +30,10 @@ class ReservationController extends Controller
     public function create(Book $book)
     {
         $students = User::where('role_id', 3)->get();
+        $min_date = Carbon::now()->addDay()->format('Y-m-d');
+        $max_date = Carbon::now()->addMonth()->format('Y-m-d');
 
-        return view('master.transactions.reservations.create', compact('students', 'book'));
+        return view('master.transactions.reservations.create', compact('students', 'book', 'min_date', 'max_date'));
     }
 
     public function store(StoreReservationRequest $request)

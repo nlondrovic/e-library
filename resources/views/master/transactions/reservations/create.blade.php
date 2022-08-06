@@ -47,9 +47,10 @@
                             {{-- Reserve date/time --}}
                             <div class="mt-[20px] w-[268px]">
                                 <p>Reserve date<span class="text-red-500">*</span></p>
-                                <input required type="date" id="start_time" name="start_time" min="{{ \Carbon\Carbon::tomorrow()->parse()->format('Y-m-d') }}" max="{{\Carbon\Carbon::now()->addMonth()->format('Y-m-d') }}" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]"/>
+                                <input required type="date" id="start_time" name="start_time"
+                                       min="{{ $min_date }}" max="{{ $max_date }}" value="{{ $min_date }}"
+                                       class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300
+                                       shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
                                 @if($errors->first('start_time'))
                                     <span class="text-red-600">{{ $errors->first('start_time') }}</span>
                                 @endif
