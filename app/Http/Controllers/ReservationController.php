@@ -17,7 +17,7 @@ class ReservationController extends Controller
 
     public function archivedReservations()
     {
-        $reservations = Reservation::where('reservation_end_reason_id', '>', 0)->get();
+        $reservations = Reservation::where('reservation_end_reason_id', '!=', null)->get();
         return view('master.transactions.reservations.archived', compact('reservations'));
     }
 
