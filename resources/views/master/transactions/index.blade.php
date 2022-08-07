@@ -65,6 +65,22 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
+                <li class="mb-[4px]">
+                    <div class="w-[300px] pl-[28px]">
+                        <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
+                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                                 @if(str_contains($route_name, 'lost')) bg-[#EFF3F6] text-[#576cdf] @endif">
+                                <a href="{{ route('lost.index') }}"
+                                   class="flex items-center">
+                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'lost')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-circle transition duration-300 ease-in "></i>
+                                    <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                        Lost books
+                                    </p>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                </li>
                 <hr>
                 <li class="mb-[4px] py-1">
                     <div class="w-[300px] pl-[32px]">

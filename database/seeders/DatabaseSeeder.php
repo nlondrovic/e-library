@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
             ScriptSeeder::class,
             SizeSeeder::class,
             ReservationEndReasonSeeder::class,
+            CheckoutEndReasonSeeder::class,
 
             AuthorSeeder::class,
             RoleSeeder::class,
             BookSeeder::class,
-            UserSeeder::class,
-//            CheckoutSeeder::class
+            UserSeeder::class
 
         ]);
     }

@@ -35,6 +35,11 @@ class Checkout extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function end_reason()
+    {
+        return $this->belongsTo(CheckoutEndReason::class, 'checkout_end_reason_id');
+    }
+
     public function getSupposedEndTime()
     {
         return Carbon::parse($this->start_time)->addDays(getenv('HOLDING_TIME'));
