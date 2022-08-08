@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -30,10 +31,10 @@ class User extends Authenticatable
 
     public function canCheckoutMoreBooks()
     {
-        return ($this->bookCount() < getenv('BOOKS_PER_STUDENT'));
+        return ($this->getBookCount() < getenv('BOOKS_PER_STUDENT'));
     }
 
-    public function bookCount()
+    public function getBookCount()
     {
         return count(Checkout::where('student_id', $this->id)
                 ->where('end_time', null)
@@ -41,6 +42,21 @@ class User extends Authenticatable
             + count(Reservation::where('student_id', $this->id)
                 ->where('end_time', null)
                 ->get());
+    }
+
+    public function getCheckedOutCount()
+    {
+        return count(Checkout::where('student_id', $this->id)
+            ->where('end_time', null)
+            ->get());
+    }
+
+    public function getOverdueCount()
+    {
+        return count(Checkout::where('student_id', $this->id)
+            ->where('end_time', null)
+            ->where('start_time', '<', Carbon::now()->subDays(getenv('HOLDING_TIME'))->toDateTimeString())
+            ->get());
     }
 
 }
