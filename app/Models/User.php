@@ -23,11 +23,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
-    public function canCheckoutMoreBooks($student):bool
+
+    public function canCheckoutMoreBooks()
     {
-        return ($student->checked_out_books < getenv('BOOK_CHECKOUT_LIMIT'));
+        return ($this->bookCount() < getenv('BOOK_CHECKOUT_LIMIT'));
     }
+
+    public function bookCount()
+    {
+        return count(Checkout::where('student_id', $this->id)
+                ->where('end_time', null)
+                ->get())
+            + count(Reservation::where('student_id', $this->id)
+                ->where('end_time', null)
+                ->get());
+    }
+
 }

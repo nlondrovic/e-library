@@ -43,10 +43,9 @@ class ReservationController extends Controller
 
         if (!$student->canCheckoutMoreBooks($student)) {
             return redirect()->back()->withErrors([
-                'message' => 'This student checked out or reserved maximum number of books'
+                'message' => 'This student has checked out or reserved maximum number of books'
             ]);
         }
-        $student->checked_out_books++;
 
         if ($book->available_count <= 0) {
             return redirect()->back()->withErrors([
