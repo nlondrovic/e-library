@@ -39,6 +39,15 @@ class ReservationController extends Controller
     public function store(StoreReservationRequest $request)
     {
         $book = Book::findOrFail($request['book_id']);
+        $student = User::findOrFail($request['student_id']);
+
+        if (!$student->canCheckoutMoreBooks($student)) {
+            return redirect()->back()->withErrors([
+                'message' => 'This student checked out or reserved maximum number of books'
+            ]);
+        }
+        $student->checked_out_books++;
+
         if ($book->available_count <= 0) {
             return redirect()->back()->withErrors([
                 'message' => 'All copies of this book are checked out or reserved.'

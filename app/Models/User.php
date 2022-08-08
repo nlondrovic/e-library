@@ -26,4 +26,8 @@ class User extends Authenticatable
     public function role() {
         return $this->belongsTo(Role::class);
     }
+    public function canCheckoutMoreBooks($student):bool
+    {
+        return ($student->checked_out_books < getenv('BOOK_CHECKOUT_LIMIT'));
+    }
 }
