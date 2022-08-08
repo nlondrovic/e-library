@@ -28,11 +28,12 @@
                     'rgba(255, 206, 86, 0.7)',
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 99, 132, 0.1)',
+                    'rgba(54, 162, 235, 0.1)',
+                    'rgba(255, 206, 86, 0.1)',
                 ],
-                borderWidth: 1
+                borderWidth: 1,
+
 
             }]
         };
@@ -43,14 +44,31 @@
             options: {ticks: {
                     precision:0
                 },
+
                 indexAxis: 'y',
                 scales: {
+                    x: {
+                        grid: {
+                            // beginAtZero: true,
+                            color: "rgba(235,235,235)",
+                            borderWidth: 1,
+                            // borderOffset: 2,
+                            borderColor: "rgba(120,120,120)"
+                        }
+                    },
                     y: {
-                        beginAtZero: true
+                        grid: {
+                            display: false,
+                            borderWidth: 1,
+                            // borderOffset: 2,
+                            borderColor: "rgba(120,120,120)"
+                        }
                     }
+
                 }
             }
         };
+
 
         const myChart = new Chart(document.getElementById('myChart'),
             config
