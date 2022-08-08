@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function canCheckoutMoreBooks()
     {
-        return ($this->bookCount() < getenv('BOOK_CHECKOUT_LIMIT'));
+        return ($this->bookCount() < getenv('BOOKS_PER_STUDENT'));
     }
 
     public function bookCount()
