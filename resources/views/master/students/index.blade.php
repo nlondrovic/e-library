@@ -27,6 +27,8 @@
                 <tr class="border-b-[1px] border-[#e4dfdf]">
                     <th class="px-4 py-4 leading-4 tracking-wider text-left">Name</th>
                     <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Email</th>
+                    <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checked out</th>
+                    <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Overdue</th>
                     <th class="px-4 py-4"></th>
                 </tr>
                 </thead>
@@ -41,6 +43,8 @@
                             </a>
                         </td>
                         <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->email }}</td>
+                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getCheckedOutCount() }}</td>
+                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getOverdueCount() }}</td>
                         <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsStudent
                             hover:text-[#606FC7]">
