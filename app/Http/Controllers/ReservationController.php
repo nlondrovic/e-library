@@ -14,17 +14,56 @@ use function PHPUnit\Framework\isEmpty;
 
 class ReservationController extends Controller
 {
+    // TODO: MORAMO ocistiti ovaj kod! Ima dosta stvari koje se ponavljaju! Nije citljivo.
 
-    public function archivedReservations()
+    public function activeReservations(Request $request)
     {
-        $reservations = Reservation::where('reservation_end_reason_id', '!=', null)->get();
-        return view('master.transactions.reservations.archived', compact('reservations'));
+        $reservationsQuery = Reservation::where('end_time', null);
+        $student = null;
+        $book = null;
+
+        if ($request->get('student_id')) {
+            $reservationsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $reservationsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $reservations = $reservationsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.reservations.active',
+            compact('reservations', 'student', 'book', 'students', 'books'));
     }
 
-    public function activeReservations()
+    public function archivedReservations(Request $request)
     {
-        $reservations = Reservation::where('end_time', null)->get();
-        return view('master.transactions.reservations.active', compact('reservations'));
+        $reservationsQuery = Reservation::where('reservation_end_reason_id', '!=', null);
+        $student = null;
+        $book = null;
+
+        if ($request->get('student_id')) {
+            $reservationsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $reservationsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $reservations = $reservationsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.reservations.archived',
+            compact('reservations', 'student', 'book', 'students', 'books'));
     }
 
     public function create(Book $book)

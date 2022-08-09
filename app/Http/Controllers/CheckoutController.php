@@ -11,32 +11,108 @@ use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
-    public function checkouts()
+    // TODO: MORAMO ocistiti ovaj kod! Ima dosta stvari koje se ponavljaju! Nije citljivo.
+
+    public function checkouts(Request $request)
     {
-        $checkouts = Checkout::where('end_time', null)->get();
-        return view('master.transactions.checkouts.index', compact('checkouts'));
+        $checkoutsQuery = Checkout::where('end_time', null);
+        $student = null;
+        $book = null;
+
+        if ($request->get('student_id')) {
+            $checkoutsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $checkoutsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $checkouts = $checkoutsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.checkouts.index',
+            compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
-    public function checkins()
+    public function checkins(Request $request)
     {
-        $checkouts = Checkout::where('end_time', '!=', null)->get();
-        return view('master.transactions.checkouts.checkins', compact('checkouts'));
+        $checkoutsQuery = Checkout::where('end_time', '!=', null);
+        $student = null;
+        $book = null;
+
+        if ($request->get('student_id')) {
+            $checkoutsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $checkoutsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $checkouts = $checkoutsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.checkouts.checkins',
+            compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
-    public function overdue()
+    public function overdue(Request $request)
     {
-        $checkouts = Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
-            ->where('end_time', null)
-            ->get();
+        $checkoutsQuery = Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
+            ->where('end_time', null);
+        $student = null;
+        $book = null;
 
-        return view('master.transactions.checkouts.overdue', compact('checkouts'));
+        if ($request->get('student_id')) {
+            $checkoutsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $checkoutsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $checkouts = $checkoutsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.checkouts.overdue',
+            compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
-    public function lost()
+    public function lost(Request $request)
     {
-        $checkouts = Checkout::where('end_time', '!=', null)
-            ->where('checkout_end_reason_id', 2)->get();
-        return view('master.transactions.checkouts.lost', compact('checkouts'));
+        $checkoutsQuery = Checkout::where('end_time', '!=', null)
+            ->where('checkout_end_reason_id', 2);
+        $student = null;
+        $book = null;
+
+        if ($request->get('student_id')) {
+            $checkoutsQuery->where('student_id', $request->get('student_id'));
+            $student = User::findOrFail($request['student_id']);
+        }
+
+        if ($request->get('book_id')) {
+            $checkoutsQuery->where('book_id', $request->get('book_id'));
+            $book = Book::findOrFail($request['book_id']);
+        }
+
+        $checkouts = $checkoutsQuery->get();
+
+        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $students = User::where('role_id', 3)->get();
+
+        return view('master.transactions.checkouts.lost',
+            compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
     public function show(Checkout $checkout)
