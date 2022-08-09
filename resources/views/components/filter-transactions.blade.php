@@ -1,4 +1,5 @@
-<form action="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), request()->all()) }}" method="get" class="mb-[20px]">
+<form action="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), request()->all()) }}" method="get"
+      class="mb-[20px]">
     <div class="flex flex-row">
         <label>
             <span>Student</span>
@@ -37,6 +38,13 @@
             ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-search"></i>&nbsp;Filter
             </button>
+            &nbsp;
+            <button type="reset" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+            ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
+                <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
+            </button>
+
+
         </div>
     </div>
 
