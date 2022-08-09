@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-
+    Route::get('/dashboardActivity', [HomeController::class, 'show_more'])->name('show_more');
 
     // BASIC CRUDs
 

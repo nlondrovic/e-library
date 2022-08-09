@@ -15,6 +15,7 @@
             <div class="mr-[30px]">
                 <h3 class="uppercase ml-[20px] mb-[20px]">Activities</h3>
                 <!-- Activity Cards -->
+                @foreach($activities->take(5) as $activity)
                 <div class="activity-card flex flex-row mb-[30px]">
                     <div class="w-[60px] h-[60px]">
                         <img class="rounded-full" src="#" alt="">
@@ -23,19 +24,19 @@
                         <div class="text-gray-500 mb-[5px]">
                             <p class="uppercase">
                                 Book checkout
-                                <span class="inline lowercase"> - 4 days ago </span>
+                                <span class="inline lowercase"> - {{ $activity->end_time }} </span>
                             </p>
                         </div>
                         <div class="">
                             <p>
                                 <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    Valentina K.
+                                    {{ $activity->checkout_librarian->name }}
                                 </a>
-                                checked out <span class="font-medium">Tom Sawyer </span>to
+                                checked out <span class="font-medium">{{ $activity->book->name }} </span>to
                                 <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    Mark Smith
+                                    {{ $activity->student->name }}
                                 </a>
-                                on <span class="font-medium">21.02.2021.</span>
+                                on <span class="font-medium"> {{ $activity->start_time }}</span>
                                 <a href="#" class="text-[#2196f3] hover:text-blue-600">
                                     show details &gt;&gt;
                                 </a>
@@ -43,9 +44,10 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
                 <!-- Show more -->
                 <div class="inline-block w-full mt-4">
-                    <a href="#" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
+                    <a href="{{ route('show_more') }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
                     text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
                     focus:outline-none focus:ring-[1px] focus:ring-gray-300">
                         Show more
