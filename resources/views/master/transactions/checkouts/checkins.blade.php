@@ -1,4 +1,5 @@
 @extends('master.transactions.index')
+@section('transactions-title', 'Checkins')
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">

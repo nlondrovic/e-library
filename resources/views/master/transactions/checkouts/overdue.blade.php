@@ -1,4 +1,5 @@
 @extends('master.transactions.index')
+@section('transactions-title', 'Overdue books')
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
