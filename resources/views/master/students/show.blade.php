@@ -4,13 +4,20 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
+
             <div class="pl-[50px] pt-[10px] pb-[20px] flex flex-col">
                 <h1>{{ $student->name }}</h1>
             </div>
 
-            <div class="pt-[24px] mr-[30px]">
-                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
-                            dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
+
+            <div class="flex flex-row pt-[24px] mr-[30px]">
+
+                <a href="{{ route('checkouts.index', ['student_id' => $student]) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                    <i class="fas fa-exchange-alt mr-[3px]"></i>
+                    Transactions
+                </a>
+
+                <p class="inline cursor-pointer text-[25px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
                 </p>
                 <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
@@ -39,6 +46,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

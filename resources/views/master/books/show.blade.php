@@ -11,6 +11,10 @@
             </div>
 
             <div class="pt-[15px] mr-[30px]">
+                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                    <i class="fas fa-exchange-alt mr-[3px]"></i>
+                    Transactions
+                </a>
                 <a href="{{ route('checkouts.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     Check out
