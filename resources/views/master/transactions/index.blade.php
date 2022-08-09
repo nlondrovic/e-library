@@ -5,10 +5,17 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 @section('main')
 
     <!-- Heading of content -->
-    <div class="heading mt-[7px]">
-        <h1 class="pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf] ">
-            Book transactions
+    <div class="heading flex flex-row mt-[7px] border-b-[1px] border-[#e4dfdf]">
+        <h1 class="pl-[50px] pb-[21px]">
+            @yield('transactions-title', 'Book transactions')
         </h1>
+        @if(isset(request()->student_id))
+            <h3 class="pl-[50px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
+        @endif
+
+        @if(isset(request()->book_id))
+            <h3 class="pl-[50px] pt-[18px]">For book: <b>{{ $book->title }}</b></h3>
+        @endif
     </div>
 
     <!-- Space for content -->
@@ -38,7 +45,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'checkins')) bg-[#EFF3F6] text-[#576cdf] @endif">
-                                <a href="{{ route('checkins.index') }}"
+                                <a href="{{ route('checkins.index', request()->all()) }}"
                                    class="flex items-center">
                                     <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-file group-hover:text-[#576cdf]"></i>
                                     <p class="transition duration-300 ease-in text-[15px] ml-[21px] group-hover:text-[#576cdf]">
@@ -54,7 +61,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'overdue')) bg-[#EFF3F6] text-[#576cdf] @endif">
-                                <a href="{{ route('overdue.index') }}"
+                                <a href="{{ route('overdue.index', request()->all()) }}"
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'overdue')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
@@ -70,7 +77,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'lost')) bg-[#EFF3F6] text-[#576cdf] @endif">
-                                <a href="{{ route('lost.index') }}"
+                                <a href="{{ route('lost.index', request()->all()) }}"
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'lost')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-circle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
@@ -87,7 +94,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'active')) bg-[#EFF3F6] text-[#576cdf] @endif">
-                                <a href="{{ route('reservations.active') }}"
+                                <a href="{{ route('reservations.active', request()->all()) }}"
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
@@ -103,7 +110,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'archived')) bg-[#EFF3F6] text-[#576cdf] @endif">
-                                <a href="{{ route('reservations.archived') }}"
+                                <a href="{{ route('reservations.archived', request()->all()) }}"
                                    class="flex items-center">
                                     <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
