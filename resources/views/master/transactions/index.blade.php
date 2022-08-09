@@ -126,7 +126,18 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
         <!-- Table -->
         <div class="w-full mt-[10px] ml-2 px-2">
-            @yield('table')
+            {{-- TODO: Ove variable su uvijek settovane ali su prazni nizovi. Kako bismo ovo rijesili? --}}
+            @if(isset($reservations) || isset($checkouts))
+                @include('components.filter-transactions')
+                @yield('table')
+            @else
+                <div class="w-[50%] ml-[50px]">
+                    <div class="flex items-center px-6 py-4 my-4 text-lg bg-gray-200 rounded-lg">
+                        <i class="fas fa-exclamation-triangle text-gray-600"></i>&nbsp;&nbsp;
+                        <p class="font-medium text-gray-600">There are no results for this query.</p>
+                    </div>
+                </div>
+            @endif
         </div>
 
     </div>
