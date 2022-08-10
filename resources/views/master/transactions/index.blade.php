@@ -10,7 +10,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             @yield('transactions-title', 'Book transactions')
         </h1>
         @if(isset(request()->student_id))
-            <h3 class="pl-[50px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
+            <h3 class="pl-[50px] ml-[57px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
         @endif
 
         @if(isset(request()->book_id))
