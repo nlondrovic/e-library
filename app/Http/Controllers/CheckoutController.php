@@ -8,6 +8,7 @@ use App\Models\Checkout;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use function PHPUnit\Framework\empty;
 
 class CheckoutController extends Controller
 {
@@ -31,6 +32,8 @@ class CheckoutController extends Controller
 
         $checkouts = $checkoutsQuery->get();
 
+        if (empty($checkouts->toArray())) return view('master.transactions.index');
+
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
@@ -40,7 +43,8 @@ class CheckoutController extends Controller
 
     public function checkins(Request $request)
     {
-        $checkoutsQuery = Checkout::where('end_time', '!=', null);
+        $checkoutsQuery = Checkout::where('end_time', '!=', null)
+            ->where('checkout_end_reason_id', 1);
         $student = null;
         $book = null;
 
@@ -55,6 +59,8 @@ class CheckoutController extends Controller
         }
 
         $checkouts = $checkoutsQuery->get();
+
+        if (empty($checkouts->toArray())) return view('master.transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
@@ -82,6 +88,8 @@ class CheckoutController extends Controller
 
         $checkouts = $checkoutsQuery->get();
 
+        if (empty($checkouts->toArray())) return view('master.transactions.index');
+
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
@@ -107,6 +115,8 @@ class CheckoutController extends Controller
         }
 
         $checkouts = $checkoutsQuery->get();
+
+        if (empty($checkouts->toArray())) return view('master.transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();

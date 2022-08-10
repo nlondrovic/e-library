@@ -34,6 +34,8 @@ class ReservationController extends Controller
 
         $reservations = $reservationsQuery->get();
 
+        if (empty($reservations->toArray())) return view('master.transactions.index');
+
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
@@ -58,6 +60,8 @@ class ReservationController extends Controller
         }
 
         $reservations = $reservationsQuery->get();
+
+        if (empty($reservations->toArray())) return view('master.transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
