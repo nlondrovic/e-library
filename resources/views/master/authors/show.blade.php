@@ -4,13 +4,14 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] py-[10px] pb-[21px] flex flex-col">
+            <div class="pl-[50px] py-[7px] pb-[21px] flex flex-col">
                 <div>
                     <h1>
                         {{ $author->name }}
                     </h1>
                 </div>
             </div>
+
 
             <div class="pt-[24px] pr-[30px]">
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-gray-300 dotsAutor hover:text-[#606FC7]">

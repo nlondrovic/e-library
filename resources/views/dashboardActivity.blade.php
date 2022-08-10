@@ -2,23 +2,16 @@
 
 @section('main')
 
-<body class="small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
-
-
-<!-- Main content -->
-<main class="flex flex-row small:hidden">
-
-
-    <!-- Content -->
-    <section class="w-screen h-screen pl-[80px] py-4 text-gray-700">
         <!-- Heading of content -->
-        <div class="heading mt-[7px]">
-            <h1 class="pl-[30px] pb-[21px]  border-b-[1px] border-[#e4dfdf] ">
-                Prikaz aktivnosti
-            </h1>
+        <div class="mt-2">
+            <div class="heading mt-[7px]">
+                <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf] ">
+                    Prikaz aktivnosti
+                </h1>
+            </div>
         </div>
         <!-- Space for content -->
-        <div class="pl-[30px] overflow-auto scroll height-dashboard pb-[30px] mt-[20px]">
+        <div class="pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[20px]">
             <div class="flex flex-row justify-between">
                 <div class="mr-[30px]">
                     <div class="text-[14px] flex flex-row mb-[30px]">
@@ -43,32 +36,16 @@
                                                 </button>
                                             </li>
                                             <div class="h-[200px] scroll">
+
                                                 <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
                                                     <label class="flex items-center justify-start">
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileStudent.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Ucenik Ucenikovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -77,78 +54,6 @@
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
                                                         Pero Perovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileStudent.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Marko Markovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileStudent.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Nikola Nikolic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileStudent.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Zivko Zivkovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-izdato">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileStudent.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Petar Petrovic
                                                     </p>
                                                 </li>
                                             </div>
@@ -193,9 +98,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -204,96 +110,6 @@
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
                                                         Bibliotekar Bulatovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-bibliotekar">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileExample.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Pero Perovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-bibliotekar">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileExample.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Marko Markovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-bibliotekar">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileExample.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Nikola Nikolic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-bibliotekar">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileExample.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Zivko Zivkovic
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-bibliotekar">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="40px" height="30px" class="ml-[15px] rounded-full"
-                                                         src="img/profileExample.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Petar Petrovic
                                                     </p>
                                                 </li>
                                             </div>
@@ -337,9 +153,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -348,96 +165,6 @@
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
                                                         Tom Sojer
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-knjiga">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="30px" height="30px" class="ml-[15px]"
-                                                         src="img/tomsojer.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Ilijada
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-knjiga">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="30px" height="30px" class="ml-[15px]"
-                                                         src="img/tomsojer.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Robinson Kruso
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-knjiga">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="30px" height="30px" class="ml-[15px]"
-                                                         src="img/tomsojer.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Orlovi rano lete
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-knjiga">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="30px" height="30px" class="ml-[15px]"
-                                                         src="img/tomsojer.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Tom Sojer
-                                                    </p>
-                                                </li>
-                                                <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-knjiga">
-                                                    <label class="flex items-center justify-start">
-                                                        <div
-                                                            class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
-                                                            <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                                                            </svg>
-                                                        </div>
-                                                    </label>
-                                                    <img width="30px" height="30px" class="ml-[15px]"
-                                                         src="img/tomsojer.jpg">
-                                                    <p
-                                                        class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Hari Poter
                                                     </p>
                                                 </li>
                                             </div>
@@ -482,9 +209,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -498,9 +226,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -514,9 +243,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -530,9 +260,10 @@
                                                         <div
                                                             class="flex items-center justify-center flex-shrink-0 w-[16px] h-[16px] mr-2 bg-white border-2 border-gray-400 rounded focus-within:border-blue-500">
                                                             <input type="checkbox" class="absolute opacity-0">
-                                                            <svg class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
-                                                                 viewBox="0 0 20 20">
-                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                                                            <svg
+                                                                class="hidden w-4 h-4 text-green-500 pointer-events-none fill-current"
+                                                                viewBox="0 0 20 20">
+                                                                <path d="M0 11l2-2 5 5L18 3l2 2L7 18z"/>
                                                             </svg>
                                                         </div>
                                                     </label>
@@ -570,11 +301,13 @@
                                             class="flex justify-between flex-row p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                             <div>
                                                 <label class="font-medium text-gray-500">Period od:</label>
-                                                <input type="date" class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
+                                                <input type="date"
+                                                       class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
                                             </div>
                                             <div class="ml-[50px]">
                                                 <label class="font-medium text-gray-500">Period do:</label>
-                                                <input type="date" class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
+                                                <input type="date"
+                                                       class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
                                             </div>
                                         </div>
                                         <div class="flex pt-[10px] text-white ">
@@ -598,10 +331,10 @@
                     <!-- Activity Cards -->
                     @foreach($activities2 as $activity)
                         <div class="activity-card flex flex-row mb-[30px]">
-                            <div class="w-[60px] h-[60px]">
+                            <div class="h-[60px]">
                                 <img class="rounded-full" src="#" alt="">
                             </div>
-                            <div class="ml-[15px] mt-[5px] flex flex-col">
+                            <div class="mt-[5px] flex flex-col">
                                 <div class="text-gray-500 mb-[5px]">
                                     <p class="uppercase">
                                         Book checkout
