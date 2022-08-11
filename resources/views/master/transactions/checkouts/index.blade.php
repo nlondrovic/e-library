@@ -80,5 +80,8 @@
         @endforeach
         </tbody>
     </table>
+    <span>
+        {{ $checkouts->links("pagination::bootstrap-4") }}
+    </span>
 
 @endsection
