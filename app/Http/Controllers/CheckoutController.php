@@ -7,6 +7,7 @@ use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use function PHPUnit\Framework\empty;
 
@@ -33,10 +34,13 @@ class CheckoutController extends Controller
         $checkoutsQuery->orderBy('id', 'desc');
         $checkouts = $checkoutsQuery->paginate(5);
 
-        if (empty($checkouts->toArray())) return view('master.transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        if ($checkouts->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('master.transactions.checkouts.index',
             compact('checkouts', 'student', 'book', 'students', 'books'));
