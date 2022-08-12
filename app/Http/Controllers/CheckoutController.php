@@ -30,7 +30,8 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->latest()->paginate(5);
+        $checkoutsQuery->orderBy('id', 'desc');
+        $checkouts = $checkoutsQuery->paginate(5);
 
         if (empty($checkouts->toArray())) return view('master.transactions.index');
 
