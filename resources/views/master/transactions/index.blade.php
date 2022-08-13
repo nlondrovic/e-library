@@ -126,8 +126,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
         <!-- Table -->
         <div class="w-full mt-[10px] ml-2 px-2">
-            {{-- TODO: Ove variable su uvijek settovane ali su prazni nizovi. Kako bismo ovo rijesili? --}}
-            @if(isset($reservations) || isset($checkouts))
+            @if((isset($reservations) && $reservations->count()) || (isset($checkouts) && $checkouts->count()))
                 @include('components.filter-transactions')
                 @yield('table')
             @else
