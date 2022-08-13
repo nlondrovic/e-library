@@ -1,5 +1,5 @@
-@extends('master.transactions.index')
-@section('transactions-title', 'Overdue books')
+@extends('transactions.index')
+@section('transactions-title', 'Checkins')
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
@@ -9,8 +9,9 @@
             <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Book</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkout librarian</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkin librarian</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Start date</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Holding for</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">End date</th>
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
@@ -33,8 +34,13 @@
                     <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
                         <span class="font-medium text-center">{{ $checkout->checkout_librarian->name }}</span>
                     </a>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">
+                    <a href="{{ route('librarians.show', $checkout->checkin_librarian) }}">
+                        <span class="font-medium text-center">{{ $checkout->checkin_librarian->name }}</span>
+                    </a>
+                </td>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->getHoldingTime() !!}</td>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->end_time) }}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                         <i
@@ -53,26 +59,6 @@
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">Show details</span>
                                 </a>
-                                <form action="{{ route('checkIn', $checkout) }}" method="post">
-                                    @csrf
-                                    @method('post')
-                                    <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                            role="menuitem">
-                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Check in</span>
-                                    </button>
-                                </form>
-                                <form action="{{ route('writeOff', $checkout) }}" method="post">
-                                    @csrf
-                                    @method('post')
-                                    <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                            role="menuitem">
-                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Write off</span>
-                                    </button>
-                                </form>
                             </div>
                         </div>
                     </div>

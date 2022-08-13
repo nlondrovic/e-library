@@ -11,12 +11,12 @@ class SizeController extends Controller
     public function index()
     {
         $sizes = Size::all();
-        return view('master.settings.sizes.index', compact('sizes'));
+        return view('settings.sizes.index', compact('sizes'));
     }
 
     public function create()
     {
-        return view('master.settings.sizes.create');
+        return view('settings.sizes.create');
     }
 
     public function store(StoreSizeRequest $request)
@@ -28,7 +28,7 @@ class SizeController extends Controller
 
     public function edit(Size $size)
     {
-        return view('master.settings.sizes.edit', compact('size'));
+        return view('settings.sizes.edit', compact('size'));
     }
 
     public function update(UpdateSizeRequest $request, Size $size)

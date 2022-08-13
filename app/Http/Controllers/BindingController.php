@@ -12,12 +12,12 @@ class BindingController extends Controller
     {
         $bindings = Binding::all();
 
-        return view('master.settings.bindings.index', compact('bindings'));
+        return view('settings.bindings.index', compact('bindings'));
     }
 
     public function create()
     {
-        return view('master.settings.bindings.create');
+        return view('settings.bindings.create');
     }
 
     public function store(StoreBindingRequest $request)
@@ -31,7 +31,7 @@ class BindingController extends Controller
 
     public function edit(Binding $binding)
     {
-        return view('master.settings.bindings.edit', compact('binding'));
+        return view('settings.bindings.edit', compact('binding'));
     }
 
     public function update(UpdateBindingRequest $request, Binding $binding)

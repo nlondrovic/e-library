@@ -1,4 +1,4 @@
-@extends('master.settings.index')
+@extends('settings.index')
 @section('main-settings')
 
     <div class="height-kategorije pb-[30px]">

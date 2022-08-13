@@ -42,7 +42,7 @@ class CheckoutController extends Controller
             $students = new Collection;
         }
 
-        return view('master.transactions.checkouts.index',
+        return view('transactions.checkouts.index',
             compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
@@ -65,12 +65,12 @@ class CheckoutController extends Controller
 
         $checkouts = $checkoutsQuery->get();
 
-        if (empty($checkouts->toArray())) return view('master.transactions.index');
+        if (empty($checkouts->toArray())) return view('transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
-        return view('master.transactions.checkouts.checkins',
+        return view('transactions.checkouts.checkins',
             compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
@@ -93,12 +93,12 @@ class CheckoutController extends Controller
 
         $checkouts = $checkoutsQuery->get();
 
-        if (empty($checkouts->toArray())) return view('master.transactions.index');
+        if (empty($checkouts->toArray())) return view('transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
-        return view('master.transactions.checkouts.overdue',
+        return view('transactions.checkouts.overdue',
             compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
@@ -121,25 +121,25 @@ class CheckoutController extends Controller
 
         $checkouts = $checkoutsQuery->get();
 
-        if (empty($checkouts->toArray())) return view('master.transactions.index');
+        if (empty($checkouts->toArray())) return view('transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
-        return view('master.transactions.checkouts.lost',
+        return view('transactions.checkouts.lost',
             compact('checkouts', 'student', 'book', 'students', 'books'));
     }
 
     public function show(Checkout $checkout)
     {
-        return view('master.transactions.checkouts.show', compact('checkout'));
+        return view('transactions.checkouts.show', compact('checkout'));
     }
 
     public function create(Request $request)
     {
         $book = Book::findOrFail($request['book']);
         $students = User::where('role_id', 3)->get();
-        return view('master.transactions.checkouts.create', compact('book', 'students'));
+        return view('transactions.checkouts.create', compact('book', 'students'));
     }
 
     public function store(StoreCheckoutRequest $request)

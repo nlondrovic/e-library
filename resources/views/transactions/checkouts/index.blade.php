@@ -1,5 +1,5 @@
-@extends('master.transactions.index')
-@section('transactions-title', 'Lost books')
+@extends('transactions.index')
+@section('transactions-title', 'Checkouts')
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
@@ -10,6 +10,7 @@
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkout librarian</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Start date</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Holding for</th>
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
@@ -33,10 +34,10 @@
                         <span class="font-medium text-center">{{ $checkout->checkout_librarian->name }}</span>
                     </a>
                 <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
+                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->getHoldingTime() !!}</td>
                 <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
-                        <i
-                            class="fas fa-ellipsis-v"></i>
+                        <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div
                         class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
@@ -51,6 +52,26 @@
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">Show details</span>
                                 </a>
+                                <form action="{{ route('checkIn', $checkout) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Check in</span>
+                                    </button>
+                                </form>
+                                <form action="{{ route('writeOff', $checkout) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Write off</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -59,5 +80,8 @@
         @endforeach
         </tbody>
     </table>
+    <span>
+        {{ $checkouts->links("pagination::bootstrap-4") }}
+    </span>
 
 @endsection

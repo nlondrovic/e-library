@@ -12,12 +12,12 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view('master.settings.categories.index', compact('categories'));
+        return view('settings.categories.index', compact('categories'));
     }
 
     public function create()
     {
-        return view('master.settings.categories.create');
+        return view('settings.categories.create');
     }
 
     public function store(StoreCategoryRequest $request)
@@ -31,7 +31,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        return view('master.settings.categories.edit', compact('category'));
+        return view('settings.categories.edit', compact('category'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)

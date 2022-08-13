@@ -12,12 +12,12 @@ class GenreController extends Controller
     {
         $genres = Genre::all();
 
-        return view('master.settings.genres.index', compact('genres'));
+        return view('settings.genres.index', compact('genres'));
     }
 
     public function create()
     {
-        return view('master.settings.genres.create');
+        return view('settings.genres.create');
     }
 
     public function store(StoreGenreRequest $request)
@@ -31,7 +31,7 @@ class GenreController extends Controller
 
     public function edit(Genre $genre)
     {
-        return view('master.settings.genres.edit', compact('genre'));
+        return view('settings.genres.edit', compact('genre'));
     }
 
     public function update(UpdateGenreRequest $request, Genre $genre)

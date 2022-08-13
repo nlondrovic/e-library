@@ -13,12 +13,12 @@ class UserController extends Controller
     public function index()
     {
         $students = User::all()->where('role_id', 3);
-        return view('master.students.index', compact('students'));
+        return view('students.index', compact('students'));
     }
 
     public function create()
     {
-        return view('master.students.create');
+        return view('students.create');
     }
 
     public function store(StoreUserRequest $request)
@@ -36,12 +36,12 @@ class UserController extends Controller
 
     public function show(User $student)
     {
-        return view('master.students.show', compact('student'));
+        return view('students.show', compact('student'));
     }
 
     public function edit(User $student)
     {
-        return view('master.students.edit', compact('student'));
+        return view('students.edit', compact('student'));
     }
 
     public function update(UpdateUserRequest $request, User $student)

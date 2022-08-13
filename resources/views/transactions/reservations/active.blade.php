@@ -1,5 +1,5 @@
-@extends('master.transactions.index')
-@section('transactions-title', 'Archived reservations')
+@extends('transactions.index')
+@section('transactions-title', 'Active reservations')
 @section('table')
 
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
@@ -8,8 +8,7 @@
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Book title</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End time</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End reason</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation due</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
         </tr>
         </thead>
@@ -28,10 +27,10 @@
                     </a>
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->start_time) }}</td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->end_time) }}</td>
-                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap ">{{ $reservation->end_reason->value }}</td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->supposed_end_time) }}</td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
-                    <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsArhiviraneRezervacije hover:text-[#606FC7]">
+                    <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300
+                        dotsArhiviraneRezervacije hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div
@@ -41,12 +40,26 @@
                             aria-labelledby="headlessui-menu-button-1"
                             id="headlessui-menu-items-117" role="menu">
                             <div class="py-1">
-                                <a href="{{ route('reservations.show', $reservation) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                   role="menuitem">
-                                    <i class="fa fa-edit mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Show details</span>
-                                </a>
+                                <form method="post" action="{{ route('reservations.checkOut', $reservation) }}">
+                                    @csrf
+                                    @method('patch')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Checkout</span>
+                                    </button>
+                                </form>
+                                <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
+                                    @csrf
+                                    @method('patch')
+                                    <button type="submit" tabindex="0"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            role="menuitem">
+                                        <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
+                                        <span class="px-4 py-0">Cancel reservation</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

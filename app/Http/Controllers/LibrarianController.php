@@ -13,12 +13,12 @@ class LibrarianController extends Controller
     public function index()
     {
         $librarians = User::where('role_id', 2)->get();
-        return view('master.librarians.index', compact('librarians'));
+        return view('librarians.index', compact('librarians'));
     }
 
     public function create()
     {
-        return view('master.librarians.create');
+        return view('librarians.create');
     }
 
     public function store(StoreUserRequest $request)
@@ -36,12 +36,12 @@ class LibrarianController extends Controller
 
     public function show(User $librarian)
     {
-        return view('master.librarians.show', compact('librarian'));
+        return view('librarians.show', compact('librarian'));
     }
 
     public function edit(User $librarian)
     {
-        return view('master.librarians.edit', compact('librarian'));
+        return view('librarians.edit', compact('librarian'));
     }
 
     public function update(UpdateUserRequest $request, User $librarian)

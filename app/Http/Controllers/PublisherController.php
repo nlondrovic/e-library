@@ -12,12 +12,12 @@ class PublisherController extends Controller
     {
         $publishers = Publisher::all();
 
-        return view('master.settings.publishers.index', compact('publishers'));
+        return view('settings.publishers.index', compact('publishers'));
     }
 
     public function create()
     {
-        return view('master.settings.publishers.create');
+        return view('settings.publishers.create');
     }
 
     public function store(StorePublisherRequest $request)
@@ -31,7 +31,7 @@ class PublisherController extends Controller
 
     public function edit(Publisher $publisher)
     {
-        return view('master.settings.publishers.edit', compact('publisher'));
+        return view('settings.publishers.edit', compact('publisher'));
     }
 
     public function update(UpdatePublisherRequest $request, Publisher $publisher)

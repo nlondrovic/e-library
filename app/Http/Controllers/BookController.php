@@ -18,7 +18,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
-        return view('master.books.index', compact('books'));
+        return view('books.index', compact('books'));
     }
 
     public function create()
@@ -31,7 +31,7 @@ class BookController extends Controller
         $sizes = Size::all();
         $bindings = Binding::all();
 
-        return view('master.books.create',
+        return view('books.create',
             compact('authors', 'categories', 'genres', 'publishers', 'scripts', 'sizes', 'bindings')
         );
     }
@@ -46,7 +46,7 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        return view('master.books.show', compact('book'));
+        return view('books.show', compact('book'));
     }
 
     public function edit(Book $book)
@@ -59,7 +59,7 @@ class BookController extends Controller
         $sizes = Size::all();
         $bindings = Binding::all();
 
-        return view('master.books.edit',
+        return view('books.edit',
             compact('book', 'authors', 'categories', 'genres', 'publishers', 'scripts', 'sizes', 'bindings')
         );
     }

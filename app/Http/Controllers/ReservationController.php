@@ -34,12 +34,12 @@ class ReservationController extends Controller
 
         $reservations = $reservationsQuery->get();
 
-        if (empty($reservations->toArray())) return view('master.transactions.index');
+        if (empty($reservations->toArray())) return view('transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
-        return view('master.transactions.reservations.active',
+        return view('transactions.reservations.active',
             compact('reservations', 'student', 'book', 'students', 'books'));
     }
 
@@ -61,12 +61,12 @@ class ReservationController extends Controller
 
         $reservations = $reservationsQuery->get();
 
-        if (empty($reservations->toArray())) return view('master.transactions.index');
+        if (empty($reservations->toArray())) return view('transactions.index');
 
         $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
         $students = User::where('role_id', 3)->get();
 
-        return view('master.transactions.reservations.archived',
+        return view('transactions.reservations.archived',
             compact('reservations', 'student', 'book', 'students', 'books'));
     }
 
@@ -76,7 +76,7 @@ class ReservationController extends Controller
         $min_date = Carbon::now()->addDay()->format('Y-m-d');
         $max_date = Carbon::now()->addMonth()->format('Y-m-d');
 
-        return view('master.transactions.reservations.create', compact('students', 'book', 'min_date', 'max_date'));
+        return view('transactions.reservations.create', compact('students', 'book', 'min_date', 'max_date'));
     }
 
     public function store(StoreReservationRequest $request)
@@ -147,7 +147,7 @@ class ReservationController extends Controller
     public function show(Reservation $reservation)
     {
         $book = Book::findOrFail($reservation['book_id']);
-        return view('master.transactions.reservations.show', compact(['reservation', 'book']));
+        return view('transactions.reservations.show', compact(['reservation', 'book']));
     }
 
 }

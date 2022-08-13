@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function policy()
     {
-        return view('master.settings.policy.index');
+        return view('settings.policy.index');
     }
 
     public function dashboard()
