@@ -29,13 +29,13 @@
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->title }}"/>
                                 @if($errors->first('title'))
-                                    <span class="text-red-600">{{ $errors->first('title') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('title') }}</p>
                                 @endif
                             </div>
                             {{-- Author --}}
                             <div class="mt-[20px]">
                                 <p>Author <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="author_id">
                                     @foreach ($authors as $author)
@@ -47,13 +47,13 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('author'))
-                                    <span class="text-red-600">{{ $errors->first('author') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('author') }}</p>
                                 @endif
                             </div>
                             {{-- Category --}}
                             <div class="mt-[20px]">
                                 <p>Category <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="category_id">
                                     @foreach ($categories as $category)
@@ -65,13 +65,13 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('category'))
-                                    <span class="text-red-600">{{ $errors->first('category') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('category') }}</p>
                                 @endif
                             </div>
                             {{-- Genre --}}
                             <div class="mt-[20px]">
                                 <p>Genre <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="genre_id">
                                     @foreach ($genres as $genre)
@@ -83,13 +83,13 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('genre'))
-                                    <span class="text-red-600">{{ $errors->first('genre') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('genre') }}</p>
                                 @endif
                             </div>
                             {{-- Publisher --}}
                             <div class="mt-[20px]">
                                 <p>Publisher <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="publisher_id">
                                     @foreach ($publishers as $publisher)
@@ -101,7 +101,7 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('genre'))
-                                    <span class="text-red-600">{{ $errors->first('genre') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('genre') }}</p>
                                 @endif
                             </div>
                             {{-- Publish date --}}
@@ -111,7 +111,7 @@
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->publish_date }}"/>
                                 @if($errors->first('publish_date'))
-                                    <span class="text-red-600">{{ $errors->first('publish_date') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('publish_date') }}</p>
                                 @endif
                             </div>
                         </div>
@@ -124,7 +124,7 @@
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->isbn }}"/>
                                 @if($errors->first('isbn'))
-                                    <span class="text-red-600">{{ $errors->first('isbn') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('isbn') }}</p>
                                 @endif
                             </div>
                             {{-- Number of pages --}}
@@ -134,13 +134,13 @@
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->page_count }}"/>
                                 @if($errors->first('page_count'))
-                                    <span class="text-red-600">{{ $errors->first('page_count') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('page_count') }}</p>
                                 @endif
                             </div>
                             {{-- Script --}}
                             <div class="mt-[20px]">
                                 <p>Choose a script <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="script_id">
                                     @foreach ($scripts as $script)
@@ -152,13 +152,13 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('script'))
-                                    <span class="text-red-600">{{ $errors->first('script') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('script') }}</p>
                                 @endif
                             </div>
                             {{-- Binding --}}
                             <div class="mt-[20px]">
                                 <p>Binding <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="binding_id">
                                     @foreach ($bindings as $binding)
@@ -170,13 +170,13 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('genre'))
-                                    <span class="text-red-600">{{ $errors->first('genre') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('genre') }}</p>
                                 @endif
                             </div>
                             {{-- Size --}}
                             <div class="mt-[20px]">
                                 <p>Size <span class="text-red-500">*</span></p>
-                                <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="size_id">
                                     @foreach ($sizes as $size)
@@ -188,7 +188,7 @@
                                     @endforeach
                                 </select>
                                 @if($errors->first('size'))
-                                    <span class="text-red-600">{{ $errors->first('size') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('size') }}</p>
                                 @endif
                             </div>
                             {{-- Content --}}
@@ -198,7 +198,7 @@
                                 border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
                                 focus:ring-[#576cdf]" rows="8">{{ $book->content }}</textarea>
                                 @if($errors->first('content'))
-                                    <span class="text-red-600">{{ $errors->first('content') }}</span>
+                                    <p class="text-red-600">{{ $errors->first('content') }}</p>
                                 @endif
                             </div>
                         </div>
@@ -210,7 +210,8 @@
                         {{-- Buttons --}}
                         <div class="absolute bottom-0 w-full">
                             <div class="flex flex-row">
-                                <div class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px] mr-[100px]">
+                                <div
+                                    class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px] mr-[100px]">
                                     <button type="button" class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none
                                     text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
                                         Cancel <i class="fas fa-times ml-[4px]"></i>
