@@ -16,7 +16,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'icon' => 'sometimes'
+            'icon' => 'required'
         ];
     }
 }

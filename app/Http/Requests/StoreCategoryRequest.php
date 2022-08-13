@@ -17,7 +17,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'icon' => 'sometimes'
+            'icon' => 'required'
         ];
     }
 }
