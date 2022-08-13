@@ -60,5 +60,7 @@
                     @endforeach
                 </tbody>
             </table>
-
+            <span>
+                {{ $bindings->links("pagination::tailwind") }}
+            </span>
 @endsection

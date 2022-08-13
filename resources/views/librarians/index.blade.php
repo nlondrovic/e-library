@@ -86,11 +86,11 @@
                         </td>
                     </tr>
                 @endforeach
-
                 </tbody>
             </table>
-
+            <span>
+                {{ $librarians->links("pagination::tailwind") }}
+            </span>
         </div>
     </div>
-
 @endsection

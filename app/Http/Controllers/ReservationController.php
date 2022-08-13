@@ -32,7 +32,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->get();
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);;
 
         if (empty($reservations->toArray())) return view('transactions.index');
 
@@ -59,7 +59,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->get();
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($reservations->toArray())) return view('transactions.index');
 

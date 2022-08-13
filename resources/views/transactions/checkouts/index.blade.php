@@ -81,7 +81,6 @@
         </tbody>
     </table>
     <span>
-        {{ $checkouts->links("pagination::bootstrap-4") }}
+        {{ $checkouts->links("pagination::tailwind") }}
     </span>
-
 @endsection

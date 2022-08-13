@@ -10,7 +10,7 @@ class BindingController extends Controller
 {
     public function index()
     {
-        $bindings = Binding::all();
+        $bindings = Binding::orderBy('id', 'desc')->paginate(5);
 
         return view('settings.bindings.index', compact('bindings'));
     }

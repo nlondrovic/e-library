@@ -95,10 +95,11 @@
                         </td>
                     </tr>
                 @endforeach
-
                 </tbody>
             </table>
-
+            <span>
+                {{ $students->links("pagination::tailwind") }}
+            </span>
         </div>
     </div>
 

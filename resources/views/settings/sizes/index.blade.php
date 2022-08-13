@@ -60,10 +60,11 @@
                         </td>
                     </tr>
                 @endforeach
-
                 </tbody>
             </table>
+            <span>
+                {{ $sizes->links("pagination::tailwind") }}
+            </span>
         </div>
     </div>
-
 @endsection

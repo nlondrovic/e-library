@@ -81,5 +81,7 @@
         @endforeach
         </tbody>
     </table>
-
+    <span>
+        {{ $checkouts->links("pagination::tailwind") }}
+    </span>
 @endsection
