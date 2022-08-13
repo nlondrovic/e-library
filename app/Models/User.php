@@ -13,6 +13,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const DEFAULT_USER_PICTURE_PATH = '/assets/img/user.jpg';
     protected $guarded = [];
 
     protected $hidden = [
