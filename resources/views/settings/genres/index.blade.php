@@ -23,7 +23,6 @@
                 @foreach($genres as $genre)
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                         <td class="flex flex-row items-center px-4 py-4">
-                            <i class="fas fa-utensils fa-lg text-[#707070]"></i>
                             <p class="ml-4 text-center">{{ $genre->name }}</p>
                         </td>
                         <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">

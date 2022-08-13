@@ -27,22 +27,6 @@
                                 <span class="text-red-600">{{ $errors->first('name') }}</span>
                             @endif
                         </div>
-                        <div class="mt-[20px]">
-                            <p>Upload an icon </p>
-                            <div id="empty-cover-art-ikonica"
-                                 class="flex w-[90%] mt-2 text-base bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]">
-                                <div class="bg-gray-300 h-[40px] w-[102px] px-[20px] pt-[10px]">
-                                    <label class="cursor-pointer">
-                                        <p class="leading-normal">Browse...</p>
-                                        <input id="icon-upload" type='file' class="hidden"/>
-                                    </label>
-                                </div>
-                                <div id="icon-output" class="h-[40px] px-[20px] pt-[7px]"></div>
-                            </div>
-                        </div>
-                        @if($errors->first('icon'))
-                            <span class="text-red-600">{{ $errors->first('icon') }}</span>
-                        @endif
                     </div>
                 </div>
 
