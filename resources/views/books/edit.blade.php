@@ -24,7 +24,7 @@
                         <div class="row-1">
                             {{-- Title --}}
                             <div class="mt-[20px]">
-                                <p>Book title<span class="text-red-500">*</span></p>
+                                <p>Title <span class="text-red-500">*</span></p>
                                 <input required type="text" name="title" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->title }}"/>
@@ -34,7 +34,7 @@
                             </div>
                             {{-- Author --}}
                             <div class="mt-[20px]">
-                                <p>Choose an author <span class="text-red-500">*</span></p>
+                                <p>Author <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="author_id">
@@ -52,7 +52,7 @@
                             </div>
                             {{-- Category --}}
                             <div class="mt-[20px]">
-                                <p>Choose a category <span class="text-red-500">*</span></p>
+                                <p>Category <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="category_id">
@@ -70,7 +70,7 @@
                             </div>
                             {{-- Genre --}}
                             <div class="mt-[20px]">
-                                <p>Choose a genre <span class="text-red-500">*</span></p>
+                                <p>Genre <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="genre_id">
@@ -88,7 +88,7 @@
                             </div>
                             {{-- Publisher --}}
                             <div class="mt-[20px]">
-                                <p>Choose a publisher <span class="text-red-500">*</span></p>
+                                <p>Publisher <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="publisher_id">
@@ -106,7 +106,7 @@
                             </div>
                             {{-- Publish date --}}
                             <div class="mt-[20px]">
-                                <p>Date of publishing<span class="text-red-500">*</span></p>
+                                <p>Date of publishing <span class="text-red-500">*</span></p>
                                 <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->publish_date }}"/>
@@ -119,7 +119,7 @@
                         <div class="row-2">
                             {{-- ISBN --}}
                             <div class="mt-[20px]">
-                                <p>Book ISBN<span class="text-red-500">*</span></p>
+                                <p>ISBN <span class="text-red-500">*</span></p>
                                 <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->isbn }}"/>
@@ -157,7 +157,7 @@
                             </div>
                             {{-- Binding --}}
                             <div class="mt-[20px]">
-                                <p>Choose a binding <span class="text-red-500">*</span></p>
+                                <p>Binding <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="binding_id">
@@ -175,7 +175,7 @@
                             </div>
                             {{-- Size --}}
                             <div class="mt-[20px]">
-                                <p>Choose a size <span class="text-red-500">*</span></p>
+                                <p>Size <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="size_id">
@@ -193,7 +193,7 @@
                             </div>
                             {{-- Content --}}
                             <div class="mt-[20px]">
-                                <p>Content<span class="text-red-500">*</span></p>
+                                <p>Content <span class="text-red-500">*</span></p>
                                 <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
                                 border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
                                 focus:ring-[#576cdf]" rows="8">{{ $book->content }}</textarea>

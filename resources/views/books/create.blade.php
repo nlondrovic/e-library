@@ -22,20 +22,22 @@
                         <div class="row-1">
                             {{-- Title --}}
                             <div class="mt-[20px]">
-                                <p>Book title<span class="text-red-500">*</span></p>
+                                <p>Title <span class="text-red-500">*</span></p>
                                 <input required type="text" name="title" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('title') }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('title') }}"
+                                       placeholder="Enter a title of the book"/>
                                 @if($errors->first('title'))
                                     <span class="text-red-600">{{ $errors->first('title') }}</span>
                                 @endif
                             </div>
                             {{-- Author --}}
                             <div class="mt-[20px]">
-                                <p>Choose an author <span class="text-red-500">*</span></p>
+                                <p>Author <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="author_id">
+                                    <option value="0">Choose an author</option>
                                     @foreach ($authors as $author)
                                         <option
                                             @if($author->id == old('author_id')) selected @endif
@@ -50,10 +52,11 @@
                             </div>
                             {{-- Category --}}
                             <div class="mt-[20px]">
-                                <p>Choose a category <span class="text-red-500">*</span></p>
+                                <p>Category <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="category_id">
+                                    <option value="0">Choose a category</option>
                                     @foreach ($categories as $category)
                                         <option
                                             @if($category->id == old('category_id')) selected @endif
@@ -68,10 +71,11 @@
                             </div>
                             {{-- Genre --}}
                             <div class="mt-[20px]">
-                                <p>Choose a genre <span class="text-red-500">*</span></p>
+                                <p>Genre <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="genre_id">
+                                    <option value="0">Choose a genre</option>
                                     @foreach ($genres as $genre)
                                         <option
                                             @if($genre->id == old('genre_id')) selected @endif
@@ -86,10 +90,11 @@
                             </div>
                             {{-- Publisher --}}
                             <div class="mt-[20px]">
-                                <p>Choose a publisher <span class="text-red-500">*</span></p>
+                                <p>Publisher <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="publisher_id">
+                                    <option value="0">Choose a publisher</option>
                                     @foreach ($publishers as $publisher)
                                         <option
                                             @if($publisher->id == old('publisher_id')) selected @endif
@@ -104,7 +109,7 @@
                             </div>
                             {{-- Publish date --}}
                             <div class="mt-[20px]">
-                                <p>Date of publishing<span class="text-red-500">*</span></p>
+                                <p>Date of publishing <span class="text-red-500">*</span></p>
                                 <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ old('publish_date') }}"/>
@@ -117,10 +122,11 @@
                         <div class="row-2">
                             {{-- ISBN --}}
                             <div class="mt-[20px]">
-                                <p>Book ISBN<span class="text-red-500">*</span></p>
+                                <p>ISBN <span class="text-red-500">*</span></p>
                                 <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('isbn') }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('isbn') }}"
+                                       placeholder="Enter a 13-digit ISBN"/>
                                 @if($errors->first('isbn'))
                                     <span class="text-red-600">{{ $errors->first('isbn') }}</span>
                                 @endif
@@ -130,17 +136,19 @@
                                 <p>Number of pages <span class="text-red-500">*</span></p>
                                 <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('page_count') }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('page_count') }}"
+                                    placeholder="Enter a number of pages"/>
                                 @if($errors->first('page_count'))
                                     <span class="text-red-600">{{ $errors->first('page_count') }}</span>
                                 @endif
                             </div>
                             {{-- Script --}}
                             <div class="mt-[20px]">
-                                <p>Choose a script <span class="text-red-500">*</span></p>
+                                <p>Script <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="script_id">
+                                    <option value="0">Choose a script</option>
                                     @foreach ($scripts as $script)
                                         <option
                                             @if($script->id == old('script_id')) selected @endif
@@ -155,10 +163,11 @@
                             </div>
                             {{-- Binding --}}
                             <div class="mt-[20px]">
-                                <p>Choose a binding <span class="text-red-500">*</span></p>
+                                <p>Binding <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="binding_id">
+                                    <option value="0">Choose a binding</option>
                                     @foreach ($bindings as $binding)
                                         <option
                                             @if($binding == old('binding_id')) selected @endif
@@ -173,10 +182,11 @@
                             </div>
                             {{-- Size --}}
                             <div class="mt-[20px]">
-                                <p>Choose a size <span class="text-red-500">*</span></p>
+                                <p>Size <span class="text-red-500">*</span></p>
                                 <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                         shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                                         name="size_id">
+                                    <option value="0">Choose a size</option>
                                     @foreach ($sizes as $size)
                                         <option
                                             @if($size->id == old('size_id')) selected @endif
@@ -191,10 +201,10 @@
                             </div>
                             {{-- Content --}}
                             <div class="mt-[20px]">
-                                <p>Content<span class="text-red-500">*</span></p>
+                                <p>Content <span class="text-red-500">*</span></p>
                                 <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
                                 border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
-                                focus:ring-[#576cdf]" rows="8">{{ old('content') }}</textarea>
+                                focus:ring-[#576cdf]" rows="8" placeholder="Enter a short description about the book (min. 20 characters)">{{ old('content') }}</textarea>
                                 @if($errors->first('content'))
                                     <span class="text-red-600">{{ $errors->first('content') }}</span>
                                 @endif
@@ -207,7 +217,8 @@
                                 <p>Total number of books <span class="text-red-500">*</span></p>
                                 <input required type="number" name="total_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('total_count') }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('total_count') }}"
+                                       placeholder="Enter a number of book copies"/>
                                 @if($errors->first('total_count'))
                                     <span class="text-red-600">{{ $errors->first('total_count') }}</span>
                                 @endif

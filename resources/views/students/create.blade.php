@@ -17,13 +17,12 @@
             @method('post')
             <div class="flex flex-row ml-[50px]">
                 <div class="w-[50%] mb-[100px]">
-
                     <div class="mt-[20px]">
-                        <span>Name<span class="text-red-500">*</span></span>
+                        <span>Name <span class="text-red-500">*</span></span>
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('name') }}"/>
+                               placeholder="Enter a name" value="{{ old('name') }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -33,38 +32,37 @@
                         <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('jmbg') }}"/>
+                               placeholder="Enter a JMBG" value="{{ old('jmbg') }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
                     </div>
-
                     <div class="mt-[20px]">
                         <span>E-mail <span class="text-red-500">*</span></span>
                         <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('email') }}"/>
+                               placeholder="Enter an e-mail" value="{{ old('email') }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif
                     </div>
-
                     <div class="mt-[20px]">
                         <span>Password <span class="text-red-500">*</span></span>
                         <input type="password" name="password" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
+                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
+                               placeholder="Enter a strong password"/>
                         @if($errors->first('password'))
                             <span class="text-red-600">{{ $errors->first('password') }}</span>
                         @endif
                     </div>
-
                     <div class="mt-[20px]">
-                        <span>Repeat password <span class="text-red-500">*</span></span>
+                        <span>Confirm password <span class="text-red-500">*</span></span>
                         <input type="password" name="confirm_password" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
+                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
+                               placeholder="Confirm password"/>
                         @if($errors->first('confirm_password'))
                             <span class="text-red-600">{{ $errors->first('confirm_password') }}</span>
                         @endif

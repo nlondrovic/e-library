@@ -18,13 +18,12 @@
             @method('put')
             <div class="flex flex-row ml-[50px]">
                 <div class="w-[50%] mb-[100px]">
-
                     <div class="mt-[20px]">
-                        <span>Name<span class="text-red-500">*</span></span>
+                        <span>Name <span class="text-red-500">*</span></span>
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ $student->name }}"/>
+                               placeholder="Enter a name" value="{{ $student->name }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -34,18 +33,17 @@
                         <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ $student->jmbg }}"/>
+                               placeholder="Enter a JMBG" value="{{ $student->jmbg }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
                     </div>
-
                     <div class="mt-[20px]">
                         <span>E-mail <span class="text-red-500">*</span></span>
                         <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ $student->email }}"/>
+                               placeholder="Enter an e-mail" value="{{ $student->email }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif

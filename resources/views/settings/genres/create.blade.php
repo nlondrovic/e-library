@@ -15,14 +15,14 @@
         <form class="text-gray-700 forma" method="post" action="{{ route('genres.store') }}">
             @csrf
             @method('post')
-            <form class="text-gray-700 forma">
                 <div class="flex flex-row ml-[30px]">
                     <div class="w-[50%] mb-[100px]">
                         <div class="mt-[20px]">
-                            <p>Genre name <span class="text-red-500">*</span></p>
+                            <p>Genre <span class="text-red-500">*</span></p>
                             <input type="text" name="name" required
                                    class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300
-                                   shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
+                                   shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
+                                   placeholder="Enter a genre name"/>
                             @if($errors->first('name'))
                                 <span class="text-red-600">{{ $errors->first('name') }}</span>
                             @endif
@@ -60,7 +60,6 @@
                         </div>
                     </div>
                 </div>
-            </form>
         </form>
 
 @endsection

@@ -18,10 +18,11 @@
             <div class="flex flex-row ml-[30px]">
                 <div class="w-[50%] mb-[150px]">
                     <div class="mt-[20px]">
-                        <p>Size name <span class="text-red-500">*</span></p>
+                        <p>Size <span class="text-red-500">*</span></p>
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
-                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
+                               appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
+                        placeholder="Enter a size name"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif

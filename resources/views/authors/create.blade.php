@@ -19,13 +19,12 @@
             @method('post')
             <div class="flex flex-row ml-[30px]">
                 <div class="w-[50%] mb-[150px]">
-
                     <div class="mt-[20px]">
-                        <span>Name<span class="text-red-500">*</span></span>
+                        <span>Name <span class="text-red-500">*</span></span>
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               value="{{ old('name') }}"/>
+                               placeholder="Enter a name" value="{{ old('name') }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -34,7 +33,8 @@
                     <div class="mt-[20px]">
                         <p class="inline-block mb-2">About</p>
                         <textarea name="about" rows="8" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300
-                        shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]">{{ old('about') }}</textarea>
+                        shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
+                        placeholder="Enter a short biography">{{ old('about') }}</textarea>
                         @if($errors->first('about'))
                             <span class="text-red-600">{{ $errors->first('about') }}</span>
                         @endif
