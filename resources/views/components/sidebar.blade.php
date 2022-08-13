@@ -16,7 +16,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     <div class="ml-[25px]">
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
                             <div class="transition duration-300 ease-in group-hover:text-blue-600">
-                                <a href="{{route('dashboard')}}" aria-label="Dashboard">
+                                <a href="{{ route('dashboard') }}" aria-label="Dashboard">
                                     <i class="px-[5px] pt-[4px] pb-[5px] fas fa-tachometer-alt text-[19px] rounded-[3px] text-[#707070]
                                         transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'dashboard')) text-[#576cdf] @endif"></i>
@@ -64,7 +64,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
-                                <a href="{{route('books.index')}}" aria-label="Books">
+                                <a href="{{ route('books.index') }}" aria-label="Books">
                                     <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] far fa-copy
                                          @if(str_contains($route_name, 'books')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
@@ -80,7 +80,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
-                                <a href="{{route('authors.index')}}" aria-label="Authors">
+                                <a href="{{ route('authors.index') }}" aria-label="Authors">
                                     <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] far fa-address-book
                                          @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
@@ -96,12 +96,12 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
-                                <a href="#" aria-label="RentingBooks">
+                                <a href="{{ route('checkouts.index') }}" aria-label="RentingBooks">
                                     <i class="text-[22px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-exchange-alt
-                                         @if(str_contains($route_name, 'renting')) text-[#576cdf] @endif"></i>
+                                         @if(str_contains($route_name, 'transactions')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Renting Books
+                                            Transactions
                                         </p>
                                     </div>
                                 </a>

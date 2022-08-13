@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -37,5 +38,19 @@ class Book extends Model
 
     public function genre(){
         return $this->belongsTo(Genre::class);
+    }
+
+    public function getOverdueCountAttribute()
+    {
+        $overdue_count = count(Checkout:: where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
+            ->where('end_time', null)
+            ->get());
+
+        return $overdue_count;
+    }
+
+    public function getAvailableCountAttribute()
+    {
+        return $this->total_count - ($this->checkouts_count + $this->reserved_count);
     }
 }

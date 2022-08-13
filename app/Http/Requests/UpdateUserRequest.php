@@ -16,11 +16,20 @@ class UpdateUserRequest extends FormRequest
 
     public function rules()
     {
+        $emailRule = 'required|unique:users';
+
+        if ($this->student) {
+            $emailRule .= ",email,{$this->student->id}";
+        }
+
+        if ($this->librarian) {
+            $emailRule .= ",email,{$this->librarian->id}";
+        }
+
         return [
             'name' => 'required|string',
             'jmbg' => 'required|regex:/[0-9]+/|digits:13',
-            'email' => 'sometimes|email',
-//            TODO: Ako u formi unesemo korisnikov trenutni mejl, baci error email must be unique, a ako ne stavimo unique pravilo, baci gresku kad drugom korisniku dodijelimo postojeci mejl
+            'email' => $emailRule,
             'picture' => 'sometimes'
         ];
     }

@@ -11,12 +11,12 @@ class ScriptController extends Controller
     public function index()
     {
         $scripts = Script::all();
-        return view('master.settings.scripts.index', compact('scripts'));
+        return view('settings.scripts.index', compact('scripts'));
     }
 
     public function create()
     {
-        return view('master.settings.scripts.create');
+        return view('settings.scripts.create');
     }
 
     public function store(StoreScriptRequest $request)
@@ -28,7 +28,7 @@ class ScriptController extends Controller
 
     public function edit(Script $script)
     {
-        return view('master.settings.scripts.edit', compact('script'));
+        return view('settings.scripts.edit', compact('script'));
     }
 
     public function update(UpdateScriptRequest $request, Script $script)
