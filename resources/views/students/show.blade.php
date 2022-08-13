@@ -70,7 +70,7 @@
                     </div>
                     <div class="mt-[40px]">
                         <span class="text-gray-500">Email</span>
-                        <a href="#" class="block font-medium text-[#2196f3]">{{ $student->email }}</a>
+                        <p class="font-medium">{{ $student->email }}</p>
                     </div>
 
                 </div>

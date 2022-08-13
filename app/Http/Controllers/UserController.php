@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -23,14 +24,23 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request)
     {
-        User::query()->create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'JMBG' => $request->jmbg,
-            'role_id' => 3,
-            'picture' => '/assets/img/user.jpg'
-        ]);
+        $inputs = $request->validated();
+        $inputs['role_id'] = 3;
+        $inputs['password'] = Hash::make($request->password);
+        unset($inputs['confirm_password']);
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/users/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/users/'), $filename);
+        }
+        else
+            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+
+        User::create($inputs);
+
         return redirect()->route('students.index');
     }
 
@@ -47,6 +57,17 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $student)
     {
         $inputs = $request->validated();
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/users/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/users/'), $filename);
+        }
+        else
+            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+
         $student->update($inputs);
 
         return redirect()->route("students.show", compact('student'));
