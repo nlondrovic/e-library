@@ -65,7 +65,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('books.index') }}" aria-label="Books">
-                                    <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] far fa-copy
+                                    <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-book
                                          @if(str_contains($route_name, 'books')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
