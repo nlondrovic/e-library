@@ -181,7 +181,7 @@
                                         name="size_id">
                                     @foreach ($sizes as $size)
                                         <option
-                                            @if($size == $book->size) selected @endif
+                                                @if($size == $book->size) selected @endif
                                         value="{{ $size->id }}">
                                             {{ $size->name }}
                                         </option>
@@ -202,9 +202,11 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="row-3">
-                            Image goes here
+                        <div class="mt-[20px]">
+                            <p>Add photo</p>
+                            <input type="file" name="picture" accept="image/*"
+                                   onchange="loadFileStudent(event)"/>
+                            <img id="image-output-student" width="360" class="mt-[20px]" src="{{ $book->picture }}" alt="Book image"/>
                         </div>
 
                         {{-- Buttons --}}

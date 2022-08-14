@@ -224,8 +224,11 @@
                                     <p class="text-red-600">{{ $errors->first('total_count') }}</p>
                                 @endif
                             </div>
-                            <div class="mt-[20px]">
-                                image goes here
+                            <div class="mt-[50px]">
+                                <p class="py-2 mt-2 leading-normal">Add photo</p>
+                                <input type="file" name="picture" accept="image/*"
+                                       onchange="loadFileStudent(event)"/>
+                                <img id="image-output-student" width="360" class="mt-[20px]"/>
                             </div>
                         </div>
 

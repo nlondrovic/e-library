@@ -12,6 +12,7 @@ use App\Models\Genre;
 use App\Models\Publisher;
 use App\Models\Script;
 use App\Models\Size;
+use Illuminate\Support\Str;
 
 class BookController extends Controller
 {
@@ -39,6 +40,17 @@ class BookController extends Controller
     public function store(StoreBookRequest $request)
     {
         $inputs = $request->validated();
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/books/'), $filename);
+        }
+        else
+            $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
+
         Book::create($inputs);
 
         return redirect()->route('books.index');
@@ -67,6 +79,17 @@ class BookController extends Controller
     public function update(UpdateBookRequest $request, Book $book)
     {
         $inputs = $request->validated();
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/books/'), $filename);
+        }
+        else
+            $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
+
         $book->update($inputs);
 
         return redirect()->route('books.show', compact('book'));

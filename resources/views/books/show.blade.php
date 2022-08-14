@@ -118,8 +118,7 @@
                             <span class="text-gray-500 text-[14px]">Content</span>
                             <p class="font-medium">{{ $book->content }}</p>
                         </div>
-                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="300px" src="{{ $book->picture }}"
-                             alt="">
+                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px" src="{{ $book->picture }}" alt="">
                     </div>
 
                 </div>

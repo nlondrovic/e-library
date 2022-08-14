@@ -10,6 +10,7 @@ class Book extends Model
 {
     use HasFactory;
 
+    const DEFAULT_BOOK_PICTURE_PATH = '/assets/img/book.jpg';
     protected $guarded = [''];
 
     public function author(){
