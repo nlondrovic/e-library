@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
                 'role_id' => 1,
-                'jmbg' => 1111111111111,
+                'jmbg' => '1111111111111',
                 'picture' => '/assets/img/user.jpg'
             ],
             [
@@ -28,8 +28,8 @@ class UserSeeder extends Seeder
                 'email' => 'nikolalondrovic41@gmail.com',
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
-                'role_id' => 1,
-                'jmbg' => 1111111111111,
+                'role_id' => 2,
+                'jmbg' => '1111111111111',
                 'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033HJXL8HM-5bb1c906a7f6-512'
             ],
             [
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 'email' => 'nikola1kapor@gmail.com',
                 'email_verified_at' => Carbon::now(),
                 'password' => Hash::make('password'),
-                'role_id' => 1,
+                'role_id' => 2,
                 'jmbg' => '1111111111111',
                 'picture' => 'https://ca.slack-edge.com/T01ALTYJSTE-U033Y7P17LK-22e4569d0941-512'
             ],
@@ -61,6 +61,6 @@ class UserSeeder extends Seeder
             ]
         ]);
 
-        User::factory(10)->create();
+        User::factory(15)->create();
     }
 }
