@@ -43,8 +43,8 @@
                             </a>
                         </td>
                         <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->email }}</td>
-                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getCheckedOutCount() }}</td>
-                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getOverdueCount() }}</td>
+                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getCheckedOutCount()>0 ?? $student->getCheckedOutCount() || "" }}</td>
+                        <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->getOverdueCount()>0 ?? $student->getOverdueCount() || "" }}</td>
                         <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsStudent
                             hover:text-[#606FC7]">
