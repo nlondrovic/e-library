@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="mt-[40px] mb-[20px]">
                                     <span class="text-gray-500 text-[14px]">Checkin librarian</span>
-                                    <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
+                                    <a href="{{ route('librarians.show', $checkout->checkin_librarian) }}">
                                         <p class="font-medium text-[#2196f3]">{{ $checkout->checkin_librarian->name }}</p>
                                     </a>
                                 </div>
