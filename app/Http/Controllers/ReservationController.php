@@ -9,6 +9,7 @@ use App\Models\Reservation;
 use App\Http\Requests\StoreReservationRequest;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use \Illuminate\Http\Request;
 use function PHPUnit\Framework\isEmpty;
 
@@ -32,12 +33,17 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->get();
+        $reservationsQuery->orderBy('id', 'desc');
+        $reservations = $reservationsQuery->paginate(5);
 
-        if (empty($reservations->toArray())) return view('transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
+        if ($reservations->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('transactions.reservations.active',
             compact('reservations', 'student', 'book', 'students', 'books'));
@@ -59,12 +65,17 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->get();
+        $reservationsQuery->orderBy('id', 'desc');
+        $reservations = $reservationsQuery->paginate(5);
 
-        if (empty($reservations->toArray())) return view('transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
+        if ($reservations->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('transactions.reservations.archived',
             compact('reservations', 'student', 'book', 'students', 'books'));

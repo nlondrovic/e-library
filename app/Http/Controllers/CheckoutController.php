@@ -9,7 +9,6 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use function PHPUnit\Framework\empty;
 
 class CheckoutController extends Controller
 {
@@ -34,6 +33,7 @@ class CheckoutController extends Controller
         $checkoutsQuery->orderBy('id', 'desc');
         $checkouts = $checkoutsQuery->paginate(5);
 
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {
             $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
             $students = User::where('role_id', 3)->get();
@@ -63,12 +63,17 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->get();
+        $checkoutsQuery->orderBy('id', 'desc');
+        $checkouts = $checkoutsQuery->paginate(5);
 
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
+        if ($checkouts->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('transactions.checkouts.checkins',
             compact('checkouts', 'student', 'book', 'students', 'books'));
@@ -91,12 +96,17 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->get();
+        $checkoutsQuery->orderBy('id', 'desc');
+        $checkouts = $checkoutsQuery->paginate(5);
 
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
+        if ($checkouts->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('transactions.checkouts.overdue',
             compact('checkouts', 'student', 'book', 'students', 'books'));
@@ -119,12 +129,17 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->get();
+        $checkoutsQuery->orderBy('id', 'desc');
+        $checkouts = $checkoutsQuery->paginate(5);
 
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-        $students = User::where('role_id', 3)->get();
+        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
+        if ($checkouts->count()) {
+            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $students = User::where('role_id', 3)->get();
+        } else {
+            $books = new Collection;
+            $students = new Collection;
+        }
 
         return view('transactions.checkouts.lost',
             compact('checkouts', 'student', 'book', 'students', 'books'));
