@@ -25,8 +25,9 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-01",
                 'total_count' => 10,
                 'category_id' => 10,
-                'genre_id' => 1
-
+                'genre_id' => 1,
+                'checkouts_count' => 1,
+                'reserved_count' => 1
             ],
             [
                 'title' => 'Harry Potter and the Chamber of Secrets',
@@ -42,7 +43,9 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-11",
                 'total_count' => 10,
                 'category_id' => 10,
-                'genre_id' => 1
+                'genre_id' => 1,
+                'checkouts_count' => 1,
+                'reserved_count' => 1
             ],
             [
                 'title' => 'Harry Potter and the Prisoner of Azkaban',
@@ -58,7 +61,9 @@ class BookSeeder extends Seeder
                 'publish_date' => "2014-09-27",
                 'total_count' => 10,
                 'category_id' => 10,
-                'genre_id' => 1
+                'genre_id' => 1,
+                'checkouts_count' => 1,
+                'reserved_count' => 1
             ],
             [
                 'title' => 'The Bridge on the Drina',
@@ -74,7 +79,9 @@ class BookSeeder extends Seeder
                 'publish_date' => "1983-02-07",
                 'total_count' => 10,
                 'category_id' => 8,
-                'genre_id' => 24
+                'genre_id' => 24,
+                'checkouts_count' => 2,
+                'reserved_count' => 1
             ],
             [
                 'title' => 'The Mountain Wreath',
@@ -90,7 +97,9 @@ class BookSeeder extends Seeder
                 'publish_date' => "1964-10-09",
                 'total_count' => 10,
                 'category_id' => 8,
-                'genre_id' => 24
+                'genre_id' => 24,
+                'checkouts_count' => 1,
+                'reserved_count' => 0
             ]
         ]);
     }

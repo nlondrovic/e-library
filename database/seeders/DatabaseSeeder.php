@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Publisher;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -10,6 +11,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            AuthorSeeder::class,
             BindingSeeder::class,
             CategorySeeder::class,
             GenreSeeder::class,
@@ -18,12 +20,12 @@ class DatabaseSeeder extends Seeder
             SizeSeeder::class,
             ReservationEndReasonSeeder::class,
             CheckoutEndReasonSeeder::class,
-
-            AuthorSeeder::class,
             RoleSeeder::class,
-            BookSeeder::class,
-            UserSeeder::class
 
+            BookSeeder::class,
+            UserSeeder::class,
+            CheckoutSeeder::class,
+            ReservationSeeder::class
         ]);
     }
 }
