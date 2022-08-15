@@ -22,8 +22,8 @@
         </div>
 
         {{-- Librarians table --}}
-        <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
-
+        <div class="px-[50px] pt-2 bg-white">
+            <div class="w-full mt-2">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
@@ -88,9 +88,9 @@
                 @endforeach
                 </tbody>
             </table>
-            <span>
-                {{ $librarians->links("pagination::tailwind") }}
-            </span>
+                <span>
+                    {{ $librarians->links("pagination::tailwind") }}
+                </span>
         </div>
     </div>
 @endsection
