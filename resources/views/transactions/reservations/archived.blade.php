@@ -8,7 +8,7 @@
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Book title</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End time</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End date</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End reason</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
         </tr>

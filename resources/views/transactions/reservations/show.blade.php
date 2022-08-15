@@ -39,7 +39,7 @@
                             </a>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Time of reservation</span>
+                            <span class="text-gray-500 text-[14px]">Date of reservation</span>
                             <p class="font-medium">{{ format_date($reservation->start_time) }}</p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="ml-[50px]">
                         @if($reservation->end_time)
                             <div class="mt-[40px]">
-                                <span class="text-gray-500 text-[14px]">Reservation end time</span>
+                                <span class="text-gray-500 text-[14px]">Reservation end date</span>
                                 <p class="font-medium">{{ format_date($reservation->end_time) }}</p>
                             </div>
                             <div class="mt-[40px] mb-[20px]">
