@@ -60,4 +60,27 @@ class User extends Authenticatable
             ->get());
     }
 
+    public function canCheckoutBook($book_id)
+    {
+        return $this
+            ->hasMany(Checkout::class, 'student_id')
+            ->where('end_time', null)
+            ->where('book_id', $book_id)
+            ->get();
+    }
+
+    public function canReserveBook($book_id)
+    {
+        return $this
+            ->hasMany(Reservation::class, 'student_id')
+            ->where('end_time', null)
+            ->where('book_id', $book_id)
+            ->get();
+    }
+
+    public function checkouts()
+    {
+        return $this->hasMany(Checkout::class, 'student_id')->where('end_time', null);
+    }
+
 }

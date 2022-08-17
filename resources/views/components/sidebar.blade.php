@@ -60,6 +60,22 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
+                <!-- Authors Icon -->
+                <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
+                    <div class="ml-[30px]">
+                        <span class="flex justify-between w-full whitespace-nowrap">
+                                <a href="{{ route('authors.index') }}" aria-label="Authors">
+                                    <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-user-pen
+                                         @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
+                                    <div class="hidden sidebar-item">
+                                        <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                            Authors
+                                        </p>
+                                    </div>
+                                </a>
+                        </span>
+                    </div>
+                </li>
                 <!-- Books Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
@@ -70,22 +86,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
                                             Books
-                                        </p>
-                                    </div>
-                                </a>
-                        </span>
-                    </div>
-                </li>
-                <!-- Authors Icon -->
-                <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
-                    <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
-                                <a href="{{ route('authors.index') }}" aria-label="Authors">
-                                    <i class="text-[25px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] far fa-address-book
-                                         @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
-                                    <div class="hidden sidebar-item">
-                                        <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Authors
                                         </p>
                                     </div>
                                 </a>
