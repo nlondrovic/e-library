@@ -33,12 +33,13 @@ class ReservationController extends Controller
         }
 
         $books_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);;
 
         if (empty($reservations->toArray())) return view('transactions.index');
 
         $books = Book::whereIn('id', $books_ids)->get();
-        $students = User::where('role_id', 3)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.active',
             compact('reservations', 'student', 'book', 'students', 'books'));
@@ -61,12 +62,13 @@ class ReservationController extends Controller
         }
 
         $books_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($reservations->toArray())) return view('transactions.index');
 
         $books = Book::whereIn('id', $books_ids)->get();
-        $students = User::where('role_id', 3)->get();
+        $students = User::whereIb('id', $student_ids)->get();
 
         return view('transactions.reservations.archived',
             compact('reservations', 'student', 'book', 'students', 'books'));
