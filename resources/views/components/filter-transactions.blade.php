@@ -5,22 +5,6 @@
         <div class="flex flex-row items-center">
 
             <label class="px-2">
-                <span>Checkout Librarian</span>
-                <select class="flex flex-col w-[90%] h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                    shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select"
-                        name="librarian_id">
-                    <option value="">None</option>
-                    @foreach ($students as $student)
-                        <option
-                            @if($student->id == request()->student_id) selected @endif
-                        value="{{ $student->id }}">
-                            {{ $student->name }}
-                        </option>
-                    @endforeach
-                </select>
-            </label>
-
-            <label class="px-2">
                 <span>Student</span>
                 <select class="flex flex-col w-[90%] h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select"
