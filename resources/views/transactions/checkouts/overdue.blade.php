@@ -19,7 +19,7 @@
         @foreach($checkouts as $checkout)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                 <td class="flex flex-row items-center px-4 py-4">
-                    <img class="object-cover w-8 mr-2 h-11" src="{{ $checkout->book->picture }}" alt=""/>
+                    <img class="object-cover w-8 mr-2 h-11" src="{{ asset($checkout->book->picture) }}" alt=""/>
                     <a href="{{ route('books.show', $checkout->book) }}">
                         <span class="font-medium text-center">{{ $checkout->book->title }}</span>
                     </a>

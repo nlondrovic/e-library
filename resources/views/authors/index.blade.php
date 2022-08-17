@@ -37,7 +37,7 @@
                     @foreach($authors as $author)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                             <td class="flex flex-row items-center px-4 py-3">
-                                <img class="object-cover w-8 mr-2 h-11" src="{{ $author->picture }}" alt=""/>
+                                <img class="object-cover w-8 mr-2 h-11" src="{{ asset($author->picture) }}" alt=""/>
                                 <a href="{{ route('authors.show', $author) }}">
                                     <span class="mr-2 font-medium text-center">{{ $author->name }}</span>
                                 </a>
