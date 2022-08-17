@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AuthorController extends Controller
 {
@@ -23,6 +25,17 @@ class AuthorController extends Controller
     public function store(StoreAuthorRequest $request)
     {
         $inputs = $request->validated();
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/authors/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/authors/'), $filename);
+        }
+        else
+            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+
         Author::create($inputs);
         return redirect()->route('authors.index');
     }
@@ -40,6 +53,17 @@ class AuthorController extends Controller
     public function update(UpdateAuthorRequest $request, Author $author)
     {
         $inputs = $request->validated();
+
+        if ($request['picture']) {
+            $file = $request['picture'];
+            $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+            $filename = "/images/authors/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
+            $inputs['picture'] = $filename;
+            $file->move(public_path('/images/authors/'), $filename);
+        }
+        else
+            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+
         $author->update($inputs);
         return redirect()->route('authors.index');
     }
