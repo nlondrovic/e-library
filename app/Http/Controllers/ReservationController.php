@@ -68,7 +68,7 @@ class ReservationController extends Controller
         if (empty($reservations->toArray())) return view('transactions.index');
 
         $books = Book::whereIn('id', $books_ids)->get();
-        $students = User::whereIb('id', $student_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.archived',
             compact('reservations', 'student', 'book', 'students', 'books'));
