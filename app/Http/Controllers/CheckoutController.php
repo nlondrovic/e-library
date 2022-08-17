@@ -30,11 +30,11 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         if ($checkouts->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+            $books = Book::whereIn('id', $books_ids)->get();
             $students = User::where('role_id', 3)->get();
         } else {
             $books = new Collection;
@@ -61,12 +61,13 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($checkouts->toArray())) return view('transactions.index');
 
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $books = Book::whereIn('id', $books_ids)->get();
         $students = User::where('role_id', 3)->get();
 
         return view('transactions.checkouts.checkins',
@@ -89,12 +90,12 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($checkouts->toArray())) return view('transactions.index');
 
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $books = Book::whereIn('id', $books_ids)->get();
         $students = User::where('role_id', 3)->get();
 
         return view('transactions.checkouts.overdue',
@@ -117,12 +118,12 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($checkouts->toArray())) return view('transactions.index');
 
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $books = Book::whereIn('id', $books_ids)->get();
         $students = User::where('role_id', 3)->get();
 
         return view('transactions.checkouts.lost',

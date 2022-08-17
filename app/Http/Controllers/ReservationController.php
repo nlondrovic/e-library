@@ -32,11 +32,12 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);;
 
         if (empty($reservations->toArray())) return view('transactions.index');
 
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $books = Book::whereIn('id', $books_ids)->get();
         $students = User::where('role_id', 3)->get();
 
         return view('transactions.reservations.active',
@@ -59,11 +60,12 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
         if (empty($reservations->toArray())) return view('transactions.index');
 
-        $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
+        $books = Book::whereIn('id', $books_ids)->get();
         $students = User::where('role_id', 3)->get();
 
         return view('transactions.reservations.archived',
