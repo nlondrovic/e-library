@@ -65,7 +65,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <span>
+            <p class="mt-[20px]">
                 {{ $categories->links("pagination::tailwind") }}
-            </span>
+            </p>
 @endsection

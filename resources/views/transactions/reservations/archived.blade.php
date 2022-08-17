@@ -55,7 +55,7 @@
         @endforeach
         </tbody>
     </table>
-    <span>
+    <p class="mt-[20px]">
         {{ $reservations->links("pagination::tailwind") }}
-    </span>
+    </p>
 @endsection

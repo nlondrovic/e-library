@@ -86,9 +86,9 @@
                     @endforeach
                     </tbody>
                 </table>
-                <span>
+                <p class="mt-[20px]">
                     {{ $authors->links("pagination::tailwind") }}
-                </span>
+                </p>
             </div>
         </div>
     </div>
