@@ -5,17 +5,19 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 @section('main')
 
     <!-- Heading of content -->
-    <div class="heading flex flex-row mt-[7px] border-b-[1px] border-[#e4dfdf]">
-        <h1 class="pl-[50px] pb-[21px]">
-            @yield('transactions-title', 'Book transactions')
-        </h1>
-        @if(isset(request()->student_id))
-            <h3 class="pl-[50px] ml-[57px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
-        @endif
+    <div class="mt-2">
+        <div class="heading flex flex-row mt-[7px] border-b-[1px] border-[#e4dfdf]">
+            <h1 class="pl-[50px] pb-[21px]">
+                @yield('transactions-title', 'Book transactions')
+            </h1>
+            @if(isset(request()->student_id))
+                <h3 class="pl-[50px] ml-[57px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
+            @endif
 
-        @if(isset(request()->book_id))
-            <h3 class="pl-[50px] pt-[18px]">For book: <b>{{ $book->title }}</b></h3>
-        @endif
+            @if(isset(request()->book_id))
+                <h3 class="pl-[50px] pt-[18px]">For book: <b>{{ $book->title }}</b></h3>
+            @endif
+        </div>
     </div>
 
     <!-- Space for content -->
