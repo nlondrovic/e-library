@@ -59,5 +59,7 @@
                     @endforeach
                 </tbody>
             </table>
-
+            <p class="mt-[20px]">
+                {{ $bindings->links("pagination::tailwind") }}
+            </p>
 @endsection

@@ -30,8 +30,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkoutsQuery->orderBy('id', 'desc');
-        $checkouts = $checkoutsQuery->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {
@@ -63,8 +62,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkoutsQuery->orderBy('id', 'desc');
-        $checkouts = $checkoutsQuery->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {
@@ -96,8 +94,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkoutsQuery->orderBy('id', 'desc');
-        $checkouts = $checkoutsQuery->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {
@@ -129,8 +126,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkoutsQuery->orderBy('id', 'desc');
-        $checkouts = $checkoutsQuery->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {

@@ -81,8 +81,7 @@
         @endforeach
         </tbody>
     </table>
-    <span>
-        {{ $checkouts->links("pagination::bootstrap-4") }}
-    </span>
-
+    <p class="mt-[20px]">
+        {{ $checkouts->links("pagination::tailwind") }}
+    </p>
 @endsection

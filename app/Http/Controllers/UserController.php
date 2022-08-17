@@ -13,7 +13,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $students = User::all()->where('role_id', 3);
+        $students = User::where('role_id', 3)->orderBy('id', 'desc')->paginate(5);;
         return view('students.index', compact('students'));
     }
 

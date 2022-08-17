@@ -33,8 +33,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservationsQuery->orderBy('id', 'desc');
-        $reservations = $reservationsQuery->paginate(5);
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);;
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($reservations->count()) {
@@ -65,8 +64,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservationsQuery->orderBy('id', 'desc');
-        $reservations = $reservationsQuery->paginate(5);
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($reservations->count()) {
