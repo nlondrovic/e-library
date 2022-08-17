@@ -33,16 +33,14 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);;
+        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
-        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
-        if ($reservations->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
-        } else {
-            $books = new Collection;
-            $students = new Collection;
-        }
+        if (empty($reservations->toArray())) return view('transactions.index');
+
+        $books = Book::whereIn('id', $books_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.active',
             compact('reservations', 'student', 'book', 'students', 'books'));
@@ -64,16 +62,14 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
 
-        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
-        if ($reservations->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
-        } else {
-            $books = new Collection;
-            $students = new Collection;
-        }
+        if (empty($reservations->toArray())) return view('transactions.index');
+
+        $books = Book::whereIn('id', $books_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.archived',
             compact('reservations', 'student', 'book', 'students', 'books'));

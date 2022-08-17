@@ -29,13 +29,14 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
         // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
         if ($checkouts->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
+            $books = Book::whereIn('id', $books_ids)->get();
+            $students = User::whereIn('id', $student_ids)->get();
         } else {
             $books = new Collection;
             $students = new Collection;
@@ -62,16 +63,14 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
-        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
-        if ($checkouts->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
-        } else {
-            $books = new Collection;
-            $students = new Collection;
-        }
+        if (empty($checkouts->toArray())) return view('transactions.index');
+
+        $books = Book::whereIn('id', $books_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.checkins',
             compact('checkouts', 'student', 'book', 'students', 'books'));
@@ -93,17 +92,14 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
-        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
-        if ($checkouts->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
-        } else {
-            $books = new Collection;
-            $students = new Collection;
-        }
+        if (empty($checkouts->toArray())) return view('transactions.index');
+
+        $books = Book::whereIn('id', $books_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.overdue',
             compact('checkouts', 'student', 'book', 'students', 'books'));
@@ -125,17 +121,14 @@ class CheckoutController extends Controller
             $checkoutsQuery->where('book_id', $request->get('book_id'));
             $book = Book::findOrFail($request['book_id']);
         }
-
+        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
 
-        // TODO: Ovdje treba da se koristi mySQL LEFT JOIN
-        if ($checkouts->count()) {
-            $books = Book::where('checkouts_count', '!=', 0)->orWhere('reserved_count', '!=', 0)->get();
-            $students = User::where('role_id', 3)->get();
-        } else {
-            $books = new Collection;
-            $students = new Collection;
-        }
+        if (empty($checkouts->toArray())) return view('transactions.index');
+
+        $books = Book::whereIn('id', $books_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.lost',
             compact('checkouts', 'student', 'book', 'students', 'books'));
