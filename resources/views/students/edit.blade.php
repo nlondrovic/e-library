@@ -53,7 +53,7 @@
                     <p class="py-2 mt-2 leading-normal">Add photo</p>
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
-                    <img id="image-output-student" width="360" class="mt-[20px]" src="{{ $student->picture }}"/>
+                    <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($student->picture) }}"/>
                 </div>
             </div>
 

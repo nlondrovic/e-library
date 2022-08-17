@@ -4,7 +4,7 @@
             <p>Books available:</p>
             <p class="mt-[20px]">Reserved:</p>
             <p class="mt-[20px]">Checked out:</p>
-            <p class="mt-[20px]">Exceed the limit:</p>
+            <p class="mt-[20px]">Overdue:</p>
             <p class="mt-[20px]">Total number:</p>
         </div>
         <div class="text-center pb-[30px]">

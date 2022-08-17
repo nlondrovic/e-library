@@ -37,7 +37,7 @@
                 @foreach($librarians as $librarian)
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                         <td class="flex flex-row items-center px-4 py-4">
-                            <img class="object-cover w-8 h-8 mr-2 rounded-full" src="{{ $librarian->picture }}" alt=""/>
+                            <img class="object-cover w-8 h-8 mr-2 rounded-full" src="{{ asset($librarian->picture) }}" alt=""/>
                             <a href="{{ route('librarians.show', $librarian) }}">
                                 <span class="font-medium text-center">{{ $librarian->name }}</span>
                             </a>
