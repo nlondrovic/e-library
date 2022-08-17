@@ -68,7 +68,7 @@
                         @endif
                     </div>
                 </div>
-                <div class="mt-[50px]">
+                <div class="mt-[20px]">
                     <p class="py-2 mt-2 leading-normal">Add photo</p>
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
