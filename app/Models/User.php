@@ -30,7 +30,7 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function canCheckoutMoreBooks()
+    public function canCheckoutOrReserveMoreBooks()
     {
         return ($this->getBookCount() < getenv('BOOKS_PER_STUDENT'));
     }
@@ -60,22 +60,22 @@ class User extends Authenticatable
             ->get());
     }
 
-    public function canCheckoutBook($book_id)
+    public function canNotCheckoutBook($book_id)
     {
-        return $this
+        return count($this
             ->hasMany(Checkout::class, 'student_id')
             ->where('end_time', null)
             ->where('book_id', $book_id)
-            ->get();
+            ->get());
     }
 
-    public function canReserveBook($book_id)
+    public function canNotReserveBook($book_id)
     {
-        return $this
+        return count($this
             ->hasMany(Reservation::class, 'student_id')
             ->where('end_time', null)
             ->where('book_id', $book_id)
-            ->get();
+            ->get());
     }
 
     public function checkouts()

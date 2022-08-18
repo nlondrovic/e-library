@@ -43,16 +43,16 @@
                 </button>
             </div>
 
-            @if(request()->get('student_id') || request()->get('book_id'))
-                <a href="{{ route($route_name) }}" class="px-2">
-                    <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
-                        <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
-                    </button>
-                </a>
-            @endif
         </div>
 
     </form>
 
+    @if(request()->get('student_id') || request()->get('book_id'))
+        <a href="{{ route($route_name) }}" class="px-2">
+            <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
+                <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
+            </button>
+        </a>
+    @endif
 </div>
