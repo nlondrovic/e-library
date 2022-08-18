@@ -19,7 +19,7 @@
                 <!-- Activity Cards -->
                 @foreach($activities as $activity)
                     @if($activity->type === 'Checkout')
-                        @if(\App\Models\Checkout::find($activity->activity_id))
+                        @if(!\App\Models\Checkout::find($activity->activity_id)->end_reason)
                             <div class="activity-card flex flex-row mb-[30px]">
                                 <div class="w-[60px] h-[60px]">
                                     <img class="rounded-full" src="#" alt="">
@@ -48,9 +48,9 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
-                            @if(\App\Models\Checkout::find($activity->activity_id)->end_reason)
-                                @if(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 1) {{--Checks if book is checked in--}}
+{{--                        @endif--}}
+{{--                            @if(\App\Models\Checkout::find($activity->activity_id)->end_reason)--}}
+                                @elseif(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 1) {{--Checks if book is checked in--}}
                                     <div class="activity-card flex flex-row mb-[30px]">
                                         <div class="w-[60px] h-[60px]">
                                             <img class="rounded-full" src="#" alt="">
@@ -79,8 +79,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endif
-                                @if(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 2) {{--Checks if book has been written off--}}
+{{--                                @endif--}}
+                                @else(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 2) {{--Checks if book has been written off--}}
                                 <div class="activity-card flex flex-row mb-[30px]">
                                     <div class="w-[60px] h-[60px]">
                                         <img class="rounded-full" src="#" alt="">
@@ -109,9 +109,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endif
-                    @endif
-                    @endif
+{{--                                @endif--}}
+                            @endif
+                        @endif
                         @if($activity->type === 'Reservation')
                             <div class="activity-card flex flex-row mb-[30px]">
                                 <div class="w-[60px] h-[60px]">

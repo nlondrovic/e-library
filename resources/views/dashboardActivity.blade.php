@@ -331,7 +331,7 @@
                     <!-- Activity Cards -->
                     @foreach($activities as $activity)
                         @if($activity->type === 'Checkout')
-                            @if(\App\Models\Checkout::find($activity->activity_id))
+                            @if(!\App\Models\Checkout::find($activity->activity_id)->end_reason)
                                 <div class="activity-card flex flex-row mb-[30px]">
                                     <div class="w-[60px] h-[60px]">
                                         <img class="rounded-full" src="#" alt="">
