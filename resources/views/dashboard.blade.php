@@ -17,35 +17,131 @@
             <div class="mr-[30px]">
                 <h3 class="uppercase ml-[20px] mb-[20px]">Activities</h3>
                 <!-- Activity Cards -->
-                @foreach($activities->take(5) as $activity)
-                <div class="activity-card flex flex-row mb-[30px]">
-                    <div class="w-[60px] h-[60px]">
-                        <img class="rounded-full" src="#" alt="">
-                    </div>
-                    <div class="ml-[15px] mt-[5px] flex flex-col">
-                        <div class="text-gray-500 mb-[5px]">
-                            <p class="uppercase">
-                                Book checkout
-                                <span class="inline lowercase"> - {{ $activity->end_time }} </span>
-                            </p>
-                        </div>
-                        <div class="">
-                            <p>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    {{ $activity->checkout_librarian->name }}
-                                </a>
-                                checked out <span class="font-medium">{{ $activity->book->name }} </span>to
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    {{ $activity->student->name }}
-                                </a>
-                                on <span class="font-medium"> {{ $activity->start_time }}</span>
-                                <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                    show details &gt;&gt;
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                @foreach($activities as $activity)
+                    @if($activity->type === 'Checkout')
+                        @if(\App\Models\Checkout::find($activity->activity_id))
+                            <div class="activity-card flex flex-row mb-[30px]">
+                                <div class="w-[60px] h-[60px]">
+                                    <img class="rounded-full" src="#" alt="">
+                                </div>
+                                <div class="ml-[15px] mt-[5px] flex flex-col">
+                                    <div class="text-gray-500 mb-[5px]">
+                                        <p class="uppercase">
+                                            {{ $activity->type }}
+                                            <span class="inline lowercase">  {{ $activity->end_time }} </span>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <p>
+                                            <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                {{ $activity->librarian->name }}
+                                            </a>
+                                            checked out <span class="font-medium">{{ $activity->book->title }} </span>to
+                                            <a href="{{ route('students.show', $activity->student) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                {{ $activity->student->name }}
+                                            </a>
+                                            on <span class="font-medium"> {{ $activity->time->diffForHumans() }}</span>
+                                            <a href="{{ route('checkouts.show', \App\Models\Checkout::find($activity->activity_id)) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                show details &gt;&gt;
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                            @if(\App\Models\Checkout::find($activity->activity_id)->end_reason)
+                                @if(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 1) {{--Checks if book is checked in--}}
+                                    <div class="activity-card flex flex-row mb-[30px]">
+                                        <div class="w-[60px] h-[60px]">
+                                            <img class="rounded-full" src="#" alt="">
+                                        </div>
+                                        <div class="ml-[15px] mt-[5px] flex flex-col">
+                                            <div class="text-gray-500 mb-[5px]">
+                                                <p class="uppercase">
+                                                    {{ \App\Models\Checkout::find($activity->activity_id)->end_reason->value }}
+                                                    <span class="inline lowercase">  {{ $activity->end_time }} </span>
+                                                </p>
+                                            </div>
+                                            <div class="">
+                                                <p>
+                                                    <a href="{{ route('students.show', $activity->student) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                        {{ $activity->student->name }}
+                                                    </a>
+                                                    checked in <span class="font-medium">{{ $activity->book->title }} </span>to
+                                                    <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                        {{ $activity->librarian->name }}
+                                                    </a>
+                                                    on <span class="font-medium"> {{ $activity->time->diffForHumans() }}</span>
+                                                    <a href="{{ route('checkouts.show', \App\Models\Checkout::find($activity->activity_id)) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                        show details &gt;&gt;
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                                @if(\App\Models\Checkout::find($activity->activity_id)->end_reason->id == 2) {{--Checks if book has been written off--}}
+                                <div class="activity-card flex flex-row mb-[30px]">
+                                    <div class="w-[60px] h-[60px]">
+                                        <img class="rounded-full" src="#" alt="">
+                                    </div>
+                                    <div class="ml-[15px] mt-[5px] flex flex-col">
+                                        <div class="text-gray-500 mb-[5px]">
+                                            <p class="uppercase">
+                                                {{ \App\Models\Checkout::find($activity->activity_id)->end_reason->value }}
+                                                <span class="inline lowercase">  {{ $activity->end_time }} </span>
+                                            </p>
+                                        </div>
+                                        <div class="">
+                                            <p>
+                                                <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                    {{ $activity->librarian->name }}
+                                                </a>
+                                                has written off <span class="font-medium">{{ $activity->book->title }} </span> checked out to
+                                                <a href="{{ route('students.show', $activity->student) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                    {{ $activity->student->name }}
+                                                </a>
+                                                on <span class="font-medium"> {{ $activity->time->diffForHumans() }}</span>
+                                                <a href="{{ route('checkouts.show', \App\Models\Checkout::find($activity->activity_id)) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                    show details &gt;&gt;
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                    @endif
+                    @endif
+                        @if($activity->type === 'Reservation')
+                            <div class="activity-card flex flex-row mb-[30px]">
+                                <div class="w-[60px] h-[60px]">
+                                    <img class="rounded-full" src="#" alt="">
+                                </div>
+                                <div class="ml-[15px] mt-[5px] flex flex-col">
+                                    <div class="text-gray-500 mb-[5px]">
+                                        <p class="uppercase">
+                                            {{ $activity->type }}
+                                            <span class="inline lowercase">  {{ $activity->end_time }} </span>
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <p>
+                                            <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                {{ $activity->librarian->name }}
+                                            </a>
+                                            has accepted the reservation request for <span class="font-medium">{{ $activity->book->title }} </span> from <span class="font-medium">{{ $activity->book->name }} </span>
+                                            <a href="{{ route('students.show', $activity->student) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                {{ $activity->student->name }}
+                                            </a>
+                                            on <span class="font-medium"> {{ $activity->time->diffForHumans() }}</span>
+                                            <a href="{{ route('checkouts.show', \App\Models\Checkout::find($activity->activity_id)) }}" class="text-[#2196f3] hover:text-blue-600">
+                                                show details &gt;&gt;
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                 @endforeach
                 <!-- Show more -->
                 <div class="inline-block w-full mt-4">
