@@ -96,7 +96,7 @@ class ReservationController extends Controller
                 'message' => 'This student has checked out or reserved maximum number of books'
             ]);
         }
-        if($student->canReserveBook($request['book_id'])){
+        if(!$student->canReserveBook($request['book_id'])){
             return redirect()->back()->withErrors([
                 'message' => 'This student has already reserved this book.'
             ]);
@@ -118,8 +118,8 @@ class ReservationController extends Controller
             Activity::create([
                 'book_id' => $reservation['book_id'],
                 'student_id' => $reservation['student_id'],
-                'librarian_id' => $reservation['checkout_librarian_id'],
-                'time' => $reservation['start_time'],
+                'librarian_id' => $reservation['librarian_id'],
+                'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Reservation',
                 'activity_id' => $reservation['id'],
             ]);
@@ -138,9 +138,6 @@ class ReservationController extends Controller
             'start_time' => Carbon::parse(now()),
         ];
 
-
-
-
         DB::transaction(function () use ($book, $inputs, $reservation) {
             $book->update([
                 'reserved_count' => --$book->reserved_count,
@@ -155,8 +152,8 @@ class ReservationController extends Controller
             Activity::create([
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
-                'librarian_id' => $checkout['checkin_librarian_id'],
-                'time' => $checkout['start_time'],
+                'librarian_id' => $checkout['checkout_librarian_id'],
+                'time' => Carbon::now()->format('Y-mm-dd H:i'),
                 'type' => 'Reservation',
                 'activity_id' => $checkout['id'],
             ]);

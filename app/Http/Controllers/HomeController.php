@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\Reservation;
@@ -22,7 +23,7 @@ class HomeController extends Controller
         $overdue_count = count(Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
             ->where('end_time', null)
             ->get());
-        $activities = Checkout::all();
+        $activities = Activity::orderBy('id', 'desc')->take(5)->get();
 
         return view('dashboard', compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities'));
 
@@ -30,8 +31,8 @@ class HomeController extends Controller
 
     public function show_more()
     {
-        $activities2 = Checkout::all();
+        $activities = Activity::orderBy('id', 'desc')->get();
 
-        return view('dashboardActivity', compact( 'activities2'));
+        return view('dashboardActivity', compact( 'activities'));
     }
 }

@@ -185,7 +185,7 @@ class CheckoutController extends Controller
                 'book_id' => $inputs['book_id'],
                 'student_id' => $inputs['student_id'],
                 'librarian_id' => $inputs['checkout_librarian_id'],
-                'time' => $inputs['start_time'],
+                'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Checkout',
                 'activity_id' => $checkout['id'],
             ]);
@@ -210,7 +210,7 @@ class CheckoutController extends Controller
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkin_librarian_id'],
-                'time' => $checkout['start_time'],
+                'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Checkout',
                 'activity_id' => $checkout['id'],
             ]);
@@ -239,8 +239,8 @@ class CheckoutController extends Controller
             Activity::create([
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
-                'librarian_id' => $checkout['checkout_librarian_id'],
-                'time' => $checkout['start_time'],
+                'librarian_id' => $checkout['checkin_librarian_id'],
+                'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Checkout',
                 'activity_id' => $checkout['id'],
             ]);
