@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCheckoutRequest;
+use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
@@ -157,12 +159,16 @@ class CheckoutController extends Controller
             ]);
         }
 
-        if($student->canCheckoutBook($request['book_id'])){
+        if(!$student->canCheckoutBook($request['book_id'])){
             return redirect()->back()->withErrors([
                 'message' => 'This student has already checked out this book and has not returned it yet.'
             ]);
         }
-
+        if ($book->available_count <= 0) {
+            return redirect()->back()->withErrors([
+                'message' => 'All copies of this book are checked out or reserved.'
+            ]);
+        }
         if ($book->available_count <= 0) {
             return redirect()->back()->withErrors([
                 'message' => 'All copies of this book are checked out or reserved.'
@@ -171,9 +177,19 @@ class CheckoutController extends Controller
 
         $inputs = $request->validated();
         $inputs['start_time'] = Carbon::parse(now());
-        Checkout::create($inputs);
 
-        $book->update(['checkouts_count' => ++$book->checkouts_count]);
+        DB::transaction(function () use ($book, $inputs) {
+            $checkout = Checkout::create($inputs);
+            $book->update(['checkouts_count' => ++$book->checkouts_count]);
+            Activity::create([
+                'book_id' => $inputs['book_id'],
+                'student_id' => $inputs['student_id'],
+                'librarian_id' => $inputs['checkout_librarian_id'],
+                'time' => $inputs['start_time'],
+                'type' => 'Checkout',
+                'activity_id' => $checkout['id'],
+            ]);
+        });
 
         return redirect()->route('books.index');
     }
@@ -181,16 +197,24 @@ class CheckoutController extends Controller
     public function checkIn($id)
     {
         $checkout = Checkout::findOrFail($id);
-        $checkout->update([
-            'end_time' => date("Y-m-d H:i:s", strtotime("now")),
-            'checkin_librarian_id' => auth()->id(),
-            'checkout_end_reason_id' => 1
-        ]);
-
         $book = Book::findOrFail($checkout['book_id']);
-        $book->update([
-            'checkouts_count' => --$book->checkouts_count
-        ]);
+
+        DB::transaction(function () use ($book, $checkout) {
+            $book->update(['checkouts_count' => --$book->checkouts_count]);
+            $checkout->update([
+                'end_time' => date("Y-m-d H:i:s", strtotime("now")),
+                'checkin_librarian_id' => auth()->id(),
+                'checkout_end_reason_id' => 1
+            ]);
+            Activity::create([
+                'book_id' => $checkout['book_id'],
+                'student_id' => $checkout['student_id'],
+                'librarian_id' => $checkout['checkin_librarian_id'],
+                'time' => $checkout['start_time'],
+                'type' => 'Checkout',
+                'activity_id' => $checkout['id'],
+            ]);
+        });
 
         return redirect()->route('checkouts.index');
     }
@@ -200,18 +224,27 @@ class CheckoutController extends Controller
         $checkout = Checkout::findOrFail($id);
         if ($checkout->end_date)
             return redirect()->route('checkouts.index'); // Prevents writing off checked in books
-
-        $checkout->update([
-            'end_time' => date("Y-m-d H:i:s", strtotime("now")),
-            'checkin_librarian_id' => auth()->id(),
-            'checkout_end_reason_id' => 2
-        ]);
-
         $book = Book::findOrFail($checkout->book_id);
-        $book->update([
-            'total_count' => --$book->total_count,
-            'checkouts_count' => --$book->checkouts_count
-        ]);
+
+        DB::transaction(function () use ($book, $checkout) {
+            $book->update([
+                'total_count' => --$book->total_count,
+                'checkouts_count' => --$book->checkouts_count
+            ]);
+            $checkout->update([
+                'end_time' => date("Y-m-d H:i:s", strtotime("now")),
+                'checkin_librarian_id' => auth()->id(),
+                'checkout_end_reason_id' => 2
+            ]);
+            Activity::create([
+                'book_id' => $checkout['book_id'],
+                'student_id' => $checkout['student_id'],
+                'librarian_id' => $checkout['checkout_librarian_id'],
+                'time' => $checkout['start_time'],
+                'type' => 'Checkout',
+                'activity_id' => $checkout['id'],
+            ]);
+        });
 
         return redirect()->route('checkouts.index');
     }

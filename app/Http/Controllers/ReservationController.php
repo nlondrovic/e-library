@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCheckoutRequest;
+use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\Reservation;
@@ -11,6 +12,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use \Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use function PHPUnit\Framework\isEmpty;
 
 class ReservationController extends Controller
@@ -94,63 +96,94 @@ class ReservationController extends Controller
                 'message' => 'This student has checked out or reserved maximum number of books'
             ]);
         }
-
         if($student->canReserveBook($request['book_id'])){
             return redirect()->back()->withErrors([
                 'message' => 'This student has already reserved this book.'
             ]);
         }
-
         if ($book->available_count <= 0) {
             return redirect()->back()->withErrors([
                 'message' => 'All copies of this book are checked out or reserved.'
             ]);
         }
 
-        $book->update(['reserved_count', ++$book->reserved_count]);
         $inputs = $request->validated();
         $inputs['librarian_id'] = auth()->id();
 
-        Reservation::query()->create($inputs);
+        $reservation = Reservation::query()->create($inputs);
+
+        DB::transaction(function () use ($book, $inputs) {
+            $book->update(['reserved_count', ++$book->reserved_count]);
+            $reservation = Reservation::query()->create($inputs);
+            Activity::create([
+                'book_id' => $reservation['book_id'],
+                'student_id' => $reservation['student_id'],
+                'librarian_id' => $reservation['checkout_librarian_id'],
+                'time' => $reservation['start_time'],
+                'type' => 'Reservation',
+                'activity_id' => $reservation['id'],
+            ]);
+        });
 
         return redirect()->route('books.index');
     }
 
     public function checkOut(Reservation $reservation)
     {
-        $reservation->update([
-            'reservation_end_reason_id' => 3,
-            'end_time' => Carbon::parse(now())
-        ]);
-
+        $book = Book::findOrFail($reservation['book_id']);
         $inputs = [
             'book_id' => $reservation['book_id'],
             'checkout_librarian_id' => auth()->id(),
             'student_id' => $reservation['student_id'],
             'start_time' => Carbon::parse(now()),
         ];
-        Checkout::query()->create($inputs);
 
-        $book = Book::findOrFail($reservation['book_id']);
-        $book->update([
-            'reserved_count' => --$book->reserved_count,
-            'checkouts_count' => ++$book->checkouts_count
-        ]);
+
+
+
+        DB::transaction(function () use ($book, $inputs, $reservation) {
+            $book->update([
+                'reserved_count' => --$book->reserved_count,
+                'checkouts_count' => ++$book->checkouts_count
+            ]);
+            $reservation->update([
+                'reservation_end_reason_id' => 3,
+                'end_time' => Carbon::parse(now())
+            ]);
+            $checkout = Checkout::query()->create($inputs);
+
+            Activity::create([
+                'book_id' => $checkout['book_id'],
+                'student_id' => $checkout['student_id'],
+                'librarian_id' => $checkout['checkin_librarian_id'],
+                'time' => $checkout['start_time'],
+                'type' => 'Reservation',
+                'activity_id' => $checkout['id'],
+            ]);
+        });
 
         return redirect()->route('reservations.active');
     }
 
     public function cancel(Reservation $reservation)
     {
+        $book = Book::findOrFail($reservation['book_id']);
         $reservation->update([
             'reservation_end_reason_id' => 2,
             'end_time' => Carbon::parse(now())
         ]);
-
-        $book = Book::findOrFail($reservation['book_id']);
         $book->update([
             'reserved_count' => --$book->reserved_count
         ]);
+        DB::transaction(function () use ($book, $reservation) {
+            $reservation->update([
+                'reservation_end_reason_id' => 2,
+                'end_time' => Carbon::parse(now())
+            ]);
+            $book->update([
+                'reserved_count' => --$book->reserved_count
+            ]);
+        });
 
         return redirect()->route('reservations.active');
     }
