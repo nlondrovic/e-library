@@ -6,11 +6,11 @@
         <!-- Table head-->
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Book</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkout librarian</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Checkin librarian</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Start date</th>
+            <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">{{__('Book')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Checkout librarian')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Checkin librarian')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Start date')}}</th>
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
@@ -56,7 +56,7 @@
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                    role="menuitem">
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Show details</span>
+                                    <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>
                             </div>
                         </div>

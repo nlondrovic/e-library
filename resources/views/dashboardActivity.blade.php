@@ -6,7 +6,7 @@
         <div class="mt-2">
             <div class="heading mt-[7px]">
                 <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf] ">
-                    Prikaz aktivnosti
+                    {{__('Prikaz aktivnosti')}}
                 </h1>
             </div>
         </div>
@@ -19,7 +19,7 @@
                             <div class="rounded">
                                 <div class="relative">
                                     <button class="w-auto rounded focus:outline-none uceniciDrop-toggle">
-                                            <span class="float-left">Ucenici: Svi <i
+                                            <span class="float-left">{{__('Ucenici: Svi')}} <i
                                                     class="px-[7px] fas fa-angle-down"></i></span>
                                     </button>
                                     <div id="uceniciDropdown"
@@ -27,7 +27,7 @@
                                         <ul class="border-b-2 border-gray-300 list-reset">
                                             <li class="p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                                 <input class="w-full h-10 px-2 border-2 rounded focus:outline-none"
-                                                       placeholder="Search"
+                                                       placeholder="{{__('Search')}}"
                                                        onkeyup="filterFunction('searchUcenici', 'uceniciDropdown', 'dropdown-item-izdato')"
                                                        id="searchUcenici"><br>
                                                 <button
@@ -61,11 +61,11 @@
                                         <div class="flex pt-[10px] text-white ">
                                             <a href="#"
                                                class="btn-animation py-2 px-[20px] transition duration-300 ease-in hover:bg-[#46A149] bg-[#4CAF50] rounded-[5px]">
-                                                Sacuvaj <i class="fas fa-check ml-[4px]"></i>
+                                                {{__('Sacuvaj')}} <i class="fas fa-check ml-[4px]"></i>
                                             </a>
                                             <a href="#"
                                                class="btn-animation ml-[20px] py-2 px-[20px] transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                                Ponisti <i class="fas fa-times ml-[4px]"></i>
+                                                {{__('Ponisti')}} <i class="fas fa-times ml-[4px]"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -76,7 +76,7 @@
                             <div class="rounded">
                                 <div class="relative">
                                     <button class="w-auto rounded focus:outline-none bibliotekariDrop-toggle">
-                                            <span class="float-left">Bibliotekari: Svi <i
+                                            <span class="float-left">{{__('Bibliotekari: Svi')}} <i
                                                     class="px-[7px] fas fa-angle-down"></i></span>
                                     </button>
                                     <div id="bibliotekariDropdown"
@@ -84,7 +84,7 @@
                                         <ul class="border-b-2 border-gray-300 list-reset">
                                             <li class="p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                                 <input class="w-full h-10 px-2 border-2 rounded focus:outline-none"
-                                                       placeholder="Search"
+                                                       placeholder="{{__('Search')}}"
                                                        onkeyup="filterFunction('searchBibliotekari', 'bibliotekariDropdown', 'dropdown-item-bibliotekar')"
                                                        id="searchBibliotekari"><br>
                                                 <button
@@ -109,7 +109,7 @@
                                                          src="img/profileExample.jpg">
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Bibliotekar Bulatovic
+                                                        {{__('Bibliotekar')}} Bulatovic
                                                     </p>
                                                 </li>
                                             </div>
@@ -117,11 +117,11 @@
                                         <div class="flex pt-[10px] text-white ">
                                             <a href="#"
                                                class="btn-animation py-2 px-[20px] transition duration-300 ease-in hover:bg-[#46A149] bg-[#4CAF50] rounded-[5px]">
-                                                Sacuvaj <i class="fas fa-check ml-[4px]"></i>
+                                                {{__('Sacuvaj')}} <i class="fas fa-check ml-[4px]"></i>
                                             </a>
                                             <a href="#"
                                                class="btn-animation ml-[20px] py-2 px-[20px] transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                                Ponisti <i class="fas fa-times ml-[4px]"></i>
+                                                {{__('Ponisti')}} <i class="fas fa-times ml-[4px]"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -139,7 +139,7 @@
                                         <ul class="border-b-2 border-gray-300 list-reset">
                                             <li class="p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                                 <input class="w-full h-10 px-2 border-2 rounded focus:outline-none"
-                                                       placeholder="Search"
+                                                       placeholder="{{__('Search')}}"
                                                        onkeyup="filterFunction('searchKnjige', 'knjigeDropdown', 'dropdown-item-knjiga')"
                                                        id="searchKnjige"><br>
                                                 <button
@@ -172,11 +172,11 @@
                                         <div class="flex pt-[10px] text-white ">
                                             <a href="#"
                                                class="btn-animation py-2 px-[20px] transition duration-300 ease-in hover:bg-[#46A149] bg-[#4CAF50] rounded-[5px]">
-                                                Sacuvaj <i class="fas fa-check ml-[4px]"></i>
+                                                {{__('Sacuvaj')}} <i class="fas fa-check ml-[4px]"></i>
                                             </a>
                                             <a href="#"
                                                class="btn-animation ml-[20px] py-2 px-[20px] transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                                Ponisti <i class="fas fa-times ml-[4px]"></i>
+                                                {{__('Ponisti')}} <i class="fas fa-times ml-[4px]"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -187,7 +187,7 @@
                             <div class="rounded">
                                 <div class="relative">
                                     <button class="w-auto rounded focus:outline-none" id="transakcijeMenu">
-                                            <span class="float-left">Transakcije: Sve <i
+                                            <span class="float-left">{{__('Transakcije: Sve')}} <i
                                                     class="px-[7px] fas fa-angle-down"></i></span>
                                     </button>
                                     <div id="transakcijeDropdown"
@@ -195,7 +195,7 @@
                                         <ul class="border-b-2 border-gray-300 list-reset">
                                             <li class="p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                                 <input class="w-full h-10 px-2 border-2 rounded focus:outline-none"
-                                                       placeholder="Search"
+                                                       placeholder="{{__('Search')}}"
                                                        onkeyup="filterFunction('searchTransakcije', 'transakcijeDropdown', 'dropdown-item-transakcije')"
                                                        id="searchTransakcije"><br>
                                                 <button
@@ -218,7 +218,7 @@
                                                     </label>
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Izdavanje knjiga
+                                                        {{__('Izdavanje knjiga')}}
                                                     </p>
                                                 </li>
                                                 <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-transakcije">
@@ -235,7 +235,7 @@
                                                     </label>
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Vracanje knjiga
+                                                        {{__('Vracanje knjiga')}}
                                                     </p>
                                                 </li>
                                                 <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-transakcije">
@@ -252,7 +252,7 @@
                                                     </label>
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Unos nove knjige
+                                                        {{__('Unos nove knjige')}}
                                                     </p>
                                                 </li>
                                                 <li class="flex p-2 mt-[2px] pt-[15px] group hover:bg-gray-200 dropdown-item-transakcije">
@@ -269,7 +269,7 @@
                                                     </label>
                                                     <p
                                                         class="block p-2 text-black cursor-pointer group-hover:text-blue-600">
-                                                        Brisanje knjige
+                                                        {{__('Brisanje knjige')}}
                                                     </p>
                                                 </li>
                                             </div>
@@ -277,11 +277,11 @@
                                         <div class="flex pt-[10px] text-white ">
                                             <a href="#"
                                                class="btn-animation py-2 px-[20px] transition duration-300 ease-in hover:bg-[#009688] bg-[#46A149] rounded-[5px]">
-                                                Sacuvaj <i class="fas fa-check ml-[4px]"></i>
+                                                {{__('Sacuvaj')}} <i class="fas fa-check ml-[4px]"></i>
                                             </a>
                                             <a href="#"
                                                class="btn-animation ml-[20px] py-2 px-[20px] transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                                Ponisti <i class="fas fa-times ml-[4px]"></i>
+                                                {{__('Ponisti')}} <i class="fas fa-times ml-[4px]"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -292,7 +292,7 @@
                             <div class="rounded">
                                 <div class="relative">
                                     <button class="w-auto rounded focus:outline-none datumDrop-toggle">
-                                            <span class="float-left">Datum: Svi <i
+                                            <span class="float-left">{{__('Datum: Svi')}} <i
                                                     class="px-[7px] fas fa-angle-down"></i></span>
                                     </button>
                                     <div id="datumDropdown"
@@ -300,12 +300,12 @@
                                         <div
                                             class="flex justify-between flex-row p-2 pb-[15px] border-b-[2px] relative border-gray-300">
                                             <div>
-                                                <label class="font-medium text-gray-500">Period od:</label>
+                                                <label class="font-medium text-gray-500">{{__('Period od:')}}</label>
                                                 <input type="date"
                                                        class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
                                             </div>
                                             <div class="ml-[50px]">
-                                                <label class="font-medium text-gray-500">Period do:</label>
+                                                <label class="font-medium text-gray-500">{{__('Period do:')}}</label>
                                                 <input type="date"
                                                        class="border-[1px] border-[#e4dfdf]  cursor-pointer focus:outline-none">
                                             </div>
@@ -313,11 +313,11 @@
                                         <div class="flex pt-[10px] text-white ">
                                             <a href="#"
                                                class="btn-animation py-2 px-[20px] transition duration-300 ease-in hover:bg-[#009688] bg-[#46A149] rounded-[5px]">
-                                                Sacuvaj <i class="fas fa-check ml-[4px]"></i>
+                                                {{__('Sacuvaj')}} <i class="fas fa-check ml-[4px]"></i>
                                             </a>
                                             <a href="#"
                                                class="btn-animation ml-[20px] py-2 px-[20px] transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                                Ponisti <i class="fas fa-times ml-[4px]"></i>
+                                                {{__('Ponisti')}} <i class="fas fa-times ml-[4px]"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -337,7 +337,7 @@
                             <div class="mt-[5px] flex flex-col">
                                 <div class="text-gray-500 mb-[5px]">
                                     <p class="uppercase">
-                                        Book checkout
+                                        {{__('Book checkout')}}
                                         <span class="inline lowercase"> - {{ $activity->end_time }} </span>
                                     </p>
                                 </div>
@@ -346,13 +346,13 @@
                                         <a href="#" class="text-[#2196f3] hover:text-blue-600">
                                             {{ $activity->checkout_librarian->name }}
                                         </a>
-                                        checked out <span class="font-medium">{{ $activity->book->name }} </span>to
+                                        {{__('checked out')}} <span class="font-medium">{{ $activity->book->name }} </span>{{__('to')}}
                                         <a href="#" class="text-[#2196f3] hover:text-blue-600">
                                             {{ $activity->student->name }}
                                         </a>
-                                        on <span class="font-medium"> {{ $activity->start_time }}</span>
+                                        {{__('on')}} <span class="font-medium"> {{ $activity->start_time }}</span>
                                         <a href="#" class="text-[#2196f3] hover:text-blue-600">
-                                            show details &gt;&gt;
+                                            {{__('show details')}} &gt;&gt;
                                         </a>
                                     </p>
                                 </div>
@@ -362,7 +362,7 @@
                     <div class="inline-block w-full mt-4">
                         <button type="button"
                                 class="btn-animation w-full px-4 py-2 text-sm tracking-wider text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded activity-showMore hover:bg-gray-200 focus:outline-none focus:ring-[1px] focus:ring-gray-300">
-                            Show more
+                            {{__('Show more')}}
                         </button>
                     </div>
                 </div>

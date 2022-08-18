@@ -35,13 +35,13 @@ class StoreBookRequest extends FormRequest
     public function messages()
     {
         return [
-            'author_id.exists' => 'Please select an existing author.',
-            'category_id.exists' => 'Please select an existing category.',
-            'genre_id.exists' => 'Please select an existing genre.',
-            'publisher_id.exists' => 'Please select an existing publisher.',
-            'script_id.exists' => 'Please select an existing script.',
-            'binding_id.exists' => 'Please select an existing binding.',
-            'size_id.exists' => 'Please select an existing size.',
+            'author_id.exists' => __('Please select an existing author.'),
+            'category_id.exists' => __('Please select an existing category.'),
+            'genre_id.exists' => __('Please select an existing genre.'),
+            'publisher_id.exists' => __('Please select an existing publisher.'),
+            'script_id.exists' => __('Please select an existing script.'),
+            'binding_id.exists' => __('Please select an existing binding.'),
+            'size_id.exists' => __('Please select an existing size.'),
         ];
     }
 }

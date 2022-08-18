@@ -21,25 +21,25 @@
 
                     <div class="">
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Book</span>
+                            <span class="text-gray-500 text-[14px]">{{__('Book')}}</span>
                             <a href="{{ route('books.show', $reservation->book) }}">
                                 <p class="font-medium text-[#2196f3]">{{ $reservation->book->title }}</p>
                             </a>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Reservation librarian</span>
+                            <span class="text-gray-500 text-[14px]">{{__('Reservation librarian')}}</span>
                             <a href="{{ route('librarians.show', $reservation->librarian) }}">
                                 <p class="font-medium text-[#2196f3]">{{ $reservation->librarian->name }}</p>
                             </a>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Reservation student</span>
+                            <span class="text-gray-500 text-[14px]">{{__('Reservation student')}}</span>
                             <a href="{{ route('students.show', $reservation->student) }}">
                                 <p class="font-medium text-[#2196f3]">{{ $reservation->student->name }}</p>
                             </a>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Date of reservation</span>
+                            <span class="text-gray-500 text-[14px]">{{__('Date of reservation')}}</span>
                             <p class="font-medium">{{ format_date($reservation->start_time) }}</p>
                         </div>
                     </div>
@@ -47,11 +47,11 @@
                     <div class="ml-[50px]">
                         @if($reservation->end_time)
                             <div class="mt-[40px]">
-                                <span class="text-gray-500 text-[14px]">Reservation end date</span>
+                                <span class="text-gray-500 text-[14px]">{{__('Reservation end date')}}</span>
                                 <p class="font-medium">{{ format_date($reservation->end_time) }}</p>
                             </div>
                             <div class="mt-[40px] mb-[20px]">
-                                <span class="text-gray-500 text-[14px] font-medium">End reason</span>
+                                <span class="text-gray-500 text-[14px] font-medium">{{__('End reason')}}</span>
                                 <p class="font-medium">{{ $reservation->end_reason->value }}</p>
                             </div>
                         @endif
