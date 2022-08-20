@@ -1,5 +1,5 @@
 <div class="activity-card flex flex-row mb-[30px]">
-    <div class="ml-[15px] mt-[5px] flex flex-col">
+    <div class="mt-[5px] flex flex-col">
         <div class="text-gray-500 mb-[5px]">
             <span class="uppercase">{{ $activity->type }}
                 <p class="inline lowercase font-medium text-black"> {{ format_time($activity->time) }} </p>
