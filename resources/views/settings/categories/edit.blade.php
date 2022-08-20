@@ -31,60 +31,67 @@
                         @endif
                     </div>
 
-                    <div class="mt-[20px]">
-                        <p>Icon <span class="text-red-500">*</span></p>
-                        <ul>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-palette"
-                                @if($category->icon === 'fas fa-palette') checked @endif>
-                                <i class="fas fa-palette"></i>&nbsp; Palette
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-address-book"
-                                @if($category->icon === 'fas fa-address-book') checked @endif>
-                                <i class="fas fa-address-book"></i>&nbsp; Address book
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-children"
-                                @if($category->icon === 'fas fa-children') checked @endif>
-                                <i class="fas fa-children"></i>&nbsp; Children
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-screwdriver-wrench"
-                                @if($category->icon === 'fas fa-screwdriver-wrench') checked @endif>
-                                <i class="fas fa-screwdriver-wrench"></i>&nbsp; Screwdriver wrench
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-gun"
-                                @if($category->icon === 'fas fa-gun') checked @endif>
-                                <i class="fas fa-gun"></i>&nbsp; Gun
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-burger"
-                                @if($category->icon === 'fas fa-burger') checked @endif>
-                                <i class="fas fa-burger"></i>&nbsp; Burger
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-tv"
-                                @if($category->icon === 'fas fa-tv') checked @endif>
-                                <i class="fas fa-tv"></i>&nbsp; TV
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-calendar-day"
-                                @if($category->icon === 'fas fa-calendar-day') checked @endif>
-                                <i class="fas fa-calendar-day"></i>&nbsp; Calendar day
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-brain"
-                                @if($category->icon === 'fas fa-brain') checked @endif>
-                                <i class="fas fa-brain"></i>&nbsp; Brain
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-rocket"
-                                @if($category->icon === 'fas fa-rocket') checked @endif>
-                                <i class="fas fa-rocket"></i>&nbsp; Rocket
-                            </li>
-                        </ul>
+                    <p class="mt-[20px]">Icon <span class="text-red-500">*</span></p>
+                    <div class="mt-[10px] flex flex-row justify-start text-lg">
+                        <div>
+                            <ul>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-palette"
+                                           @if($category->icon === 'fas fa-palette') checked @endif>
+                                    <i class="fas fa-palette"></i>&nbsp; Palette
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-address-book"
+                                           @if($category->icon === 'fas fa-address-book') checked @endif>
+                                    <i class="fas fa-address-book"></i>&nbsp; Address book
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-children"
+                                           @if($category->icon === 'fas fa-children') checked @endif>
+                                    <i class="fas fa-children"></i>&nbsp; Children
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-screwdriver-wrench"
+                                           @if($category->icon === 'fas fa-screwdriver-wrench') checked @endif>
+                                    <i class="fas fa-screwdriver-wrench"></i>&nbsp; Screwdriver wrench
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-gun"
+                                           @if($category->icon === 'fas fa-gun') checked @endif>
+                                    <i class="fas fa-gun"></i>&nbsp; Gun
+                                </li>
+                            </ul>
+                        </div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-burger"
+                                           @if($category->icon === 'fas fa-burger') checked @endif>
+                                    <i class="fas fa-burger"></i>&nbsp; Burger
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-tv"
+                                           @if($category->icon === 'fas fa-tv') checked @endif>
+                                    <i class="fas fa-tv"></i>&nbsp; TV
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-calendar-day"
+                                           @if($category->icon === 'fas fa-calendar-day') checked @endif>
+                                    <i class="fas fa-calendar-day"></i>&nbsp; Calendar day
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-brain"
+                                           @if($category->icon === 'fas fa-brain') checked @endif>
+                                    <i class="fas fa-brain"></i>&nbsp; Brain
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-rocket"
+                                           @if($category->icon === 'fas fa-rocket') checked @endif>
+                                    <i class="fas fa-rocket"></i>&nbsp; Rocket
+                                </li>
+                            </ul>
+                        </div>
 
                         @if($errors->first('icon'))
                             <span class="text-red-600">{{ $errors->first('icon') }}</span>

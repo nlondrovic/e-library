@@ -28,50 +28,57 @@
                         @endif
                     </div>
 
-                    <div class="mt-[20px]">
-                        <p>Icon <span class="text-red-500">*</span></p>
-                        <ul>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-palette">
-                                <i class="fas fa-palette"></i>&nbsp; Palette
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-address-book">
-                                <i class="fas fa-address-book"></i>&nbsp; Address book
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-children">
-                                <i class="fas fa-children"></i>&nbsp; Children
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-screwdriver-wrench">
-                                <i class="fas fa-screwdriver-wrench"></i>&nbsp; Screwdriver wrench
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-gun">
-                                <i class="fas fa-gun"></i>&nbsp; Gun
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-burger">
-                                <i class="fas fa-burger"></i>&nbsp; Burger
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-tv">
-                                <i class="fas fa-tv"></i>&nbsp; TV
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-calendar-day">
-                                <i class="fas fa-calendar-day"></i>&nbsp; Calendar day
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-brain">
-                                <i class="fas fa-brain"></i>&nbsp; Brain
-                            </li>
-                            <li>
-                                <input required type="radio" name="icon" value="fas fa-rocket">
-                                <i class="fas fa-rocket"></i>&nbsp; Rocket
-                            </li>
-                        </ul>
+                    <p class="mt-[20px]">Icon <span class="text-red-500">*</span></p>
+                    <div class="mt-[10px] flex flex-row justify-start text-lg">
+                        <div>
+                            <ul>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-palette">
+                                    <i class="fas fa-palette"></i>&nbsp; Palette
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-address-book">
+                                    <i class="fas fa-address-book"></i>&nbsp; Address book
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-children">
+                                    <i class="fas fa-children"></i>&nbsp; Children
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-screwdriver-wrench">
+                                    <i class="fas fa-screwdriver-wrench"></i>&nbsp; Screwdriver wrench
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-gun">
+                                    <i class="fas fa-gun"></i>&nbsp; Gun
+                                </li>
+                            </ul>
+                        </div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-burger">
+                                    <i class="fas fa-burger"></i>&nbsp; Burger
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-tv">
+                                    <i class="fas fa-tv"></i>&nbsp; TV
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-calendar-day">
+                                    <i class="fas fa-calendar-day"></i>&nbsp; Calendar day
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-brain">
+                                    <i class="fas fa-brain"></i>&nbsp; Brain
+                                </li>
+                                <li>
+                                    <input required type="radio" name="icon" value="fas fa-rocket">
+                                    <i class="fas fa-rocket"></i>&nbsp; Rocket
+                                </li>
+                            </ul>
+                        </div>
 
                         @if($errors->first('icon'))
                             <span class="text-red-600">{{ $errors->first('icon') }}</span>
