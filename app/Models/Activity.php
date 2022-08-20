@@ -32,4 +32,14 @@ class Activity extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function reservation()
+    {
+        return $this->belongsTo(Reservation::class, 'activity_id');
+    }
+
+    public function checkout()
+    {
+        return $this->belongsTo(Checkout::class, 'activity_id');
+    }
 }

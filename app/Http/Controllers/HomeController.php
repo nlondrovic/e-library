@@ -25,14 +25,15 @@ class HomeController extends Controller
             ->get());
         $activities = Activity::orderBy('id', 'desc')->take(5)->get();
 
-        return view('dashboard', compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities'));
+        return view('components.dashboard.index',
+            compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities'));
 
     }
 
-    public function show_more()
+    public function activities()
     {
         $activities = Activity::orderBy('id', 'desc')->get();
 
-        return view('dashboardActivity', compact( 'activities'));
+        return view('components.dashboard.activities', compact( 'activities'));
     }
 }
