@@ -76,6 +76,10 @@
                                     <span class="text-gray-500 text-[14px]">Checkout end reason</span>
                                     <p class="font-medium">{{ $checkout->end_reason->value }}</p>
                                 </div>
+                                <div class="mt-[40px]">
+                                    <span class="text-gray-500 text-[14px]">Write-off time</span>
+                                    <p class="font-medium">{{ format_time($checkout->end_time) }}</p>
+                                </div>
                             @else
                                 <div class="mt-[40px]">
                                     <span class="text-gray-500 text-[14px]">Checkin time</span>
