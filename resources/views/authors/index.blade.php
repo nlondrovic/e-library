@@ -59,7 +59,7 @@
                                         px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">View more</span>
+                                                <span class="px-4 py-0">Show details</span>
                                             </a>
 
                                             <a href="{{ route('authors.edit', $author) }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5

@@ -27,14 +27,14 @@
 
 <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
 <!-- Header -->
-@include('components/header')
+@include('components.dashboard.header')
 <!-- End Header -->
 
 
 <!-- Main content -->
 <main class="flex flex-row small:hidden">
     <!-- Sidebar -->
-@include('components/sidebar')
+@include('components.dashboard.sidebar')
 <!-- End Sidebar -->
 
     <!-- Content -->

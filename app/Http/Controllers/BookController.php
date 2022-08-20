@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Activity;
 use App\Models\Author;
 use App\Models\Binding;
 use App\Models\Book;
@@ -18,7 +19,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::orderBy('id', 'desc')->paginate(5);
+        $books = Book::paginate(5);
         return view('books.index', compact('books'));
     }
 
@@ -58,7 +59,8 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        return view('books.show', compact('book'));
+        $activities = Activity::where('book_id', $book->id)->orderBy('id', 'desc')->take(5)->get();
+        return view('books.show', compact('book', 'activities'));
     }
 
     public function edit(Book $book)

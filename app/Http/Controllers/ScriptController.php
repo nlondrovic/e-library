@@ -10,7 +10,7 @@ class ScriptController extends Controller
 {
     public function index()
     {
-        $scripts = Script::orderBy('id', 'desc')->paginate(5);
+        $scripts = Script::paginate(5);
         return view('settings.scripts.index', compact('scripts'));
     }
 
