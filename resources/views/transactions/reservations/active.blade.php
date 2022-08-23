@@ -5,10 +5,10 @@
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Book title</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation due</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book title')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation date')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation due')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
         </tr>
         </thead>
@@ -47,7 +47,7 @@
                                             class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                             role="menuitem">
                                         <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Checkout</span>
+                                        <span class="px-4 py-0">{{__('Checkout')}}</span>
                                     </button>
                                 </form>
                                 <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
@@ -57,7 +57,7 @@
                                             class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                             role="menuitem">
                                         <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">Cancel reservation</span>
+                                        <span class="px-4 py-0">{{__('Cancel reservation')}}</span>
                                     </button>
                                 </form>
                             </div>

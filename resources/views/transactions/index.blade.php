@@ -11,11 +11,11 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 @yield('transactions-title', 'Book transactions')
             </h1>
             @if(isset(request()->student_id))
-                <h3 class="pl-[50px] ml-[57px] pt-[18px]">For student: <b>{{ $student->name }}</b></h3>
+                <h3 class="pl-[50px] ml-[57px] pt-[18px]">{{__('For student:')}} <b>{{ $student->name }}</b></h3>
             @endif
 
             @if(isset(request()->book_id))
-                <h3 class="pl-[50px] pt-[18px]">For book: <b>{{ $book->title }}</b></h3>
+                <h3 class="pl-[50px] pt-[18px]">{{__('For book:')}} <b>{{ $book->title }}</b></h3>
             @endif
         </div>
     </div>
@@ -35,7 +35,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="@if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] far fa-copy text-[20px]"></i>
                                     <p class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[15px] ml-[18px]">
-                                        Checkouts
+                                        {{__('Checkouts')}}
                                     </p>
                                 </a>
                             </div>
@@ -51,7 +51,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-file group-hover:text-[#576cdf]"></i>
                                     <p class="transition duration-300 ease-in text-[15px] ml-[21px] group-hover:text-[#576cdf]">
-                                        Checkins
+                                        {{__('Checkins')}}
                                     </p>
                                 </a>
                             </div>
@@ -67,7 +67,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'overdue')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                        Overdue books
+                                        {{__('Overdue books')}}
                                     </p>
                                 </a>
                             </div>
@@ -83,7 +83,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'lost')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-circle transition duration-300 ease-in "></i>
                                     <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                        Lost books
+                                        {{__('Lost books')}}
                                     </p>
                                 </a>
                             </div>
@@ -100,7 +100,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                        Active reservations
+                                        {{__('Active reservations')}}
                                     </p>
                                 </a>
                             </div>
@@ -116,7 +116,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                    class="flex items-center">
                                     <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
-                                        Archived reservations
+                                        {{__('Archived reservations')}}
                                     </p>
                                 </a>
                             </div>

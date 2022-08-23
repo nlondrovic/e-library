@@ -5,11 +5,11 @@
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Book title</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Student</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">Reservation date</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End date</th>
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">End reason</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book title')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation date')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('End date')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('End reason')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
         </tr>
         </thead>
@@ -44,8 +44,8 @@
                                 <a href="{{ route('reservations.show', $reservation) }}" tabindex="0"
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                    role="menuitem">
-                                    <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Show details</span>
+                                    <i class="fa fa-edit mr-[10px] ml-[5px] py-1"></i>
+                                    <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>
                             </div>
                         </div>
