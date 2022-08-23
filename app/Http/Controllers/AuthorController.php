@@ -32,9 +32,9 @@ class AuthorController extends Controller
             $filename = "/images/authors/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/authors/'), $filename);
-        }
-        else
+        } else {
             $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+        }
 
         Author::create($inputs);
         return redirect()->route('authors.index');
@@ -60,9 +60,9 @@ class AuthorController extends Controller
             $filename = "/images/authors/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/authors/'), $filename);
-        }
-        else
+        } else {
             $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
+        }
 
         $author->update($inputs);
         return redirect()->route('authors.index');

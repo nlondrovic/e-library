@@ -9,5 +9,5 @@ class Binding extends Model
 {
     use HasFactory;
 
-    public $guarded = [''];
+    protected $guarded = ['id'];
 }

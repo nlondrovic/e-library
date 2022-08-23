@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreUserRequest extends FormRequest
 {
-
     public function authorize()
     {
         return Auth::check();

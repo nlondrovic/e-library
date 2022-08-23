@@ -11,7 +11,6 @@ class BindingController extends Controller
     public function index()
     {
         $bindings = Binding::orderBy('name', 'asc')->paginate(5);
-
         return view('settings.bindings.index', compact('bindings'));
     }
 
@@ -23,7 +22,6 @@ class BindingController extends Controller
     public function store(StoreBindingRequest $request)
     {
         $inputs = $request->validated();
-
         Binding::create($inputs);
 
         return redirect()->route('bindings.index');
@@ -37,16 +35,13 @@ class BindingController extends Controller
     public function update(UpdateBindingRequest $request, Binding $binding)
     {
         $inputs = $request->validated();
-
         $binding->update($inputs);
-
         return redirect()->route('bindings.index');
     }
 
     public function destroy(Binding $binding)
     {
         $binding->delete();
-
         return redirect()->route('bindings.index');
     }
 }

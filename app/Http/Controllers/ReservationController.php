@@ -33,17 +33,19 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($reservations->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $reservationsQuery->pluck('book_id')->toArray();
         $student_ids = $reservationsQuery->pluck('student_id')->toArray();
-        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($reservations->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.active',
-            compact('reservations', 'student', 'book', 'students', 'books'));
+            compact('reservations', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function archivedReservations(Request $request)
@@ -62,17 +64,19 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($reservations->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $reservationsQuery->pluck('book_id')->toArray();
         $student_ids = $reservationsQuery->pluck('student_id')->toArray();
-        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($reservations->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.reservations.archived',
-            compact('reservations', 'student', 'book', 'students', 'books'));
+            compact('reservations', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function create(Book $book)
@@ -82,7 +86,8 @@ class ReservationController extends Controller
         $max_date = Carbon::now()->addMonth()->format('Y-m-d');
 
         return view('transactions.reservations.create',
-            compact('students', 'book', 'min_date', 'max_date'));
+            compact('students', 'book', 'min_date', 'max_date')
+        );
     }
 
     public function store(StoreReservationRequest $request)
@@ -90,13 +95,13 @@ class ReservationController extends Controller
         $book = Book::findOrFail($request['book_id']);
         $student = User::findOrFail($request['student_id']);
 
-        if (!$student->canCheckoutOrReserveMoreBooks($student)) {
+        if (!$student->canCheckoutOrReserveMoreBooks()) {
             return redirect()->back()->withErrors([
                 'message' => __('This student has checked out or reserved maximum number of books')
             ]);
         }
 
-        if ($student->canNotReserveBook($request['book_id'])) {
+        if ($student->canNotReserveBook($book->id)) {
             return redirect()->back()->withErrors([
                 'message' => __('This student has already reserved this book.')
             ]);
@@ -130,6 +135,7 @@ class ReservationController extends Controller
 
     public function checkOut(Reservation $reservation)
     {
+        DB::transaction(function () use ($reservation) {
             $inputs = [
                 'book_id' => $reservation['book_id'],
                 'checkout_librarian_id' => auth()->id(),
@@ -137,25 +143,25 @@ class ReservationController extends Controller
                 'start_time' => Carbon::parse(now())
             ];
             $checkout = Checkout::create($inputs);
-            $book = Book::findOrFail($reservation['book_id']);
 
-        DB::transaction(function () use ($checkout, $reservation, $book) {
-            $book->update([
-                'reserved_count' => --$book->reserved_count,
-                'checkouts_count' => ++$book->checkouts_count
-            ]);
             $reservation->update([
                 'reservation_end_reason_id' => 3,
                 'end_time' => Carbon::parse(now())
             ]);
+
+            $book = Book::findOrFail($reservation['book_id']);
+            $book->update([
+                'reserved_count' => --$book->reserved_count,
+                'checkouts_count' => ++$book->checkouts_count
+            ]);
+
             Activity::create([
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkout_librarian_id'],
                 'time' => Carbon::now()->format('Y-mm-dd H:i'),
                 'type' => 'Reservation',
-                'activity_id' => $checkout['id'],
-
+                'activity_id' => $checkout['id']
             ]);
         });
 
@@ -183,5 +189,4 @@ class ReservationController extends Controller
         return view('transactions.reservations.show',
             compact('reservation', 'book'));
     }
-
 }

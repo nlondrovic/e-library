@@ -30,17 +30,19 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($checkouts->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.index',
-            compact('checkouts', 'student', 'book', 'students', 'books'));
+            compact('checkouts', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function checkins(Request $request)
@@ -60,24 +62,25 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($checkouts->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.checkins',
-            compact('checkouts', 'student', 'book', 'students', 'books'));
+            compact('checkouts', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function overdue(Request $request)
     {
         $checkoutsQuery = Checkout::where('end_time', null)
-            ->where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString());
-
+            ->where('start_time', '<', Carbon::now()->subDays(getenv('HOLDING_TIME'))->toDateTimeString());
         $student = null;
         $book = null;
 
@@ -91,17 +94,19 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($checkouts->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.overdue',
-            compact('checkouts', 'student', 'book', 'students', 'books'));
+            compact('checkouts', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function lost(Request $request)
@@ -121,17 +126,19 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        if (empty($checkouts->toArray())) {
+            return view('transactions.index');
+        }
+
         $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
-
-        if (empty($checkouts->toArray())) return view('transactions.index');
-
         $books = Book::whereIn('id', $books_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
 
         return view('transactions.checkouts.lost',
-            compact('checkouts', 'student', 'book', 'students', 'books'));
+            compact('checkouts', 'student', 'book', 'students', 'books')
+        );
     }
 
     public function show(Checkout $checkout)
@@ -151,13 +158,13 @@ class CheckoutController extends Controller
         $book = Book::findOrFail($request['book_id']);
         $student = User::findOrFail($request['student_id']);
 
-        if (!$student->canCheckoutOrReserveMoreBooks($student)) {
+        if (!$student->canCheckoutOrReserveMoreBooks()) {
             return redirect()->back()->withErrors([
                 'message' => __('This student has checked out or reserved maximum number of books.')
             ]);
         }
 
-        if ($student->canNotCheckoutBook($request['book_id'])) {
+        if ($student->canNotCheckoutBook($book->id)) {
             return redirect()->back()->withErrors([
                 'message' => __('This student has already checked out this book and has not returned it yet.')
             ]);
@@ -182,25 +189,23 @@ class CheckoutController extends Controller
                 'librarian_id' => $inputs['checkout_librarian_id'],
                 'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Checkout',
-                'activity_id' => $checkout['id'],
+                'activity_id' => $checkout['id']
             ]);
         });
 
         return redirect()->route('books.index');
     }
 
-    public function checkIn($id)
+    public function checkIn(Checkout $checkout)
     {
-        $checkout = Checkout::findOrFail($id);
-        $book = Book::findOrFail($checkout['book_id']);
-
-        DB::transaction(function () use ($book, $checkout) {
+        DB::transaction(function () use ($checkout) {
             $checkout->update([
                 'end_time' => Carbon::parse(now()),
                 'checkin_librarian_id' => auth()->id(),
                 'checkout_end_reason_id' => 1
             ]);
 
+            $book = Book::findOrFail($checkout['book_id']);
             $book->update(['checkouts_count' => --$book->checkouts_count]);
 
             Activity::create([
@@ -209,28 +214,26 @@ class CheckoutController extends Controller
                 'librarian_id' => $checkout['checkin_librarian_id'],
                 'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Checkin',
-                'activity_id' => $checkout['id'],
+                'activity_id' => $checkout['id']
             ]);
         });
 
         return redirect()->route('checkouts.index');
     }
 
-    public function writeOff($id)
+    public function writeOff(Checkout $checkout)
     {
-        $checkout = Checkout::findOrFail($id);
-        $book = Book::findOrFail($checkout->book_id);
-
         if ($checkout->end_date)
             return redirect()->route('checkouts.index'); // Prevents writing off checked in books
 
-        DB::transaction(function () use ($book, $checkout) {
+        DB::transaction(function () use ($checkout) {
             $checkout->update([
                 'end_time' => Carbon::parse(now()),
                 'checkin_librarian_id' => auth()->id(),
                 'checkout_end_reason_id' => 2
             ]);
 
+            $book = Book::findOrFail($checkout->book_id);
             $book->update([
                 'total_count' => --$book->total_count,
                 'checkouts_count' => --$book->checkouts_count
@@ -242,8 +245,7 @@ class CheckoutController extends Controller
                 'librarian_id' => $checkout['checkin_librarian_id'],
                 'time' => Carbon::now()->format('Y-m-d H:i'),
                 'type' => 'Lost Book',
-                'activity_id' => $checkout['id'],
-
+                'activity_id' => $checkout['id']
             ]);
         });
 

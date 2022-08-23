@@ -11,43 +11,48 @@ class Book extends Model
     use HasFactory;
 
     const DEFAULT_BOOK_PICTURE_PATH = '/assets/img/book.jpg';
-    protected $guarded = [''];
+    protected $guarded = ['id'];
 
-    public function author(){
+    public function author()
+    {
         return $this->belongsTo(Author::class);
     }
 
-    public function script(){
+    public function script()
+    {
         return $this->belongsTo(Script::class);
     }
 
-    public function binding(){
+    public function binding()
+    {
         return $this->belongsTo(Binding::class);
     }
 
-    public function size(){
+    public function size()
+    {
         return $this->belongsTo(Size::class);
     }
 
-    public function publisher(){
+    public function publisher()
+    {
         return $this->belongsTo(Publisher::class);
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
-    public function genre(){
+    public function genre()
+    {
         return $this->belongsTo(Genre::class);
     }
 
     public function getOverdueCountAttribute()
     {
-        $overdue_count = count(Checkout:: where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
+        return count(Checkout:: where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
             ->where('end_time', null)
             ->get());
-
-        return $overdue_count;
     }
 
     public function getAvailableCountAttribute()

@@ -9,13 +9,8 @@ class Activity extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'id',
-    ];
-    protected $dates = [
-      'time',
-    ];
-
+    protected $guarded = ['id'];
+    protected $dates = ['time'];
     public $timestamps = false;
 
     public function book()

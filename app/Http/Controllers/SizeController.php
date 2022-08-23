@@ -34,7 +34,6 @@ class SizeController extends Controller
     public function update(UpdateSizeRequest $request, Size $size)
     {
         $size->update($request->validated());
-
         return redirect()->route('sizes.index');
     }
 

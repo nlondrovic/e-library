@@ -22,7 +22,6 @@ class ScriptController extends Controller
     public function store(StoreScriptRequest $request)
     {
         Script::create($request->validated());
-
         return redirect()->route('scripts.index');
     }
 
@@ -34,7 +33,6 @@ class ScriptController extends Controller
     public function update(UpdateScriptRequest $request, Script $script)
     {
         $script->update($request->validated());
-
         return redirect()->route('scripts.index');
     }
 

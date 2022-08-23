@@ -29,7 +29,6 @@ class BookController extends Controller
         $books = Book::orderBy('title', 'asc')->paginate(5);
         $search_books = Book::orderBy('title', 'asc')->get();
         return view('books.index', compact('books', 'search_books'));
-
     }
 
     public function create()
@@ -57,12 +56,11 @@ class BookController extends Controller
             $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/books/'), $filename);
-        }
-        else
+        } else {
             $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
+        }
 
         Book::create($inputs);
-
         return redirect()->route('books.index');
     }
 
@@ -97,12 +95,11 @@ class BookController extends Controller
             $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/books/'), $filename);
-        }
-        else
+        } else {
             $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
+        }
 
         $book->update($inputs);
-
         return redirect()->route('books.show', compact('book'));
     }
 

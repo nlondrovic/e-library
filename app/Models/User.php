@@ -14,16 +14,14 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     const DEFAULT_USER_PICTURE_PATH = '/assets/img/user.jpg';
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
     protected $hidden = [
         'password',
-        'remember_token',
+        'remember_token'
     ];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = ['email_verified_at' => 'datetime'];
 
     public function role()
     {
@@ -32,7 +30,7 @@ class User extends Authenticatable
 
     public function canCheckoutOrReserveMoreBooks()
     {
-        return ($this->getBookCount() < getenv('BOOKS_PER_STUDENT'));
+        return $this->getBookCount() < getenv('BOOKS_PER_STUDENT');
     }
 
     public function getBookCount()
@@ -82,5 +80,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Checkout::class, 'student_id')->where('end_time', null);
     }
-
 }

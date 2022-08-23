@@ -19,6 +19,7 @@ class UpdateCategoryRequest extends FormRequest
             'icon' => 'required'
         ];
     }
+
     public function messages()
     {
         return [

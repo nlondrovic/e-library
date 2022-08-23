@@ -9,5 +9,5 @@ class Genre extends Model
 {
     use HasFactory;
 
-    public $guarded = [''];
+    protected $guarded = ['id'];
 }

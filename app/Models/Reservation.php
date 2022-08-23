@@ -10,12 +10,12 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    protected $guarded = [''];
+    protected $guarded = ['id'];
     public $timestamps = false;
 
     protected $casts = [
         'start_time' => 'datetime',
-        'end_time' => 'datetime',
+        'end_time' => 'datetime'
     ];
 
     public function book()

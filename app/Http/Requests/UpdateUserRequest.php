@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UpdateUserRequest extends FormRequest
 {
-
     public function authorize()
     {
         return Auth::check();
