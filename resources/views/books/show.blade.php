@@ -86,7 +86,7 @@
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Date of publishing</span>
-                            <p class="font-medium">{{ $book->publish_date }}</p>
+                            <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
                         </div>
                     </div>
 
