@@ -13,7 +13,7 @@ class LibrarianController extends Controller
 {
     public function index()
     {
-        $librarians = User::where('role_id', 2)->paginate(5);
+        $librarians = User::where('role_id', 2)->orderBy('id', 'desc')->paginate(5);
         return view('librarians.index', compact('librarians'));
     }
 

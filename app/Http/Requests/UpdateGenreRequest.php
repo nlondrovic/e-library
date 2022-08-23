@@ -15,8 +15,14 @@ class UpdateGenreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'icon' => 'sometimes'
+            'name' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name is required.')
         ];
     }
 }

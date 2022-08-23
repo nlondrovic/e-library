@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreAuthorRequest extends FormRequest
 {
-
     public function authorize()
     {
         return Auth::check();
@@ -19,7 +18,15 @@ class StoreAuthorRequest extends FormRequest
             'name' => 'required',
             'about' => 'required|min:10',
             'picture' => 'sometimes'
+        ];
+    }
 
+    public function messages()
+    {
+        return [
+            'name.required' => __('An author must have a name.'),
+            'about.required' => __('Write something about this author.'),
+            'about.min' => __('About must be at least 10 characters.')
         ];
     }
 }

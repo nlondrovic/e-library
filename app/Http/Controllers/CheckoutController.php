@@ -208,7 +208,7 @@ class CheckoutController extends Controller
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkin_librarian_id'],
                 'time' => Carbon::now()->format('Y-m-d H:i'),
-                'type' => 'Checkout',
+                'type' => 'Checkin',
                 'activity_id' => $checkout['id'],
             ]);
         });
@@ -241,7 +241,7 @@ class CheckoutController extends Controller
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkin_librarian_id'],
                 'time' => Carbon::now()->format('Y-m-d H:i'),
-                'type' => 'Checkout',
+                'type' => 'Lost Book',
                 'activity_id' => $checkout['id'],
 
             ]);

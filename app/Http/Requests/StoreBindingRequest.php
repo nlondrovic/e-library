@@ -12,10 +12,17 @@ class StoreBindingRequest extends FormRequest
         return Auth::check();
     }
 
-      public function rules()
+    public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name of the binding must be specified.')
         ];
     }
 }

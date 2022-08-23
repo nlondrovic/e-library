@@ -202,11 +202,25 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="mt-[20px]">
-                            <p>Add photo</p>
-                            <input type="file" name="picture" accept="image/*"
-                                   onchange="loadFileStudent(event)"/>
-                            <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($book->picture) }}" alt="Book image"/>
+
+                        <div class="row-3">
+                            {{-- Total book count --}}
+                            <div class="mt-[20px]">
+                                <p>Total number of books <span class="text-red-500">*</span></p>
+                                <input required type="number" name="total_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->total_count }}"
+                                       placeholder="Enter a number of book copies"/>
+                                @if($errors->first('total_count'))
+                                    <p class="text-red-600">{{ $errors->first('total_count') }}</p>
+                                @endif
+                            </div>
+                            <div class="mt-[20px]">
+                                <p>Add photo</p>
+                                <input type="file" name="picture" accept="image/*"
+                                       onchange="loadFileStudent(event)"/>
+                                <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($book->picture) }}" alt="Book image"/>
+                            </div>
                         </div>
 
                         {{-- Buttons --}}
