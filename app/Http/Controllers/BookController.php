@@ -13,14 +13,23 @@ use App\Models\Genre;
 use App\Models\Publisher;
 use App\Models\Script;
 use App\Models\Size;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->get('searchBook')) {
+            $search_books = Book::orderBy('title', 'asc')->get();
+            $books = Book::where('title', 'LIKE', '%' . $request->get('searchBook') . '%')->paginate(5);
+            return view('books.index', compact('books', 'search_books'));
+        }
+
         $books = Book::orderBy('title', 'asc')->paginate(5);
-        return view('books.index', compact('books'));
+        $search_books = Book::orderBy('title', 'asc')->get();
+        return view('books.index', compact('books', 'search_books'));
+
     }
 
     public function create()

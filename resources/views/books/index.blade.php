@@ -19,6 +19,27 @@
                        ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i> New book
             </a>
+
+            <form action="{{ route('books.index') }}">
+                <div class="wrapper">
+                    <div class="search-input">
+                        <a href="" hidden></a>
+                        <input type="search" name="searchBook" placeholder="Search books.."
+                               value="{{ request()->get('searchBook') }}">
+                        <div class="autocom-box"></div>
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                    </div>
+                </div>
+            </form>
+
+            <script>
+                {{--{id:{{ $book->id }}, title:"{{ $book->title }}"},--}}
+                let suggestions = [
+                    @foreach($search_books as $book)
+                        "{{ $book->title }}",
+                    @endforeach
+                ];
+            </script>
         </div>
 
         <div class="px-[50px] pt-2 bg-white">
