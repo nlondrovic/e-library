@@ -18,4 +18,11 @@ class UpdateBindingRequest extends FormRequest
             'name' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name of the binding must be specified.')
+        ];
+    }
 }

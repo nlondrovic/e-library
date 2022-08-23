@@ -19,4 +19,11 @@ class UpdateCategoryRequest extends FormRequest
             'icon' => 'required'
         ];
     }
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name is required.'),
+            'icon.required' => __('Icon is required.')
+        ];
+    }
 }

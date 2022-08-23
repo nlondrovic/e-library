@@ -16,7 +16,7 @@ class UpdateUserRequest extends FormRequest
 
     public function rules()
     {
-        $emailRule = 'required|unique:users';
+        $emailRule = 'required|email|unique:users';
 
         if ($this->student) {
             $emailRule .= ",email,{$this->student->id}";
@@ -31,6 +31,20 @@ class UpdateUserRequest extends FormRequest
             'jmbg' => 'required|regex:/[0-9]+/|digits:13',
             'email' => $emailRule,
             'picture' => 'sometimes'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name is required.'),
+            'name.string' => __('Name must be a string.'),
+            'jmbg.required' => __('JMBG is required.'),
+            'jmbg.regex' => __('JMBG format is invalid.'),
+            'jmbg.digits' => __('JMBG must have 13 digits.'),
+            'email.required' => __('Email is required.'),
+            'email.email' => __('Invalid email.'),
+            'email.unique' => __('Email must be unique.')
         ];
     }
 }

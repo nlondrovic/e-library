@@ -18,4 +18,11 @@ class StoreSizeRequest extends FormRequest
             'name' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name is required.')
+        ];
+    }
 }

@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class StoreCategoryRequest extends FormRequest
 {
-
     public function authorize()
     {
         return Auth::check();
@@ -18,6 +17,13 @@ class StoreCategoryRequest extends FormRequest
         return [
             'name' => 'required',
             'icon' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => __('Name is required.'),
+            'icon.required' => __('Icon is required.')
         ];
     }
 }
