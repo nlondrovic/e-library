@@ -20,7 +20,7 @@
                         @include('components/dashboard/checkout-card')
                     @elseif($activity->type == 'Checkin')
                         @include('components/dashboard/checkin-card')
-                    @elseif($activity->type == 'Lost book')
+                    @elseif($activity->type == 'Lost Book')
                         @include('components/dashboard/lost-card')
                     @elseif($activity->type == 'Reservation')
                         @include('components/dashboard/reservation-card')
