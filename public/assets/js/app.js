@@ -250,3 +250,10 @@ $(document).on('mouseup', function (e) {
         dropdownFormat.slideUp();
     }
 });
+
+// Student image upload
+var loadFileStudent = function (event) {
+    var imageStudent = document.getElementById('image-output-student');
+    imageStudent.style.display = "block";
+    imageStudent.src = URL.createObjectURL(event.target.files[0]);
+};
