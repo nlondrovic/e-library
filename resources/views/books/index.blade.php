@@ -24,8 +24,8 @@
                 <div class="wrapper">
                     <div class="search-input">
                         <a href="" hidden></a>
-                        <input type="search" name="searchBook" placeholder="Search books.."
-                               value="{{ request()->get('searchBook') }}">
+                        <input type="search" name="search" placeholder="Search books"
+                               value="{{ request()->get('search') }}">
                         <div class="autocom-box"></div>
                         <div class="search-icon"><i class="fas fa-search"></i></div>
                     </div>
@@ -33,9 +33,8 @@
             </form>
 
             <script>
-                {{--{id:{{ $book->id }}, title:"{{ $book->title }}"},--}}
                 let suggestions = [
-                    @foreach($search_books as $book)
+                    @foreach($search_array as $book)
                         "{{ $book->title }}",
                     @endforeach
                 ];
@@ -137,9 +136,13 @@
                     @endforeach
                     </tbody>
                 </table>
-                <p class="mt-[20px]">
-                    {{ $books->links("pagination::tailwind") }}
-                </p>
+
+                @if(isset($pagination))
+                    <p class="mt-[20px]">
+                        {{ $books->links("pagination::tailwind") }}
+                    </p>
+                @endif
+
             </div>
         </div>
     </div>

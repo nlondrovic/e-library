@@ -6,15 +6,26 @@ use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class AuthorController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $authors = Author::orderBy('name', 'asc')->paginate(5);
-        return view('authors.index', compact('authors'));
+        if ($request->get('search')) {
+            $search_array = Author::orderBy('name', 'asc')->get();
+            $authors = Author::where('name', 'LIKE', '%' . $request->get('search') . '%')
+                ->orderBy('name', 'asc')->get();
+
+            return view('authors.index', compact('authors', 'search_array'));
+        }
+
+        $authors = Author::orderBy('name', 'asc')->paginate(10);
+        $search_array = Author::orderBy('name', 'asc')->get();
+        $pagination = true;
+
+        return view('authors.index', compact('authors', 'search_array', 'pagination'));
     }
 
     public function create()

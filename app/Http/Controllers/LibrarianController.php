@@ -11,10 +11,22 @@ use Illuminate\Support\Str;
 
 class LibrarianController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $librarians = User::where('role_id', 2)->orderBy('id', 'desc')->paginate(5);
-        return view('librarians.index', compact('librarians'));
+        if ($request->get('search')) {
+            $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
+            $librarians = User::where('role_id', 2)
+                ->where('name', 'LIKE', '%' . $request->get('search') . '%')
+                ->orderBy('name', 'asc')->get();
+
+            return view('librarians.index', compact('librarians', 'search_array'));
+        }
+
+        $librarians = User::where('role_id', 2)->orderBy('name', 'asc')->paginate(8);
+        $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
+        $pagination = true;
+
+        return view('librarians.index', compact('librarians', 'search_array', 'pagination'));
     }
 
     public function create()

@@ -20,15 +20,19 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
-        if ($request->get('searchBook')) {
-            $search_books = Book::orderBy('title', 'asc')->get();
-            $books = Book::where('title', 'LIKE', '%' . $request->get('searchBook') . '%')->paginate(5);
-            return view('books.index', compact('books', 'search_books'));
+        if ($request->get('search')) {
+            $search_array = Book::orderBy('title', 'asc')->get();
+            $books = Book::where('title', 'LIKE', '%' . $request->get('searchBook') . '%')
+                ->orderBy('title', 'asc')->get();
+
+            return view('books.index', compact('books', 'search_array'));
         }
 
-        $books = Book::orderBy('title', 'asc')->paginate(5);
-        $search_books = Book::orderBy('title', 'asc')->get();
-        return view('books.index', compact('books', 'search_books'));
+        $books = Book::orderBy('title', 'asc')->paginate(10);
+        $search_array = Book::orderBy('title', 'asc')->get();
+        $pagination = true;
+
+        return view('books.index', compact('books', 'search_array', 'pagination'));
     }
 
     public function create()

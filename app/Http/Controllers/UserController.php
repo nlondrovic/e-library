@@ -11,10 +11,22 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $students = User::where('role_id', 3)->orderBy('id', 'desc')->paginate(5);;
-        return view('students.index', compact('students'));
+        if ($request->get('search')) {
+            $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
+            $students = User::where('role_id', 3)
+                ->where('name', 'LIKE', '%' . $request->get('search') . '%')
+                ->orderBy('name', 'asc')->get();
+
+            return view('students.index', compact('students', 'search_array'));
+        }
+
+        $students = User::where('role_id', 3)->orderBy('name', 'asc')->paginate(8);
+        $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
+        $pagination = true;
+
+        return view('students.index', compact('students', 'search_array', 'pagination'));
     }
 
     public function create()

@@ -12,13 +12,33 @@
 
     <!-- Space for content -->
     <div class="scroll height-evidencija">
-        {{-- New Book --}}
+        {{-- New Author --}}
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('authors.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                        ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i>New author
             </a>
+
+            <form action="{{ route('authors.index') }}">
+                <div class="wrapper">
+                    <div class="search-input">
+                        <a href="" hidden></a>
+                        <input type="search" name="search" placeholder="Search authors"
+                               value="{{ request()->get('search') }}">
+                        <div class="autocom-box"></div>
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                    </div>
+                </div>
+            </form>
+
+            <script>
+                let suggestions = [
+                    @foreach($search_array as $author)
+                        "{{ $author->name }}",
+                    @endforeach
+                ];
+            </script>
         </div>
 
         <div class="px-[50px] pt-2 bg-white">
@@ -86,9 +106,13 @@
                     @endforeach
                     </tbody>
                 </table>
-                <p class="mt-[20px]">
-                    {{ $authors->links("pagination::tailwind") }}
-                </p>
+
+                @if(isset($pagination))
+                    <p class="mt-[20px]">
+                        {{ $authors->links("pagination::tailwind") }}
+                    </p>
+                @endif
+
             </div>
         </div>
     </div>
