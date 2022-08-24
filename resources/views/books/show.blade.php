@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="">
-                        <div class="mt-[40px]">
+                        <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">ISBN</span>
                             <p class="font-medium">{{ $book->isbn }}</p>
                         </div>
@@ -114,11 +114,11 @@
                     </div>
 
                     <div class="w-[560px]">
-                        <div class="mt-[40px]">
+                        <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">Content</span>
                             <p class="font-medium">{{ $book->content }}</p>
                         </div>
-                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px" src="{{ asset($book->picture) }}" alt="">
+                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px" src="{{ asset($book->picture) }}" alt="Book image">
                     </div>
 
                 </div>

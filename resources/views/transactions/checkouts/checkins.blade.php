@@ -10,8 +10,8 @@
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Checkout librarian')}}</th>
             <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Checkin librarian')}}</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Start date')}}</th>
-            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('End date')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Start time')}}</th>
+            <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('End time')}}</th>
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
