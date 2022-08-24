@@ -33,7 +33,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($reservations->toArray())) {
             return view('transactions.index');
         }
@@ -64,7 +64,7 @@ class ReservationController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(5);
+        $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($reservations->toArray())) {
             return view('transactions.index');
         }
@@ -159,7 +159,7 @@ class ReservationController extends Controller
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkout_librarian_id'],
-                'time' => Carbon::now()->format('Y-mm-dd H:i'),
+                'time' => Carbon::parse(now()),
                 'type' => 'Reservation',
                 'activity_id' => $checkout['id']
             ]);

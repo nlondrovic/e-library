@@ -30,7 +30,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
         }
@@ -62,7 +62,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
         }
@@ -94,7 +94,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
         }
@@ -126,7 +126,7 @@ class CheckoutController extends Controller
             $book = Book::findOrFail($request['book_id']);
         }
 
-        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(5);
+        $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
         }

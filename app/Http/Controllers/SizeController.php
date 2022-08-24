@@ -10,7 +10,7 @@ class SizeController extends Controller
 {
     public function index()
     {
-        $sizes = Size::orderBy('name', 'asc')->paginate(5);
+        $sizes = Size::orderBy('name', 'asc')->paginate(8);
         return view('settings.sizes.index', compact('sizes'));
     }
 
