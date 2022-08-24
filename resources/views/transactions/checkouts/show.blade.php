@@ -4,9 +4,11 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="py-[10px] flex flex-row">
-                <div class="pl-[50px] pb-[14px] flex flex-col">
-                    <h1>{{ $checkout->book->title }}</h1>
+            <div class="pt-[1px]">
+                <div class="py-[7px] flex flex-row">
+                    <div class="pl-[50px] pb-[14px] flex flex-col">
+                        <h1>{{ $checkout->book->title }}</h1>
+                    </div>
                 </div>
             </div>
 

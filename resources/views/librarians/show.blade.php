@@ -4,8 +4,10 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] pt-[10px] pb-[20px] flex flex-col">
-                <h1>{{ $librarian->name }}</h1>
+            <div class="pt-[1px]">
+                <div class="pl-[50px] pt-[8px] pb-[20px] flex flex-col">
+                    <h1>{{ $librarian->name }}</h1>
+                </div>
             </div>
 
             <div class="pt-[24px] mr-[30px]">

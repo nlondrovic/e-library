@@ -4,8 +4,10 @@
     {{-- Heading --}}
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[60px] pb-[27px] flex flex-col">
-                <h1>Edit binding</h1>
+            <div class="mt-[2px]">
+                <div class="pl-[60px] pb-[27px] flex flex-col">
+                    <h1>Edit binding</h1>
+                </div>
             </div>
         </div>
     </div>
