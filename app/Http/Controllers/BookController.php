@@ -22,7 +22,7 @@ class BookController extends Controller
     {
         if ($request->get('search')) {
             $search_array = Book::orderBy('title', 'asc')->get();
-            $books = Book::where('title', 'LIKE', '%' . $request->get('searchBook') . '%')
+            $books = Book::where('title', 'LIKE', '%' . $request->get('search') . '%')
                 ->orderBy('title', 'asc')->get();
 
             return view('books.index', compact('books', 'search_array'));
