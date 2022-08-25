@@ -6,6 +6,9 @@
             </a>
         </x-slot>
 
+
+
+
         <!-- Session Status -->
         <x-auth.auth-session-status class="mb-4" :status="session('status')" />
 
@@ -31,6 +34,11 @@
                                 name="password"
                                 required autocomplete="current-password" />
             </div>
+            @if(session()->has('error'))
+                <div>
+                    <p class="alert alert-info text-red-600">{{ Session::get('error') }}</p>
+                </div>
+            @endif
 
             <!-- Remember Me -->
             <div class="block mt-4">
