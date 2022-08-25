@@ -20,13 +20,6 @@ class UserPolicy
         return $user->isAdmin();
     }
 
-    /**
-     * Determine whether the user can view the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
-     * @return \Illuminate\Auth\Access\Response|bool
-     */
     public function view(User $user, User $librarian)
     {
         return $user->isAdmin() || $user->id == $librarian->id;
