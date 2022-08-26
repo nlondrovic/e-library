@@ -28,22 +28,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
-                <!-- Librarian Icon -->
-                <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
-                    <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
-                                <a href="{{ route('librarians.index') }}" aria-label="Librarians">
-                                    <i class="text-[25px] text-[#707070] far fa-address-book transition duration-300 ease-in group-hover:text-blue-600
-                                         @if(str_contains($route_name, 'librarians')) text-[#576cdf] @endif"></i>
-                                    <div class="hidden sidebar-item">
-                                        <p class="inline text-[15px] ml-[20px] transition duration-300 ease-in group-hover:text-blue-600">
-                                            Librarians
-                                        </p>
-                                    </div>
-                                </a>
-                        </span>
-                    </div>
-                </li>
                 <!-- Students Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
@@ -108,6 +92,41 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
+{{--                @if(auth()->user()->isAdmin())--}}
+                <!-- Librarian Icon -->
+                <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
+                    <div class="ml-[30px]">
+                        <span class="flex justify-between w-full whitespace-nowrap">
+                                <a href="{{ route('librarians.index') }}" aria-label="Librarians">
+                                    <i class="text-[25px] text-[#707070] fa-solid fa-user-tie transition duration-300 ease-in group-hover:text-blue-600
+                                         @if(str_contains($route_name, 'librarians')) text-[#576cdf] @endif"></i>
+                                    <div class="hidden sidebar-item">
+                                        <p class="inline text-[15px] ml-[20px] transition duration-300 ease-in group-hover:text-blue-600">
+                                            Librarians
+                                        </p>
+                                    </div>
+                                </a>
+                        </span>
+                    </div>
+                </li>
+                <!-- Admin icon -->
+                <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
+                    <div class="ml-[30px]">
+                        <span class="flex justify-between w-full whitespace-nowrap">
+                                <a href="{{ route('admins.index') }}" aria-label="RentingBooks">
+                                    <i class="text-[22px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fa-solid fa-user-shield
+                                         @if(str_contains($route_name, 'admins')) text-[#576cdf] @endif"></i>
+                                    <div class="hidden sidebar-item">
+                                        <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                            Admin
+                                        </p>
+                                    </div>
+                                </a>
+                        </span>
+                    </div>
+                </li>
+{{--                @endif--}}
+
             </ul>
         </div>
     </div>
