@@ -17,7 +17,7 @@
         <div class="relative flex items-center justify-end">
             <div class="flex items-center">
 
-            
+
                 <!-- Add Icon -->
                 <a class="inline-block border-l-[1px] border-gray-300 px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">

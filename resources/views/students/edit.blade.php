@@ -3,7 +3,7 @@
 
     <!-- Heading of content -->
     <div class="heading">
-        <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
+        <div class="pl-[50px] pb-[27px] mt-[2px] border-b-[1px] border-[#e4dfdf]">
             <h1> Edit student</h1>
         </div>
     </div>
