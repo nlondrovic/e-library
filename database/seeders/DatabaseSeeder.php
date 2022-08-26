@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PublisherSeeder::class,
             ScriptSeeder::class,
             SizeSeeder::class,
+            SettingSeeder::class,
             ReservationEndReasonSeeder::class,
             CheckoutEndReasonSeeder::class,
             RoleSeeder::class,

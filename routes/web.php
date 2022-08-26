@@ -10,6 +10,7 @@ use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ScriptController;
 
@@ -51,8 +52,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/sizes', SizeController::class);
     Route::resource('/scripts', ScriptController::class);
     Route::resource('/librarians', LibrarianController::class);
-    Route::get('/policy', [HomeController::class, 'policy'])->name('policy');
-
+    Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
+    Route::patch('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
 
 
     // RESERVATIONS LISTING

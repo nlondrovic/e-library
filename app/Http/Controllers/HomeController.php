@@ -11,11 +11,6 @@ use Carbon\Carbon;
 
 class HomeController extends Controller
 {
-    public function policy()
-    {
-        return view('settings.policy.index');
-    }
-
     public function dashboard()
     {
         $checkouts_count = count(Checkout::where('end_time', null)->get());

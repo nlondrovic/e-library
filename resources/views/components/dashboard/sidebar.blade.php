@@ -115,7 +115,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <!-- Settings Icon -->
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
-                <a href="{{ route('policy') }}" aria-label="Settngs" class="ml-[30px]">
+                <a href="{{ route('settings.index') }}" aria-label="Settngs" class="ml-[30px]">
                         <span class="whitespace-nowrap">
                             <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog
                                          @if(str_contains($route_name, 'policy')||
