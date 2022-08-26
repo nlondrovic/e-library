@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
@@ -52,6 +53,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/sizes', SizeController::class);
     Route::resource('/scripts', ScriptController::class);
     Route::resource('/librarians', LibrarianController::class);
+    Route::resource('/admins', AdminController::class);
     Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::patch('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
 
