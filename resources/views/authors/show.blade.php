@@ -4,11 +4,13 @@
     <!-- Heading of content -->
     <div class="heading">
         <div class="flex justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] py-[7px] pb-[21px] flex flex-col">
-                <div>
-                    <h1>
-                        {{ $author->name }}
-                    </h1>
+            <div class="pt-[1px]">
+                <div class="pl-[50px] pt-[7px] pb-[21px] flex flex-col">
+                    <div>
+                        <h1>
+                            {{ $author->name }}
+                        </h1>
+                    </div>
                 </div>
             </div>
 
