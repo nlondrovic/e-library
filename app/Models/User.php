@@ -28,6 +28,16 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function isAdmin()
+    {
+        return $this->role_id == 1;
+    }
+
+    public function isLibrarian()
+    {
+        return $this->role_id == 2;
+    }
+
     public function canCheckoutOrReserveMoreBooks()
     {
         return $this->getBookCount() < getenv('BOOKS_PER_STUDENT');
