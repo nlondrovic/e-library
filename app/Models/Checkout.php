@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Checkout extends Model
 {
@@ -40,7 +41,7 @@ class Checkout extends Model
 
     public function getSupposedEndTime()
     {
-        return Carbon::parse($this->start_time)->addDays(getenv('HOLDING_TIME'));
+        return Carbon::parse($this->start_time)->addDays(DB::table('settings')->where('variable', '=', 'Holding time')->value('value'));
     }
 
     public function getHoldingTime()
