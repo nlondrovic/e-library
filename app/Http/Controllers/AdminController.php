@@ -13,17 +13,23 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
+        $this->authorize('viewAny', User::class);
+
         $admins = User::where('role_id', 1)->orderBy('name', 'asc')->paginate(8);
         return view('admins.index', compact('admins'));
     }
 
     public function create()
     {
+        $this->authorize('create', User::class);
+
         return view('admins.create');
     }
 
     public function store(StoreUserRequest $request)
     {
+        $this->authorize('create', User::class);
+
         $inputs = $request->validated();
         $inputs['role_id'] = 1;
         $inputs['password'] = Hash::make($request->password);
@@ -45,16 +51,22 @@ class AdminController extends Controller
 
     public function show(User $admin)
     {
+        $this->authorize('view', User::class);
+
         return view('admins.show', compact('admin'));
     }
 
     public function edit(User $admin)
     {
+        $this->authorize('update', User::class);
+
         return view('admins.edit', compact('admin'));
     }
 
     public function update(UpdateUserRequest $request, User $admin)
     {
+        $this->authorize('update', User::class);
+
         $inputs = $request->validated();
 
         if ($request['picture']) {
@@ -73,6 +85,8 @@ class AdminController extends Controller
 
     public function destroy(User $admin)
     {
+        $this->authorize('delete', User::class);
+
         $admin->delete();
         return redirect()->route("admins.index");
     }

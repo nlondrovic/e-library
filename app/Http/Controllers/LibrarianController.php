@@ -13,6 +13,8 @@ class LibrarianController extends Controller
 {
     public function index(Request $request)
     {
+        $this->authorize('viewAny', User::class);
+
         if ($request->get('search')) {
             $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
             $librarians = User::where('role_id', 2)
@@ -31,11 +33,15 @@ class LibrarianController extends Controller
 
     public function create()
     {
+        $this->authorize('create',User::class);
+
         return view('librarians.create');
     }
 
     public function store(StoreUserRequest $request)
     {
+        $this->authorize('create', User::class);
+
         $inputs = $request->validated();
         $inputs['role_id'] = 2;
         $inputs['password'] = Hash::make($request->password);
@@ -57,16 +63,22 @@ class LibrarianController extends Controller
 
     public function show(User $librarian)
     {
+        $this->authorize('view', $librarian);
+
         return view('librarians.show', compact('librarian'));
     }
 
     public function edit(User $librarian)
     {
+        $this->authorize('update', $librarian);
+
         return view('librarians.edit', compact('librarian'));
     }
 
     public function update(UpdateUserRequest $request, User $librarian)
     {
+        $this->authorize('update', $librarian   );
+
         $inputs = $request->validated();
 
         if ($request['picture']) {
@@ -85,6 +97,8 @@ class LibrarianController extends Controller
 
     public function destroy(User $librarian)
     {
+        $this->authorize('delete', User::class);
+
         $librarian->delete();
         return redirect()->route("librarians.index");
     }
