@@ -92,7 +92,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
-{{--                @if(auth()->user()->isAdmin())--}}
+                @if(auth()->user()->isAdmin())
                 <!-- Librarian Icon -->
                 <li class="pt-[18px] pb-[14px] mb-[4px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
@@ -125,7 +125,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
-{{--                @endif--}}
+                @endif
 
             </ul>
         </div>
