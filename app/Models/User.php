@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -40,7 +41,7 @@ class User extends Authenticatable
 
     public function canCheckoutOrReserveMoreBooks()
     {
-        return $this->getBookCount() < getenv('BOOKS_PER_STUDENT');
+        return $this->getBookCount() < DB::table('settings')->where('variable', '=', 'Books per student')->value('value');
     }
 
     public function getBookCount()
@@ -64,7 +65,7 @@ class User extends Authenticatable
     {
         return count(Checkout::where('student_id', $this->id)
             ->where('end_time', null)
-            ->where('start_time', '<', Carbon::now()->subDays(getenv('HOLDING_TIME'))->toDateTimeString())
+            ->where('start_time', '<', Carbon::now()->subDays(DB::table('settings')->where('variable', '=', 'Holding time')->value('value'))->toDateTimeString())
             ->get());
     }
 
