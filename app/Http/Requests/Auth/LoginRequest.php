@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,11 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function ensureIsNotStudent()
+    {
+        return User::where('email', '=', $this->email)->first()->role_id == 3;
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
@@ -41,6 +47,7 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
+
     public function authenticate()
     {
         $this->ensureIsNotRateLimited();
