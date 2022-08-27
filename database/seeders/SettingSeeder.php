@@ -19,6 +19,7 @@ class SettingSeeder extends Seeder
             ['variable' => 'Holding time' ,'value' => 20 ],
             ['variable' => 'Reservation time' ,'value' => 20 ],
             ['variable' => 'Overdue time' ,'value' => 5 ],
+            ['variable' => 'Books per student' ,'value' => 5 ],
         ]);
     }
 }
