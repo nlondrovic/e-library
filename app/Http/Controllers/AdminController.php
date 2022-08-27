@@ -51,21 +51,21 @@ class AdminController extends Controller
 
     public function show(User $admin)
     {
-        $this->authorize('view', User::class);
+        $this->authorize('view', $admin);
 
         return view('admins.show', compact('admin'));
     }
 
     public function edit(User $admin)
     {
-        $this->authorize('update', User::class);
+        $this->authorize('update', $admin);
 
         return view('admins.edit', compact('admin'));
     }
 
     public function update(UpdateUserRequest $request, User $admin)
     {
-        $this->authorize('update', User::class);
+        $this->authorize('update', $admin);
 
         $inputs = $request->validated();
 

@@ -3,8 +3,10 @@
 
     <!-- Heading of content -->
     <div class="heading">
-        <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
-            <h1> Edit admin</h1>
+        <div class="mt-[2px]">
+            <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
+                <h1> Edit admin</h1>
+            </div>
         </div>
     </div>
 
