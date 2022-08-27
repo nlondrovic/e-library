@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,8 +30,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request)
     {
-        if(User::where('email', '=', $request->email)->first()->role_id == 3){
-            return redirect('login')->with('error', 'Invalid Credentials');
+        if($request->ensureIsNotStudent())
+        {
+            throw ValidationException::withMessages([
+                'email' => trans('auth.failed'),
+            ]);
         }
         $request->authenticate();
         $request->session()->regenerate();
