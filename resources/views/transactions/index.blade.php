@@ -58,8 +58,9 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
+                <hr>
                 <li class="mb-[4px]">
-                    <div class="w-[300px] pl-[28px]">
+                    <div class="w-[300px] pl-[28px] py-1">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
                             <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'overdue')) bg-[#EFF3F6] text-[#576cdf] @endif">
