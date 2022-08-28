@@ -11,9 +11,9 @@ class ReservationEndReasonSeeder extends Seeder
     public function run()
     {
         DB::table('reservation_end_reasons')->insert([
-            [ 'value' => 'Reservation expired' ],
-            [ 'value' => 'Reservation cancelled' ],
-            [ 'value' => 'Book checked out' ],
+            ['value' => 'Reservation expired'],
+            ['value' => 'Reservation cancelled'],
+            ['value' => 'Book checked out'],
         ]);
     }
 }

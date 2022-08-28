@@ -11,8 +11,8 @@ class CheckoutEndReasonSeeder extends Seeder
     public function run()
     {
         DB::table('checkout_end_reasons')->insert([
-            [ 'value' => 'Book checked in' ],
-            [ 'value' => 'Book lost' ]
+            ['value' => 'Book checked in'],
+            ['value' => 'Book lost']
         ]);
     }
 }
