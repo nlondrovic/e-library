@@ -69,7 +69,7 @@
 
                 </div>
                 <div class="ml-[100px]  mt-[20px]">
-                    <img class="p-2 border-2 border-gray-300" width="300px" src="{{ asset($librarian->picture) }}" alt="Librarian image">
+                    <img class="rounded-full border-2 border-blue-600 p-2" width="300px" src="{{ asset($librarian->picture) }}" alt="Librarian image">
                 </div>
             </div>
         </div>
