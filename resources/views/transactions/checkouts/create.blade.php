@@ -63,8 +63,8 @@
                             <input type="date" disabled class="flex w-[90%] mt-2 px-2 py-2 text-base text-gray-400
                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
                             focus:ring-[#576cdf]"
-                                   value="{{ date('Y-m-d', time() + DB::table('settings')->where('variable', '=', 'Holding time')->value('value') * 86400) }}"/>
-                            <p>{{__('Return period:')}} {{ DB::table('settings')->where('variable', '=', 'Holding time')->value('value') }} {{__('days')}}</p>
+                                   value="{{ $end_date }}"/>
+                            <p>{{__('Return period:')}} {{ $holding_time }} {{__('days')}}</p>
                         </div>
 
                     </div>
