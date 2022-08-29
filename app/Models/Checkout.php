@@ -42,8 +42,8 @@ class Checkout extends Model
     public function getSupposedEndTime()
     {
         $holding_time = DB::table('settings')
-                ->where('variable', 'Holding time')
-                ->value('value') || env('HOLDING_TIME');
+            ->where('variable', 'Holding time')
+            ->value('value');
 
         return Carbon::parse($this->start_time)->addDays($holding_time);
     }
@@ -62,8 +62,7 @@ class Checkout extends Model
             return "<p class=\"font-medium\">Less than 24 horus</p>";
 
         // if checkout is overdue
-        $holding_time = DB::table('settings')
-                ->where('variable', 'Holding time')->first()->value || env('HOLDING_TIME');
+        $holding_time = DB::table('settings')->where('variable', 'Holding time')->first()->value;
         if ($days >= $holding_time)
             return "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px] font-medium\">"
                 . $days . " days</p>";

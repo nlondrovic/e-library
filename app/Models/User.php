@@ -43,7 +43,8 @@ class User extends Authenticatable
     {
         $books_per_student = DB::table('settings')
             ->where('variable', 'Books per student')
-            ->value('value') || env('BOOKS_PER_STUDENT');
+            ->value('value');
+        return $books_per_student;
 
         return $this->getBookCount() < $books_per_student;
     }
@@ -69,7 +70,7 @@ class User extends Authenticatable
     {
         $holding_time = DB::table('settings')
                 ->where('variable',  'Holding time')
-                ->value('value') || env('HOLDING_TIME');
+                ->value('value');
 
         return count(Checkout::where('student_id', $this->id)
             ->where('end_time', null)

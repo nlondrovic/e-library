@@ -43,7 +43,7 @@ class Reservation extends Model
     {
         $reservation_time = DB::table('settings')
                 ->where('variable', 'Reservation time')
-                ->value('value') || env('RESERVATION_TIME');
+                ->value('value');
 
         return Carbon::parse($this->start_time)->addDays($reservation_time);
     }

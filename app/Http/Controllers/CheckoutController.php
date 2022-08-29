@@ -80,7 +80,7 @@ class CheckoutController extends Controller
     public function overdue(Request $request)
     {
         $holding_time = DB::table('settings')
-                ->where('variable', 'Holding time')->first()->value || env('HOLDING_TIME');
+                ->where('variable', 'Holding time')->first()->value;
         $checkoutsQuery = Checkout::where('end_time', null)
             ->where('start_time', '<', Carbon::now()->subDays($holding_time)->toDateTimeString());
         $student = null;
@@ -153,7 +153,7 @@ class CheckoutController extends Controller
         $book = Book::findOrFail($request['book']);
         $students = User::where('role_id', 3)->get();
         $holding_time = DB::table('settings')
-            ->where('variable', 'Holding time')->first()->value || env('HOLDING_TIME');
+            ->where('variable', 'Holding time')->first()->value;
         $end_date = Carbon::now()->addDays($holding_time)->format('Y-m-d');
 
         return view('transactions.checkouts.create',
