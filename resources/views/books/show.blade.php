@@ -69,36 +69,41 @@
                             <span class="text-gray-500 text-[14px]">Title</span>
                             <p class="font-medium">{{ $book->title }}</p>
                         </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Author</span>
-                            <p class="font-medium">{{ $book->author->name }}</p>
-                        </div>
+
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Category</span>
                             <p class="font-medium">{{ $book->category->name }}</p>
-                        </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Genre</span>
-                            <p class="font-medium">{{ $book->genre->name }}</p>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Publisher</span>
                             <p class="font-medium">{{ $book->publisher->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Date of publishing</span>
-                            <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
+                            <span class="text-gray-500 text-[14px]">Number of pages</span>
+                            <p class="font-medium">{{ $book->page_count }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">ISBN</span>
+                            <p class="font-medium">{{ $book->isbn }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Content</span>
+                            <p class="font-medium max-w-[600px]" style="width: 400px">{{ $book->content }}</p>
                         </div>
                     </div>
 
                     <div class="">
                         <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">ISBN</span>
-                            <p class="font-medium">{{ $book->isbn }}</p>
+                            <span class="text-gray-500 text-[14px]">Author</span>
+                            <p class="font-medium">{{ $book->author->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Number of pages</span>
-                            <p class="font-medium">{{ $book->page_count }}</p>
+                            <span class="text-gray-500 text-[14px]">Genre</span>
+                            <p class="font-medium">{{ $book->genre->name }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">Date of publishing</span>
+                            <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Script</span>
@@ -112,13 +117,11 @@
                             <span class="text-gray-500 text-[14px]">Size</span>
                             <p class="font-medium">{{ $book->size->name }}</p>
                         </div>
+
                     </div>
 
                     <div class="w-[560px]">
-                        <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">Content</span>
-                            <p class="font-medium">{{ $book->content }}</p>
-                        </div>
+
                         <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px" src="{{ asset($book->picture) }}" alt="Book image">
                     </div>
 
