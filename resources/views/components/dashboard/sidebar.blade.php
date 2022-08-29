@@ -17,7 +17,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
                             <div class="transition duration-300 ease-in group-hover:text-blue-600">
                                 <a href="{{ route('dashboard') }}" aria-label="Dashboard">
-                                    <i class="px-[5px] pt-[4px] pb-[5px] fa-solid fa-square-poll-horizontal text-[19px] rounded-[3px] text-[#707070]
+                                    <i class="px-[5px] pt-[4px] pb-[5px] fa-solid fa-chart-line text-[19px] rounded-[3px] text-[#707070]
                                         transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'dashboard')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
