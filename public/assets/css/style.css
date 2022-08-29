@@ -1891,6 +1891,10 @@ h4 {
     --tw-bg-opacity: 1;
     background-color: rgba(191, 219, 254, var(--tw-bg-opacity));
 }
+.bg-purple-200 {
+    --tw-bg-opacity: 1;
+    background-color: rgba(221, 214, 254, var(--tw-bg-opacity));
+}
 .bg-\[\#46A149\]{
     --tw-bg-opacity: 1;
     background-color: rgba(70, 161, 73, var(--tw-bg-opacity));
@@ -2423,6 +2427,10 @@ h4 {
     --tw-text-opacity: 1;
     color: rgba(17, 24, 39, var(--tw-text-opacity));
 }
+.text-purple-700 {
+     --tw-text-opacity: 1;
+     color: rgba(109, 40, 217, var(--tw-text-opacity));
+ }
 .text-green-700{
     --tw-text-opacity: 1;
     color: rgba(4, 120, 87, var(--tw-text-opacity));

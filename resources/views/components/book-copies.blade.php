@@ -5,7 +5,7 @@
             <p class="mt-[20px]">Reserved:</p>
             <p class="mt-[20px]">Checked out:</p>
             <p class="mt-[20px]">Overdue:</p>
-            <p class="mt-[20px]">Total number:</p>
+            <p class="mt-[20px]">Total copies:</p>
         </div>
         <div class="text-center pb-[30px]">
             <p class="bg-green-200 text-green-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
@@ -16,7 +16,7 @@
                 {{ $book->checkouts_count }} copies</p>
             <p class="mt-[16px] bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px]">
                 {{ $book->overdue_count }} copies</p>
-            <p class="mt-[16px] bg-gray-200 text-purple-600 rounded-[10px] px-[6px] py-[2px] text-[14px]">
+            <p class="mt-[16px] bg-purple-200 bg text-purple-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">
                 {{ $book->total_count }} copies
             </p>
         </div>
