@@ -39,8 +39,26 @@
         <div class="mr-[50px]">
             <h1 class="mb-[20px] mt-[20px]">Filters</h1>
             <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get">
-                {{-- Book --}}
+                {{-- Type --}}
                 <div>
+                    <p>Type</p>
+                    <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                            shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
+                            name="type">
+                        <option value="">None</option>
+                        <option value="Checkout" @if(request()->get('type') == "Checkout") selected @endif>Checkout
+                        </option>
+                        <option value="Checkin" @if(request()->get('type') == "Checkin") selected @endif>Checkin
+                        </option>
+                        <option value="Lost book" @if(request()->get('type') == "Lost book") selected @endif>Lost book
+                        </option>
+                        <option value="Reservation" @if(request()->get('type') == "Reservation") selected @endif>
+                            Reservation
+                        </option>
+                    </select>
+                </div>
+                {{-- Book --}}
+                <div class="mt-[20px]">
                     <p>Book</p>
                     <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
@@ -113,9 +131,9 @@
                 </div>
             </form>
 
-            @if(request()->get('book_id') || request()->get('student_id')
-                || request()->get('librarian_id') || request()->get('start_date')
-                || request()->get('end_date'))
+            @if(request()->get('type') || request()->get('book_id')
+                || request()->get('student_id') || request()->get('librarian_id')
+                || request()->get('start_date') || request()->get('end_date'))
                 <a href="{{ route(Route::currentRouteName()) }}" class="">
                     <button class="mt-[20px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                                     ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">

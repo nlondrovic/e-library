@@ -28,6 +28,10 @@ class HomeController extends Controller
     {
         $activitiesQuery = Activity::query();
 
+        if (request()->get('type')) {
+            $activitiesQuery->where('type', request()->get('type'));
+        }
+
         if (request()->get('book_id')) {
             $activitiesQuery->where('book_id', request()->get('book_id'));
         }
