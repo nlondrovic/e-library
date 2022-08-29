@@ -150,7 +150,13 @@ class CheckoutController extends Controller
     {
         $book = Book::findOrFail($request['book']);
         $students = User::where('role_id', 3)->get();
-        return view('transactions.checkouts.create', compact('book', 'students'));
+        $holding_time = DB::table('settings')
+            ->where('variable', 'Holding time')->first()->value;
+        $end_date = Carbon::now()->addDays($holding_time)->format('Y-m-d');
+
+        return view('transactions.checkouts.create',
+            compact('book', 'students', 'holding_time', 'end_date')
+        );
     }
 
     public function store(StoreCheckoutRequest $request)
