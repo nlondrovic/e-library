@@ -16,7 +16,7 @@ class SettingsController extends Controller
             ->where('variable', 'Reservation time')->first()->value;
 
         $books_per_student = DB::table('settings')
-            ->where('variable', '=', 'Books per student')->first()->value;
+            ->where('variable', 'Books per student')->first()->value;
 
         return view('settings.policy.index',
             compact('holding_time', 'reservation_time', 'books_per_student')
@@ -26,7 +26,7 @@ class SettingsController extends Controller
     public function update(Request $request)
     {
         if ($request->holding_time) {
-            DB::table('settings')->where('variable', '=', 'Holding time')
+            DB::table('settings')->where('variable', 'Holding time')
                 ->update(['value' => $request->holding_time]);
         }
 

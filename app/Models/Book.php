@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Book extends Model
 {
@@ -48,9 +49,13 @@ class Book extends Model
         return $this->belongsTo(Genre::class);
     }
 
-    public function getOverdueCountAttribute()
+    public function getOverdueCount()
     {
-        return count(Checkout:: where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
+        $holding_time = DB::table('settings')
+                ->where('variable', 'Holding time')->first()->value || env('HOLDING_TIME');
+
+        return count(Checkout::where('book_id', $this->id)
+            ->where('start_time', '<', Carbon::now()->subDays($holding_time)->toDateTimeString())
             ->where('end_time', null)
             ->get());
     }

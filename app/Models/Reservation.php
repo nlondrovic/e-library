@@ -41,6 +41,10 @@ class Reservation extends Model
 
     public function getSupposedEndTimeAttribute()
     {
-        return Carbon::parse($this->start_time)->addDays(DB::table('settings')->where('variable', '=', 'Reservation time')->value('value'));
+        $reservation_time = DB::table('settings')
+                ->where('variable', 'Reservation time')
+                ->value('value') || env('RESERVATION_TIME');
+
+        return Carbon::parse($this->start_time)->addDays($reservation_time);
     }
 }

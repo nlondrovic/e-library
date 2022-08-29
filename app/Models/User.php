@@ -41,7 +41,11 @@ class User extends Authenticatable
 
     public function canCheckoutOrReserveMoreBooks()
     {
-        return $this->getBookCount() < DB::table('settings')->where('variable', '=', 'Books per student')->value('value');
+        $books_per_student = DB::table('settings')
+            ->where('variable', 'Books per student')
+            ->value('value') || env('BOOKS_PER_STUDENT');
+
+        return $this->getBookCount() < $books_per_student;
     }
 
     public function getBookCount()
@@ -63,9 +67,13 @@ class User extends Authenticatable
 
     public function getOverdueCount()
     {
+        $holding_time = DB::table('settings')
+                ->where('variable',  'Holding time')
+                ->value('value') || env('HOLDING_TIME');
+
         return count(Checkout::where('student_id', $this->id)
             ->where('end_time', null)
-            ->where('start_time', '<', Carbon::now()->subDays(DB::table('settings')->where('variable', '=', 'Holding time')->value('value'))->toDateTimeString())
+            ->where('start_time', '<', Carbon::now()->subDays($holding_time)->toDateTimeString())
             ->get());
     }
 
