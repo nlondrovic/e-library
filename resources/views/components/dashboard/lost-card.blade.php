@@ -1,8 +1,8 @@
 <div class="activity-card flex flex-row mb-[30px]">
     <div class="mt-[5px] flex flex-col">
         <div class="text-gray-500 mb-[5px]">
-            <span class="uppercase">{{ $activity->type }}
-                <p class="inline lowercase font-medium text-black"> {{ format_time($activity->time) }} </p>
+            <span class="capitalize">{{ $activity->type }}
+                <p class="inline lowercase font-medium text-black"> - {{ format_time($activity->time) }} </p>
             </span>
         </div>
         <div>
@@ -11,9 +11,13 @@
                     {{ $activity->student->name }}
                 </a>
                 has lost
-                <a href="{{ route('books.show', $activity->book) }}" class="text-[#2196f3] hover:text-blue-600">
-                    {{ $activity->book->title }}
-                </a>
+                @if(\Request::is('books/*'))
+                    the book
+                @else
+                    <a href="{{ route('books.show', $activity->book) }}" class="text-[#2196f3] hover:text-blue-600">
+                        {{ $activity->book->title }}
+                    </a>
+                @endif
                 and
                 <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
                     {{ $activity->librarian->name }}
