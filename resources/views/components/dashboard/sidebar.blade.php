@@ -82,7 +82,9 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('checkouts.index') }}" aria-label="RentingBooks">
                                     <i class="text-[22px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-exchange-alt
-                                         @if(str_contains($route_name, 'transactions')) text-[#576cdf] @endif"></i>
+                                         @if(str_contains($route_name, 'checkouts') || str_contains($route_name, 'checkins') ||
+                                            str_contains($route_name, 'lost') || str_contains($route_name, 'overdue') ||
+                                            str_contains($route_name, 'reservations')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
                                             Transactions
