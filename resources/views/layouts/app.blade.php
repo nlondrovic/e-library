@@ -24,10 +24,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
     <!-- End Styles -->
-
-    <!-- Scripts -->
-    @include('components/scripts')
-    <!-- End Scripts -->
 </head>
 
 <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
@@ -53,6 +49,10 @@
 
 <!-- Notification for small devices -->
 @include('components/inProgress')
+
+<!-- Scripts -->
+@include('components/scripts')
+<!-- End Scripts -->
 
 </body>
 
