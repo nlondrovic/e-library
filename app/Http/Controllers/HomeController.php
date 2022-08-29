@@ -17,7 +17,7 @@ class HomeController extends Controller
         $reserved_count = count(Reservation::where('end_time', null)->get());
         $overdue_count = count(Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
             ->where('end_time', null)->get());
-        $activities = Activity::orderBy('id', 'desc')->take(5)->get();
+        $activities = Activity::orderBy('id', 'desc')->take(15)->get();
 
         return view('components.dashboard.index',
             compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities')
