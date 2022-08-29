@@ -75,24 +75,43 @@
     transition: mask-position 0.3s, -webkit-mask-position 0.3s;
 }
 
+.scroll-dashboard {
+    overflow-y: scroll;
+    mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 17px, black 17px);
+    mask-size: 100% 20000px;
+    /*mask-position: left bottom;*/
+    /*-webkit-mask-image: linear-gradient(to top, transparent, black),*/
+    /*linear-gradient(to left, transparent 17px, black 17px);*/
+    /*-webkit-mask-size: 100% 20000px;*/
+    /*-webkit-mask-position: left bottom;*/
+    /*transition: mask-position 0.3s, -webkit-mask-position 0.3s;*/
+}
+
 .scroll:hover {
+    -webkit-mask-position: left top;
+}
+.scroll-dashboard:hover {
     -webkit-mask-position: left top;
 }
 
 /* Styling scroll */
 .scroll::-webkit-scrollbar-track,
+.scroll-dashboard::-webkit-scrollbar-track,
 .sidebar::-webkit-scrollbar-track {
     border-radius: 10px;
     background-color: transparent;
 }
 
 .scroll::-webkit-scrollbar,
+.scroll-dashboard::-webkit-scrollbar,
 .sidebar::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
 }
 
 .scroll::-webkit-scrollbar-thumb,
+.scroll-dashboard::-webkit-scrollbar-thumb,
 .sidebar::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #c9c8c8;
@@ -1419,6 +1438,9 @@ h4 {
 .h-\[300px\]{
     height: 300px;
 }
+.h-\[630px\]{
+    height: 630px;
+}
 .h-\[50px\]{
     height: 50px;
 }
@@ -1514,6 +1536,9 @@ h4 {
 }
 .w-\[77px\]{
     width: 77px;
+}
+.w-\[83px\]{
+    width: 83px;
 }
 .w-\[80\%\]{
     width: 80%;
@@ -2693,4 +2718,23 @@ h4 {
     .\32xl\:grid-cols-4{
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+}
+
+/* Manuelno dodan css :) */
+
+.book-labels{
+    /*position: relative;*/
+    /*top: 0;*/
+    /*left: -210%;*/
+}
+.w-\[400px\]{
+    width: 400px;
+}
+
+.flex-2{
+    flex: 1 1 100%;
+}
+
+.pr-\[57\%\]{
+    padding-right: 57%;
 }
