@@ -19,11 +19,15 @@
     <!-- End Title -->
 
     <!-- Styles -->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
     <!-- End Styles -->
+
+    <!-- Scripts -->
+    @include('components/scripts')
+    <!-- End Scripts -->
 </head>
 
 <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
@@ -49,10 +53,6 @@
 
 <!-- Notification for small devices -->
 @include('components/inProgress')
-
-<!-- Scripts -->
-@include('components/scripts')
-<!-- End Scripts -->
 
 </body>
 
