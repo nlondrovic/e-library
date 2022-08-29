@@ -26,7 +26,36 @@ class HomeController extends Controller
 
     public function activities()
     {
-        $activities = Activity::orderBy('id', 'desc')->get();
-        return view('components.dashboard.activities', compact('activities'));
+        $activitiesQuery = Activity::query();
+
+        if (request()->get('book_id')) {
+            $activitiesQuery->where('book_id', request()->get('book_id'));
+        }
+
+        if (request()->get('student_id')) {
+            $activitiesQuery->where('student_id', request()->get('student_id'));
+        }
+
+        if (request()->get('librarian_id')) {
+            $activitiesQuery->where('librarian_id', request()->get('librarian_id'));
+        }
+
+        if (request()->get('start_date')) {
+            $activitiesQuery->where('time', '>', request()->get('start_date'));
+        }
+
+        if (request()->get('end_date')) {
+            $activitiesQuery->where('time', '<', request()->get('end_date'));
+        }
+
+        $activities = $activitiesQuery->orderBy('time', 'desc')->get();
+
+        $books = Book::all();
+        $students = User::where('role_id', 3)->get();
+        $librarians = User::where('role_id', 2)->get();
+
+        return view('components.dashboard.activities',
+            compact('activities', 'books', 'librarians', 'students')
+        );
     }
 }

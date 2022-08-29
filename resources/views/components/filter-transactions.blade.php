@@ -1,6 +1,6 @@
 <div class="flex flex-row">
 
-    <form action="{{ route(\Illuminate\Support\Facades\Route::currentRouteName(), request()->all()) }}" method="get"
+    <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get"
           class="mb-[20px] mr-[15px]">
         <div class="flex flex-row items-center">
 
@@ -48,7 +48,7 @@
     </form>
 
     @if(request()->get('student_id') || request()->get('book_id'))
-        <a href="{{ route($route_name) }}" class="px-2">
+        <a href="{{ route(Route::currentRouteName()) }}" class="px-2">
             <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                     ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
                 <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
