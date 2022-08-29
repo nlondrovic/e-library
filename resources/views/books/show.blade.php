@@ -12,7 +12,8 @@
                 </div>
             </div>
             <div class="pt-[15px] mr-[30px]">
-                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}"
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
                     Transactions
                 </a>
@@ -20,7 +21,8 @@
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     Check out
                 </a>
-                <a href="{{ route('reservations.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                <a href="{{ route('reservations.create', $book) }}"
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="far fa-calendar-check mr-[3px]"></i>
                     Reserve
                 </a>
@@ -63,13 +65,11 @@
             <!-- Space for content -->
             <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
-
                     <div class="">
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">Title</span>
                             <p class="font-medium">{{ $book->title }}</p>
                         </div>
-
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">Category</span>
                             <p class="font-medium">{{ $book->category->name }}</p>
@@ -117,19 +117,21 @@
                             <span class="text-gray-500 text-[14px]">Size</span>
                             <p class="font-medium">{{ $book->size->name }}</p>
                         </div>
-
                     </div>
 
-                    <div class="w-[560px]">
-
-                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px" src="{{ asset($book->picture) }}" alt="Book image">
+                    <div class="">
+                        <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px"
+                             src="{{ asset($book->picture) }}" alt="Book image">
                     </div>
-
                 </div>
             </div>
         </div>
 
-        @include('components.book-sidebar')
+        {{-- Book sidebar --}}
+        <div class="min-w-[20%] border-l-[1px] height-dashboard border-[#e4dfdf]">
+            @include('components.book-copies')
+            @include('components.book-recent-activity')
+        </div>
 
     </div>
 

@@ -44,6 +44,7 @@
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                         <i
                             class="fas fa-ellipsis-v"></i>
+                        {{--TODO: NE PRIKAZUJE SE OVAJ DROPDOWN--}}
                     </p>
                     <div
                         class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">

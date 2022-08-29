@@ -91,10 +91,11 @@
 
         </div>
 
-        <div class="min-w-[20%] border-l-[1px] border-[#e4dfdf]">
-            @include('components.book-copies')
+        <div class="w-[50%] mb-[100px]">
+            <div class="border-[1px] border-[#e4dfdf] w-[360px] mt-[75px]">
+                @include('components.book-copies')
+            </div>
         </div>
-
 
     </div>
 

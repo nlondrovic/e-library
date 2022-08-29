@@ -64,7 +64,7 @@
                         </p>
                     </div>
                     <div class="relative flex ml-[60px] mt-[20px]">
-                        <input type="number" name="book_per_student" value="{{ $books_per_student }}"
+                        <input type="number" name="books_per_student" value="{{ $books_per_student }}"
                                class="h-[50px] flex-1 w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400
                                bg-white border-[1px]  border-[#e4dfdf]  rounded-lg shadow-sm appearance-none
                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"/>
