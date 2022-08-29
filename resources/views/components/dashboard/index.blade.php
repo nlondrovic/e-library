@@ -15,28 +15,30 @@
 
             <!-- Left side -->
             <div class="mr-[30px]">
-                <h3 class="uppercase ml-[20px] mb-[20px]">Activities</h3>
+                <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">Recent activities</h3>
                 <!-- Activity Cards -->
-                <div class="ml-[20px]">
-                    @foreach($activities as $activity)
-                        @if($activity->type == 'Checkout')
-                            @include('components/dashboard/checkout-card')
-                        @elseif($activity->type == 'Checkin')
-                            @include('components/dashboard/checkin-card')
-                        @elseif($activity->type == 'Lost book')
-                            @include('components/dashboard/lost-card')
-                        @elseif($activity->type == 'Reservation')
-                            @include('components/dashboard/reservation-card')
-                        @endif
-                    @endforeach
-                    <!-- Show more -->
-                    <div class="inline-block w-full mt-4">
-                        <a href="{{ route('activities') }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
-                    text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
-                    focus:outline-none focus:ring-[1px] focus:ring-gray-300">
-                            Show all
-                        </a>
+                <div class="ml-[20px] border-[1px] px-2 py-2 rounded-[5px]  shadow-lg">
+                    <div class="overflow-y-auto scroll h-[630px]">
+                        @foreach($activities as $activity)
+                            @if($activity->type == 'Checkout')
+                                @include('components/dashboard/checkout-card')
+                            @elseif($activity->type == 'Checkin')
+                                @include('components/dashboard/checkin-card')
+                            @elseif($activity->type == 'Lost Book')
+                                @include('components/dashboard/lost-card')
+                            @elseif($activity->type == 'Reservation')
+                                @include('components/dashboard/reservation-card')
+                            @endif
+                        @endforeach
                     </div>
+                </div>
+                <!-- Show more -->
+                <div class="inline-block w-[90%] mt-4 ml-[35px] px-2 py-2">
+                    <a href="{{ route('activities') }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
+                    text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
+                    focus:outline-none focus:ring-[1px] focus:ring-gray-300  shadow-md">
+                        Show all
+                    </a>
                 </div>
             </div>
 
