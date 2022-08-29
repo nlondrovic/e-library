@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[50px] py-[10px] pb-[20px] flex flex-col">
@@ -10,7 +9,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content">
         <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('sizes.store') }}">
             @csrf
@@ -22,7 +20,7 @@
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                        placeholder="Enter a size name"/>
+                               placeholder="Enter a size name"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif

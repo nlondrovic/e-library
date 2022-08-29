@@ -1,16 +1,13 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="pl-[50px] pb-[27px] mt-[2px] border-b-[1px] border-[#e4dfdf]">
             <h1> Edit student</h1>
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content">
-
         <form class="text-gray-700 text-[14px] forma"
               action="{{ route('students.update', $student) }}"
               method="post" enctype="multipart/form-data">
@@ -57,7 +54,6 @@
                 </div>
             </div>
 
-            {{-- Buttons --}}
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-right py-[7px] mr-[100px] text-white">
@@ -75,7 +71,6 @@
                     </div>
                 </div>
             </div>
-
         </form>
     </div>
 

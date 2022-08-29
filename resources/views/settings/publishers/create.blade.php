@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    {{-- Heading --}}
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[60px] pb-[27px] flex flex-col">
@@ -10,7 +9,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content pl-[32px]">
         <form class="text-gray-700 forma" method="post" action="{{ route('publishers.store') }}">
             @csrf
@@ -29,7 +27,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-white text-right py-[7px] mr-[100px]">

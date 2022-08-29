@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('main')
-    {{-- Heading of content --}}
+
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
@@ -9,17 +9,13 @@
         </div>
     </div>
 
-    {{-- Space for content --}}
     <div class="scroll height-dashboard">
-
-        {{-- Above table --}}
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             {{-- Add librarian button --}}
-            <a href="{{ route('librarians.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-            ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
+            <a href="{{ route('librarians.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5
+                transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i> New librarian
             </a>
-
             <form action="{{ route('librarians.index') }}">
                 <div class="wrapper">
                     <div class="search-input">
@@ -31,7 +27,6 @@
                     </div>
                 </div>
             </form>
-
             <script>
                 let suggestions = [
                     @foreach($search_array as $librarian)
@@ -41,7 +36,6 @@
             </script>
         </div>
 
-        {{-- Librarians table --}}
         <div class="px-[50px] pt-2 bg-white">
             <div class="w-full mt-2">
                 <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]"
@@ -54,7 +48,6 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white">
-
                     @foreach($librarians as $librarian)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                             <td class="flex flex-row items-center px-4 py-4">
@@ -67,27 +60,27 @@
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $librarian->email }}</td>
                             <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsStudent
-                            hover:text-[#606FC7]">
+                                hover:text-[#606FC7]">
                                     <i class="fas fa-ellipsis-v"></i>
                                 </p>
                                 <div class="absolute z-10 hidden transition-all duration-300 origin-top-right transform
-                                scale-95 -translate-y-2 dropdown-student">
+                                    scale-95 -translate-y-2 dropdown-student">
                                     <div class="absolute right-[50px] w-56 mt-[7px] origin-top-right bg-white border
-                                    border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                                        border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
 
-                                        >
+                                    >
                                         <div class="py-1">
                                             <a href="{{ route('librarians.show', $librarian) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                           outline-none hover:text-blue-600"
-                                              >
+                                               outline-none hover:text-blue-600"
+                                            >
                                                 <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Show details</span>
                                             </a>
                                             <a href="{{route('librarians.edit', $librarian)}}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                           outline-none hover:text-blue-600"
-                                              >
+                                               outline-none hover:text-blue-600"
+                                            >
                                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Edit librarian</span>
                                             </a>
@@ -97,7 +90,7 @@
                                                 @method('delete')
                                                 <button type="submit" tabindex="0"
                                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                                       >
+                                                >
                                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">Delete librarian</span>
                                                 </button>

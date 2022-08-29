@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[50px] py-[2px] pb-[27px] flex flex-col">
@@ -10,7 +9,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content pb-[30px] section-content">
         <form class="text-gray-700 forma" method="post" action="{{ route('books.store') }}"
               enctype="multipart/form-data">
@@ -138,7 +136,7 @@
                                 <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ old('page_count') }}"
-                                    placeholder="Enter a number of pages"/>
+                                       placeholder="Enter a number of pages"/>
                                 @if($errors->first('page_count'))
                                     <p class="text-red-600">{{ $errors->first('page_count') }}</p>
                                 @endif
@@ -205,7 +203,8 @@
                                 <p>Content <span class="text-red-500">*</span></p>
                                 <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
                                 border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
-                                focus:ring-[#576cdf]" rows="8" placeholder="Enter a short description about the book (min. 20 characters)">{{ old('content') }}</textarea>
+                                focus:ring-[#576cdf]" rows="8"
+                                          placeholder="Enter a short description about the book (min. 20 characters)">{{ old('content') }}</textarea>
                                 @if($errors->first('content'))
                                     <p class="text-red-600">{{ $errors->first('content') }}</p>
                                 @endif
@@ -255,6 +254,5 @@
             </div>
         </form>
     </div>
-
 
 @endsection

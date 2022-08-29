@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[50px] py-[2px] pb-[27px] flex flex-col">
@@ -9,8 +8,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Space for content -->
 
     <div class="scroll height-content pb-[30px] section-content">
         <form class="text-gray-700 forma" method="post" action="{{ route('books.update', $book) }}"
@@ -20,7 +17,6 @@
             <div class="flex flex-row overflow-auto height-osnovniDetalji">
                 <div class="pl-[30px] pl-[50px] w-[100%] mt-[20px]">
                     <div class="grid grid-cols-3">
-
                         <div class="row-1">
                             {{-- Title --}}
                             <div class="mt-[20px]">
@@ -226,8 +222,7 @@
                         {{-- Buttons --}}
                         <div class="absolute bottom-0 w-full">
                             <div class="flex flex-row">
-                                <div
-                                    class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px] mr-[100px]">
+                                <div class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px] mr-[100px]">
                                     <button type="button" class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none
                                     text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
                                         Cancel <i class="fas fa-times ml-[4px]"></i>

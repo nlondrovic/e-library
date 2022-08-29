@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="mt-[2px]">
             <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
@@ -10,9 +9,7 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content">
-
         <form class="text-gray-700 text-[14px] forma"
               action="{{ route('librarians.update', $librarian) }}"
               method="post" enctype="multipart/form-data">
@@ -55,11 +52,11 @@
                     <p class="py-2 mt-2 leading-normal">Add photo</p>
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
-                    <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($librarian->picture) }}"/>
+                    <img id="image-output-student" width="360" class="mt-[20px]"
+                         src="{{ asset($librarian->picture) }}"/>
                 </div>
             </div>
 
-            {{-- Buttons --}}
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-right py-[7px] mr-[100px] text-white">

@@ -29,19 +29,14 @@
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsGenre hover:text-[#606FC7]">
                                 <i class="fas fa-ellipsis-v"></i>
                             </p>
-                            <div
-                                class="relative z-10 hidden transition-all duration-300 origin-top-right transform
+                            <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-genre">
-                                <div
-                                    class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
-                                        border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-
-                                   >
+                                <div class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
+                                        border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                     <div class="py-1">
                                         <a href="{{ route('genres.edit', $genre) }}" tabindex="0"
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                               outline-none hover:text-blue-600"
-                                          >
+                                               outline-none hover:text-blue-600">
                                             <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0">Edit genre</span>
                                         </a>
@@ -49,8 +44,7 @@
                                             @csrf
                                             @method('delete')
                                             <button type="submit" tabindex="0"
-                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                                   >
+                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                                 <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Delete genre</span>
                                             </button>
@@ -63,7 +57,9 @@
                 @endforeach
                 </tbody>
             </table>
+
             <p class="mt-[20px]">
                 {{ $genres->links("pagination::tailwind") }}
             </p>
+
 @endsection

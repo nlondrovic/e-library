@@ -93,9 +93,9 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     </div>
                 </li>
                 @if(auth()->user()->isAdmin())
-                <!-- Librarian Icon -->
-                <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
-                    <div class="ml-[30px]">
+                    <!-- Librarian Icon -->
+                    <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                        <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('librarians.index') }}" aria-label="Librarians">
                                     <i class="text-[25px] text-[#707070] fa-solid fa-user-tie transition duration-300 ease-in group-hover:text-blue-600
@@ -107,11 +107,11 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     </div>
                                 </a>
                         </span>
-                    </div>
-                </li>
-                <!-- Admin icon -->
-                <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
-                    <div class="ml-[30px]">
+                        </div>
+                    </li>
+                    <!-- Admin icon -->
+                    <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                        <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('admins.index') }}" aria-label="RentingBooks">
                                     <i class="text-[22px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fa-solid fa-user-shield
@@ -123,8 +123,8 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     </div>
                                 </a>
                         </span>
-                    </div>
-                </li>
+                        </div>
+                    </li>
                 @endif
 
             </ul>
@@ -135,20 +135,20 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
                 <a href="{{ route('settings.index') }}" aria-label="Settngs" class="ml-[30px]">
-                        <span class="whitespace-nowrap">
-                            <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog
-                                         @if(str_contains($route_name, 'policy')||
-                                            str_contains($route_name, 'categories')||
-                                            str_contains($route_name, 'genres')||
-                                            str_contains($route_name, 'publishers')||
-                                            str_contains($route_name, 'bindings')||
-                                            str_contains($route_name, 'sizes')||
-                                            str_contains($route_name, 'scripts')) text-[#576cdf] @endif"></i>
-                            <div class="hidden sidebar-item">
-                                <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                    Settings</p>
-                            </div>
-                        </span>
+                    <span class="whitespace-nowrap">
+                        <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] text-[#707070] fas fa-cog
+                                     @if(str_contains($route_name, 'policy')||
+                                        str_contains($route_name, 'categories')||
+                                        str_contains($route_name, 'genres')||
+                                        str_contains($route_name, 'publishers')||
+                                        str_contains($route_name, 'bindings')||
+                                        str_contains($route_name, 'sizes')||
+                                        str_contains($route_name, 'scripts')) text-[#576cdf] @endif"></i>
+                        <div class="hidden sidebar-item">
+                            <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
+                                Settings</p>
+                        </div>
+                    </span>
                 </a>
             </li>
         </ul>

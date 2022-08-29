@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('main')
 
     <div class="mt-2">
@@ -146,7 +145,6 @@
     </div>
     <script>
         $(document).ready(function () {
-            //this will execute on page load(to be more specific when document ready event occurs)
             if ($('.activity-card').length > 6) {
                 $('.activity-card:gt(6)').hide();
                 $('.activity-showMore').show();
@@ -154,9 +152,7 @@
             }
 
             $('.activity-showMore').on('click', function () {
-                //toggle elements with class .ty-compact-list that their index is bigger than 2
                 $('.activity-card:gt(6)').toggle();
-                //change text of show more element just for demonstration purposes to this demo
                 if ($(this).text() == 'Show less') {
                     $(this).text('Show more')
                 } else {

@@ -4,7 +4,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 ?>
 @section('main')
 
-    <!-- Heading of content -->
     <div class="mt-2">
         <div class="heading flex flex-row mt-[7px] border-b-[1px] border-[#e4dfdf]">
             <h1 class="pl-[50px] pb-[21px]">
@@ -20,10 +19,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="flex justify-start pt-3 bg-white">
-
-        {{-- Side navbar --}}
         <div class="mt-[10px]">
             <ul class="text-[#2D3B48]">
                 <li class="mb-[4px]">
@@ -127,7 +123,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             </ul>
         </div>
 
-        <!-- Table -->
         <div class="w-full mt-[10px] ml-2 px-2">
             @if((isset($reservations) && $reservations->count()) || (isset($checkouts) && $checkouts->count()))
                 @include('components.filter-transactions')
@@ -141,7 +136,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 </div>
             @endif
         </div>
-
     </div>
 
 @endsection

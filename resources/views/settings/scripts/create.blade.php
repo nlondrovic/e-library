@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[50px] py-[10px] pb-[20px] flex flex-col">
@@ -10,7 +9,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content">
         <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('scripts.store') }}">
             @csrf

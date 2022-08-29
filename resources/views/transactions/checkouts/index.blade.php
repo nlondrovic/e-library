@@ -3,7 +3,6 @@
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
-        <!-- Table head-->
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
             <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">{{__('Book')}}</th>
@@ -14,7 +13,6 @@
             <th class="px-4 py-4"></th>
         </tr>
         </thead>
-        {{-- Tabe body --}}
         <tbody class="bg-white">
         @foreach($checkouts as $checkout)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
@@ -43,13 +41,10 @@
                     <div
                         class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
                         <div
-                            class="absolute right-20 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-
-                           >
+                            class="absolute right-20 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                             <div class="py-1">
                                 <a href="{{ route('checkouts.show', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                  >
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>
@@ -57,8 +52,7 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                           >
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                         <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Check in')}}</span>
                                     </button>
@@ -67,8 +61,7 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                           >
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                         <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Write off')}}</span>
                                     </button>
@@ -81,7 +74,9 @@
         @endforeach
         </tbody>
     </table>
+
     <p class="mt-[20px]">
         {{ $checkouts->links("pagination::tailwind") }}
     </p>
+
 @endsection

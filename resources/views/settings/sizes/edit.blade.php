@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="mt-[2px]">
@@ -12,7 +11,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content">
         <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('sizes.update', $size) }}">
             @csrf

@@ -5,7 +5,7 @@
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
         <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
-            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book title')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation date')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation due')}}</th>
@@ -33,19 +33,16 @@
                         dotsArhiviraneRezervacije hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
-                    <div
-                        class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 arhivirane-rezervacije">
-                        <div
-                            class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-
-                           >
+                    <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95
+                    -translate-y-2 arhivirane-rezervacije">
+                        <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y
+                        divide-gray-100 rounded-md shadow-lg outline-none">
                             <div class="py-1">
                                 <form method="post" action="{{ route('reservations.checkOut', $reservation) }}">
                                     @csrf
                                     @method('patch')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                           >
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                         <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Checkout')}}</span>
                                     </button>
@@ -54,8 +51,7 @@
                                     @csrf
                                     @method('patch')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                           >
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                         <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Cancel reservation')}}</span>
                                     </button>
@@ -68,7 +64,9 @@
         @endforeach
         </tbody>
     </table>
+
     <p class="mt-[20px]">
         {{ $reservations->links("pagination::tailwind") }}
     </p>
+
 @endsection

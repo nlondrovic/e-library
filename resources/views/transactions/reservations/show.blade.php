@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
             <div class="py-[7px] flex flex-row">
@@ -14,13 +13,10 @@
         </div>
     </div>
 
-    {{-- Content --}}
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
-            <!-- Space for content -->
             <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-start">
-
                     <div class="">
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">{{__('Book')}}</span>
@@ -58,7 +54,6 @@
                             </div>
                         @endif
                     </div>
-
                 </div>
             </div>
         </div>

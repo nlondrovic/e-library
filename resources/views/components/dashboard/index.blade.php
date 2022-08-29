@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('main')
 
     <div class="mt-2">
@@ -12,13 +11,12 @@
 
     <div class="pl-[30px] scroll height-dashboard overflow-auto mt-[20px] pb-[30px]">
         <div class="flex flex-row justify-between">
-
             <!-- Left side -->
             <div class="mr-[30px]">
                 <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">Recent activities</h3>
                 <!-- Activity Cards -->
-                <div class="ml-[20px] border-[1px] px-2 py-2 rounded-[5px]  shadow-lg">
-                    <div class="overflow-y-auto scroll h-[630px]">
+                <div class="ml-[20px] border-[1px] p-4 py-2 rounded-[5px]  shadow-lg">
+                    <div class="overflow-y-auto scroll height-content overflow-hidden">
                         @foreach($activities as $activity)
                             @if($activity->type == 'Checkout')
                                 @include('components/dashboard/checkout-card')

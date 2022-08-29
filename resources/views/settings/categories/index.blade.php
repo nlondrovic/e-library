@@ -1,5 +1,4 @@
 @extends('settings.index')
-
 @section('main-settings')
 
     <div class="height-kategorije pb-[30px]">
@@ -21,51 +20,49 @@
                 </tr>
                 </thead>
                 <tbody class="bg-white">
-                    @foreach($categories as $category)
-                        <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                            <td class="flex flex-row items-center px-4 py-4">
-                                <i class="{{ $category->icon }} fa-lg text-[#707070]"></i>
-                                <p class="ml-4 text-center">{{ $category->name }}</p>
-                            </td>
-                            <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
-                                <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsCategory hover:text-[#606FC7]">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </p>
-                                <div
-                                    class="relative z-10 hidden transition-all duration-300 origin-top-right transform
+                @foreach($categories as $category)
+                    <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
+                        <td class="flex flex-row items-center px-4 py-4">
+                            <i class="{{ $category->icon }} fa-lg text-[#707070]"></i>
+                            <p class="ml-4 text-center">{{ $category->name }}</p>
+                        </td>
+                        <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
+                            <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsCategory hover:text-[#606FC7]">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </p>
+                            <div
+                                class="relative z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-category">
-                                    <div
-                                        class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
-                                        border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-
-                                       >
-                                        <div class="py-1">
-                                            <a href="{{ route('categories.edit', $category) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                               outline-none hover:text-blue-600"
-                                              >
-                                                <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">Edit category</span>
-                                            </a>
-                                            <form action="{{ route('categories.destroy', $category) }}" method="post">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" tabindex="0"
-                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                                       >
-                                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">Delete category</span>
-                                                </button>
-                                            </form>
-                                        </div>
+                                <div
+                                    class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
+                                        border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
+                                    <div class="py-1">
+                                        <a href="{{ route('categories.edit', $category) }}" tabindex="0"
+                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
+                                               outline-none hover:text-blue-600">
+                                            <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
+                                            <span class="px-4 py-0">Edit category</span>
+                                        </a>
+                                        <form action="{{ route('categories.destroy', $category) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" tabindex="0"
+                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                                <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                                                <span class="px-4 py-0">Delete category</span>
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
-                            </td>
-                        </tr>
-                    @endforeach
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
+
             <p class="mt-[20px]">
                 {{ $categories->links("pagination::tailwind") }}
             </p>
+
 @endsection

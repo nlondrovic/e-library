@@ -4,18 +4,16 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 ?>
 @section('main')
 
-    <!-- Heading of content -->
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <div class="border-b-[1px] border-[#e4dfdf]">
                 <div class="pl-[50px] pb-[21px]">
-                    <h1>
-                        Settings
-                    </h1>
+                    <h1>Settings</h1>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="py-4 text-gray-500 border-b-[1px] border-[#e4dfdf] pl-[50px]">
         <a href="{{ route('settings.index') }}"
            class="inline hover:text-blue-800 @if(str_contains($route_name, 'policy')) active-book-nav @endif">
@@ -46,8 +44,8 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             Scripts
         </a>
     </div>
+
     <div class="height-ucenikProfile pb-[30px] pl-[50px] pt-[15px] scroll">
-        {{-- Space for content --}}
         @yield('main-settings')
     </div>
 

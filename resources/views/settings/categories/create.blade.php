@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    {{-- Heading --}}
     <div class="heading">
         <div class="flex border-b-[1px] border-[#e4dfdf]">
             <div class="pl-[60px] pb-[27px] flex flex-col">
@@ -10,7 +9,6 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-content section-content pl-[32px]">
         <form class="text-gray-700 forma" method="post" action="{{ route('categories.store') }}">
             @csrf
@@ -27,7 +25,6 @@
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
                     </div>
-
                     <p class="mt-[20px]">Icon <span class="text-red-500">*</span></p>
                     <div class="mt-[10px] flex flex-row justify-start text-lg">
                         <div>
@@ -79,12 +76,10 @@
                                 </li>
                             </ul>
                         </div>
-
                         @if($errors->first('icon'))
                             <span class="text-red-600">{{ $errors->first('icon') }}</span>
                         @endif
                     </div>
-
                     @if($errors->first('icon'))
                         <span class="text-red-600">{{ $errors->first('icon') }}</span>
                     @endif

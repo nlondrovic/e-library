@@ -6,7 +6,6 @@
         @method('PATCH')
         <div class="section- mt-[5px]">
             <div class="flex flex-col">
-
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf]  pb-[20px]">
                     <div>
                         <h3>
@@ -28,7 +27,6 @@
                         <p class="ml-[10px] mt-[10px]">{{ __('days') }}</p>
                     </div>
                 </div>
-
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
                         <h3>
@@ -50,7 +48,6 @@
                         <p class="ml-[10px] mt-[10px]">{{ __('days') }}</p>
                     </div>
                 </div>
-
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
                         <h3>
@@ -71,14 +68,12 @@
                         <p class="ml-[10px] mt-[10px]">{{ __('books') }}</p>
                     </div>
                 </div>
-
                 <button type="submit"
                         class="btn-animation mt-[10px] text-white shadow-lg w-[150px] disabled:opacity-50
                             focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                             hover:bg-[#46A149] bg-[#4CAF50]">
                     <i class="fas fa-check mr-[7px]"></i> {{ __('Save') }}
                 </button>
-
             </div>
         </div>
     </form>

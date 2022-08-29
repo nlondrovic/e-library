@@ -12,11 +12,11 @@
                 </a>
                 checked out
                 @if(\Request::is('books/*'))
-                the book
+                    the book
                 @else
-                <a href="{{ route('books.show', $activity->book) }}" class="text-[#2196f3] hover:text-blue-600">
-                    {{ $activity->book->title }}
-                </a>
+                    <a href="{{ route('books.show', $activity->book) }}" class="text-[#2196f3] hover:text-blue-600">
+                        {{ $activity->book->title }}
+                    </a>
                 @endif
                 to
                 <a href="{{ route('students.show', $activity->student) }}" class="text-[#2196f3] hover:text-blue-600">

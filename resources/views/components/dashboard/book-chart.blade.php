@@ -33,18 +33,16 @@
                     'rgba(255, 206, 86, 0.1)',
                 ],
                 borderWidth: 1,
-
-
             }]
         };
 
         const config = {
             type: 'bar',
             data,
-            options: {ticks: {
-                    precision:0
+            options: {
+                ticks: {
+                    precision: 0
                 },
-
                 indexAxis: 'y',
                 scales: {
                     x: {
@@ -64,15 +62,11 @@
                             borderColor: "rgba(120,120,120)"
                         }
                     }
-
                 }
             }
         };
 
-
-        const myChart = new Chart(document.getElementById('myChart'),
-            config
-        );
+        const myChart = new Chart(document.getElementById('myChart'), config);
     </script>
 
 </div>
