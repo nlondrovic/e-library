@@ -83,38 +83,38 @@
                                 <div
                                     class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
                                     <div
-                                        class="absolute right-20 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                                        aria-labelledby="headlessui-menu-button-1"
-                                        id="headlessui-menu-items-117" role="menu">
+                                        class="absolute  w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+
+                                       >
                                         <div class="py-1">
                                             <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                            outline-none hover:text-blue-600"
-                                               role="menuitem">
+                                              >
                                                 <i class="fas fa-exchange-alt mr-[3px]"></i>
                                                 <span class="px-4 py-0">Transactions</span>
                                             </a>
                                             <a href="{{ route('checkouts.create', $book) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                               role="menuitem">
+                                              >
                                                 <i class="far fa-hand-scissors mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Check out</span>
                                             </a>
                                             <a href="{{ route('reservations.create', $book) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                               role="menuitem">
+                                              >
                                                 <i class="far fa-calendar-check mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Reserve</span>
                                             </a>
                                             <a href="{{ route('books.show', $book) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                               role="menuitem">
+                                              >
                                                 <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Show details</span>
                                             </a>
                                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                               role="menuitem">
+                                              >
                                                 <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">Edit book</span>
                                             </a>
@@ -123,7 +123,7 @@
                                                 @method('delete')
                                                 <button tabindex="0"
                                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                                                        role="menuitem">
+                                                       >
                                                     <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">Delete the book</span>
                                                 </button>

@@ -31,25 +31,25 @@
                     class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-create">
                     <div
                         class="absolute right-[12px] w-56 mt-[35px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                        aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+                       >
                         <div class="py-1">
                             <a href="{{ route('librarians.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                               role="menuitem">
+                              >
                                 <i class="far fa-address-book mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Librarian</span>
                             </a>
                             <a href="{{ route('students.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                               role="menuitem">
+                              >
                                 <i class="fas fa-users mr-[5px] ml-[3px] py-1"></i>
                                 <span class="px-4 py-0">Student</span>
                             </a>
-                            <a href="{{ route('books.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600" role="menuitem">
+                            <a href="{{ route('books.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-copy mr-[10px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Book</span>
                             </a>
-                            <a href="{{ route('authors.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600" role="menuitem">
+                            <a href="{{ route('authors.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-address-book mr-[10px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Author</span>
                             </a>
@@ -74,17 +74,17 @@
                     class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-profile">
                     <div
                         class="absolute right-[12px] w-56 mt-[35px] origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                        aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+                       >
                         <div class="py-1">
                             <a href="{{ route(strtolower(auth()->user()->role->name).'s.show', auth()->user()) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                               role="menuitem">
+                              >
                                 <i class="fas fa-file mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Profile</span>
                             </a>
                             <a href="#" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
-                               role="menuitem">
+                              >
                                 <i class="fas fa-sign-out-alt mr-[5px] ml-[5px] py-1"></i>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
