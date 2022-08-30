@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="pl-[30px] scroll height-dashboard overflow-auto mt-[20px] pb-[30px]">
+    <div class="pl-[30px] scroll height-dashboard overflow-auto pt-[20px] pb-[30px]">
         <div class="flex flex-row justify-between">
             <!-- Left side -->
             <div class="mr-[30px]">

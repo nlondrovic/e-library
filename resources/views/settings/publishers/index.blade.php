@@ -11,7 +11,8 @@
             </a>
         </div>
 
-        <div class="inline-block min-w-full pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
+        <div
+            class="inline-block min-w-[96%] pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard mb-[30px]">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
@@ -61,5 +62,7 @@
             <p class="mt-[20px]">
                 {{ $publishers->links("pagination::tailwind") }}
             </p>
+        </div>
+    </div>
 
 @endsection

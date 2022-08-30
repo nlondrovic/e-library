@@ -11,7 +11,7 @@
         </div>
 
         <div
-            class="inline-block min-w-full pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard">
+            class="inline-block min-w-[96%] pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard mb-[30px]">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
@@ -29,8 +29,8 @@
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsBookBind hover:text-[#606FC7]">
                                 <i class="fas fa-ellipsis-v"></i>
                             </p>
-                            <div
-                                class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-book-bind">
+                            <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform
+                                scale-95 -translate-y-2 dropdown-book-bind">
                                 <div class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
                                         border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                     <div class="py-1">
@@ -60,5 +60,7 @@
             <p class="mt-[20px]">
                 {{ $bindings->links("pagination::tailwind") }}
             </p>
+        </div>
+    </div>
 
 @endsection
