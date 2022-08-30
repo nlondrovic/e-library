@@ -1,6 +1,6 @@
 <div class="relative">
     <h3 class="uppercase mb-[20px] text-left py-[30px]">
-        Book statistics
+        {{ __('Book statistics') }}
     </h3>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -15,12 +15,12 @@
     </div>
 
     <script>
-        const labels = ['Checkouts', 'Reserved', 'Overdue']
+        const labels = ["{{__('Checkouts')}}", "{{__('Reserved')}}", "{{__('Overdue')}}"]
 
         const data = {
             labels: labels,
             datasets: [{
-                label: '# of books',
+                label: "{{__('# of books')}}",
                 data: [{{ $checkouts_count }}, {{ $reserved_count }}, {{ $overdue_count }}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',

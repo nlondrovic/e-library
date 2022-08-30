@@ -26,7 +26,7 @@
                             <a href="{{ route('authors.edit', $author) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Edit the author</span>
+                                <span class="px-4 py-0">{{ __('Edit author') }}</span>
                             </a>
                             <form method="post" action="{{ route('authors.destroy', $author) }}">
                                 @csrf
@@ -34,7 +34,7 @@
                                 <button type="submit" tabindex="0"
                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <span class="px-4 py-0">Delete author</span>
+                                    <span class="px-4 py-0">{{ __('Delete author') }}</span>
                                 </button>
                             </form>
                         </div>
@@ -47,11 +47,11 @@
     <div class="pl-[50px] height-profile pb-[30px] scroll mt-[20px]">
         <div class="mr-[30px]">
             <div class="mt-[20px]">
-                <span class="text-gray-500">Name</span>
+                <span class="text-gray-500">{{ __('Name') }}</span>
                 <p class="font-medium">{{ $author->name }}</p>
             </div>
             <div class="mt-[40px]">
-                <span class="text-gray-500">About</span>
+                <span class="text-gray-500">{{ __('About') }}</span>
                 <p class="font-medium max-w-[550px]">
                     {{ $author->about }}
                 </p>

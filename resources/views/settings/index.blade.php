@@ -8,7 +8,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <div class="heading mt-[7px]">
             <div class="border-b-[1px] border-[#e4dfdf]">
                 <div class="pl-[50px] pb-[21px]">
-                    <h1>Settings</h1>
+                    <h1>{{ __('Settings') }}</h1>
                 </div>
             </div>
         </div>
@@ -17,31 +17,31 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
     <div class="py-4 text-gray-500 border-b-[1px] border-[#e4dfdf] pl-[50px]">
         <a href="{{ route('policy.index') }}"
            class="inline hover:text-blue-800 @if(str_contains($route_name, 'policy')) active-book-nav @endif">
-            Policy
+            {{ __('Policy') }}
         </a>
         <a href="{{ route('categories.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'categories')) active-book-nav @endif">
-            Categories
+            {{ __('Categories') }}
         </a>
         <a href="{{ route('genres.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'genres')) active-book-nav @endif">
-            Genres
+            {{ __('Genres') }}
         </a>
         <a href="{{ route('publishers.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'publishers')) active-book-nav @endif">
-            Publishers
+            {{ __('Publishers') }}
         </a>
         <a href="{{ route('bindings.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'bindings')) active-book-nav @endif">
-            Bindings
+            {{ __('Bindings') }}
         </a>
         <a href="{{ route('sizes.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'sizes')) active-book-nav @endif">
-            Sizes
+            {{ __('Sizes') }}
         </a>
         <a href="{{ route('scripts.index') }}"
            class="inline ml-[70px] hover:text-blue-800 @if(str_contains($route_name, 'scripts')) active-book-nav @endif">
-            Scripts
+            {{ __('Scripts') }}
         </a>
     </div>
 

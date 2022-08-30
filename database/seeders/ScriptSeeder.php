@@ -11,20 +11,20 @@ class ScriptSeeder extends Seeder
     public function run()
     {
         DB::table('scripts')->insert([
-            ['name' => 'Latin'],
-            ['name' => 'Chinese'],
-            ['name' => 'Arabic'],
-            ['name' => 'Bengali-Assamese'],
-            ['name' => 'Cyrillic'],
-            ['name' => 'Malayalam'],
-            ['name' => 'Thai'],
-            ['name' => 'Lao'],
-            ['name' => 'Hebrew'],
-            ['name' => 'Armenian'],
-            ['name' => 'Greek'],
-            ['name' => 'Tibetan'],
-            ['name' => 'Georgian'],
-            ['name' => 'Mongolian'],
+            ['name' => 'Latinica'],
+            ['name' => 'Kinesko pismo'],
+            ['name' => 'Arapsko pismo'],
+            ['name' => 'Bengalsko-Asamsko pismo'],
+            ['name' => 'Ćirilica'],
+            ['name' => 'Malajlam pismo'],
+            ['name' => 'Tajlandsko pismo'],
+            ['name' => 'Lao pismo'],
+            ['name' => 'Hebrejsko pismo'],
+            ['name' => 'Jermensko pismo'],
+            ['name' => 'Grčko pismo'],
+            ['name' => 'Tibetansko pismo'],
+            ['name' => 'Gruzijsko pismo'],
+            ['name' => 'Mongolsko pismo'],
         ]);
     }
 }

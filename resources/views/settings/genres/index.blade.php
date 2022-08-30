@@ -6,7 +6,7 @@
             <a href="{{ route('genres.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in
                rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
-                <i class="fas fa-plus mr-[15px]"></i> New Genre
+                <i class="fas fa-plus mr-[15px]"></i> {{ __('New genre') }}
             </a>
         </div>
 
@@ -15,7 +15,7 @@
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
-                    <th class="px-4 py-4 leading-4 tracking-wider text-left">Genre</th>
+                    <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Genre') }}</th>
                     <th class="px-4 py-4"></th>
                 </tr>
                 </thead>
@@ -38,7 +38,7 @@
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                outline-none hover:text-blue-600">
                                             <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0">Edit genre</span>
+                                            <span class="px-4 py-0">{{ __('Edit genre') }}</span>
                                         </a>
                                         <form action="{{ route('genres.destroy', $genre) }}" method="post">
                                             @csrf
@@ -46,7 +46,7 @@
                                             <button type="submit" tabindex="0"
                                                     class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                                 <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">Delete genre</span>
+                                                <span class="px-4 py-0">{{ __('Delete genre') }}</span>
                                             </button>
                                         </form>
                                     </div>

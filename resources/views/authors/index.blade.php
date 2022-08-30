@@ -4,7 +4,7 @@
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
-                Authors
+                {{ __('Authors') }}
             </h1>
         </div>
     </div>
@@ -14,7 +14,7 @@
             <a href="{{ route('authors.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                        ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
-                <i class="fas fa-plus mr-[15px]"></i>New author
+                <i class="fas fa-plus mr-[15px]"></i>{{ __('New author') }}
             </a>
             <form action="{{ route('authors.index') }}">
                 <div class="wrapper">
@@ -42,8 +42,8 @@
                        id="myTable">
                     <thead class="bg-[#EFF3F6]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
-                        <th class="px-4 py-4 leading-4 tracking-wider text-left">Name<a href="#"></a></th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">About</th>
+                        <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Name') }}<a href="#"></a></th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('About') }}</th>
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
@@ -71,14 +71,14 @@
                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                    outline-none hover:text-blue-600">
                                                     <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">Show details</span>
+                                                    <span class="px-4 py-0">{{ __('View more') }}</span>
                                                 </a>
 
                                                 <a href="{{ route('authors.edit', $author) }}" tabindex="0"
                                                    class="flex w-full px-4 py-2 text-sm leading-5
                                                     text-left text-gray-700 outline-none hover:text-blue-600">
                                                     <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">Edit author</span>
+                                                    <span class="px-4 py-0">{{ __('Edit author') }}</span>
                                                 </a>
 
                                                 <form method="post" action="{{ route('authors.destroy', $author) }}">
@@ -87,7 +87,7 @@
                                                     <button type="submit" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
                                                         text-left text-gray-700 outline-none hover:text-blue-600">
                                                         <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                                        <span class="px-4 py-0">Delete author</span>
+                                                        <span class="px-4 py-0">{{ __('Delete author') }}</span>
                                                     </button>
                                                 </form>
                                             </div>

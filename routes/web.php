@@ -41,6 +41,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
 
+    Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => '\App\Http\Controllers\LanguageController@switchLang']);
+
     // BASIC CRUDs
 
     Route::resource('/students', UserController::class);

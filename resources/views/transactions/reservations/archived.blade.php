@@ -1,5 +1,5 @@
 @extends('transactions.index')
-@section('transactions-title', 'Archived reservations')
+@section('transactions-title', __('Archived reservations'))
 @section('table')
 
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">

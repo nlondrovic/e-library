@@ -1,7 +1,5 @@
-<header
-    class="z-20 small:hidden  flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto bg-[#4558BE]">
-
-    <!-- logo -->
+<header class="z-20 small:hidden  flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto
+    bg-[#4558BE]">
     <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
         <div class="block">
 {{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
@@ -16,16 +14,13 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="flex items-center">
-
-                <!-- Add Icon -->
                 <a class="inline-block border-l-[1px] border-gray-300 px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">
-                        <span
-                            class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full px-[11px] py-[7px]  ">
+                        <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
+                            px-[11px] py-[7px]">
                             <i class="fas fa-plus"></i>
                         </span>
                 </a>
-
                 <div
                     class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-create">
                     <div class="absolute right-[12px] w-56 mt-[35px] origin-top-right bg-white border border-gray-200
@@ -35,23 +30,23 @@
                             <a href="{{ route('librarians.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-address-book mr-[8px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Librarian</span>
+                                <span class="px-4 py-0">{{ __('Librarian') }}</span>
                             </a>
                             @endif
                             <a href="{{ route('students.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-users mr-[5px] ml-[3px] py-1"></i>
-                                <span class="px-4 py-0">Student</span>
+                                <span class="px-4 py-0">{{ __('Student') }}</span>
                             </a>
                             <a href="{{ route('books.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm
                                 leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-copy mr-[10px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Book</span>
+                                <span class="px-4 py-0">{{ __('Book') }}</span>
                             </a>
                             <a href="{{ route('authors.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm
                                 leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-address-book mr-[10px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Author</span>
+                                <span class="px-4 py-0">{{ __('Author') }}</span>
                             </a>
                         </div>
                     </div>
@@ -78,7 +73,7 @@
                                tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-file mr-[8px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Profile</span>
+                                <span class="px-4 py-0">{{ __('Profile') }}</span>
                             </a>
                             <a href="#" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
@@ -86,12 +81,26 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     @method('post')
-                                    <button class="inline-block px-4 py-0">Log out</button>
+                                    <button class="inline-block px-4 py-0">{{ __('Log out') }}</button>
                                 </form>
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        @foreach (Config::get('languages') as $lang => $language)
+                            @if ($lang != App::getLocale())
+                                <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+                            @endif
+                        @endforeach
+                    </div>
+                </li>
+
             </div>
         </div>
     </div>

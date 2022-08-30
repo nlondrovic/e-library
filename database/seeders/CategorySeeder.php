@@ -11,16 +11,16 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            ['name' => 'Art & Photography', 'icon' => 'fas fa-palette'],
-            ['name' => 'Biography', 'icon' => 'fas fa-address-book'],
-            ['name' => 'Children\'s Books', 'icon' => 'fas fa-children'],
-            ['name' => 'Crafts & Hobbies', 'icon' => 'fas fa-screwdriver-wrench'],
-            ['name' => 'Crime & Thriller', 'icon' => 'fas fa-gun'],
-            ['name' => 'Food & Drink', 'icon' => 'fas fa-burger'],
-            ['name' => 'Graphic Novels, Anime & Manga', 'icon' => 'fas fa-tv'],
-            ['name' => 'History & Archaeology', 'icon' => 'fas fa-calendar-day'],
-            ['name' => 'Mind, Body & Spirit', 'icon' => 'fas fa-brain'],
-            ['name' => 'Science Fiction, Fantasy & Horror', 'icon' => 'fas fa-rocket']
+            ['name' => 'Umjetnost i fotografija', 'icon' => 'fas fa-palette'],
+            ['name' => 'Biogrfija', 'icon' => 'fas fa-address-book'],
+            ['name' => 'Dječije knjige', 'icon' => 'fas fa-children'],
+            ['name' => 'Zanat i hobiji', 'icon' => 'fas fa-screwdriver-wrench'],
+            ['name' => 'Krimi i triler', 'icon' => 'fas fa-gun'],
+            ['name' => 'Hrana i piće', 'icon' => 'fas fa-burger'],
+            ['name' => 'Grafički romani, Anime & Mange', 'icon' => 'fas fa-tv'],
+            ['name' => 'Istorija i arheologija', 'icon' => 'fas fa-calendar-day'],
+            ['name' => 'Um, tijelo i duh', 'icon' => 'fas fa-brain'],
+            ['name' => 'Naučna fantastika, fikcija i horor', 'icon' => 'fas fa-rocket']
         ]);
     }
 }

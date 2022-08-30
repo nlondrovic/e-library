@@ -14,7 +14,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title>Library - ICT Cortex student project</title>
+    <title>{{ __('Library - ICT Cortex student project') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/library-favicon.ico') }}" type="image/vnd.microsoft.icon"/>
     <!-- End Title -->
 

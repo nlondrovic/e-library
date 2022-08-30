@@ -8,9 +8,7 @@
             <div class="flex flex-col">
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf]  pb-[20px]">
                     <div>
-                        <h3>
-                            {{ __('Holding time') }}
-                        </h3>
+                        <h3>{{ __('Holding time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __("This value defines the time in days, a book can be checked out before being checked in.
                                 After this deadline the book will be given a status of \"Overdue\".") }}
@@ -29,9 +27,7 @@
                 </div>
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
-                        <h3>
-                            {{ __('Reservation time') }}
-                        </h3>
+                        <h3>{{ __('Reservation time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __("This value defines the time in days, a book can be reserved for a student.
                                 After this deadline the reservation will be canceled.") }}
@@ -73,6 +69,7 @@
                             focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                             hover:bg-[#46A149] bg-[#4CAF50]">
                     <i class="fas fa-check mr-[7px]"></i> {{ __('Save') }}
+
                 </button>
             </div>
         </div>

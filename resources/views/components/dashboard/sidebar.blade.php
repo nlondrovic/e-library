@@ -21,7 +21,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                         transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'dashboard')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
-                                        <p class="inline text-[15px] ml-[15px]">Dashboard</p>
+                                        <p class="inline text-[15px] ml-[15px]">{{ __('Dashboard') }}</p>
                                     </div>
                                 </a>
                             </div>
@@ -37,7 +37,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                          @if(str_contains($route_name, 'students')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Students
+                                            {{ __('Students') }}
                                         </p>
                                     </div>
                                 </a>
@@ -53,7 +53,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                          @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Authors
+                                            {{ __('Authors') }}
                                         </p>
                                     </div>
                                 </a>
@@ -69,7 +69,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                          @if(str_contains($route_name, 'books')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Books
+                                            {{ __('Books') }}
                                         </p>
                                     </div>
                                 </a>
@@ -87,7 +87,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                             str_contains($route_name, 'reservations')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                            Transactions
+                                           {{ __('Transactions') }}
                                         </p>
                                     </div>
                                 </a>
@@ -148,12 +148,11 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                         str_contains($route_name, 'scripts')) text-[#576cdf] @endif"></i>
                         <div class="hidden sidebar-item">
                             <p class="transition duration-300 ease-in group-hover:text-[#576cdf] inline text-[15px] ml-[20px]">
-                                Settings</p>
+                                {{ __('Settings') }}</p>
                         </div>
                     </span>
                 </a>
             </li>
         </ul>
-
     </div>
 </nav>

@@ -1,5 +1,5 @@
 @extends('transactions.index')
-@section('transactions-title', 'Lost books')
+@section('transactions-title', __('Lost books'))
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">

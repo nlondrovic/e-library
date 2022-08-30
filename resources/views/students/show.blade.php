@@ -13,7 +13,7 @@
                 <a href="{{ route('checkouts.index', ['student_id' => $student]) }}"
                    class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
-                    Transactions
+                    {{ __('Transactions') }}
                 </a>
                 <p class="inline cursor-pointer text-[25px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
@@ -26,7 +26,7 @@
                             <a href="{{ route('students.edit', $student) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Edit student</span>
+                                <span class="px-4 py-0">{{ __('Edit student') }}</span>
                             </a>
                             <form action="{{ route('students.destroy', $student) }}" method="post">
                                 @csrf
@@ -34,7 +34,7 @@
                                 <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
                                             text-gray-700 outline-none hover:text-blue-600">
                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <button type="submit" class="px-4 py-0">Delete student</button>
+                                    <button type="submit" class="px-4 py-0">{{ __('Delete student') }}</button>
                                 </p>
                             </form>
                         </div>
@@ -49,19 +49,19 @@
             <div class="flex flex-row">
                 <div class="mr-[30px]">
                     <div class="mt-[20px]">
-                        <span class="text-gray-500">Name and surname</span>
+                        <span class="text-gray-500">{{ __('Name and surname') }}</span>
                         <p class="font-medium">{{ $student->name }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">User type</span>
+                        <span class="text-gray-500">{{ __('User type') }}</span>
                         <p class="font-medium">{{ $student->role->name }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">JMBG</span>
+                        <span class="text-gray-500">{{ __('JMBG') }}</span>
                         <p class="font-medium">{{ $student->jmbg }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">Email</span>
+                        <span class="text-gray-500">{{ __('Email') }}</span>
                         <p class="font-medium">{{ $student->email }}</p>
                     </div>
                 </div>

@@ -11,21 +11,21 @@ class AuthorSeeder extends Seeder
     public function run()
     {
         DB::table('authors')->insert([
-            [
-                'name' => 'J. K. Rowling',
-                'about' => 'Joanne Rowling (born 31 July 1965), also known by her pen name J. K. Rowling, is a British author and philanthropist. She wrote a seven-volume children\'s fantasy series, Harry Potter, published from 1997 to 2007. The series has sold over 500 million copies, been translated into at least 70 languages, and spawned a global media franchise including films and video games. The Casual Vacancy (2012) was her first novel for adults. She writes Cormoran Strike, an ongoing crime fiction series, as Robert Galbraith.',
-                'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg'
-            ],
-            [
-                'name' => 'Ivo Andrić',
-                'about' => 'Ivo Andrić (9 October 1892 – 13 March 1975) was a Yugoslav novelist, poet and short story writer who won the Nobel Prize in Literature in 1961. His writings dealt mainly with life in his native Bosnia under Ottoman rule.',
-                'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/S._Kragujevic%2C_Ivo_Andric%2C_1961.jpg/220px-S._Kragujevic%2C_Ivo_Andric%2C_1961.jpg'
-            ],
-            [
-                'name' => 'Petar II Petrović-Njegoš',
-                'about' => 'Petar II Petrović-Njegoš (13 November 1813 – 31 October 1851), commonly referred to simply as Njegoš, was a Prince-Bishop of Montenegro, poet and philosopher whose works are widely considered some of the most important in Montenegrin and Serbian literature.',
-                'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Petar_II_Petrovic-Njegos.jpg/220px-Petar_II_Petrovic-Njegos.jpg'
-            ]
-        ]);
+        [
+            'name' => 'J. K. Rowling',
+            'about' => 'Joanne Rowling (rođena 31 Jula 1965), takođe poznata pod pseudonimom J. K. Rowling, je engleska književnica. Napisala je 7 serijala romana, Hari Poter, izdaih od 1997 do 2007. Serijal se prodao u preko 500 miliona izdanja, preveden na najmanje 70 jezika, i iznjedrio globalnu medijsku franšizu uključujući filmove i video igrice. Upražnjeno mjesto (2012) bio je njen prvi roman za odrasle. Sledeća knjiga koju je Roulingova napisala bila je kriminalistički roman Zov kukavice. Objavila ju je u aprilu 2013, pod pseudonimom Robert Galbrejt.',
+            'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/220px-J._K._Rowling_2010.jpg'
+        ],
+        [
+            'name' => 'Ivo Andrić',
+            'about' => 'Ivo Andrić (Dolac, kod Travnika, 9. oktobar 1892 — Beograd, 13. mart 1975) bio je srpski i jugoslovenski književnik i diplomata Kraljevine Jugoslavije. Godine 1961.(10. decembra) dobio je Nobelovu nagradu za književnost „za epsku snagu kojom je oblikovao teme i prikazao sudbine ljudi tokom istorije svoje zemlje”. Njegova najpoznatija dela su pored romana Na Drini ćuprija i Travnička hronika, Prokleta avlija, Gospođica i Jelena, žena koje nema. ',
+            'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/S._Kragujevic%2C_Ivo_Andric%2C_1961.jpg/220px-S._Kragujevic%2C_Ivo_Andric%2C_1961.jpg'
+        ],
+        [
+            'name' => 'Petar II Petrović-Njegoš',
+            'about' => 'Petar II Petrović Njegoš (Njeguši (Cetinje) 13. novembar 1813 — Cetinje 31. oktobar 1851) bio je crnogorski vladar, vladika, pjesnik i filozof. Njegova se djela svrstavaju u red najznačajnijih dijelova crnogorske i srpske književnosi. Rođen je kao kao Radoje „Rade” Tomov Petrović, obrazovao se u nekoliko manastira u Crnoj Gori i postao je duhovni i svjetovni vođa Crne Gore nakon smrti svog strica Petra I. Njegoš je poštovan kao pjesnik i filozof, a najpoznatiji je po svojoj epskoj poemi „Gorski vijenac“, koja se smatra za remek-djelo srpske i južnoslovenske književnosti. Druga njegova važna djela su „Luča mikrokozma“, „Ogledalo srpsko“ i „Lažni car Šćepan Mali“.',
+            'picture' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Petar_II_Petrovic-Njegos.jpg/220px-Petar_II_Petrovic-Njegos.jpg'
+        ]
+    ]);
     }
 }
