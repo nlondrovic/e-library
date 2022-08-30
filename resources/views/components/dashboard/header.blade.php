@@ -6,7 +6,7 @@
         <div class="block">
             <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
                 <div class="flex items-center">
-                    <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
+                    <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">cclo
                         <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">
                     </div>
                 </div>
