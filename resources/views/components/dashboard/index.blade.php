@@ -16,7 +16,7 @@
                 <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">Recent activities</h3>
                 <!-- Activity Cards -->
                 <div class="ml-[20px] border-[1px] px-3 py-2 rounded-[5px]  shadow-lg">
-                    <div class="overflow-y-auto scroll h-[630px]">
+                    <div class="overflow-y-auto scroll h-[630px] w-[560px]">
                         @foreach($activities as $activity)
                             @if($activity->type == 'Checkout')
                                 @include('components/dashboard/checkout-card')
