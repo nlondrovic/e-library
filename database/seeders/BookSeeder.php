@@ -62,8 +62,8 @@ class BookSeeder extends Seeder
                 'total_count' => 10,
                 'category_id' => 10,
                 'genre_id' => 1,
-                'checkouts_count' => 1,
-                'reserved_count' => 1
+                'checkouts_count' => 0,
+                'reserved_count' => 0
             ],
             [
                 'title' => 'The Bridge on the Drina',
@@ -80,8 +80,8 @@ class BookSeeder extends Seeder
                 'total_count' => 10,
                 'category_id' => 8,
                 'genre_id' => 24,
-                'checkouts_count' => 2,
-                'reserved_count' => 1
+                'checkouts_count' => 0,
+                'reserved_count' => 0
             ],
             [
                 'title' => 'The Mountain Wreath',
@@ -98,7 +98,7 @@ class BookSeeder extends Seeder
                 'total_count' => 10,
                 'category_id' => 8,
                 'genre_id' => 24,
-                'checkouts_count' => 1,
+                'checkouts_count' => 0,
                 'reserved_count' => 0
             ]
         ]);

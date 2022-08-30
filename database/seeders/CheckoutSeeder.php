@@ -16,7 +16,7 @@ class CheckoutSeeder extends Seeder
                 'book_id' => 1,
                 'checkout_librarian_id' => 1,
                 'student_id' => 6,
-                'start_time' => '2022-08-01 13:00:00'
+                'start_time' => '2022-08-20 13:00:00'
             ],
             [
                 'book_id' => 2,
