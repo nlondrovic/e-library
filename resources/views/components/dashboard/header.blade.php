@@ -1,17 +1,17 @@
 <header
     class="z-20 small:hidden  flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto bg-[#4558BE]">
-    <!-- Logo -->
-    <div class="logo-font inline-flex bg-[#3F51B5] py-[18px] px-[30px]">
-        <a class="_o6689fn" href="#">
-            <div class="block">
-                <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
-                    <div class="flex">
+
+    <!-- logo -->
+    <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
+        <div class="block">
+            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
+                <div class="flex items-center">
+                    <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
                         <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">
-                        <p class="text-[20px] mt-[5px]">&nbsp;&nbsp;Online Library</p>
                     </div>
-                </a>
-            </div>
-        </a>
+                </div>
+            </a>
+        </div>
     </div>
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
