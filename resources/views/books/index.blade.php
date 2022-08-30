@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('main')
 
-    <!-- Heading of content -->
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <h1 class="pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
@@ -10,16 +9,13 @@
         </div>
     </div>
 
-    <!-- Space for content -->
     <div class="scroll height-evidencija">
-        {{-- New Book --}}
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('books.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                        ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                 <i class="fas fa-plus mr-[15px]"></i> New book
             </a>
-
             <form action="{{ route('books.index') }}">
                 <div class="wrapper">
                     <div class="search-input">
@@ -31,7 +27,6 @@
                     </div>
                 </div>
             </form>
-
             <script>
                 let suggestions = [
                     @foreach($search_array as $book)
@@ -40,13 +35,9 @@
                 ];
             </script>
         </div>
-
         <div class="px-[50px] pt-2 bg-white">
             <div class="w-full mt-2">
-
-                <!-- Table -->
                 <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
-                    <!-- Table head-->
                     <thead class="bg-[#EFF3F6]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
                         <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">Title</th>
@@ -59,7 +50,6 @@
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
-                    {{-- Tabe body --}}
                     <tbody class="bg-white">
                     @foreach($books as $book)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
@@ -77,8 +67,7 @@
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count }}</td>
                             <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
-                                    <i
-                                        class="fas fa-ellipsis-v"></i>
+                                    <i class="fas fa-ellipsis-v"></i>
                                 </p>
                                 <div
                                     class="absolute z-10 hidden transition-all duration-300 origin-top-right transform

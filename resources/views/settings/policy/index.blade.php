@@ -1,7 +1,7 @@
 @extends('settings.index')
 @section('main-settings')
 
-    <form method="post" action="{{ route('settings.update') }}">
+    <form method="post" action="{{ route('policy.update') }}">
         @csrf
         @method('PATCH')
         <div class="section- mt-[5px]">
@@ -16,7 +16,7 @@
                                 After this deadline the book will be given a status of \"Overdue\".") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __('Current value') }}: {{ $holding_time }} {{ __('days') }}
+                            {{ __('Current value') }}: {{ $holding_time }} {{ __('day(s)') }}
                         </p>
                     </div>
                     <div class="relative flex ml-[60px] mt-[20px]">
@@ -24,7 +24,7 @@
                                class="h-[50px] flex-1 w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400
                                bg-white border-[1px]  border-[#e4dfdf]  rounded-lg shadow-sm appearance-none
                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"/>
-                        <p class="ml-[10px] mt-[10px]">{{ __('days') }}</p>
+                        <p class="ml-[10px] mt-[10px]">{{ __('day(s)') }}</p>
                     </div>
                 </div>
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
@@ -37,7 +37,7 @@
                                 After this deadline the reservation will be canceled.") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __('Current value') }}: {{ $reservation_time }} {{ __('days') }}
+                            {{ __('Current value') }}: {{ $reservation_time }} {{ __('day(s)') }}
                         </p>
                     </div>
                     <div class="relative flex ml-[60px] mt-[20px]">
@@ -45,7 +45,7 @@
                                class="h-[50px] flex-1 w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400
                                bg-white border-[1px]  border-[#e4dfdf]  rounded-lg shadow-sm appearance-none
                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"/>
-                        <p class="ml-[10px] mt-[10px]">{{ __('days') }}</p>
+                        <p class="ml-[10px] mt-[10px]">{{ __('day(s)') }}</p>
                     </div>
                 </div>
                 <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
@@ -57,7 +57,7 @@
                             {{ __("This value defines a limit of books that can be checked out or reserved for a student.") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __('Current value') }}: {{ $books_per_student }} {{ __('books') }}
+                            {{ __('Current value') }}: {{ $books_per_student }} {{ __('book(s)') }}
                         </p>
                     </div>
                     <div class="relative flex ml-[60px] mt-[20px]">
@@ -65,7 +65,7 @@
                                class="h-[50px] flex-1 w-full px-4 py-2 text-sm text-gray-700 placeholder-gray-400
                                bg-white border-[1px]  border-[#e4dfdf]  rounded-lg shadow-sm appearance-none
                                focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"/>
-                        <p class="ml-[10px] mt-[10px]">{{ __('books') }}</p>
+                        <p class="ml-[10px] mt-[10px]">{{ __('book(s)') }}</p>
                     </div>
                 </div>
                 <button type="submit"

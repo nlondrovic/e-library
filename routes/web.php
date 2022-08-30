@@ -54,8 +54,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/scripts', ScriptController::class);
     Route::resource('/librarians', LibrarianController::class);
     Route::resource('/admins', AdminController::class);
-    Route::get('/settings', [SettingsController::class, 'index'])->name('settings.index');
-    Route::patch('/settings/update', [SettingsController::class, 'update'])->name('settings.update');
+    Route::get('/policy', [SettingsController::class, 'index'])->name('policy.index');
+    Route::patch('/policy/update', [SettingsController::class, 'update'])->name('policy.update');
 
 
     // RESERVATIONS LISTING
