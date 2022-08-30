@@ -46,6 +46,67 @@
                                     <p class="text-red-600">{{ $errors->first('author') }}</p>
                                 @endif
                             </div>
+                            {{-- Content --}}
+                            <div class="mt-[20px]">
+                                <p>Content <span class="text-red-500">*</span></p>
+                                <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
+                                border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
+                                focus:ring-[#576cdf]" rows="8">{{ $book->content }}</textarea>
+                                @if($errors->first('content'))
+                                    <p class="text-red-600">{{ $errors->first('content') }}</p>
+                                @endif
+                            </div>
+                            {{-- ISBN --}}
+                            <div class="mt-[20px]">
+                                <p>ISBN <span class="text-red-500">*</span></p>
+                                <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->isbn }}"/>
+                                @if($errors->first('isbn'))
+                                    <p class="text-red-600">{{ $errors->first('isbn') }}</p>
+                                @endif
+                            </div>
+                            {{-- Number of pages --}}
+                            <div class="mt-[20px]">
+                                <p>Number of pages <span class="text-red-500">*</span></p>
+                                <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->page_count }}"/>
+                                @if($errors->first('page_count'))
+                                    <p class="text-red-600">{{ $errors->first('page_count') }}</p>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row-2">
+                            {{-- Publish date --}}
+                            <div class="mt-[20px]">
+                                <p>Date of publishing <span class="text-red-500">*</span></p>
+                                <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->publish_date }}"/>
+                                @if($errors->first('publish_date'))
+                                    <p class="text-red-600">{{ $errors->first('publish_date') }}</p>
+                                @endif
+                            </div>
+                            {{-- Publisher --}}
+                            <div class="mt-[20px]">
+                                <p>Publisher <span class="text-red-500">*</span></p>
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
+                                        name="publisher_id">
+                                    @foreach ($publishers as $publisher)
+                                        <option
+                                            @if($publisher == $book->publisher) selected @endif
+                                        value="{{ $publisher->id }}">
+                                            {{ $publisher->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @if($errors->first('genre'))
+                                    <p class="text-red-600">{{ $errors->first('genre') }}</p>
+                                @endif
+                            </div>
                             {{-- Category --}}
                             <div class="mt-[20px]">
                                 <p>Category <span class="text-red-500">*</span></p>
@@ -80,57 +141,6 @@
                                 </select>
                                 @if($errors->first('genre'))
                                     <p class="text-red-600">{{ $errors->first('genre') }}</p>
-                                @endif
-                            </div>
-                            {{-- Publisher --}}
-                            <div class="mt-[20px]">
-                                <p>Publisher <span class="text-red-500">*</span></p>
-                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
-                                        name="publisher_id">
-                                    @foreach ($publishers as $publisher)
-                                        <option
-                                            @if($publisher == $book->publisher) selected @endif
-                                        value="{{ $publisher->id }}">
-                                            {{ $publisher->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @if($errors->first('genre'))
-                                    <p class="text-red-600">{{ $errors->first('genre') }}</p>
-                                @endif
-                            </div>
-                            {{-- Publish date --}}
-                            <div class="mt-[20px]">
-                                <p>Date of publishing <span class="text-red-500">*</span></p>
-                                <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->publish_date }}"/>
-                                @if($errors->first('publish_date'))
-                                    <p class="text-red-600">{{ $errors->first('publish_date') }}</p>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="row-2">
-                            {{-- ISBN --}}
-                            <div class="mt-[20px]">
-                                <p>ISBN <span class="text-red-500">*</span></p>
-                                <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->isbn }}"/>
-                                @if($errors->first('isbn'))
-                                    <p class="text-red-600">{{ $errors->first('isbn') }}</p>
-                                @endif
-                            </div>
-                            {{-- Number of pages --}}
-                            <div class="mt-[20px]">
-                                <p>Number of pages <span class="text-red-500">*</span></p>
-                                <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->page_count }}"/>
-                                @if($errors->first('page_count'))
-                                    <p class="text-red-600">{{ $errors->first('page_count') }}</p>
                                 @endif
                             </div>
                             {{-- Script --}}
@@ -187,16 +197,6 @@
                                     <p class="text-red-600">{{ $errors->first('size') }}</p>
                                 @endif
                             </div>
-                            {{-- Content --}}
-                            <div class="mt-[20px]">
-                                <p>Content <span class="text-red-500">*</span></p>
-                                <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
-                                border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
-                                focus:ring-[#576cdf]" rows="8">{{ $book->content }}</textarea>
-                                @if($errors->first('content'))
-                                    <p class="text-red-600">{{ $errors->first('content') }}</p>
-                                @endif
-                            </div>
                         </div>
 
                         <div class="row-3">
@@ -211,6 +211,7 @@
                                     <p class="text-red-600">{{ $errors->first('total_count') }}</p>
                                 @endif
                             </div>
+                            {{-- Picture --}}
                             <div class="mt-[20px]">
                                 <p>Add photo</p>
                                 <input type="file" name="picture" accept="image/*"
