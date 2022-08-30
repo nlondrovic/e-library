@@ -16,25 +16,25 @@
         <tbody class="bg-white">
         @foreach($checkouts as $checkout)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
-                <td class="flex flex-row items-center px-4 py-4">
+                <td class="flex flex-row items-center px-4 py-3">
                     <img class="object-cover w-8 mr-2 h-11" src="{{ asset($checkout->book->picture) }}" alt=""/>
                     <a href="{{ route('books.show', $checkout->book) }}">
                         <span class="font-medium text-center">{{ $checkout->book->title }}</span>
                     </a>
                 </td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">
                     <a href="{{ route('students.show', $checkout->student) }}">
                         <span class="font-medium text-center">{{ $checkout->student->name }}</span>
                     </a>
                 </td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">
                     <a href="{{ route('librarians.show', $checkout->checkout_librarian) }}">
                         <span class="font-medium text-center">{{ $checkout->checkout_librarian->name }}</span>
                     </a>
                 </td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
-                <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{!! $checkout->getHoldingTime() !!}</td>
-                <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_time($checkout->start_time) }}</td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{!! $checkout->getHoldingTime() !!}</td>
+                <td class="px-6 py-3 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
