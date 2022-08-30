@@ -4,10 +4,10 @@
     <!-- logo -->
     <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
         <div class="block">
-            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
+{{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
                 <div class="flex items-center">
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
-                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">
+{{--                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">--}}
                     </div>
                 </div>
             </a>
@@ -31,11 +31,13 @@
                     <div class="absolute right-[12px] w-56 mt-[35px] origin-top-right bg-white border border-gray-200
                     divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                         <div class="py-1">
+                            @if(auth()->user()->isAdmin())
                             <a href="{{ route('librarians.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="far fa-address-book mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">Librarian</span>
                             </a>
+                            @endif
                             <a href="{{ route('students.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-users mr-[5px] ml-[3px] py-1"></i>
