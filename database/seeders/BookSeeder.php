@@ -92,7 +92,7 @@ class BookSeeder extends Seeder
                 'page_count' => 132,
                 'size_id' => 4,
                 'script_id' => 5,
-                'binding_id' => 5,
+                'binding_id' => 1,
                 'publisher_id' => 7,
                 'publish_date' => "1964-10-09",
                 'total_count' => 10,
