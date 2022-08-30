@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row overflow-auto height-osnovniDetalji">
+    <div class="flex flex-row overflow-auto height-osnovniDetalji scroll">
         <div class="w-[100%]">
             <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
