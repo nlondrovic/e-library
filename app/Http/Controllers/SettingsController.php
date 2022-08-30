@@ -40,6 +40,6 @@ class SettingsController extends Controller
                 ->update(['value' => $request->books_per_student]);
         }
 
-        return redirect()->route('settings.index');
+        return redirect()->route('policy.index');
     }
 }

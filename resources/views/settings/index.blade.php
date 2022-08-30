@@ -15,7 +15,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
     </div>
 
     <div class="py-4 text-gray-500 border-b-[1px] border-[#e4dfdf] pl-[50px]">
-        <a href="{{ route('settings.index') }}"
+        <a href="{{ route('policy.index') }}"
            class="inline hover:text-blue-800 @if(str_contains($route_name, 'policy')) active-book-nav @endif">
             Policy
         </a>
