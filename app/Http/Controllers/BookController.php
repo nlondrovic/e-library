@@ -70,7 +70,7 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        $activities = Activity::where('book_id', $book->id)->orderBy('id', 'desc')->take(5)->get();
+        $activities = Activity::where('book_id', $book->id)->orderBy('id', 'desc')->take(4)->get();
         return view('books.show', compact('book', 'activities'));
     }
 
