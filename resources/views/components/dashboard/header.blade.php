@@ -2,10 +2,10 @@
     bg-[#4558BE]">
     <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
         <div class="block">
-{{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
+            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
                 <div class="flex items-center">
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
-{{--                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">--}}
+                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">
                     </div>
                 </div>
             </a>
@@ -87,20 +87,23 @@
                         </div>
                     </div>
                 </div>
+                <div class="px-5 w-[145px]">
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang != App::getLocale())
-                                <a class="dropdown-item" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+                            @if ($lang == App::getLocale())
+                            <li class="nav-item dropdown">
+                                <a class="">
+                                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
+                                </a>
+                            </li>
+                            @else
+                                <a class="" href="{{ route('lang.switch', $lang) }}">
+                                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
+                                </a>
                             @endif
                         @endforeach
-                    </div>
-                </li>
 
+                </div>
             </div>
         </div>
     </div>
