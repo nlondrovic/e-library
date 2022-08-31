@@ -2777,3 +2777,10 @@ h4 {
 .pr-2{
     padding-right: 0.5rem;
 }
+.ml-\[50\%\]{
+    margin-left: 50%;
+}
+.ml-\[40px\]{
+    margin-left: 40px;
+}
+
