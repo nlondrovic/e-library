@@ -1,8 +1,5 @@
 <div class="p-4 pt-[15px] border-t-[1px] border-[#e4dfdf]">
-    <div class="flex flex-row justify-between">
-        <u><h4>{{ __('Recent activity') }}</h4></u>
-        <h5 class="mr-[14px]">{{ __('Results') }}: {{ count($activities) }}</h5>
-    </div>
+        <h4 class="text-center mb-[5px]">{{ __('Recent activity') }}</h4>
     @foreach($activities as $activity)
         @if($activity->type == 'Checkout')
             @include('components/dashboard/checkout-card')

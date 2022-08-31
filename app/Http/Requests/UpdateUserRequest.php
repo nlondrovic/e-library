@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,7 +39,7 @@ class UpdateUserRequest extends FormRequest
             'name.string' => __('Name must be a string.'),
             'jmbg.required' => __('JMBG is required.'),
             'jmbg.regex' => __('JMBG format is invalid.'),
-            'jmbg.digits' => __('JMBG must have 13 digits.'),
+            'jmbg.digits' => __('JMBG must have :digits digits.'),
             'email.required' => __('Email is required.'),
             'email.email' => __('Invalid email.'),
             'email.unique' => __('Email must be unique.')

@@ -1204,6 +1204,9 @@ h4 {
 .mr-\[15px\]{
     margin-right: 15px;
 }
+.mr-\[20px\]{
+    margin-right: 20px;
+}
 .ml-3{
     margin-left: 0.75rem;
 }
@@ -1558,6 +1561,9 @@ h4 {
 .min-w-\[20\%\]{
     min-width: 20%;
 }
+.min-w-\[25\%\]{
+    min-width: 25%;
+}
 .min-w-\[40\%\]{
     min-width: 40%;
 }
@@ -1587,6 +1593,9 @@ h4 {
 }
 .max-w-\[600px\]{
     max-width: 600px;
+}
+.max-w-\[800px\]{
+    max-width: 800px;
 }
 .max-w-md{
     max-width: 28rem;
@@ -2756,11 +2765,22 @@ h4 {
 .w-\[400px\]{
     width: 400px;
 }
-
 .flex-2{
     flex: 1 1 100%;
 }
-
 .pr-\[57\%\]{
     padding-right: 57%;
 }
+.mb-\[25px\]{
+    margin-bottom: 25px;
+}
+.pr-2{
+    padding-right: 0.5rem;
+}
+.ml-\[50\%\]{
+    margin-left: 50%;
+}
+.ml-\[40px\]{
+    margin-left: 40px;
+}
+

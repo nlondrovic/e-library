@@ -46,6 +46,7 @@
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Free') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Reserved') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Checked out') }}</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Overdue') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Total') }}</th>
                         <th class="px-4 py-4"></th>
                     </tr>
@@ -61,9 +62,22 @@
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->author->name }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->category->name }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count - ($book->checkouts_count + $book->reserved_count) }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->reserved_count != 0 ? $book->reserved_count : "" }}</td>
-                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->checkouts_count != 0 ? $book->checkouts_count : "" }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->getFreeCount() }}</td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
+                                <a href="{{ route('reservations.active', ['book_id' => $book->id]) }}">
+                                    {{ $book->reserved_count != 0 ? $book->reserved_count : "" }}
+                                </a>
+                            </td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
+                                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}">
+                                    {{ $book->checkouts_count != 0 ? $book->checkouts_count : "" }}
+                                </a>
+                            </td>
+                            <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
+                                <a href="{{ route('overdue.index', ['book_id' => $book->id]) }}">
+                                    {{ $book->getOverdueCount() != 0 ? $book->getOverdueCount() : "" }}
+                                </a>
+                            </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count }}</td>
                             <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
                                 <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">

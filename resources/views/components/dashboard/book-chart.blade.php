@@ -20,7 +20,7 @@
         const data = {
             labels: labels,
             datasets: [{
-                label: "{{__('# of books')}}",
+                label: "{{__('Number of books')}}",
                 data: [{{ $checkouts_count }}, {{ $reserved_count }}, {{ $overdue_count }}],
                 backgroundColor: [
                     'rgba(54, 162, 235, 0.7)',
