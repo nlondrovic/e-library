@@ -28,7 +28,7 @@ class BookController extends Controller
             return view('books.index', compact('books', 'search_array'));
         }
 
-        $books = Book::orderBy('title', 'asc')->paginate(10);
+        $books = Book::orderBy('title', 'asc')->paginate(8);
         $search_array = Book::orderBy('title', 'asc')->get();
         $pagination = true;
 

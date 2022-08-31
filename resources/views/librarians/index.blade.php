@@ -3,7 +3,7 @@
 
     <div class="mt-2">
         <div class="heading mt-[7px]">
-            <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
+            <h1 class="pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
                 {{ __('Librarians') }}
             </h1>
         </div>
@@ -35,7 +35,7 @@
             </script>
         </div>
 
-        <div class="px-[50px] pt-2 bg-white">
+        <div class="px-[50px] pt-2 bg-white mb-[30px]">
             <div class="w-full mt-2">
                 <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]"
                        id="myTable">

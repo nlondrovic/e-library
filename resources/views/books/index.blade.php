@@ -35,7 +35,8 @@
                 ];
             </script>
         </div>
-        <div class="px-[50px] pt-2 bg-white">
+
+        <div class="px-[50px] pt-2 bg-white mb-[30px]">
             <div class="w-full mt-2">
                 <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
                     <thead class="bg-[#EFF3F6]">
@@ -87,7 +88,7 @@
                                     class="absolute z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-knjige">
                                     <div
-                                        class="absolute  w-56 mt-2 origin-top-right bg-white border border-gray-200
+                                        class="absolute w-56 mt-2 origin-top-right bg-white border border-gray-200
                                          divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                         <div class="py-1">
                                             <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}"
