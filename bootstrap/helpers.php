@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Lang;
+
 function format_carbon_date(\Carbon\Carbon $date): string
 {
     return $date->format('d.m.Y.');
@@ -22,15 +24,23 @@ function format_time(string $time): string
 
 function format_activity_time(string $time): string
 {
-    if(\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $time)->isCurrentWeek()){
-        return 'This '.\Carbon\Carbon::parse($time)->englishDayOfWeek.' at '.\Carbon\Carbon::parse($time)->format('H:i');
-    }
-    if(\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $time)->isLastWeek()){
-        return 'Last '.\Carbon\Carbon::parse($time)->englishDayOfWeek.' at '.\Carbon\Carbon::parse($time)->format('H:i');
-    }
-    if(\Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $time)->isLastYear()){
-        return \Carbon\Carbon::parse($time)->format('M jS Y - H:i');
-    }
-    return \Carbon\Carbon::parse($time)->format('M jS H:i');
+    $local_language = Lang::getLocale();
+    $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $time)->locale($local_language);
 
+    if($date->isCurrentWeek()) {
+        return $date->dayName.' '.__('at').' '.$date->format('H:i');
+    } elseif($date->isLastWeek()){
+        if($date->dayName != "Wednesday" || $date->dayName != "Saturday" || $date->dayName != "Sunday") {
+            return __('Last.a').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
+        }
+        return __('Last').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
+    } elseif(!$date->isCurrentYear()){
+        return $date->translatedFormat('M jS Y - H:i');
+    }
+    return $date->format('M jS H:i');
+}
+
+function capitalize(string $time): string
+{
+    return \Illuminate\Support\Str::ucfirst($time);
 }
