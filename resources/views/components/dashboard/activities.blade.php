@@ -10,10 +10,12 @@
     </div>
 
     <div class="flex flex-row pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
-        <div class="mr-[30px]">
-            <p class="mb-[20px] mt-[20px]">
-                {{ __('Results found: ') }} {{ count($activities) }}
-            </p>
+        <div class="mr-[30px] mt-[30px]">
+            @if(filtering())
+                <p class="mb-[20px]">
+                    {{ __('Results found: ') }} {{ count($activities) }}
+                </p>
+            @endif
             <!-- Activity Cards -->
             @foreach($activities as $activity)
                 @if($activity->type == 'Checkout')
@@ -35,7 +37,7 @@
                 </button>
             </div>
         </div>
-        <div class="mr-[50px] ml-[50%] mt-[40px] absolute">
+        <div class="mr-[50px] ml-[50%] mt-[10px] absolute">
             <h1 class="mb-[20px] mt-[20px] text-center">Filters</h1>
             <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get" class="">
                 {{-- Type --}}
@@ -127,9 +129,7 @@
                             duration-300ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-search"></i>&nbsp;Filter
                     </button>
-                    @if(request()->get('type') || request()->get('book_id')
-               || request()->get('student_id') || request()->get('librarian_id')
-               || request()->get('start_date') || request()->get('end_date'))
+                    @if(filtering())
                         <a href="{{ route(Route::currentRouteName()) }}"
                            class="mt-[20px] ml-[30px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                                     ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
