@@ -61,7 +61,7 @@
                         <p class="font-medium">{{ $librarian->email }}</p>
                     </div>
                 </div>
-                <div class="ml-[100px]  mt-[20px]">
+                <div class="ml-[100px] mt-[20px]">
                     <img class="rounded-full border-2 border-blue-600 p-2" width="300px"
                          src="{{ asset($librarian->picture) }}" alt="Librarian image">
                 </div>

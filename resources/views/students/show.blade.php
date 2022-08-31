@@ -65,7 +65,7 @@
                         <p class="font-medium">{{ $student->email }}</p>
                     </div>
                 </div>
-                <div class="ml-[100px]  mt-[20px]">
+                <div class="ml-[100px] mt-[20px]">
                     <img class="rounded-full border-2 border-blue-600 p-2" width="300px"
                          src="{{ asset($student->picture) }}" alt="Student image">
                 </div>

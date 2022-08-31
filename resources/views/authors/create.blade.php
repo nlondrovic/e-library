@@ -4,7 +4,7 @@
     <!-- Heading of content -->
     <div class="mt-2">
         <div class="heading mt-[7px]">
-            <h1 class="pl-[60px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
+            <h1 class="pl-[60px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
                 {{ __('New author') }}
             </h1>
         </div>
