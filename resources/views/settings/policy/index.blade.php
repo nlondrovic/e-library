@@ -6,7 +6,7 @@
         @method('PATCH')
         <div class="section- mt-[5px]">
             <div class="flex flex-col">
-                <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf]  pb-[20px]">
+                <div class="flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
                         <h3>{{ __('Holding time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
@@ -25,7 +25,7 @@
                         <p class="ml-[10px] mt-[10px]">{{ __('day(s)') }}</p>
                     </div>
                 </div>
-                <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
+                <div class="flex border-b-[1px] border-[#e4dfdf] pb-[20px] mt-[20px]">
                     <div>
                         <h3>{{ __('Reservation time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
@@ -44,7 +44,7 @@
                         <p class="ml-[10px] mt-[10px]">{{ __('day(s)') }}</p>
                     </div>
                 </div>
-                <div class="pl-[0px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
+                <div class="flex border-b-[1px] border-[#e4dfdf] pb-[20px] mt-[20px]">
                     <div>
                         <h3>
                             {{ __('Books per student') }}
