@@ -22,7 +22,7 @@
                             <a href="{{ route('admins.edit', $admin) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">Edit admin</span>
+                                <span class="px-4 py-0">{{__('Edit admin')}}</span>
                             </a>
                             <form action="{{ route('admins.destroy', $admin) }}" method="post">
                                 @csrf
@@ -30,7 +30,7 @@
                                 <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
                                             text-gray-700 outline-none hover:text-blue-600">
                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <button type="submit" class="px-4 py-0">Delete admin</button>
+                                    <button type="submit" class="px-4 py-0">{{__('Delete admin')}}</button>
                                 </p>
                             </form>
                         </div>
@@ -45,19 +45,19 @@
             <div class="flex flex-row">
                 <div class="mr-[30px]">
                     <div class="mt-[20px]">
-                        <span class="text-gray-500">Name and surname</span>
+                        <span class="text-gray-500">{{__('Name and surname')}}</span>
                         <p class="font-medium">{{ $admin->name }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">User type</span>
+                        <span class="text-gray-500">{{__('User type')}}</span>
                         <p class="font-medium">{{ $admin->role->name }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">JMBG</span>
+                        <span class="text-gray-500">{{__('JMBG')}}</span>
                         <p class="font-medium">{{ $admin->jmbg }}</p>
                     </div>
                     <div class="mt-[40px]">
-                        <span class="text-gray-500">Email</span>
+                        <span class="text-gray-500">{{__('Email')}}</span>
                         <p class="font-medium">{{ $admin->email }}</p>
                     </div>
                 </div>

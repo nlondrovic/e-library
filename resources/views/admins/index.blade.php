@@ -4,7 +4,7 @@
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
-                Admins
+                {{__('Admins')}}
             </h1>
         </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('admins.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5
                 transition duration-300 ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
-                <i class="fas fa-plus mr-[15px]"></i> New admin
+                <i class="fas fa-plus mr-[15px]"></i> {{__('New admin')}}
             </a>
             <form action="{{ route('admins.index') }}">
                 <div class="wrapper">
@@ -34,8 +34,8 @@
                        id="myTable">
                     <thead class="bg-[#EFF3F6]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
-                        <th class="px-4 py-4 leading-4 tracking-wider text-left">Name</th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">Email</th>
+                        <th class="px-4 py-4 leading-4 tracking-wider text-left">{{__('Name')}}</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Email')}}</th>
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
@@ -64,13 +64,13 @@
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                outline-none hover:text-blue-600">
                                                 <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">Show details</span>
+                                                <span class="px-4 py-0">{{__('Show details')}}</span>
                                             </a>
                                             <a href="{{route('admins.edit', $admin)}}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                 outline-none hover:text-blue-600">
                                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">Edit admin</span>
+                                                <span class="px-4 py-0">{{__('Edit admin')}}</span>
                                             </a>
                                             <form action="{{ route('admins.destroy', $admin) }}" method="post">
                                                 @csrf
@@ -79,7 +79,7 @@
                                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left
                                                             text-gray-700 outline-none hover:text-blue-600">
                                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">Delete admin</span>
+                                                    <span class="px-4 py-0">{{__('Delete admin')}}</span>
                                                 </button>
                                             </form>
                                         </div>

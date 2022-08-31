@@ -12,18 +12,18 @@
                 </a>
                 returned
                 @if(\Request::is('books/*'))
-                    the book
+                {{__('the book')}}
                 @else
                     <a href="{{ route('books.show', $activity->book) }}" class="text-[#2196f3] hover:text-blue-600">
                         {{ $activity->book->title }}
                     </a>
                 @endif
-                to
+                {{__('to')}}
                 <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
                     {{ $activity->librarian->name }}
                 </a><br>
                 <a href="{{ route('checkouts.show', $activity->activity_id) }}" class="text-[#2196f3] hover:text-blue-600">
-                    show details &gt;&gt;
+                    {{__('show details')}} &gt;&gt;
                 </a>
             </p>
         </div>

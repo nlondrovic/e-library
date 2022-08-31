@@ -10,8 +10,7 @@
                     <div>
                         <h3>{{ __('Holding time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __("This value defines the time in days, a book can be checked out before being checked in.
-                                After this deadline the book will be given a status of \"Overdue\".") }}
+                            {{ __("This value defines the time in days, a book can be checked out before being checked in. After this deadline the book will be given a status of 'Overdue'.") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('Current value') }}: {{ $holding_time }} {{ __('day(s)') }}
@@ -29,8 +28,7 @@
                     <div>
                         <h3>{{ __('Reservation time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __("This value defines the time in days, a book can be reserved for a student.
-                                After this deadline the reservation will be canceled.") }}
+                            {{ __("This value defines the time in days, a book can be reserved for a student. After this deadline the reservation will be canceled.") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('Current value') }}: {{ $reservation_time }} {{ __('day(s)') }}
