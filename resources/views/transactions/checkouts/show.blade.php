@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="mt-[40px]">
                                     <span class="text-gray-500 text-[14px]">{{__('Overdue time')}}</span>
-                                    <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
+                                    <p class="font-medium">{!! $checkout->getOverdueTime() !!}</p>
                                 </div>
                                 <div class="mt-[40px]">
                                     <span class="text-gray-500 text-[14px]">{{__('Checkout end reason')}}</span>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Overdue time')}}</span>
-                                <p class="font-medium">{!! $checkout->getOverdueTime()  !!}</p>
+                                <p class="font-medium">{!! $checkout->getOverdueTime() !!}</p>
                             </div>
                         @endif
                     </div>

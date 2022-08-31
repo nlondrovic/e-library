@@ -12,7 +12,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <div class="mt-[16px]">
             <ul class="text-[#2D3B48] sidebar-nav">
                 <!-- Dashboard Icon -->
-                <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
                             <div class="transition duration-300 ease-in group-hover:text-blue-600">
@@ -31,7 +31,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     </div>
                 </li>
                 <!-- Students Icon -->
-                <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('students.index') }}" aria-label="Students">
@@ -63,7 +63,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     </div>
                 </li>
                 <!-- Books Icon -->
-                <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('books.index') }}" aria-label="Books">
@@ -99,7 +99,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 </li>
                 @if(auth()->user()->isAdmin())
                     <!-- Librarian Icon -->
-                    <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                    <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                         <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('librarians.index') }}" aria-label="Librarians">
@@ -115,7 +115,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </div>
                     </li>
                     <!-- Admin icon -->
-                    <li class="pt-[18px] pb-[14px]  group hover:bg-[#EAEAEA] h-[60px]">
+                    <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                         <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap">
                                 <a href="{{ route('admins.index') }}" aria-label="RentingBooks">
@@ -135,7 +135,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             </ul>
         </div>
     </div>
-    <div class="sidebar-nav py-[10px] border-t-[1px] border-[#e4dfdf] pt-[23px] pb-[29px]  group hover:bg-[#EFF3F6]">
+    <div class="sidebar-nav py-[10px] border-t-[1px] border-[#e4dfdf] pt-[23px] pb-[29px] group hover:bg-[#EFF3F6]">
         <!-- Settings Icon -->
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
