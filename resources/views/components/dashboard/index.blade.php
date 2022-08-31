@@ -4,16 +4,16 @@
     <div class="mt-2">
         <div class="heading mt-[7px]">
             <h1 class="pl-[50px] pb-[21px]  border-b-[1px] border-[#e4dfdf]">
-                {{__('Dashboard')}}
+                {{ __('Dashboard') }}
             </h1>
         </div>
     </div>
 
-    <div class="pl-[30px] scroll height-dashboard overflow-auto pt-[20px] pb-[30px]">
+    <div class="pl-[50px] scroll height-dashboard overflow-auto pt-[20px] pb-[30px]">
         <div class="flex flex-row justify-between">
             <!-- Left side -->
             <div class="mr-[30px]">
-                <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">{{__('Recent activities')}}</h3>
+                <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">{{ __('Recent activities') }}</h3>
                 <!-- Activity Cards -->
                 <div class="ml-[20px] border-[1px] px-3 py-2 rounded-[5px]  shadow-lg">
                     <div class="overflow-y-auto scroll h-[630px] w-[560px]">
@@ -35,7 +35,7 @@
                     <a href="{{ route('activities') }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
                     text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
                     focus:outline-none focus:ring-[1px] focus:ring-gray-300  shadow-md">
-                        {{__('Show all')}}
+                        {{ __('Show all') }}
                     </a>
                 </div>
             </div>
@@ -78,7 +78,7 @@
                     <div class="text-right mt-[5px]">
                         <a href="#" class="text-[#2196f3] hover:text-blue-600">
                             <i class="fas fa-calendar-alt mr-[4px]" aria-hidden="true"></i>
-                            {{__('Show all')}}
+                            {{ __('Show all') }}
                         </a>
                     </div>
                 </div>
