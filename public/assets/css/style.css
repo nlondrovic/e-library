@@ -1204,6 +1204,9 @@ h4 {
 .mr-\[15px\]{
     margin-right: 15px;
 }
+.mr-\[20px\]{
+    margin-right: 20px;
+}
 .ml-3{
     margin-left: 0.75rem;
 }
@@ -1558,6 +1561,9 @@ h4 {
 .min-w-\[20\%\]{
     min-width: 20%;
 }
+.min-w-\[25\%\]{
+    min-width: 25%;
+}
 .min-w-\[40\%\]{
     min-width: 40%;
 }
@@ -1587,6 +1593,9 @@ h4 {
 }
 .max-w-\[600px\]{
     max-width: 600px;
+}
+.max-w-\[800px\]{
+    max-width: 800px;
 }
 .max-w-md{
     max-width: 28rem;

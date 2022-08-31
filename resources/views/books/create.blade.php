@@ -239,25 +239,24 @@
                             </div>
                             {{-- Picure --}}
                             <div class="mt-[20px]">
-                                <p class="py-2 mt-2 leading-normal">{{__('Add photo')}}</p>
+                                <p>{{ __('Add photo') }}</p>
                                 <input type="file" name="picture" accept="image/*"
                                        onchange="loadFileStudent(event)"/>
                                 <img id="image-output-student" width="360" class="mt-[20px]"/>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-0 w-full">
+                        <div class="absolute bottom-0 right-0">
                             <div class="flex flex-row">
-                                <div
-                                    class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px] mr-[100px]">
+                                <div class="inline-block w-full text-white text-right py-[7px] px-5 mr-[50px]">
                                     <button type="button" class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none
                                     text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                        {{__('Cancel')}} <i class="fas fa-times ml-[4px]"></i>
+                                        {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
                                     </button>
-                                    <button type="submit" class="btn-animation shadow-lg w-[150px] disabled:opacity-50
+                                    <button type="reset" class="btn-animation shadow-lg w-[150px] disabled:opacity-50
                                         focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                                         hover:bg-[#46A149] bg-[#4CAF50]">
-                                        {{__('Save')}} <i class="fas fa-check ml-[4px]"></i>
+                                        {{ __('Save') }} <i class="fas fa-check ml-[4px]"></i>
                                     </button>
                                 </div>
                             </div>
