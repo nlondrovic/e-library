@@ -1,4 +1,4 @@
-<h2 class="mt-[20px] ml-[30px]">{{ __('BOOK COPIES') }}</h2>
+<h2 class="mt-[20px] ml-[30px]">{{ __('Book copies') }}</h2>
 <div class="mx-[30px] mt-[20px] flex flex-row">
     <div class="text-gray-500 mr-[30px]">
         <p>{{ __('Books available') }}:</p>
