@@ -33,7 +33,7 @@ class LibrarianController extends Controller
 
     public function create()
     {
-        $this->authorize('create',User::class);
+        $this->authorize('create', User::class);
 
         return view('librarians.create');
     }
@@ -77,7 +77,7 @@ class LibrarianController extends Controller
 
     public function update(UpdateUserRequest $request, User $librarian)
     {
-        $this->authorize('update', $librarian   );
+        $this->authorize('update', $librarian);
 
         $inputs = $request->validated();
 
@@ -97,7 +97,7 @@ class LibrarianController extends Controller
 
     public function destroy(User $librarian)
     {
-        $this->authorize('delete', User::class);
+        $this->authorize('delete', $librarian);
 
         $librarian->delete();
         return redirect()->route("librarians.index");
