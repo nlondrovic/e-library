@@ -19,7 +19,7 @@
                 <div class="wrapper">
                     <div class="search-input">
                         <a href="" hidden></a>
-                        <input type="search" name="search" placeholder="Search admins"
+                        <input type="search" name="search" placeholder="{{ __('Search admins') }}"
                                value="{{ request()->get('search') }}">
                         <div class="autocom-box"></div>
                         <div class="search-icon"><i class="fas fa-search"></i></div>

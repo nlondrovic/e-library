@@ -19,7 +19,7 @@
                 <div class="wrapper">
                     <div class="search-input">
                         <a href="" hidden></a>
-                        <input type="search" name="search" placeholder="Search students"
+                        <input type="search" name="search" placeholder="{{ __('Search students') }}"
                                value="{{ request()->get('search') }}">
                         <div class="autocom-box"></div>
                         <div class="search-icon"><i class="fas fa-search"></i></div>
@@ -45,7 +45,7 @@
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Email') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Checked out') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Overdue') }}</th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Reservations') }}</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Reserved') }}</th>
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
