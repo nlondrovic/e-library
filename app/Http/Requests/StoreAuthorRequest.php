@@ -26,7 +26,7 @@ class StoreAuthorRequest extends FormRequest
         return [
             'name.required' => __('An author must have a name.'),
             'about.required' => __('Write something about this author.'),
-            'about.min' => __('About must be at least 10 characters.')
+            'about.min' => __('About must be at least :min characters.')
         ];
     }
 }
