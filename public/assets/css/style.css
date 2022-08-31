@@ -2765,11 +2765,15 @@ h4 {
 .w-\[400px\]{
     width: 400px;
 }
-
 .flex-2{
     flex: 1 1 100%;
 }
-
 .pr-\[57\%\]{
     padding-right: 57%;
+}
+.mb-\[25px\]{
+    margin-bottom: 25px;
+}
+.pr-2{
+    padding-right: 0.5rem;
 }
