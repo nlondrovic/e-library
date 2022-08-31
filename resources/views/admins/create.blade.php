@@ -19,7 +19,7 @@
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter a name" value="{{ old('name') }}"/>
+                               placeholder="{{ __('Enter a name') }}" value="{{ old('name') }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -29,7 +29,7 @@
                         <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter a JMBG" value="{{ old('jmbg') }}"/>
+                               placeholder="{{ __('Enter a JMBG') }}" value="{{ old('jmbg') }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
@@ -39,7 +39,7 @@
                         <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter an e-mail" value="{{ old('email') }}"/>
+                               placeholder="{{ __('Enter an e-mail') }}" value="{{ old('email') }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif
@@ -49,7 +49,7 @@
                         <input type="password" name="password" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter a strong password"/>
+                               placeholder="{{ __('Enter a strong password') }}"/>
                         @if($errors->first('password'))
                             <span class="text-red-600">{{ $errors->first('password') }}</span>
                         @endif
@@ -59,7 +59,7 @@
                         <input type="password" name="confirm_password" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Confirm password"/>
+                               placeholder="{{ __('Confirm password') }}"/>
                         @if($errors->first('confirm_password'))
                             <span class="text-red-600">{{ $errors->first('confirm_password') }}</span>
                         @endif

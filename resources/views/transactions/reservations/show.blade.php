@@ -17,7 +17,7 @@
                 <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                     <div class="flex flex-row justify-start">
                         <div class="">
-                            <div class="mt-[40px]">
+                            <div class="mt-[20px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Book')}}</span>
                                 <a href="{{ route('books.show', $reservation->book) }}">
                                     <p class="font-medium text-[#2196f3]">{{ $reservation->book->title }}</p>
@@ -30,7 +30,7 @@
                                 </a>
                             </div>
                             <div class="mt-[40px]">
-                                <span class="text-gray-500 text-[14px]">{{__('Reservation student')}}</span>
+                                <span class="text-gray-500 text-[14px]">{{__('Student')}}</span>
                                 <a href="{{ route('students.show', $reservation->student) }}">
                                     <p class="font-medium text-[#2196f3]">{{ $reservation->student->name }}</p>
                                 </a>
@@ -43,13 +43,13 @@
 
                         <div class="ml-[50px]">
                             @if($reservation->end_time)
-                                <div class="mt-[40px]">
+                                <div class="mt-[20px]">
                                     <span class="text-gray-500 text-[14px]">{{__('Reservation end date')}}</span>
                                     <p class="font-medium">{{ format_date($reservation->end_time) }}</p>
                                 </div>
                                 <div class="mt-[40px] mb-[20px]">
-                                    <span class="text-gray-500 text-[14px] font-medium">{{__('End reason')}}</span>
-                                    <p class="font-medium">{{ $reservation->end_reason->value }}</p>
+                                    <span class="text-gray-500 text-[14px]">{{__('Reservation end reason')}}</span>
+                                    <p class="font-medium">{{ __($reservation->end_reason->value) }}</p>
                                 </div>
                             @endif
                         </div>

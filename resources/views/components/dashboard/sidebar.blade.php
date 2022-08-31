@@ -123,7 +123,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                          @if(str_contains($route_name, 'admins')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                           <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
-                                           Admin
+                                           {{ __('Admins') }}
                                         </p>
                                     </div>
                                 </a>

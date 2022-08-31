@@ -22,7 +22,7 @@
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter a name" value="{{ $admin->name }}"/>
+                               placeholder="{{ __('Enter a name') }}" value="{{ $admin->name }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -32,7 +32,7 @@
                         <input type="number" name="jmbg" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter a JMBG" value="{{ $admin->jmbg }}"/>
+                               placeholder="{{ __('Enter a JMBG') }}" value="{{ $admin->jmbg }}"/>
                         @if($errors->first('jmbg'))
                             <span class="text-red-600">{{ $errors->first('jmbg') }}</span>
                         @endif
@@ -42,7 +42,7 @@
                         <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="Enter an e-mail" value="{{ $admin->email }}"/>
+                               placeholder="{{ __('Enter an e-mail') }}" value="{{ $admin->email }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif

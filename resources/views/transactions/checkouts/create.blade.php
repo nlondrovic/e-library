@@ -6,7 +6,7 @@
             <div class="pt-[1px]">
                 <div class="py-[7px] flex flex-row">
                     <div class="pl-[50px] pb-[14px] flex flex-col">
-                        <h1>{{__('Check out:')}} <i>{{ $book->title }}</i></h1>
+                        <h1>{{__('Check out')}}: <i>{{ $book->title }}</i></h1>
                     </div>
                 </div>
             </div>
@@ -16,8 +16,7 @@
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
             @include('components.error-check')
-            <form method="post"
-                  action="{{ route('checkouts.store', ['checkout_librarian_id' => auth()->id(), 'book_id' => $book->id]) }}">
+            <form action="{{ route('checkouts.store', ['book_id' => $book->id]) }}" method="post">
                 @csrf
                 @method('post')
                 <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">

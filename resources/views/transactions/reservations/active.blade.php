@@ -7,6 +7,7 @@
         <tr class="border-b-[1px] border-[#e4dfdf]">
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
+            <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Librarian')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation date')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Reservation due')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left"></th>
@@ -24,6 +25,11 @@
                 <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">
                     <a href="{{ route('students.show', $reservation->student) }}">
                         <span class="font-medium text-center">{{ $reservation->student->name }}</span>
+                    </a>
+                </td>
+                <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">
+                    <a href="{{ route('librarians.show', $reservation->librarian) }}">
+                        <span class="font-medium text-center">{{ $reservation->librarian->name }}</span>
                     </a>
                 </td>
                 <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->start_time) }}</td>
@@ -44,7 +50,7 @@
                                     <button type="submit" tabindex="0"
                                             class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                         <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
-                                        <span class="px-4 py-0">{{__('Checkout')}}</span>
+                                        <span class="px-4 py-0">{{__('Checkout book')}}</span>
                                     </button>
                                 </form>
                                 <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">

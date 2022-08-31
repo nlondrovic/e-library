@@ -90,3 +90,21 @@
         document.location = url;
     }
 </script>
+<script>
+    $(document).ready(function () {
+        if ($('.activity-card').length > 6) {
+            $('.activity-card:gt(6)').hide();
+            $('.activity-showMore').show();
+            $(this).text('Show more');
+        }
+
+        $('.activity-showMore').on('click', function () {
+            $('.activity-card:gt(6)').toggle();
+            if ($(this).text() == 'Show less') {
+                $(this).text('Show more')
+            } else {
+                $(this).text('Show less');
+            }
+        });
+    });
+</script>

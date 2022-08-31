@@ -51,7 +51,8 @@ class Checkout extends Model
     public function getHoldingTime()
     {
         if ($this->end_time)
-            return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInDays(Carbon::parse(strtotime($this->end_time))));
+            return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))
+                ->diffInDays(Carbon::parse(strtotime($this->end_time))));
         return $this->formatHoldingTime(Carbon::parse(strtotime($this->start_time))->diffInDays());
     }
 
@@ -59,29 +60,28 @@ class Checkout extends Model
     {
         // if holding less than a day
         if ($days < 1)
-            return "<p class=\"font-medium\">{{ __('Less than 24 hours') }}</p>";
+            return __('Less than 24 hours');
 
         // if checkout is overdue
         $holding_time = DB::table('settings')->where('variable', 'Holding time')->first()->value;
         if ($days >= $holding_time)
-            return "<p class=\"text-center bg-red-200 text-red-800 rounded-[10px] px-[6px] py-[2px] text-[14px] font-medium\">"
-                . $days . " {{ __('days') }}</p>";
+            return "$days " . __('days');
 
-        return "<p class=\"font-medium\">$days {{ __('days') }}</p>";
+        // if not overdue and more than 24 hours
+        return "$days " . __('days');
     }
 
     public function getOverdueTime()
     {
-        $class_list = "text-center rounded-[10px] px-[6px] py-[2px] text-[14px] font-medium";
         if ($this->end_time)
             if ($this->end_time > $this->getSupposedEndTime())
-                return "<p class=\"$class_list bg-red-200 text-red-800\">" . $this->overdue($this->end_time) . " {{ __('days') }}</p>";
+                return "$this->overdue($this->end_time) " . __('days');
             else
-                return "<p class=\"font-medium\">{{ __('Not overdue') }}</p>";
+                return __('Not overdue');
 
         if (now() > $this->getSupposedEndTime())
-            return "<p class=\"$class_list bg-red-200 text-red-800\">" . $this->overdue() . " {{ __('days') }}</p>";
-        else return "<p class=\"font-medium\">{{ __('Not overdue') }}</p>";
+            return $this->overdue() . " " . __('days');
+        else return __('Not overdue');
     }
 
     public function overdue($time = null)

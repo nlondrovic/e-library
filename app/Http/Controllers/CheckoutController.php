@@ -187,6 +187,7 @@ class CheckoutController extends Controller
         DB::transaction(function () use ($book, $request) {
             $inputs = $request->validated();
             $inputs['start_time'] = Carbon::parse(now());
+            $inputs['checkout_librarian_id'] = auth()->id();
             $checkout = Checkout::create($inputs);
 
             $book->update(['checkouts_count' => ++$book->checkouts_count]);

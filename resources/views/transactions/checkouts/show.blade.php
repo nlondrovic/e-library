@@ -70,12 +70,12 @@
                     <div class="ml-[50px]">
                         @if($checkout->end_time)
                             @if($checkout->end_reason->id == 2)
-                                <div class="mt-[40px]">
-                                    <span class="text-gray-500 text-[14px]">{{__('Checkout end reason')}}</span>
-                                    <p class="font-medium">{{ $checkout->end_reason->value }}</p>
+                                <div class="mt-[20px]">
+                                    <span class="text-gray-500 text-[14px]">{{__('Checkin reason')}}</span>
+                                    <p class="font-medium">{{ __($checkout->end_reason->value) }}</p>
                                 </div>
                                 <div class="mt-[40px]">
-                                    <span class="text-gray-500 text-[14px]">Write-off time</span>
+                                    <span class="text-gray-500 text-[14px]">{{ __('Write-off time') }}</span>
                                     <p class="font-medium">{{ format_time($checkout->end_time) }}</p>
                                 </div>
                             @else
@@ -91,25 +91,25 @@
                                 </div>
                                 <div class="mt-[40px]">
                                     <span class="text-gray-500 text-[14px]">{{__('Holding for')}}</span>
-                                    <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
+                                    <p class="font-medium">{{ $checkout->getHoldingTime() }}</p>
                                 </div>
                                 <div class="mt-[40px]">
                                     <span class="text-gray-500 text-[14px]">{{__('Overdue time')}}</span>
-                                    <p class="font-medium">{!! $checkout->getOverdueTime() !!}</p>
+                                    <p class="font-medium">{{ $checkout->getOverdueTime() }}</p>
                                 </div>
                                 <div class="mt-[40px]">
-                                    <span class="text-gray-500 text-[14px]">{{__('Checkout end reason')}}</span>
-                                    <p class="font-medium">{{ $checkout->end_reason->value }}</p>
+                                    <span class="text-gray-500 text-[14px]">{{__('Checkin reason')}}</span>
+                                    <p class="font-medium">{{ __($checkout->end_reason->value) }}</p>
                                 </div>
                             @endif
                         @else
                             <div class="mt-[20px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Holding for')}}</span>
-                                <p class="font-medium">{!! $checkout->getHoldingTime() !!}</p>
+                                <p class="font-medium">{{ $checkout->getHoldingTime() }}</p>
                             </div>
                             <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Overdue time')}}</span>
-                                <p class="font-medium">{!! $checkout->getOverdueTime() !!}</p>
+                                <p class="font-medium">{{ $checkout->getOverdueTime() }}</p>
                             </div>
                         @endif
                     </div>

@@ -6,7 +6,7 @@
             <div class="pt-[1px]">
                 <div class="py-[7px] flex flex-row">
                     <div class="pl-[50px] pb-[14px] flex flex-col">
-                        <h1>{{__('Reserve:')}} <i>{{ $book->title }}</i></h1>
+                        <h1>{{__('Reserve')}}: <i>{{ $book->title }}</i></h1>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,10 @@
             </form>
         </div>
 
-        <div class="min-w-[20%] border-l-[1px] border-[#e4dfdf]">
-            @include('components.book-copies')
+        <div class="w-[50%] mb-[100px]">
+            <div class="border-[1px] border-[#e4dfdf] w-[360px] mt-[75px]">
+                @include('components.book-copies')
+            </div>
         </div>
     </div>
 
