@@ -52,12 +52,17 @@ class Book extends Model
     public function getOverdueCount()
     {
         $holding_time = DB::table('settings')
-                ->where('variable', 'Holding time')->first()->value;
+            ->where('variable', 'Holding time')->first()->value;
 
         return count(Checkout::where('book_id', $this->id)
             ->where('start_time', '<', Carbon::now()->subDays($holding_time)->toDateTimeString())
             ->where('end_time', null)
             ->get());
+    }
+
+    public function getFreeCount()
+    {
+        return $this->total_count - ($this->checkouts_count + $this->reserved_count);
     }
 
     public function getAvailableCountAttribute()
