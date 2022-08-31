@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row justify-between pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
+    <div class="flex flex-row pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
         <div class="mr-[30px]">
             <p class="mb-[20px] mt-[20px]">
                 {{ __('Results found: ') }} {{ count($activities) }}
@@ -35,9 +35,9 @@
                 </button>
             </div>
         </div>
-        <div class="mr-[50px]">
-            <h1 class="mb-[20px] mt-[20px]">Filters</h1>
-            <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get">
+        <div class="mr-[50px] ml-[50%] mt-[40px] absolute">
+            <h1 class="mb-[20px] mt-[20px] text-center">Filters</h1>
+            <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get" class="">
                 {{-- Type --}}
                 <div>
                     <p>Type</p>
@@ -78,7 +78,7 @@
                 {{-- Student --}}
                 <div class="mt-[20px]">
                     <p>Student</p>
-                    <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[100%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="student_id">
                         <option value="">None</option>
@@ -94,7 +94,7 @@
                 {{-- Librarian --}}
                 <div class="mt-[20px]">
                     <p>Librarian</p>
-                    <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[100%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="librarian_id">
                         <option value="">None</option>
@@ -110,36 +110,36 @@
                 {{-- Start date --}}
                 <div class="mt-[20px]">
                     <p>Start date</p>
-                    <input type="date" name="start_date" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
+                    <input type="date" name="start_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('start_date') }}"/>
                 </div>
                 {{-- End date --}}
                 <div class="mt-[20px]">
                     <p>End date</p>
-                    <input type="date" name="end_date" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
+                    <input type="date" name="end_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('end_date') }}"/>
                 </div>
 
                 <div class="pt-[20px]">
-                    <button type="submit" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition
+                    <button type="submit" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 p-[6px] ml-[40px] transition
                             duration-300ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-search"></i>&nbsp;Filter
                     </button>
+                    @if(request()->get('type') || request()->get('book_id')
+               || request()->get('student_id') || request()->get('librarian_id')
+               || request()->get('start_date') || request()->get('end_date'))
+                        <a href="{{ route(Route::currentRouteName()) }}"
+                           class="mt-[20px] ml-[30px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+                                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
+                            <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
+                        </a>
+                    @endif
                 </div>
             </form>
 
-            @if(request()->get('type') || request()->get('book_id')
-                || request()->get('student_id') || request()->get('librarian_id')
-                || request()->get('start_date') || request()->get('end_date'))
-                <a href="{{ route(Route::currentRouteName()) }}" class="">
-                    <button class="mt-[20px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
-                        <i class="fas fa-times ml-[4px]"></i>&nbsp;Reset
-                    </button>
-                </a>
-            @endif
+
 
         </div>
     </div>
