@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('main')
 
+    <!-- Heading of content -->
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
             <div class="pt-[1px]">
@@ -32,7 +33,8 @@
                 <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
                             -translate-y-2 dropdown-knjiga-osnovni-detalji">
                     <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
-                                divide-y divide-gray-100 rounded-md shadow-lg outline-none">
+                                divide-y divide-gray-100 rounded-md shadow-lg outline-none"
+                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
                         <div class="py-1">
                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
@@ -54,53 +56,55 @@
             </div>
         </div>
     </div>
-
-    <div class="flex flex-row overflow-auto height-osnovniDetalji scroll">
+    {{-- Content --}}
+    <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="w-[100%]">
+            <!-- Space for content -->
             <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
+
                     <div class="">
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Title') }}</span>
                             <p class="font-medium">{{ $book->title }}</p>
                         </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Author') }}</span>
-                            <p class="font-medium">{{ $book->author->name }}</p>
-                        </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Content') }}</span>
-                            <p class="font-medium">{{ $book->content }}</p>
-                        </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('ISBN') }}</span>
-                            <p class="font-medium">{{ $book->isbn }}</p>
-                        </div>
-                        <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Number of pages') }}</span>
-                            <p class="font-medium">{{ $book->page_count }}</p>
-                        </div>
-                    </div>
 
-                    <div class="">
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Date of publishing') }}</span>
-                            <p class="font-medium">{{ $book->publish_date }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('Category') }}</span>
+                            <p class="font-medium">{{ $book->category->name }}</p>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Publisher') }}</span>
                             <p class="font-medium">{{ $book->publisher->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Category') }}</span>
-                            <p class="font-medium">{{ $book->category->name }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('Number of pages') }}</span>
+                            <p class="font-medium">{{ $book->page_count }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">{{ __('ISBN') }}</span>
+                            <p class="font-medium">{{ $book->isbn }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">{{ __('Content') }}</span>
+                            <p class="font-medium max-w-[600px]" style="width: 400px">{{ $book->content }}</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="mt-[20px]">
+                            <span class="text-gray-500 text-[14px]">{{ __('Author') }}</span>
+                            <p class="font-medium">{{ $book->author->name }}</p>
                         </div>
                         <div class="mt-[40px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Genre') }}</span>
                             <p class="font-medium">{{ $book->genre->name }}</p>
                         </div>
                         <div class="mt-[40px]">
-                            <span class="text-gray-500 text-[14px]">Script</span>
+                            <span class="text-gray-500 text-[14px]">{{ __('Date of publishing') }}</span>
+                            <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
+                        </div>
+                        <div class="mt-[40px]">
+                            <span class="text-gray-500 text-[14px]">{{ __('Script') }}</span>
                             <p class="font-medium">{{ $book->script->name }}</p>
                         </div>
                         <div class="mt-[40px]">
@@ -113,13 +117,13 @@
                         </div>
                     </div>
                     <div class="w-[560px]">
+
                         <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px"
                              src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}">
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="min-w-[20%] border-l-[1px] height-dashboard border-[#e4dfdf]">
             @include('components.book-copies')
             @include('components.book-recent-activity')
