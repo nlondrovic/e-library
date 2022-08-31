@@ -44,3 +44,9 @@ function capitalize(string $time): string
 {
     return \Illuminate\Support\Str::ucfirst($time);
 }
+function filtering(): bool
+{
+    return request()->get('type') || request()->get('book_id')
+        || request()->get('student_id') || request()->get('librarian_id')
+        || request()->get('start_date') || request()->get('end_date');
+}
