@@ -100,14 +100,14 @@
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                            outline-none hover:text-blue-600"
                                                role="menuitem">
-                                                <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
+                                                <i class="far fa-file mr-[5px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Show details') }}</span>
                                             </a>
                                             <a href="{{ route('students.edit', $student) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                            outline-none hover:text-blue-600"
                                                role="menuitem">
-                                                <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
+                                                <i class="fas fa-edit mr-[1px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Edit student') }}</span>
                                             </a>
 
@@ -117,7 +117,7 @@
                                                 <button type="submit" tabindex="0"
                                                         class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
                                                         role="menuitem">
-                                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                                                    <i class="fa fa-trash mr-[5px] ml-1 py-1"></i>
                                                     <span class="px-4 py-0">{{ __('Delete student') }}</span>
                                                 </button>
                                             </form>

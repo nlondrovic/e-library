@@ -78,7 +78,7 @@
                                                    class="flex w-full px-4 py-2 text-sm leading-5
                                                     text-left text-gray-700 outline-none hover:text-blue-600">
                                                     <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">{{ __('Edit author') }}</span>
+                                                    <span class="px-4 ml-1 py-0">{{ __('Edit author') }}</span>
                                                 </a>
 
                                                 <form method="post" action="{{ route('authors.destroy', $author) }}">
@@ -86,7 +86,7 @@
                                                     @method('delete')
                                                     <button type="submit" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
                                                         text-left text-gray-700 outline-none hover:text-blue-600">
-                                                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                                                        <i class="fa fa-trash mr-[5px] ml-[4px] py-1"></i>
                                                         <span class="px-4 py-0">{{ __('Delete author') }}</span>
                                                     </button>
                                                 </form>
