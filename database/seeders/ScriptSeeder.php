@@ -12,10 +12,10 @@ class ScriptSeeder extends Seeder
     {
         DB::table('scripts')->insert([
             ['name' => 'Latinica'],
+            ['name' => 'Ćirilica'],
             ['name' => 'Kinesko pismo'],
             ['name' => 'Arapsko pismo'],
             ['name' => 'Bengalsko-Asamsko pismo'],
-            ['name' => 'Ćirilica'],
             ['name' => 'Malajlam pismo'],
             ['name' => 'Tajlandsko pismo'],
             ['name' => 'Lao pismo'],

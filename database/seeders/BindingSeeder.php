@@ -11,10 +11,10 @@ class BindingSeeder extends Seeder
     public function run()
     {
         DB::table('bindings')->insert([
-            [ 'name' => 'Meki povez' ],
-            [ 'name' => 'Plastična spirala' ],
-            [ 'name' => 'Tvrdi povez' ],
-            [ 'name' => 'Klamovani' ],
+            ['name' => 'Meki povez'],
+            ['name' => 'Tvrdi povez'],
+            ['name' => 'Plastična spirala'],
+            ['name' => 'Klamovani'],
         ]);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,38 +13,37 @@ class CheckoutSeeder extends Seeder
         // Active checkouts
         DB::table('checkouts')->insert([
             [
-                'book_id' => 1,
-                'checkout_librarian_id' => 1,
-                'student_id' => 6,
-                'start_time' => '2022-08-20 13:00:00'
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(6)->toDateTimeString()
             ],
             [
-                'book_id' => 2,
-                'checkout_librarian_id' => 2,
-                'student_id' => 7,
-                'start_time' => '2022-07-20 13:00:00'
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(23)->toDateTimeString()
             ]
-
         ]);
 
         // Ended checkouts
         DB::table('checkouts')->insert([
             [
-                'book_id' => 3,
-                'checkout_librarian_id' => 3,
-                'student_id' => 8,
-                'start_time' => '2022-07-15 13:00:00',
-                'end_time' => '2022-08-02 13:00:00',
-                'checkin_librarian_id' => 2,
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(33)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(5)->toDateTimeString(),
+                'checkin_librarian_id' => rand(2, 5),
                 'checkout_end_reason_id' => 1
             ],
             [
-                'book_id' => 4,
-                'checkout_librarian_id' => 4,
-                'student_id' => 9,
-                'start_time' => '2022-08-02 13:00:00',
-                'end_time' => '2022-08-15 13:00:00',
-                'checkin_librarian_id' => 1,
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(18)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(3)->toDateTimeString(),
+                'checkin_librarian_id' => rand(2, 5),
                 'checkout_end_reason_id' => 1
             ]
         ]);
@@ -52,21 +51,21 @@ class CheckoutSeeder extends Seeder
         // Written off books
         DB::table('checkouts')->insert([
             [
-                'book_id' => 4,
-                'checkout_librarian_id' => 5,
-                'student_id' => 10,
-                'start_time' => '2022-07-25 13:00:00',
-                'end_time' => '2022-07-07 13:00:00',
-                'checkin_librarian_id' => 2,
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(21)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(6)->toDateTimeString(),
+                'checkin_librarian_id' => rand(2, 5),
                 'checkout_end_reason_id' => 2
             ],
             [
-                'book_id' => 5,
-                'checkout_librarian_id' => 4,
-                'student_id' => 11,
-                'start_time' => '2022-08-03 13:00:00',
-                'end_time' => '2022-08-06 13:00:00',
-                'checkin_librarian_id' => 3,
+                'book_id' => rand(1, 31),
+                'checkout_librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(16)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(2)->toDateTimeString(),
+                'checkin_librarian_id' => rand(2, 5),
                 'checkout_end_reason_id' => 2
             ]
         ]);

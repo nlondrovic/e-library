@@ -75,7 +75,7 @@ class Checkout extends Model
     {
         if ($this->end_time)
             if ($this->end_time > $this->getSupposedEndTime())
-                return "$this->overdue($this->end_time) " . __('days');
+                return $this->overdue($this->end_time) . " " . __('days');
             else
                 return __('Not overdue');
 

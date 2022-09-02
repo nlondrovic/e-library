@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -13,43 +14,43 @@ class ReservationSeeder extends Seeder
         // Active checkouts
         DB::table('reservations')->insert([
             [
-                'book_id' => 1,
-                'librarian_id' => 1,
-                'student_id' => 6,
-                'start_time' => '2022-08-01 13:00:00'
+                'book_id' => rand(1, 31),
+                'librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(6)->toDateTimeString()
             ],
             [
                 'book_id' => 2,
                 'librarian_id' => 2,
                 'student_id' => 7,
-                'start_time' => '2022-07-20 13:00:00'
+                'start_time' => Carbon::now()->subDays(16)->toDateTimeString()
             ]
         ]);
 
         // Archived checkouts
         DB::table('reservations')->insert([
             [
-                'book_id' => 3,
-                'librarian_id' => 3,
-                'student_id' => 8,
-                'start_time' => '2022-07-18 13:00:00',
-                'end_time' => '2022-08-04 13:00:00',
+                'book_id' => rand(1, 31),
+                'librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(10)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(3)->toDateTimeString(),
                 'reservation_end_reason_id' => 1
             ],
             [
-                'book_id' => 4,
-                'librarian_id' => 4,
-                'student_id' => 8,
-                'start_time' => '2022-08-01 13:00:00',
-                'end_time' => '2022-08-09 13:00:00',
+                'book_id' => rand(1, 31),
+                'librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(12)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(6)->toDateTimeString(),
                 'reservation_end_reason_id' => 2,
             ],
             [
-                'book_id' => 5,
-                'librarian_id' => 5,
-                'student_id' => 10,
-                'start_time' => '2022-07-31 13:00:00',
-                'end_time' => '2022-08-05 13:00:00',
+                'book_id' => rand(1, 31),
+                'librarian_id' => rand(2, 5),
+                'student_id' => rand(6, 20),
+                'start_time' => Carbon::now()->subDays(20)->toDateTimeString(),
+                'end_time' => Carbon::now()->subDays(11)->toDateTimeString(),
                 'reservation_end_reason_id' => 3
             ]
         ]);
