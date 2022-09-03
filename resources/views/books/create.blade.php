@@ -249,7 +249,7 @@
                         <div class="absolute bottom-0 right-0">
                             <div class="flex flex-row">
                                 <div class="inline-block w-full text-white text-right py-[7px] px-5 mr-[50px]">
-                                    <button type="button" class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none
+                                    <button type="reset" class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none
                                     text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
                                         {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
                                     </button>
