@@ -79,7 +79,7 @@
                             <p class="font-medium">{{ $book->isbn }}</p>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="mr-[15px]">
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Date of publishing') }}</span>
                             <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
@@ -109,7 +109,7 @@
                             <p class="font-medium">{{ $book->size->name }}</p>
                         </div>
                     </div>
-                    <div class="mr-[50px]">
+                    <div class="mr-[20px]">
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Number of pages') }}</span>
                             <p class="font-medium">{{ $book->page_count }}</p>
