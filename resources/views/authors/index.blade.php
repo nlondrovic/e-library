@@ -36,7 +36,7 @@
             </script>
         </div>
 
-        <div class="px-[50px] pt-2 bg-white">
+        <div class="px-[50px] pt-2 bg-white mb-[30px]">
             <div class="w-full mt-2">
                 <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]"
                        id="myTable">
