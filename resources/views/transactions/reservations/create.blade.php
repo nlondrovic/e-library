@@ -14,7 +14,7 @@
     </div>
 
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
-        <div class="w-[100%]">
+        <div class="">
             @include('components.error-check')
             <form action="{{ route('reservations.store', ['book_id' => $book->id]) }}" method="post">
                 @csrf
@@ -37,9 +37,6 @@
                                     </option>
                                 @endforeach
                             </select>
-                            @if($errors->first('student_id'))
-                                <span class="text-red-600">{{ $errors->first('student_id') }}</span>
-                            @endif
                         </div>
 
                         {{-- Reserve date/time --}}
@@ -49,32 +46,25 @@
                                    min="{{ $min_date }}" max="{{ $max_date }}" value="{{ $min_date }}"
                                    class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300
                                        shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"/>
-                            @if($errors->first('start_time'))
-                                <span class="text-red-600">{{ $errors->first('start_time') }}</span>
-                            @endif
                         </div>
                     </div>
                 </div>
 
-                <div class="absolute bottom-50 pr-[83%] ml-[4px] w-full">
-                    <div class="flex flex-row">
-                        <div class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px]">
-                            <button type="reset" class="btn-animation shadow-lg mr-[15px] w-[102px] focus:outline-none
+                <div class="flex flex-row bottom-50 pl-[50px] ml-[4px] w-full text-white text-right">
+                    <button type="reset" class="btn-animation shadow-lg mr-[15px] focus:outline-none
                                 text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                {{__('Cancel')}} <i class="fas fa-times ml-[4px]"></i>
-                            </button>
-                            <button type="submit" class="btn-animation shadow-lg w-[102px] disabled:opacity-50
+                        {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
+                    </button>
+                    <button type="submit" class="btn-animation shadow-lg disabled:opacity-50
                                     focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                                     hover:bg-[#46A149] bg-[#4CAF50]">
-                                {{__('Save')}} <i class="fas fa-check ml-[4px]"></i>
-                            </button>
-                        </div>
-                    </div>
+                        {{ __('Save') }} <i class="fas fa-check ml-[4px]"></i>
+                    </button>
                 </div>
             </form>
         </div>
 
-        <div class="w-[50%] mb-[100px] pr-[83%]">
+        <div class="w-[50%] mb-[100px]">
             <div class="border-[1px] border-[#e4dfdf] w-[360px] mt-[20px]">
                 @include('components.book-copies')
             </div>

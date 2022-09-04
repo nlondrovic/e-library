@@ -1,4 +1,4 @@
-    @extends('layouts.app')
+@extends('layouts.app')
 @section('main')
 
     <div class="heading">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
-        <div class="w-[100%]">
+        <div class="">
             @include('components.error-check')
             <form action="{{ route('checkouts.store', ['book_id' => $book->id]) }}" method="post">
                 @csrf
@@ -37,9 +37,6 @@
                                     </option>
                                 @endforeach
                             </select>
-                            @if($errors->first('student_id'))
-                                <span class="text-red-600">{{ $errors->first('student_id') }}</span>
-                            @endif
                         </div>
                         {{-- Start date/time --}}
                         <div class="mt-[20px] w-[268px]">
@@ -60,20 +57,16 @@
                     </div>
                 </div>
 
-                <div class="absolute bottom-50 pr-[83%] ml-[4px] w-full">
-                    <div class="flex flex-row">
-                        <div class="inline-block w-full text-white text-right py-[7px] px-5 px-[50px]">
-                            <button type="reset" class="btn-animation shadow-lg mr-[15px] w-[102px] focus:outline-none
+                <div class="flex flex-row bottom-50 pl-[50px] ml-[4px] w-full text-white text-right">
+                    <button type="reset" class="btn-animation shadow-lg mr-[15px] focus:outline-none
                                 text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                                {{__('Cancel')}} <i class="fas fa-times ml-[4px]"></i>
-                            </button>
-                            <button type="submit" class="btn-animation shadow-lg w-[102px] disabled:opacity-50
+                        {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
+                    </button>
+                    <button type="submit" class="btn-animation shadow-lg disabled:opacity-50
                                     focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                                     hover:bg-[#46A149] bg-[#4CAF50]">
-                                {{__('Save')}} <i class="fas fa-check ml-[4px]"></i>
-                            </button>
-                        </div>
-                    </div>
+                        {{ __('Save') }} <i class="fas fa-check ml-[4px]"></i>
+                    </button>
                 </div>
             </form>
         </div>
