@@ -86,8 +86,6 @@ class UserController extends Controller
             $filename = "/images/users/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/users/'), $filename);
-        } else {
-            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
         }
 
         $student->update($inputs);

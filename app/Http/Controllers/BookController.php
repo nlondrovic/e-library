@@ -99,8 +99,6 @@ class BookController extends Controller
             $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/books/'), $filename);
-        } else {
-            $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
         }
 
         $book->update($inputs);
