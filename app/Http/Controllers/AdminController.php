@@ -65,6 +65,7 @@ class AdminController extends Controller
         if (!$admin->isAdmin()) {
             return back();
         }
+
         return view('admins.edit', compact('admin'));
     }
 

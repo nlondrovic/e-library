@@ -64,7 +64,7 @@ class LibrarianController extends Controller
     public function show(User $librarian)
     {
         $this->authorize('view', $librarian);
-        if(!$librarian->isLibrarian()){
+        if (!$librarian->isLibrarian()) {
             return back();
         }
 
@@ -74,7 +74,7 @@ class LibrarianController extends Controller
     public function edit(User $librarian)
     {
         $this->authorize('update', $librarian);
-        if(!$librarian->isLibrarian()){
+        if (!$librarian->isLibrarian()) {
             return back();
         }
 
@@ -84,7 +84,7 @@ class LibrarianController extends Controller
     public function update(UpdateUserRequest $request, User $librarian)
     {
         $this->authorize('update', $librarian);
-        if(!$librarian->isLibrarian()){
+        if (!$librarian->isLibrarian()) {
             return back();
         }
 
@@ -107,7 +107,7 @@ class LibrarianController extends Controller
     public function destroy(User $librarian)
     {
         $this->authorize('delete', $librarian);
-        if(!$librarian->isLibrarian()){
+        if (!$librarian->isLibrarian()) {
             return back();
         }
 

@@ -57,7 +57,7 @@ class UserController extends Controller
 
     public function show(User $student)
     {
-        if(!$student->isStudent()){
+        if (!$student->isStudent()) {
             return back();
         }
 
@@ -66,7 +66,7 @@ class UserController extends Controller
 
     public function edit(User $student)
     {
-        if(!$student->isStudent()){
+        if (!$student->isStudent()) {
             return back();
         }
 
@@ -76,7 +76,7 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, User $student)
     {
         $inputs = $request->validated();
-        if(!$student->isStudent()){
+        if (!$student->isStudent()) {
             return back();
         }
 
@@ -96,9 +96,10 @@ class UserController extends Controller
 
     public function destroy(User $student)
     {
-        if(!$student->isStudent()){
+        if (!$student->isStudent()) {
             return back();
         }
+
         $student->delete();
         return redirect()->route("students.index");
     }
