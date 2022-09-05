@@ -30,7 +30,7 @@ function format_activity_time(string $time): string
     if($date->isCurrentWeek()) {
         return $date->dayName.' '.__('at').' '.$date->format('H:i');
     } elseif($date->isLastWeek()){
-        if($date->dayName != "Wednesday" || $date->dayName != "Saturday" || $date->dayName != "Sunday") {
+        if($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedelja") {
             return __('Last.a').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
         }
         return __('Last').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
@@ -44,6 +44,7 @@ function capitalize(string $time): string
 {
     return \Illuminate\Support\Str::ucfirst($time);
 }
+
 function filtering(): bool
 {
     return request()->get('type') || request()->get('book_id')
