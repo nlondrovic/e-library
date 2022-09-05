@@ -52,6 +52,9 @@ class AdminController extends Controller
     public function show(User $admin)
     {
         $this->authorize('view', $admin);
+        if(!$admin->isAdmin()){
+            return back();
+        }
 
         return view('admins.show', compact('admin'));
     }
@@ -59,13 +62,18 @@ class AdminController extends Controller
     public function edit(User $admin)
     {
         $this->authorize('update', $admin);
-
+        if(!$admin->isAdmin()){
+            return back();
+        }
         return view('admins.edit', compact('admin'));
     }
 
     public function update(UpdateUserRequest $request, User $admin)
     {
         $this->authorize('update', $admin);
+        if(!$admin->isAdmin()){
+            return back();
+        }
 
         $inputs = $request->validated();
 
@@ -86,6 +94,9 @@ class AdminController extends Controller
     public function destroy(User $admin)
     {
         $this->authorize('delete', User::class);
+        if(!$admin->isAdmin()){
+            return back();
+        }
 
         $admin->delete();
         return redirect()->route("admins.index");

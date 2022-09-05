@@ -57,17 +57,28 @@ class UserController extends Controller
 
     public function show(User $student)
     {
+        if(!$student->isStudent()){
+            return back();
+        }
+
         return view('students.show', compact('student'));
     }
 
     public function edit(User $student)
     {
+        if(!$student->isStudent()){
+            return back();
+        }
+
         return view('students.edit', compact('student'));
     }
 
     public function update(UpdateUserRequest $request, User $student)
     {
         $inputs = $request->validated();
+        if(!$student->isStudent()){
+            return back();
+        }
 
         if ($request['picture']) {
             $file = $request['picture'];
@@ -85,6 +96,9 @@ class UserController extends Controller
 
     public function destroy(User $student)
     {
+        if(!$student->isStudent()){
+            return back();
+        }
         $student->delete();
         return redirect()->route("students.index");
     }
