@@ -234,6 +234,13 @@ $(document).on('mouseup', function (e) {
 // Student image upload
 var loadFileStudent = function (event) {
     var imageStudent = document.getElementById('image-output-student');
+
     imageStudent.style.display = "block";
-    imageStudent.src = URL.createObjectURL(event.target.files[0]);
+
+    if (event.target.files[0]) {
+        imageStudent.src = URL.createObjectURL(event.target.files[0]);
+    }
+    else {
+        imageStudent.src = '/assets/img/user.jpg';
+    }
 };

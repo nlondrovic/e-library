@@ -68,7 +68,7 @@
                 </div>
                 <div class="ml-[100px] mt-[20px]">
                     <img class="rounded-full border-2 border-blue-600 p-2" width="300px"
-                         src="{{ asset($student->picture) }}" alt="Student image">
+                         src="{{ asset($student->picture) }}" alt="{{ __('Student image') }}">
                 </div>
             </div>
         </div>

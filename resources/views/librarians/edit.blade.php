@@ -53,7 +53,7 @@
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" width="360" class="mt-[20px]"
-                         src="{{ asset($librarian->picture) }}"/>
+                         src="{{ asset($librarian->picture) }}" alt="{{ __('Librarian image') }}"/>
                 </div>
             </div>
 

@@ -64,7 +64,7 @@
                 </div>
                 <div class="ml-[100px] mt-[20px]">
                     <img class="rounded-full border-2 border-blue-600 p-2" width="300px"
-                         src="{{ asset($admin->picture) }}">
+                         src="{{ asset($admin->picture) }}" alt="{{ __('Admin image') }}">
                 </div>
             </div>
         </div>
