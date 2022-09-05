@@ -18,7 +18,7 @@ class UpdateBookRequest extends FormRequest
             'title' => 'required',
             'content' => 'required|min:20',
             'isbn' => 'required|regex:/[0-9]+/|digits:13',
-            'page_count' => 'required|integer',
+            'page_count' => 'required|integer|min:1',
             'publish_date' => 'required|date',
             'author_id' => 'required|exists:authors,id',
             'binding_id' => 'required|exists:bindings,id',
@@ -27,6 +27,7 @@ class UpdateBookRequest extends FormRequest
             'publisher_id' => 'required|exists:publishers,id',
             'script_id' => 'required|exists:scripts,id',
             'size_id' => 'required|exists:sizes,id',
+            'total_count' => 'required|integer|min:1',
             'picture' => 'sometimes'
         ];
     }
@@ -42,6 +43,7 @@ class UpdateBookRequest extends FormRequest
             'isbn.digits' => __('ISBN must have :digits digits.'),
             'page_count.required' => __('Number of pages is required.'),
             'page_count.integer' => __('Number of pages must be an integer.'),
+            'page_count.min' => __('Number of pages must be greater than zero.'),
             'publish_date.required' => __('Date of publishing is required.'),
             'publish_date.date' => __('Date of publishing must be a date.'),
             'author_id.required' => __('Author is required.'),
@@ -59,7 +61,8 @@ class UpdateBookRequest extends FormRequest
             'size_id.required' => __('Size is required.'),
             'size_id.exists' => __('Select an existing size.'),
             'total_count.required' => __('Total number of books is required.'),
-            'total_count.integer' => __('Total number of books must be an integer.')
+            'total_count.integer' => __('Total number of books must be an integer.'),
+            'total_count.min' => __('Total number of books must be greater than zero.')
         ];
     }
 }
