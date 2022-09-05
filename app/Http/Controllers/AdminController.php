@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $this->authorize('viewAny', User::class);
 
@@ -52,7 +52,7 @@ class AdminController extends Controller
     public function show(User $admin)
     {
         $this->authorize('view', $admin);
-        if(!$admin->isAdmin()){
+        if (!$admin->isAdmin()) {
             return back();
         }
 
@@ -62,7 +62,7 @@ class AdminController extends Controller
     public function edit(User $admin)
     {
         $this->authorize('update', $admin);
-        if(!$admin->isAdmin()){
+        if (!$admin->isAdmin()) {
             return back();
         }
         return view('admins.edit', compact('admin'));
@@ -71,7 +71,7 @@ class AdminController extends Controller
     public function update(UpdateUserRequest $request, User $admin)
     {
         $this->authorize('update', $admin);
-        if(!$admin->isAdmin()){
+        if (!$admin->isAdmin()) {
             return back();
         }
 
@@ -93,8 +93,8 @@ class AdminController extends Controller
 
     public function destroy(User $admin)
     {
-        $this->authorize('delete', User::class);
-        if(!$admin->isAdmin()){
+        $this->authorize('delete', auth()->user(), $admin);
+        if (!$admin->isAdmin()) {
             return back();
         }
 
