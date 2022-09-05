@@ -2,7 +2,7 @@
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
-        <h1> {{__('Edit sizes')}}</h1>
+        <h1> {{__('Edit size')}}</h1>
         <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
         <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
         <a href="{{ route('sizes.index') }}">{{ __('Sizes') }}</a> >
