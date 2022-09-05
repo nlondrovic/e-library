@@ -28,7 +28,7 @@
                 @foreach($categories as $category)
                     <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                         <td class="flex flex-row items-center px-4 py-4">
-                            <i class="{{ $category->icon }} fa-lg text-[#707070]"></i>
+                            <i class="{{ $category->icon }} fa-lg text-[#707070] w-[25px]"></i>
                             <p class="ml-4 text-center">{{ $category->name }}</p>
                         </td>
                         <td class="px-4 py-4 text-sm leading-5 text-right whitespace-no-wrap">
