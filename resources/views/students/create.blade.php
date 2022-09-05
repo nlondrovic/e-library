@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="pl-[50px] pb-[27px] mt-[2px] border-b-[1px] border-[#e4dfdf]">
-            <h1> {{ __('New student') }}</h1>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('New student')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('students.index') }}">{{ __('Students') }}</a> >
+        <a href="{{ route('students.create') }}">{{ __('New student') }}</a>
     </div>
 
     <div class="scroll height-content section-content">

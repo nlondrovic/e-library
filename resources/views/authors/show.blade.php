@@ -2,15 +2,12 @@
 @section('main')
 
     <div class="heading">
-        <div class="flex justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pt-[1px]">
-                <div class="pl-[50px] pt-[7px] pb-[21px] flex flex-col">
-                    <div>
-                        <h1>
-                            {{ $author->name }}
-                        </h1>
-                    </div>
-                </div>
+        <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
+            <div class="pl-[50px] pb-[5px] header-breadcrumbs">
+                <h1> {{ $author->name }}</h1>
+                <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+                <a href="{{ route('authors.index') }}">{{ __('Authors') }}</a> >
+                <a href="{{ route('authors.show', $author) }}">{{ $author->name }}</a>
             </div>
 
             <div class="pt-[24px] pr-[30px]">

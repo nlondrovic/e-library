@@ -3,10 +3,11 @@
 
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pt-[1px]">
-                <div class="pl-[50px] pt-[8px] pb-[20px] flex flex-col">
-                    <h1>{{ $admin->name }}</h1>
-                </div>
+            <div class="pl-[50px] pb-[5px] header-breadcrumbs">
+                <h1> {{ $admin->name }}</h1>
+                <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+                <a href="{{ route('admins.index') }}">{{ __('Admins') }}</a> >
+                <a href="{{ route('admins.show', $admin) }}">{{ $admin->name }}</a>
             </div>
 
             <div class="pt-[24px] mr-[30px]">

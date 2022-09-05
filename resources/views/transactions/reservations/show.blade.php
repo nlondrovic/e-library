@@ -7,6 +7,7 @@
                 <div class="pt-[1px]">
                     <div class="pl-[50px] pb-[14px] flex flex-col">
                         <h1>{{ $reservation->book->title }}</h1>
+                        Home > Transactions > Reservations > ID
                     </div>
                 </div>
             </div>

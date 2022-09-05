@@ -1,4 +1,9 @@
 @extends('settings.index')
+@section('settings-subtitle')
+    <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+    <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
+    <a href="{{ route('policy.index') }}">{{ __('Policy') }}</a>
+@endsection
 @section('main-settings')
 
     <form method="post" action="{{ route('policy.update') }}">

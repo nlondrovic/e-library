@@ -26,13 +26,6 @@
                     <div class="absolute right-[12px] w-56 mt-[35px] origin-top-right bg-white border border-gray-200
                     divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                         <div class="py-1">
-                            @if(auth()->user()->isAdmin())
-                            <a href="{{ route('librarians.create') }}" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="far fa-address-book mr-[8px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">{{ __('Librarian') }}</span>
-                            </a>
-                            @endif
                             <a href="{{ route('students.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-users mr-[5px] ml-[3px] py-1"></i>
@@ -48,6 +41,18 @@
                                 <i class="far fa-address-book mr-[10px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Author') }}</span>
                             </a>
+                            @if(auth()->user()->isAdmin())
+                                <a href="{{ route('librarians.create') }}" tabindex="0"
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                    <i class="fas fa-user-tie mr-[8px] ml-[5px] py-1"></i>
+                                    <span class="px-4 py-0">{{ __('Librarian') }}</span>
+                                </a>
+                                <a href="{{ route('admins.create') }}" tabindex="0"
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                    <i class="fas fa-user-shield mr-[8px] ml-[5px] py-1"></i>
+                                    <span class="px-4 py-0">{{ __('Admin') }}</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </div>

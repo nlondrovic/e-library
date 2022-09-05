@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="mt-2">
-        <div class="heading mt-[7px]">
-            <h1 class="pl-[60px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
-                {{ __('Edit Author') }}
-            </h1>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Edit author')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('authors.index') }}">{{ __('Authors') }}</a> >
+        <a href="{{ route('authors.show', $author) }}">{{ $author->name }}</a> >
+        <a href="{{ route('authors.create') }}">{{ __('Edit') }}</a>
     </div>
 
     <div class="pl-[30px] scroll height-content section-content">

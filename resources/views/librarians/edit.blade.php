@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="mt-[2px]">
-            <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
-                <h1> {{ __('Edit librarian') }}</h1>
-            </div>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Edit librarian')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('librarians.index') }}">{{ __('Librarian') }}</a> >
+        <a href="{{ route('librarians.show', $librarian) }}">{{ $librarian->name }}</a> >
+        <a href="{{ route('librarians.create') }}">{{ __('Edit') }}</a>
     </div>
 
     <div class="scroll height-content section-content">

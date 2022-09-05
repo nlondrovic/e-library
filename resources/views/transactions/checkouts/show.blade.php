@@ -7,6 +7,7 @@
                 <div class="py-[7px] flex flex-row">
                     <div class="pl-[50px] pb-[14px] flex flex-col">
                         <h1>{{ $checkout->book->title }}</h1>
+                        Home > Transactions > Checkouts > ID
                     </div>
                 </div>
             </div>

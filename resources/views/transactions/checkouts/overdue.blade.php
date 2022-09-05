@@ -1,5 +1,6 @@
 @extends('transactions.index')
 @section('transactions-title', __('Overdue books'))
+@section('transactions-subtitle', 'Home > Transactions > Overdue books')
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">

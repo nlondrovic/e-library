@@ -1,12 +1,11 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="flex border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[50px] py-[2px] pb-[27px] flex flex-col">
-                <h1>{{__('New book')}}</h1>
-            </div>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('New book')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('books.index') }}">{{ __('Books') }}</a> >
+        <a href="{{ route('books.create') }}">{{ __('New book') }}</a>
     </div>
 
     <div class="scroll height-content pb-[30px] section-content">

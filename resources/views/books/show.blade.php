@@ -3,13 +3,13 @@
 
     <div class="heading">
         <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pt-[1px]">
-                <div class="py-[7px] flex flex-row">
-                    <div class="pl-[50px] pb-[14px] flex flex-col">
-                        <h1>{{ $book->title }}</h1>
-                    </div>
-                </div>
+            <div class="pl-[50px] pb-[5px] header-breadcrumbs">
+                <h1> {{ $book->title }}</h1>
+                <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+                <a href="{{ route('books.index') }}">{{ __('Books') }}</a> >
+                <a href="{{ route('books.show', $book) }}">{{ $book->title }}</a>
             </div>
+
             <div class="pt-[15px] mr-[30px]">
                 <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}"
                    class="inline hover:text-blue-600 ml-[20px] pr-[10px]">

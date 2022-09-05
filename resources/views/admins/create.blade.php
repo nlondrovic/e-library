@@ -1,10 +1,11 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="pl-[50px] pb-[27px] border-b-[1px] border-[#e4dfdf]">
-            <h1> {{__('New admin')}}</h1>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('New admin')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('admins.index') }}">{{ __('Admins') }}</a> >
+        <a href="{{ route('admins.create') }}">{{ __('New admin') }}</a>
     </div>
 
     <div class="scroll height-content section-content">

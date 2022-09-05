@@ -4,14 +4,9 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 ?>
 @section('main')
 
-    <div class="mt-2">
-        <div class="heading mt-[7px]">
-            <div class="border-b-[1px] border-[#e4dfdf]">
-                <div class="pl-[50px] pb-[21px]">
-                    <h1>{{ __('Settings') }}</h1>
-                </div>
-            </div>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Settings')}}</h1>
+        @yield('settings-subtitle')
     </div>
 
     <div class="py-4 text-gray-500 border-b-[1px] border-[#e4dfdf] pl-[50px]">

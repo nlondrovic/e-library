@@ -5,17 +5,19 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 @section('main')
 
     <div class="mt-2">
-        <div class="heading flex flex-row mt-[7px] border-b-[1px] border-[#e4dfdf]">
-            <h1 class="pl-[50px] pb-[21px]">
+        <div class="heading pl-[50px] pb-[21px] mt-[7px] border-b-[1px] border-[#e4dfdf]">
+            <h1 class="">
                 @yield('transactions-title', 'Book transactions')
             </h1>
-            @if(isset(request()->student_id))
-                <h3 class="pl-[50px] ml-[57px] pt-[18px]">{{__('For student:')}} <b>{{ $student->name }}</b></h3>
-            @endif
+            @yield('transactions-subtitle')
 
-            @if(isset(request()->book_id))
-                <h3 class="pl-[50px] pt-[18px]">{{__('For book:')}} <b>{{ $book->title }}</b></h3>
-            @endif
+{{--            @if(isset(request()->student_id))--}}
+{{--                <h3 class="pl-[50px] ml-[57px] pt-[18px]">{{__('For student:')}} <b>{{ $student->name }}</b></h3>--}}
+{{--            @endif--}}
+
+{{--            @if(isset(request()->book_id))--}}
+{{--                <h3 class="pl-[50px] pt-[18px]">{{__('For book:')}} <b>{{ $book->title }}</b></h3>--}}
+{{--            @endif--}} // TODO: Kako cemo prikazivati ove filtere sad kad imamo breadcumbs?
         </div>
     </div>
 

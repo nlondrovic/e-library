@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
@@ -40,24 +41,26 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
+    Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
-    Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => '\App\Http\Controllers\LanguageController@switchLang']);
+
 
     // BASIC CRUDs
 
+    Route::resource('/admins', AdminController::class);
+    Route::resource('/librarians', LibrarianController::class);
     Route::resource('/students', UserController::class);
     Route::resource('/books', BookController::class);
     Route::resource('/authors', AuthorController::class);
-    Route::resource('/categories', CategoryController::class);
-    Route::resource('/genres', GenreController::class);
-    Route::resource('/publishers', PublisherController::class);
-    Route::resource('/bindings', BindingController::class);
-    Route::resource('/sizes', SizeController::class);
-    Route::resource('/scripts', ScriptController::class);
-    Route::resource('/librarians', LibrarianController::class);
-    Route::resource('/admins', AdminController::class);
-    Route::get('/policy', [SettingsController::class, 'index'])->name('policy.index');
+    Route::resource('/settings/categories', CategoryController::class);
+    Route::resource('/settings/genres', GenreController::class);
+    Route::resource('/settings/publishers', PublisherController::class);
+    Route::resource('/settings/bindings', BindingController::class);
+    Route::resource('/settings/sizes', SizeController::class);
+    Route::resource('/settings/scripts', ScriptController::class);
+    Route::get('/settings/policy', [SettingsController::class, 'index'])->name('policy.index');
     Route::patch('/policy/update', [SettingsController::class, 'update'])->name('policy.update');
+
 
 
     // RESERVATIONS LISTING

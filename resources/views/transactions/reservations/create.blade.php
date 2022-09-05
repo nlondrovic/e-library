@@ -7,6 +7,7 @@
                 <div class="py-[7px] flex flex-row">
                     <div class="pl-[50px] pb-[14px] flex flex-col">
                         <h1>{{__('Reserve')}}: <i>{{ $book->title }}</i></h1>
+                        Home > Books > Stranac > Reserve
                     </div>
                 </div>
             </div>

@@ -1,4 +1,9 @@
 @extends('settings.index')
+@section('settings-subtitle')
+    <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+    <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
+    <a href="{{ route('genres.index') }}">{{ __('Genres') }}</a>
+@endsection
 @section('main-settings')
 
     <div class="height-kategorije pb-[30px]">

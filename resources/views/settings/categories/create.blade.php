@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="flex border-b-[1px] border-[#e4dfdf]">
-            <div class="pl-[60px] pb-[27px] flex flex-col">
-                <h1>{{ __('New category') }}</h1>
-            </div>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('New category')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
+        <a href="{{ route('categories.index') }}">{{ __('Categories') }}</a> >
+        <a href="{{ route('categories.create') }}">{{ __('New category') }}</a>
     </div>
 
     <div class="scroll height-content section-content pl-[32px]">

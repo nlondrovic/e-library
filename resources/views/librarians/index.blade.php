@@ -1,12 +1,10 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="mt-2">
-        <div class="heading mt-[7px]">
-            <h1 class="pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
-                {{ __('Librarians') }}
-            </h1>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Librarians')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('librarians.index') }}">{{ __('Librarians') }}</a>
     </div>
 
     <div class="scroll height-dashboard">
