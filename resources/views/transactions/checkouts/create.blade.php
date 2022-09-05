@@ -1,17 +1,12 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="heading">
-        <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pt-[1px]">
-                <div class="py-[7px] flex flex-row">
-                    <div class="pl-[50px] pb-[14px] flex flex-col">
-                        <h1>{{__('Check out')}}: <i>{{ $book->title }}</i></h1>
-                        Home > Books > Stranac > Check out
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Check out')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('books.index') }}">{{ __('Books') }}</a> >
+        <a href="{{ route('books.show', $book) }}">{{ $book->title }}</a> >
+        <a href="{{ route('checkouts.create', $book) }}">{{ __('Check out') }}</a>
     </div>
 
     <div class="flex flex-row overflow-auto height-osnovniDetalji">

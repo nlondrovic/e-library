@@ -1,13 +1,10 @@
 @extends('layouts.app')
 @section('main')
 
-    <div class="mt-2">
-        <div class="heading mt-[7px] pl-[50px] pb-[21px] border-b-[1px] border-[#e4dfdf]">
-            <h1 class="">
-                {{ __('Activities') }}
-            </h1>
-            Home > Activities
-        </div>
+    <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <h1> {{__('Activities')}}</h1>
+        <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+        <a href="{{ route('activities') }}">{{ __('Activities') }}</a>
     </div>
 
     <div class="flex flex-row pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
@@ -142,7 +139,6 @@
                     @endif
                 </div>
             </form>
-
 
         </div>
     </div>
