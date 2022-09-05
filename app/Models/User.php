@@ -39,6 +39,11 @@ class User extends Authenticatable
         return $this->role_id == 2;
     }
 
+    public function isStudent()
+    {
+        return $this->role_id == 3;
+    }
+
     public function canCheckoutOrReserveMoreBooks()
     {
         $books_per_student = DB::table('settings')
