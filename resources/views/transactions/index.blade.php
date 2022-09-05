@@ -123,16 +123,19 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         </div>
 
         <div class="w-full mt-[10px] ml-2 px-2">
-            @if((isset($reservations) && $reservations->count()) || (isset($checkouts) && $checkouts->count()))
+            @if(isset($reservations) && $reservations->count() || isset($checkouts) && $checkouts->count())
                 @include('components.filter-transactions')
                 @yield('table')
+            @elseif(isset(request()->book_id) || isset(request()->student_id))
+                @include('components.no-results')
+                <a href="{{ route(Route::currentRouteName()) }}" class="ml-[50px]">
+                    <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
+                        <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset filters') }}
+                    </button>
+                </a>
             @else
-                <div class="w-[50%] ml-[50px]">
-                    <div class="flex items-center px-6 py-4 my-4 text-lg bg-gray-200 rounded-lg">
-                        <i class="fas fa-exclamation-triangle text-gray-600"></i>&nbsp;&nbsp;
-                        <p class="font-medium text-gray-600">{{__('There are no results for this query.')}}</p>
-                    </div>
-                </div>
+                @include('components.no-results')
             @endif
         </div>
     </div>
