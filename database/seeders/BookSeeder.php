@@ -16,7 +16,7 @@ class BookSeeder extends Seeder
                 'isbn' => '074-53269-123',
                 'content' => 'Hari Poter i Kamen mudrosti je prvi dio serijala o Hariju Poteru, za koji je planirano sedam knjiga. Knjige je za djecu napisala engleska književnica Džoan Ketlin Rouling. Glavni lik je dječak čarobnjak Hari Poter. Ova knjiga je prvi put izašla 30. juna 1997. godine, a izdavač je bio Blumsburi (Bloomsbury Publishing Plc) iz Londona. Knjiga je prevedena na oko 60 jezika. Po knjizi je 2001. godine snimljen i istoimeni film. Radnja počinje sa sasvim običnom britanskom porodicom Darsli. Nju čine Vernon Darsli, njegova žena Petunija i njihov sin Dadli Darsli. Darslijevi su pretjerano normalna porodica. Naime, oni ne podnose bilo šta što ima imalo veze i sa čim nevjerovatnim i iole neobičnim. Međutim, u noći 1. novembra 1981. godine, čovjek zvani Albus Dambldor pojavljuje se kod njihove kuće, a mačka koja je tu cijelog dana stajala transformiše se u ženu, Minervu Mek Gonagal.',
                 'author_id' => 17,
-                'picture' => '/assets/img/book.jpg',
+                'picture' => '/images/books/1662236333073-Hari-Poter-i-Kamen-Mudrosti.jpg',
                 'page_count' => 352,
                 'size_id' => 4,
                 'script_id' => 1,
@@ -34,7 +34,7 @@ class BookSeeder extends Seeder
                 'isbn' => '074-53849-123',
                 'content' => 'Hari Poter i Dvorana tajni je knjiga Dž. K. Rouling. Drugi je dio serijala Hari Poter od sedam knjiga. Roman je objavljen 2. jula 1998. u Ujedinjenom Kraljevstvu. Po knjizi je 2002. godine snimljen istoimeni film. Harija Potera na rođendan posjeti kućni vilenjak Dobi. On ga upozorava da ove godine ne ide u Hogvorts, pošto će se strašne stvari dogoditi. Hari provodi prijatno ostatak raspusta u Ronovoj kući. Na dan polaska u školu, magična barijera koja razdvaja peron 9 i tri četvrtine od svijeta Normalaca odbija da ih propusti. Hari kasnije saznaje da je Dobi začarao pregradu da bi ga spriječio da ode na Hogvorts. ',
                 'author_id' => 17,
-                'picture' => '/assets/img/book.jpg',
+                'picture' => '/images/books/1662236333073-Hari-Poter-i-Dvorana-Tajni.jpg',
                 'page_count' => 384,
                 'size_id' => 4,
                 'script_id' => 1,
@@ -52,7 +52,7 @@ class BookSeeder extends Seeder
                 'isbn' => '074-54215-123',
                 'content' => 'Hari Poter i zatvorenik iz Askabana (engl. Harry Potter and the prisioner of the Azkaban) je treća knjiga iz serijala o Hariju Poteru britanske spisateljice Dž. K. Rouling. Knjiga je objavljena 8. jula 1999. Film temeljen na knjizi u Velikoj Britaniji premijerno je prikazan 31. maja 2004, a u SAD i ostatku svijeta 4. juna 2004. Priča počinje na Hari Poterov rođendan, 31. jula. Tog jutra Hari na televiziji čuje da je ozloglašeni kriminalac Sirijus Blek pobjegao iz zatvora. Hari iz bijesa naduva groznu sestru svoga teče kad je vrijeđala njegove roditelje. U strahu od Ministarstva magije, koje kažnjava maloljetne čarobnjake zbog izvođenja magije van škole, Hari odlazi iz kuće i bježi Noćnim viteškim autobusom, čarobnim trospratnim vozilom, u London. Kasnije ga, ipak, ne kazni Ministarstvo magije.',
                 'author_id' => 17,
-                'picture' => '/assets/img/book.jpg',
+                'picture' => '/images/books/1662236333073-Hari-Poter-i-zatvorenik-iz-Askabana.jpg',
                 'page_count' => 480,
                 'size_id' => 4,
                 'script_id' => 1,
@@ -70,7 +70,7 @@ class BookSeeder extends Seeder
                 'isbn' => '6-01-03056-4',
                 'content' => 'Na Drini ćuprija je roman srpskog književnika i nobelovca Iva Andrića. Roman pripovjeda o građenju mosta preko rijeke Drine u bosanskom gradu Višegradu. Građenje mosta naručio je Mehmed paša Sokolović, čuveni zvaničnik Osmanskog carstva koji je bio rođeni Srbin iz Rudog. Još kao mali dječak, Bajica, odveden je sa ostalom djecom kao danak u krvi u Carigrad. Uprkos raširenom mišljenju, Andrić nije dobio Nobelovu nagradu za književnost za ovaj roman, već je, kao i svi drugi dobitnici, zvanično nagrađen za cjelokupno književno stvaralaštvo, a ne pojedinačno djelo. Radnja romana traje otprilike četiri vijeka i skup je više priča povezanih sa mostom na Drini, koji je tačka okosnica i glavni simbol naracije. Sam most predstavlja na neki način suprotnost ljudskoj sudbini koja je prolazna u odnosu na kamenu građevinu, koja je vječna. Oko njega se razvijaju priče o istorijskim ličnostima i bezimenim likovima koji su plod piščeve mašte.',
                 'author_id' => 18,
-                'picture' => '/assets/img/book.jpg',
+                'picture' => '/images/books/1662236333074-Na-Drini-ćuprija.jpg',
                 'page_count' => 464,
                 'size_id' => 4,
                 'script_id' => 5,
@@ -88,7 +88,7 @@ class BookSeeder extends Seeder
                 'isbn' => '978-63732-608',
                 'content' => 'Gorski vijenac (u prvom izdanju Горскıй вıенацъ) refleksivno-herojska je poema u obliku narodne drame Petra II Petrovića Njegoša, nastala u doba srpskog romantizma. Djelo je objavljeno u Beču 1847. na srpskom narodnom jeziku i svojom pojavom predstavljalo je veliki doprinos pobedi Vukove borbe za novi književni jezik. Tema „Gorskog vijenca” je istraga, odnosno istrebljenje, poturica. Djelo je napisano poslije poeme „Luča mikrokozma” (1845), a prije poeme „Lažni car Šćepan Mali” (1847, objavljena 1851). Njegoš je, u „Gorskom vijencu”, ispleo čitavu crnogorsku istoriju, opjevao najvažnije događaje iz prošlosti, od vremena Nemanjića do početka 18. veka, naslikao svakodnevni crnogorski život, njihove praznike i skupove, dao narodne običaje, vjerovanja i shvatanja, prikazao susjedne narode, Turke i Mlečane. U stvari, u „Gorskom vijencu”, u njegovih 2819 stihova (deseteraca, izuzev jedne umetnute pjesme u devetercu i jedne tužbalice u dvanaestercu), našla su mesto tri sveta, tri civilizacije, koje su se dodirivale i preplitale na crnogorskom tlu.',
                 'author_id' => 18,
-                'picture' => '/assets/img/book.jpg',
+                'picture' => '/images/books/1662236333073-Gorski-Vijenac.jpg',
                 'page_count' => 132,
                 'size_id' => 4,
                 'script_id' => 5,
@@ -100,7 +100,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 24,
                 'checkouts_count' => 0,
                 'reserved_count' => 0
-            ],[
+            ], [
                 'title' => 'Lelejska gora',
                 'author_id' => 2,
                 'page_count' => 599,
@@ -116,7 +116,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Lelejska-Gora.jpg'
             ],
             [
                 'title' => 'Tvrdica',
@@ -134,7 +134,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Tvrdica.jpg'
             ],
             [
                 'title' => 'Rani jadi',
@@ -152,7 +152,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Rani-jadi.jpg'
             ],
             [
                 'title' => 'Primjeri čojstva i junaštva',
@@ -170,7 +170,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Primjeri-čojstva-i-junaštva.jpg'
             ],
             [
                 'title' => 'Gospoda Glembajevi',
@@ -188,7 +188,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Gospoda-Glembajevi.jpg'
             ],
             [
                 'title' => 'Don Kihot',
@@ -206,7 +206,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Don-Kihot.jpg'
             ],
             [
                 'title' => 'Seobe',
@@ -224,7 +224,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Seobe.jpg'
             ],
             [
                 'title' => 'Ana Karenjina',
@@ -242,7 +242,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Ana-Karenjina.jpg'
             ],
             [
                 'title' => 'Nečista krv',
@@ -260,7 +260,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Nečista-krv.jpg'
             ],
             [
                 'title' => 'Revizor',
@@ -278,7 +278,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Revizor.jpg'
             ],
             [
                 'title' => 'Romeo i Julija',
@@ -296,7 +296,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Romeo-i-Julija.jpg'
             ],
             [
                 'title' => 'Cigani',
@@ -314,7 +314,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Cigani.jpg'
             ],
             [
                 'title' => 'Gilgameš',
@@ -332,7 +332,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Gilgameš.jpg'
             ],
             [
                 'title' => 'Derviš i smrt',
@@ -350,25 +350,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
-            ],
-            [
-                'title' => 'Na Drini ćuprija',
-                'author_id' => 15,
-                'page_count' => 295,
-                'binding_id' => 2,
-                'publisher_id' => 6,
-                'publish_date' => '1991-01-01',
-                'script_id' => 1,
-                'isbn' => '86-01-03056-4',
-                'content' => '',
-                'size_id' => 1,
-                'total_count' => rand(4, 15),
-                'category_id' => rand(1, 10),
-                'genre_id' => 1,
-                'checkouts_count' => 0,
-                'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Derviš-i-smrt.jpg'
             ],
             [
                 'title' => 'Starac i more',
@@ -386,7 +368,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Stranac-i-more.jpg'
             ],
             [
                 'title' => 'Čiča Gorio',
@@ -404,7 +386,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Čiča-Gorio.jpg'
             ],
             [
                 'title' => 'Ilijada',
@@ -422,7 +404,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Ilijada.jpg'
             ],
             [
                 'title' => 'Hamlet',
@@ -440,7 +422,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Hamlet.jpg'
             ],
             [
                 'title' => 'Proces',
@@ -458,7 +440,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Proces.jpg'
             ],
             [
                 'title' => 'Dekameron',
@@ -476,7 +458,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Dekameron.jpg'
             ],
             [
                 'title' => 'Kanconijer',
@@ -494,7 +476,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Kanconijer.jpg'
             ],
             [
                 'title' => 'Antigona',
@@ -512,7 +494,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333073-Antigona.jpg'
             ],
             [
                 'title' => 'Stranac',
@@ -530,7 +512,7 @@ class BookSeeder extends Seeder
                 'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0,
-                'picture' => '/assets/img/book.jpg'
+                'picture' => '/images/books/1662236333074-Stranac.jpg'
             ]
         ]);
     }

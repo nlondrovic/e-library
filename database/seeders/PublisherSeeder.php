@@ -18,7 +18,7 @@ class PublisherSeeder extends Seeder
             ['name' => 'Zavod za udžbenike i nastavna sredstva, Podgorica'],
             ['name' => 'Svjetlost, Sarajevo'],
             ['name' => 'Daily press D.O.O.'],
-            ['name' => 'Knjiqa Komerc'],
+            ['name' => 'Knjiga Komerc'],
             ['name' => 'Zavod za udzbenike i nastavna sredstva - Beograd'],
             ['name' => 'Centralna narodna bliboteka Crne Gore - Biblioteka Vijenci'],
             ['name' => 'Gutenbergova galaksija'],

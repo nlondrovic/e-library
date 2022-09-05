@@ -14,7 +14,7 @@ class ReservationSeeder extends Seeder
         // Active checkouts
         DB::table('reservations')->insert([
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(6)->toDateTimeString()
@@ -30,7 +30,7 @@ class ReservationSeeder extends Seeder
         // Archived checkouts
         DB::table('reservations')->insert([
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(10)->toDateTimeString(),
@@ -38,7 +38,7 @@ class ReservationSeeder extends Seeder
                 'reservation_end_reason_id' => 1
             ],
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(12)->toDateTimeString(),
@@ -46,7 +46,7 @@ class ReservationSeeder extends Seeder
                 'reservation_end_reason_id' => 2,
             ],
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(20)->toDateTimeString(),

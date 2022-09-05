@@ -13,13 +13,13 @@ class CheckoutSeeder extends Seeder
         // Active checkouts
         DB::table('checkouts')->insert([
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(6)->toDateTimeString()
             ],
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(23)->toDateTimeString()
@@ -29,7 +29,7 @@ class CheckoutSeeder extends Seeder
         // Ended checkouts
         DB::table('checkouts')->insert([
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(33)->toDateTimeString(),
@@ -38,7 +38,7 @@ class CheckoutSeeder extends Seeder
                 'checkout_end_reason_id' => 1
             ],
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(18)->toDateTimeString(),
@@ -51,7 +51,7 @@ class CheckoutSeeder extends Seeder
         // Written off books
         DB::table('checkouts')->insert([
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(21)->toDateTimeString(),
@@ -60,7 +60,7 @@ class CheckoutSeeder extends Seeder
                 'checkout_end_reason_id' => 2
             ],
             [
-                'book_id' => rand(1, 31),
+                'book_id' => rand(1, 29),
                 'checkout_librarian_id' => rand(2, 5),
                 'student_id' => rand(6, 20),
                 'start_time' => Carbon::now()->subDays(16)->toDateTimeString(),
