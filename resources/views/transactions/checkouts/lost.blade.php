@@ -1,6 +1,10 @@
 @extends('transactions.index')
 @section('transactions-title', __('Lost books'))
-@section('transactions-subtitle', 'Home > Transactions > Lost books')
+@section('transactions-subtitle')
+    <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+    <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
+    <a href="{{ route('lost.index') }}">{{ __('Lost books') }}</a>
+@endsection
 @section('table')
 
     <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">

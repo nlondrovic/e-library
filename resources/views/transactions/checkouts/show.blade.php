@@ -2,14 +2,13 @@
 @section('main')
 
     <div class="heading">
-        <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
-            <div class="pt-[1px]">
-                <div class="py-[7px] flex flex-row">
-                    <div class="pl-[50px] pb-[14px] flex flex-col">
-                        <h1>{{ $checkout->book->title }}</h1>
-                        Home > Transactions > Checkouts > ID
-                    </div>
-                </div>
+        <div class="flex flex-row justify-between">
+            <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+                <h1> {{__('Checkout')}}</h1>
+                <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+                <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
+                <a href="{{ route('checkouts.show', $checkout) }}">{{ __('Checkouts') }}</a> >
+                <a href="{{ route('checkouts.show', $checkout) }}">{{ $checkout->id }}</a>
             </div>
 
             <div class="pt-[15px] mr-[30px] grid grid-cols-2">

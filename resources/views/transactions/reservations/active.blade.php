@@ -1,6 +1,10 @@
 @extends('transactions.index')
 @section('transactions-title', __('Active reservations'))
-@section('transactions-subtitle', 'Home > Transactions > Active reservations')
+@section('transactions-subtitle')
+    <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
+    <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
+    <a href="{{ route('reservations.active') }}">{{ __('Active reservations') }}</a>
+@endsection
 @section('table')
 
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
