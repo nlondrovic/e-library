@@ -92,8 +92,8 @@ class AdminController extends Controller
 
     public function destroy(User $admin)
     {
-        $this->authorize('delete', auth()->user(), $admin);
-        if (!$admin->isAdmin()) {
+        $this->authorize('delete', auth()->user());
+        if (!$admin->isAdmin() || auth()->user()->id === $admin->id) {
             return back();
         }
 
