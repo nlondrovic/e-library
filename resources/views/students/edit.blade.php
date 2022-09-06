@@ -38,11 +38,11 @@
                         @endif
                     </div>
                     <div class="mt-[20px]">
-                        <span>{{ __('E-mail') }} <span class="text-red-500">*</span></span>
+                        <span>{{ __('Email') }} <span class="text-red-500">*</span></span>
                         <input type="text" name="email" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                               placeholder="{{ __('Enter an e-mail') }}" value="{{ $student->email }}"/>
+                               placeholder="{{ __('Enter an email') }}" value="{{ $student->email }}"/>
                         @if($errors->first('email'))
                             <span class="text-red-600">{{ $errors->first('email') }}</span>
                         @endif
