@@ -80,6 +80,8 @@
                                 <i class="fas fa-file mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Profile') }}</span>
                             </a>
+
+
                             <a href="#" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-sign-out-alt mr-[5px] ml-[5px] py-1"></i>
@@ -92,23 +94,19 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="px-5 w-[145px]">
-
-                        @foreach (Config::get('languages') as $lang => $language)
-                            @if ($lang == App::getLocale())
+                    @foreach (Config::get('languages') as $lang => $language)
+                        @if ($lang == App::getLocale())
                             <li class="nav-item dropdown">
-                                <a class="">
-                                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
-                                </a>
+                                <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                             </li>
-                            @else
-                                <a class="" href="{{ route('lang.switch', $lang) }}">
-                                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
-                                </a>
-                            @endif
-                        @endforeach
-
+                        @else
+                            <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
+                        @endif
+                    @endforeach
                 </div>
+
             </div>
         </div>
     </div>

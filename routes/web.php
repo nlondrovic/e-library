@@ -34,6 +34,7 @@ Route::get('/', function () {
     return redirect('login');
 });
 
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -41,7 +42,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
-    Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 
 

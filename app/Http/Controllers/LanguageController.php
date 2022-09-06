@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -13,6 +13,10 @@ class LanguageController extends Controller
     {
         if (array_key_exists($lang, Config::get('languages'))) {
             Session::put('applocale', $lang);
+        }
+
+        if (auth()->user()) {
+            User::findOrFail(auth()->user()->id)->update(['language' => $lang]);
         }
 
         return Redirect::back();

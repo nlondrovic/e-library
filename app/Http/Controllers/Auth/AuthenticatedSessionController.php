@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\LanguageController;
+use App\Http\Middleware\Language;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\ValidationException;
 
 class AuthenticatedSessionController extends Controller
@@ -25,13 +28,12 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      *
-     * @param  \App\Http\Requests\Auth\LoginRequest  $request
+     * @param \App\Http\Requests\Auth\LoginRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request)
     {
-        if($request->ensureIsNotStudent())
-        {
+        if ($request->ensureIsNotStudent()) {
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
             ]);
@@ -39,13 +41,19 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
+        $user_lang = auth()->user()->language;
+
+        if (array_key_exists($user_lang, Config::get('languages'))) {
+            Session::put('applocale', $user_lang);
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
     /**
      * Destroy an authenticated session.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Request $request)
