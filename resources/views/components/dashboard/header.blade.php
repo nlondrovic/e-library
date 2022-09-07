@@ -14,7 +14,7 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="flex items-center">
-                <a class="inline-block border-l-[1px] border-gray-300 px-3" href="#" aria-label="Add something"
+                <a class="inline-block border-gray-300 mr-[10px] px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">
                         <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
                             px-[11px] py-[7px]">
