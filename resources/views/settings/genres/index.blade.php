@@ -7,7 +7,7 @@
 @section('main-settings')
 
     <div class="height-kategorije pb-[30px]">
-        <div class="flex items-center pl-[15px] py-[10px] space-x-3 rounded-lg">
+        <div class="flex items-center py-[10px] space-x-3 rounded-lg">
             <a href="{{ route('genres.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300 ease-in
                rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
@@ -16,7 +16,7 @@
         </div>
 
         <div
-            class="inline-block min-w-[96%] pl-[15px] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard mb-[30px]">
+            class="inline-block min-w-[96%] pt-3 align-middle bg-white rounded-bl-lg rounded-br-lg shadow-dashboard mb-[30px]">
             <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]" id="myTable">
                 <thead class="bg-[#EFF3F6]">
                 <tr class="border-b-[1px] border-[#e4dfdf]">
