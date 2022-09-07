@@ -71,12 +71,16 @@
                             <p class="font-medium">{{ $book->author->name }}</p>
                         </div>
                         <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Content') }}</span>
-                            <p class="font-medium max-w-[550px]">{{ $book->content }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('Category') }}</span>
+                            <p class="font-medium">{{ $book->category->name }}</p>
                         </div>
                         <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('ISBN') }}</span>
-                            <p class="font-medium">{{ $book->isbn }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('Publisher') }}</span>
+                            <p class="font-medium">{{ $book->publisher->name }}</p>
+                        </div>
+                        <div class="mt-[20px]">
+                            <span class="text-gray-500 text-[14px]">{{ __('Content') }}</span>
+                            <p class="font-medium max-w-[550px]">{{ $book->content }}</p>
                         </div>
                     </div>
                     <div class="mr-[15px]">
@@ -84,13 +88,14 @@
                             <span class="text-gray-500 text-[14px]">{{ __('Date of publishing') }}</span>
                             <p class="font-medium">{{ format_date($book->publish_date . " 00:00:00") }}</p>
                         </div>
+
                         <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Publisher') }}</span>
-                            <p class="font-medium">{{ $book->publisher->name }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('ISBN') }}</span>
+                            <p class="font-medium">{{ $book->isbn }}</p>
                         </div>
                         <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Category') }}</span>
-                            <p class="font-medium">{{ $book->category->name }}</p>
+                            <span class="text-gray-500 text-[14px]">{{ __('Number of pages') }}</span>
+                            <p class="font-medium">{{ $book->page_count }}</p>
                         </div>
                         <div class="mt-[20px]">
                             <span class="text-gray-500 text-[14px]">{{ __('Genre') }}</span>
@@ -110,10 +115,7 @@
                         </div>
                     </div>
                     <div class="mr-[20px]">
-                        <div class="mt-[20px]">
-                            <span class="text-gray-500 text-[14px]">{{ __('Number of pages') }}</span>
-                            <p class="font-medium">{{ $book->page_count }}</p>
-                        </div>
+
                         <img class="p-2 border-2 border-gray-300 mt-[20px]" width="400px"
                              src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}">
                     </div>
