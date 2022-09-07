@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div class="pl-[50px] scroll height-dashboard pt-[20px] pb-[30px]">
+    <div class="pl-[32px] scroll height-dashboard pt-[20px] pb-[30px]">
         <div class="flex flex-row justify-between">
             <!-- Left side -->
             <div class="mr-[30px]">
