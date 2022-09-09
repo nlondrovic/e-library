@@ -61,62 +61,6 @@
                                     <p class="text-red-600">{{ $errors->first('content') }}</p>
                                 @endif
                             </div>
-                            {{-- ISBN --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('ISBN')}} <span class="text-red-500">*</span></p>
-                                <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('isbn') }}"
-                                       placeholder="{{__('Enter a 13-digit ISBN')}}"/>
-                                @if($errors->first('isbn'))
-                                    <p class="text-red-600">{{ $errors->first('isbn') }}</p>
-                                @endif
-                            </div>
-                            {{-- Number of pages --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('Number of pages')}} <span class="text-red-500">*</span></p>
-                                <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('page_count') }}"
-                                       placeholder="{{__('Enter a number of pages')}}"/>
-                                @if($errors->first('page_count'))
-                                    <p class="text-red-600">{{ $errors->first('page_count') }}</p>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="row-2">
-                            {{-- Publish date --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('Date of publishing')}} <span class="text-red-500">*</span></p>
-                                <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('publish_date') }}"/>
-                                @if($errors->first('publish_date'))
-                                    <p class="text-red-600">{{ $errors->first('publish_date') }}</p>
-                                @endif
-                            </div>
-                            {{-- Publisher --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('Publisher')}} <span class="text-red-500">*</span></p>
-                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
-                                        name="publisher_id">
-                                    <option value="0">{{__('Choose a publisher')}}</option>
-                                    @foreach ($publishers as $publisher)
-                                        <option
-                                            @if($publisher->id == old('publisher_id'))
-                                                {{__('selected')}}
-                                            @endif
-                                            value="{{ $publisher->id }}">
-                                            {{ $publisher->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @if($errors->first('publisher_id'))
-                                    <p class="text-red-600">{{ $errors->first('publisher_id') }}</p>
-                                @endif
-                            </div>
                             {{-- Category --}}
                             <div class="mt-[20px]">
                                 <p>{{__('Category')}} <span class="text-red-500">*</span></p>
@@ -159,27 +103,6 @@
                                     <p class="text-red-600">{{ $errors->first('genre_id') }}</p>
                                 @endif
                             </div>
-                            {{-- Script --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('Script')}} <span class="text-red-500">*</span></p>
-                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
-                                        name="script_id">
-                                    <option value="0">{{__('Choose a script')}}</option>
-                                    @foreach ($scripts as $script)
-                                        <option
-                                            @if($script->id == old('script_id'))
-                                                {{__('selected')}}
-                                            @endif
-                                            value="{{ $script->id }}">
-                                            {{ $script->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @if($errors->first('script_id'))
-                                    <p class="text-red-600">{{ $errors->first('script_id') }}</p>
-                                @endif
-                            </div>
                             {{-- Binding --}}
                             <div class="mt-[20px]">
                                 <p>{{__('Binding')}} <span class="text-red-500">*</span></p>
@@ -199,6 +122,94 @@
                                 </select>
                                 @if($errors->first('binding_id'))
                                     <p class="text-red-600">{{ $errors->first('binding_id') }}</p>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="row-2">
+                            {{-- Publish date --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('Date of publishing')}} <span class="text-red-500">*</span></p>
+                                <input required type="date" name="publish_date" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('publish_date') }}"/>
+                                @if($errors->first('publish_date'))
+                                    <p class="text-red-600">{{ $errors->first('publish_date') }}</p>
+                                @endif
+                            </div>
+                            {{-- Publisher --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('Publisher')}} <span class="text-red-500">*</span></p>
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
+                                        name="publisher_id">
+                                    <option value="0">{{__('Choose a publisher')}}</option>
+                                    @foreach ($publishers as $publisher)
+                                        <option
+                                            @if($publisher->id == old('publisher_id'))
+                                                {{__('selected')}}
+                                            @endif
+                                            value="{{ $publisher->id }}">
+                                            {{ $publisher->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @if($errors->first('publisher_id'))
+                                    <p class="text-red-600">{{ $errors->first('publisher_id') }}</p>
+                                @endif
+                            </div>
+                            {{-- ISBN --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('ISBN')}} <span class="text-red-500">*</span></p>
+                                <input required type="number" name="isbn" class="flex flex-row w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('isbn') }}"
+                                       placeholder="{{__('Enter a 13-digit ISBN')}}"/>
+                                @if($errors->first('isbn'))
+                                    <p class="text-red-600">{{ $errors->first('isbn') }}</p>
+                                @endif
+                            </div>
+                            {{-- Number of pages --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('Number of pages')}} <span class="text-red-500">*</span></p>
+                                <input required type="number" name="page_count" class="flex flex-row w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('page_count') }}"
+                                       placeholder="{{__('Enter a number of pages')}}"/>
+                                @if($errors->first('page_count'))
+                                    <p class="text-red-600">{{ $errors->first('page_count') }}</p>
+                                @endif
+                            </div>
+                            {{-- Total book count --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('Total number of books')}} <span class="text-red-500">*</span></p>
+                                <input required type="number" name="total_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
+                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('total_count') }}"
+                                       placeholder="{{__('Enter a number of book copies')}}"/>
+                                @if($errors->first('total_count'))
+                                    <p class="text-red-600">{{ $errors->first('total_count') }}</p>
+                                @endif
+                            </div>
+                            {{-- Script --}}
+                            <div class="mt-[20px]">
+                                <p>{{__('Script')}} <span class="text-red-500">*</span></p>
+                                <select required class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                                        shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
+                                        name="script_id">
+                                    <option value="0">{{__('Choose a script')}}</option>
+                                    @foreach ($scripts as $script)
+                                        <option
+                                            @if($script->id == old('script_id'))
+                                                {{__('selected')}}
+                                            @endif
+                                            value="{{ $script->id }}">
+                                            {{ $script->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @if($errors->first('script_id'))
+                                    <p class="text-red-600">{{ $errors->first('script_id') }}</p>
                                 @endif
                             </div>
                             {{-- Size --}}
@@ -225,17 +236,6 @@
                         </div>
 
                         <div class="row-3">
-                            {{-- Total book count --}}
-                            <div class="mt-[20px]">
-                                <p>{{__('Total number of books')}} <span class="text-red-500">*</span></p>
-                                <input required type="number" name="total_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
-                                            bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ old('total_count') }}"
-                                       placeholder="{{__('Enter a number of book copies')}}"/>
-                                @if($errors->first('total_count'))
-                                    <p class="text-red-600">{{ $errors->first('total_count') }}</p>
-                                @endif
-                            </div>
                             {{-- Picure --}}
                             <div class="mt-[20px]">
                                 <p>{{ __('Add photo') }}</p>
