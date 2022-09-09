@@ -30,7 +30,7 @@
                     <div class="search-input">
                         <a href="" hidden></a>
                         <input type="search" name="search" placeholder="{{ __('Search students') }}"
-                               value="{{ request()->get('search') }}">
+                               value="{{ request()->get('search') }}" autocomplete="off">
                         <div class="autocom-box"></div>
                         <div class="search-icon"><i class="fas fa-search"></i></div>
                     </div>
