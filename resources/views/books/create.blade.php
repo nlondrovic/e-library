@@ -161,7 +161,7 @@
                             {{-- ISBN --}}
                             <div class="mt-[20px]">
                                 <p>{{__('ISBN')}} <span class="text-red-500">*</span></p>
-                                <input required type="number" name="isbn" class="flex flex-row w-[90%] mt-2 px-2 py-2 text-base
+                                <input required type="text" name="isbn" class="flex flex-row w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ old('isbn') }}"
                                        placeholder="{{__('Enter a 13-digit ISBN')}}"/>

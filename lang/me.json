@@ -300,7 +300,7 @@
     "Content must be at least :min characters.": "Sadržaj mora biti najmanje :min karaktera.",
     "ISBN is required.": "Morate unijeti ISBN.",
     "ISBN format is invalid.": "ISBN format je nevažeći.",
-    "ISBN must have :digits digits.": "ISBN mora sadržati :digits cifara.",
+    "ISBN must contain :size characters.": "ISBN mora sadržati :size karaktera.",
     "Number of pages is required.": "Morate unijeti broj stranica knjige.",
     "Number of pages must be an integer.": "Broj stranica knjige mora biti cijeli broj.",
     "Number of pages must be greater than zero.": "Broj stranica knjige mora biti veći od nule.",

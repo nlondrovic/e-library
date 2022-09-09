@@ -17,7 +17,7 @@ class UpdateBookRequest extends FormRequest
         return [
             'title' => 'required',
             'content' => 'required|min:20',
-            'isbn' => 'required|regex:/[0-9]+/|digits:13',
+            'isbn' => 'required|size:13|regex:^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$^',
             'page_count' => 'required|integer|min:1',
             'publish_date' => 'required|date',
             'author_id' => 'required|exists:authors,id',
@@ -39,8 +39,8 @@ class UpdateBookRequest extends FormRequest
             'content.required' => __('Content is required.'),
             'content.min' => __('Content must be at least :min characters.'),
             'isbn.required' => __('ISBN is required.'),
+            'isbn.size' => __('ISBN must contain :size characters.'),
             'isbn.regex' => __('ISBN format is invalid.'),
-            'isbn.digits' => __('ISBN must have :digits digits.'),
             'page_count.required' => __('Number of pages is required.'),
             'page_count.integer' => __('Number of pages must be an integer.'),
             'page_count.min' => __('Number of pages must be greater than zero.'),

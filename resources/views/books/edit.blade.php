@@ -23,7 +23,9 @@
                                 <p>{{ __('Title') }} <span class="text-red-500">*</span></p>
                                 <input required type="text" name="title" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->title }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]"
+                                       placeholder="{{__('Enter a title of the book')}}"
+                                       value="{{ $book->title }}"/>
                                 @if($errors->first('title'))
                                     <p class="text-red-600">{{ $errors->first('title') }}</p>
                                 @endif
@@ -51,7 +53,8 @@
                                 <p>{{ __('Content') }} <span class="text-red-500">*</span></p>
                                 <textarea required name="content" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border
                                 border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2
-                                focus:ring-[#576cdf]" rows="8">{{ $book->content }}</textarea>
+                                focus:ring-[#576cdf]" rows="8"
+                                          placeholder="{{ __('Enter a short description about the book (min. 20 characters)') }}">{{ $book->content }}</textarea>
                                 @if($errors->first('content'))
                                     <p class="text-red-600">{{ $errors->first('content') }}</p>
                                 @endif
@@ -59,9 +62,11 @@
                             {{-- ISBN --}}
                             <div class="mt-[20px]">
                                 <p>{{ __('ISBN') }} <span class="text-red-500">*</span></p>
-                                <input required type="number" name="isbn" class="flex w-[90%] mt-2 px-2 py-2 text-base
+                                <input class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->isbn }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]" name="isbn"
+                                       placeholder="{{__('Enter an ISBN')}}" required
+                                       type="text" value="{{ $book->isbn }}"/>
                                 @if($errors->first('isbn'))
                                     <p class="text-red-600">{{ $errors->first('isbn') }}</p>
                                 @endif
@@ -71,7 +76,8 @@
                                 <p>{{ __('Number of pages') }} <span class="text-red-500">*</span></p>
                                 <input required type="number" name="page_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
-                                            focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->page_count }}"/>
+                                            focus:ring-2 focus:ring-[#576cdf]"
+                                       placeholder="{{__('Enter a number of pages')}}" value="{{ $book->page_count }}"/>
                                 @if($errors->first('page_count'))
                                     <p class="text-red-600">{{ $errors->first('page_count') }}</p>
                                 @endif
@@ -187,7 +193,7 @@
                                         name="size_id">
                                     @foreach ($sizes as $size)
                                         <option
-                                                @if($size == $book->size) selected @endif
+                                            @if($size == $book->size) selected @endif
                                         value="{{ $size->id }}">
                                             {{ $size->name }}
                                         </option>
@@ -216,7 +222,8 @@
                                 <p>{{ __('Add photo') }}</p>
                                 <input type="file" name="picture" accept="image/*"
                                        onchange="loadFileStudent(event)"/>
-                                <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($book->picture) }}" alt="Book image"/>
+                                <img id="image-output-student" width="360" class="mt-[20px]"
+                                     src="{{ asset($book->picture) }}" alt="Book image"/>
                             </div>
                         </div>
 
@@ -241,6 +248,5 @@
             </div>
         </form>
     </div>
-
 
 @endsection
