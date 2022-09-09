@@ -20,8 +20,9 @@ class BookController extends Controller
 {
     public function index(Request $request)
     {
+        $search_array = Book::orderBy('title', 'asc')->get();
+
         if ($request->get('search')) {
-            $search_array = Book::orderBy('title', 'asc')->get();
             $books = Book::where('title', 'LIKE', '%' . $request->get('search') . '%')
                 ->orderBy('title', 'asc')->get();
 
@@ -29,7 +30,6 @@ class BookController extends Controller
         }
 
         $books = Book::orderBy('title', 'asc')->paginate(8);
-        $search_array = Book::orderBy('title', 'asc')->get();
         $pagination = true;
 
         return view('books.index', compact('books', 'search_array', 'pagination'));

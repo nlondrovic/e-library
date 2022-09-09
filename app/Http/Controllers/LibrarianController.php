@@ -11,21 +11,21 @@ use Illuminate\Support\Str;
 
 class LibrarianController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $this->authorize('viewAny', User::class);
 
-        if ($request->get('search')) {
-            $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
+        $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
+
+        if (request()->get('search')) {
             $librarians = User::where('role_id', 2)
-                ->where('name', 'LIKE', '%' . $request->get('search') . '%')
+                ->where('name', 'LIKE', '%' . request()->get('search') . '%')
                 ->orderBy('name', 'asc')->get();
 
             return view('librarians.index', compact('librarians', 'search_array'));
         }
 
         $librarians = User::where('role_id', 2)->orderBy('name', 'asc')->paginate(8);
-        $search_array = User::where('role_id', 2)->orderBy('name', 'asc')->get();
         $pagination = true;
 
         return view('librarians.index', compact('librarians', 'search_array', 'pagination'));

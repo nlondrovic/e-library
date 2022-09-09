@@ -13,16 +13,16 @@ class AuthorController extends Controller
 {
     public function index(Request $request)
     {
+        $search_array = Author::orderBy('name', 'asc')->get();
+
         if ($request->get('search')) {
-            $search_array = Author::orderBy('name', 'asc')->get();
             $authors = Author::where('name', 'LIKE', '%' . $request->get('search') . '%')
                 ->orderBy('name', 'asc')->get();
 
             return view('authors.index', compact('authors', 'search_array'));
         }
 
-        $authors = Author::orderBy('name', 'asc')->paginate(10);
-        $search_array = Author::orderBy('name', 'asc')->get();
+        $authors = Author::orderBy('name', 'asc')->paginate(8);
         $pagination = true;
 
         return view('authors.index', compact('authors', 'search_array', 'pagination'));

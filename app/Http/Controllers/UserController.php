@@ -11,19 +11,19 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        if ($request->get('search')) {
-            $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
+        $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
+
+        if (request()->get('search')) {
             $students = User::where('role_id', 3)
-                ->where('name', 'LIKE', '%' . $request->get('search') . '%')
+                ->where('name', 'LIKE', '%' . request()->get('search') . '%')
                 ->orderBy('name', 'asc')->get();
 
             return view('students.index', compact('students', 'search_array'));
         }
 
         $students = User::where('role_id', 3)->orderBy('name', 'asc')->paginate(8);
-        $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
         $pagination = true;
 
         return view('students.index', compact('students', 'search_array', 'pagination'));
