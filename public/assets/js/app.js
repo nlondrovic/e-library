@@ -244,3 +244,18 @@ var loadFileStudent = function (event) {
         imageStudent.src = '/assets/img/user.jpg';
     }
 };
+
+
+// Book image upload
+var loadFileBook = function (event) {
+    var imageStudent = document.getElementById('image-output-book');
+
+    imageStudent.style.display = "block";
+
+    if (event.target.files[0]) {
+        imageStudent.src = URL.createObjectURL(event.target.files[0]);
+    }
+    else {
+        imageStudent.src = '/assets/img/book.jpg';
+    }
+};

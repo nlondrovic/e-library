@@ -240,8 +240,9 @@
                             <div class="mt-[20px]">
                                 <p>{{ __('Add photo') }}</p>
                                 <input type="file" name="picture" accept="image/*"
-                                       onchange="loadFileStudent(event)"/>
-                                <img id="image-output-student" width="360" class="mt-[20px]" alt="{{ __('Book image') }}"/>
+                                       onchange="loadFileBook(event)"/>
+                                <img id="image-output-book" width="360" class="mt-[20px]" alt="{{ __('Book image') }}"
+                                     src="{{ asset('/assets/img/book.jpg') }}"/>
                             </div>
                         </div>
 
