@@ -15,8 +15,20 @@ class AdminController extends Controller
     {
         $this->authorize('viewAny', User::class);
 
+        $search_array = User::where('role_id', 1)->orderBy('name', 'asc')->get();
+
+        if (request()->get('search')) {
+            $admins = User::where('role_id', 1)
+                ->where('name', 'LIKE', '%' . request()->get('search') . '%')
+                ->orderBy('name', 'asc')->get();
+
+            return view('admins.index', compact('admins', 'search_array'));
+        }
+
         $admins = User::where('role_id', 1)->orderBy('name', 'asc')->paginate(8);
-        return view('admins.index', compact('admins'));
+        $pagination = true;
+
+        return view('admins.index', compact('admins', 'search_array', 'pagination'));
     }
 
     public function create()

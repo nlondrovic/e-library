@@ -12,7 +12,7 @@
             <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
             <p class="text-left"> {{ session()->get('flash-admin-store-success') }} </p>
         </div>
-        @elseif(session()->has('flash-admin-update-success'))
+    @elseif(session()->has('flash-admin-update-success'))
         <div class="flash_message success">
             <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
             <p class="text-left"> {{ session()->get('flash-admin-update-success') }} </p>
@@ -36,6 +36,13 @@
                     </div>
                 </div>
             </form>
+            <script>
+                let suggestions = [
+                    @foreach($search_array as $admin)
+                        "{{ $admin->name }}",
+                    @endforeach
+                ];
+            </script>
         </div>
 
         <div class="px-[50px] pt-2 bg-white mb-[30px]">
@@ -101,9 +108,11 @@
                     </tbody>
                 </table>
 
-                <p class="mt-[20px]">
-                    {{ $admins->links("pagination::tailwind") }}
-                </p>
+                @if(isset($pagination))
+                    <p class="mt-[20px]">
+                        {{ $admins->links("pagination::tailwind") }}
+                    </p>
+                @endif
 
             </div>
         </div>
