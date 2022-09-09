@@ -7,6 +7,18 @@
         <a href="{{ route('books.index') }}">{{ __('Books') }}</a>
     </div>
 
+    @if(session()->has('flash-book-store-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-book-store-success') }} </p>
+        </div>
+    @elseif(session()->has('flash-book-update-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-book-update-success') }} </p>
+        </div>
+    @endif
+
     <div class="scroll height-evidencija">
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('books.create') }}"

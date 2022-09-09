@@ -9,6 +9,13 @@
         <a href="{{ route('reservations.create', $book) }}">{{ __('Reserve') }}</a>
     </div>
 
+    @if(session()->has('flash-reservation-store-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-reservation-store-success') }} </p>
+        </div>
+    @endif
+
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="">
             @include('components.error-check')

@@ -7,6 +7,18 @@
         <a href="{{ route('students.index') }}">{{ __('Students') }}</a>
     </div>
 
+    @if(session()->has('flash-student-store-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-student-store-success') }} </p>
+        </div>
+    @elseif(session()->has('flash-student-update-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-student-update-success') }} </p>
+        </div>
+    @endif
+
     <div class="scroll height-dashboard">
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('students.create') }}" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300

@@ -9,6 +9,13 @@
         <a href="{{ route('checkouts.create', $book) }}">{{ __('Check out') }}</a>
     </div>
 
+    @if(session()->has('flash-checkout-store-success'))
+        <div class="flash_message success">
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <p class="text-left"> {{ session()->get('flash-checkout-store-success') }} </p>
+        </div>
+    @endif
+
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="">
             @include('components.error-check')
