@@ -14,24 +14,25 @@
 </script>
 
 <script>
-    let searchWrapper2 = document.querySelector(".search-input");
-    let inputBox2 = searchWrapper2.querySelector("input");
-    let model2;
+    let searchWrapper;
+    let inputBox;
+    let model;
 
     $(document).ready(function () {
         let routeName = "{{ \Illuminate\Support\Facades\Route::currentRouteName() }}";
+        let routeMethod = routeName.split('.')[1];
         routeName = routeName.split('.')[0];
-        let model = routeName.substring(0, routeName.length - 1);
-        model2 = model;
+        model = routeName.substring(0, routeName.length - 1);
 
         // if not on page where search bar exists
-        if (model !== "author" && model !== "librarian" && model !== "student" && model !== "book" && model !== "admin") {
+        if (model !== "author" && model !== "librarian" && model !== "student" && model !== "book" && model !== "admin"
+            || routeMethod !== "index") {
             return;
         }
 
         // getting all required elements
-        const searchWrapper = document.querySelector(".search-input");
-        const inputBox = searchWrapper.querySelector("input");
+        searchWrapper = document.querySelector(".search-input");
+        inputBox = searchWrapper.querySelector("input");
         const suggBox = searchWrapper.querySelector(".autocom-box");
         const icon = searchWrapper.querySelector(".search-icon");
         let linkTag = searchWrapper.querySelector("a");
@@ -83,13 +84,13 @@
 
     function select(element) {
         let selectData = element.textContent;
-        inputBox2.value = selectData;
+        inputBox.value = selectData;
 
         let url = "{{ route('authors.index', ['search' => "searchQuery"]) }}";
         url = url.replace("searchQuery", selectData);
-        url = url.replace("author", model2);
+        url = url.replace("author", model);
 
-        searchWrapper2.classList.remove("active");
+        searchWrapper.classList.remove("active");
         document.location = url;
     }
 </script>
