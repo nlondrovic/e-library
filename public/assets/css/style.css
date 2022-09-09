@@ -2800,3 +2800,42 @@ h4 {
 .header-breadcrumbs a {
     color: #2196f3;
 }
+.flash_message {
+    width: 30%;
+    border-radius: 2px;
+    position: absolute;
+    height: auto;
+    padding: 1em;
+    font-size: 14px;
+    top: 55px;
+    z-index: 1000;
+    display: block;
+    margin-left: 35%;
+    /*padding-left: 10%;*/
+    text-align: center;
+
+    animation: slide-up 1.25s forwards;
+    animation-delay: 2.25s;
+    -webkit-animation-delay: 2.25s;
+}
+
+.flash_message p {
+    margin: 0;
+    padding: 0;
+}
+
+.success {
+    color: #fff;
+    background: #33bb44;
+    opacity: 80%;
+}
+.error {
+    color: #fff;
+    background: red;
+    opacity: 80%;
+ }
+
+@-webkit-keyframes slide-up {
+    from {transition: translateY(0);opacity: 1}
+    to {transition: translateY(-150px);opacity: 0;top:0px;}
+}
