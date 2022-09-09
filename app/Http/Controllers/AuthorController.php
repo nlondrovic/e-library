@@ -48,7 +48,7 @@ class AuthorController extends Controller
         }
 
         Author::create($inputs);
-        return redirect()->route('authors.index');
+        return redirect()->route('authors.index')->with('flash-author-store-success', __('Author created successfully!'));
     }
 
     public function show(Author $author)
@@ -74,7 +74,7 @@ class AuthorController extends Controller
         }
 
         $author->update($inputs);
-        return redirect()->route('authors.index');
+        return redirect()->route('authors.index')->with('flash-author-update-success', __('Author updated successfully!'));
     }
 
     public function destroy(Author $author)

@@ -58,7 +58,7 @@ class LibrarianController extends Controller
         }
 
         User::create($inputs);
-        return redirect()->route('librarians.index');
+        return redirect()->route('librarians.index')->with('flash-librarian-store-success', __('Librarian created successfully!'));
     }
 
     public function show(User $librarian)
@@ -101,7 +101,7 @@ class LibrarianController extends Controller
         }
 
         $librarian->update($inputs);
-        return redirect()->route("librarians.show", compact('librarian'));
+        return redirect()->route("librarians.show", compact('librarian'))->with('flash-librarian-update-success', __('Librarian updated successfully!'));
     }
 
     public function destroy(User $librarian)

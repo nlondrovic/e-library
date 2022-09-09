@@ -130,7 +130,7 @@ class ReservationController extends Controller
             ]);
         });
 
-        return redirect()->route('books.index');
+        return redirect()->route('books.index')->with('flash-reservation-store-success', __('Reservation created successfully!'));
     }
 
     public function checkOut(Reservation $reservation)

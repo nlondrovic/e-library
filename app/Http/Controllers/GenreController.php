@@ -23,7 +23,7 @@ class GenreController extends Controller
     {
         $inputs = $request->validated();
         Genre::create($inputs);
-        return redirect()->route('genres.index');
+        return redirect()->route('genres.index')->with('flash-genre-store-success', __('Genre created successfully!'));
     }
 
     public function edit(Genre $genre)
@@ -35,7 +35,7 @@ class GenreController extends Controller
     {
         $inputs = $request->validated();
         $genre->update($inputs);
-        return redirect()->route('genres.index');
+        return redirect()->route('genres.index')->with('flash-genre-update-success', __('Genre updated successfully!'));
     }
 
     public function destroy(Genre $genre)

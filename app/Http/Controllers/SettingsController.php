@@ -40,6 +40,6 @@ class SettingsController extends Controller
                 ->update(['value' => $request->books_per_student]);
         }
 
-        return redirect()->route('policy.index');
+        return redirect()->route('policy.index')->with('flash-policy-update-success', __('Policy updated successfully!'));
     }
 }

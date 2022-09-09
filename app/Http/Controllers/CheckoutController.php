@@ -202,7 +202,7 @@ class CheckoutController extends Controller
             ]);
         });
 
-        return redirect()->route('books.index');
+        return redirect()->route('books.index')->with('flash-checkout-store-success', __('Checkout created successfully!'));
     }
 
     public function checkIn(Checkout $checkout)

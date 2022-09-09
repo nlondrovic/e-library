@@ -46,7 +46,7 @@ class AdminController extends Controller
         }
 
         User::create($inputs);
-        return redirect()->route('admins.index');
+        return redirect()->route('admins.index')->with('flash-admin-store-success', __('Admin created successfully!'));
     }
 
     public function show(User $admin)
@@ -87,7 +87,7 @@ class AdminController extends Controller
         }
 
         $admin->update($inputs);
-        return redirect()->route("admins.show", compact('admin'));
+        return redirect()->route("admins.show", compact('admin'))->with('flash-admin-update-success', __('Admin updated successfully!'));
     }
 
     public function destroy(User $admin)

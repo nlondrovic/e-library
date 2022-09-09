@@ -11,7 +11,7 @@ class SizeController extends Controller
     public function index()
     {
         $sizes = Size::orderBy('name', 'asc')->paginate(8);
-        return view('settings.sizes.index', compact('sizes'));
+        return view('settings.sizes.index', compact('sizes'))->with('flash-size-store-success', __('Size created successfully!'));
     }
 
     public function create()
@@ -34,7 +34,7 @@ class SizeController extends Controller
     public function update(UpdateSizeRequest $request, Size $size)
     {
         $size->update($request->validated());
-        return redirect()->route('sizes.index');
+        return redirect()->route('sizes.index')->with('flash-size-update-success', __('Size updated successfully!'));
     }
 
     public function destroy(Size $size)
