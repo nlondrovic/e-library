@@ -15,7 +15,7 @@
             @csrf
             @method('put')
             <div class="flex flex-row overflow-auto height-osnovniDetalji">
-                <div class="pl-[30px] pl-[50px] w-[100%] mt-[20px]">
+                <div class="pl-[50px] w-[100%] mt-[20px] pb-2">
                     <div class="grid grid-cols-3">
                         <div class="row-1">
                             {{-- Title --}}
@@ -223,7 +223,7 @@
                                 <input type="file" name="picture" accept="image/*"
                                        onchange="loadFileStudent(event)"/>
                                 <img id="image-output-student" width="360" class="mt-[20px]"
-                                     src="{{ asset($book->picture) }}" alt="Book image"/>
+                                     src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"/>
                             </div>
                         </div>
 
