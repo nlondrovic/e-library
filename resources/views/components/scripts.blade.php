@@ -7,7 +7,7 @@
         $('.search-select').select2({
             width: 'resolve',
             height: 'resolve',
-            placeholder: "Select...",
+            placeholder: "{{ __('Select...') }}",
             allowClear: true
         });
     });

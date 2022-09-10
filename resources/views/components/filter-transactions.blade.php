@@ -4,8 +4,8 @@
         <div class="flex flex-row items-center">
             <label class="px-2">
                 <span>{{ __('Student') }}</span>
-                <select class="flex flex-col w-[90%] h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                    shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select"
+                <select class="flex flex-col h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select w-[300px]"
                         name="student_id">
                     <option value="">{{ __('None') }}</option>
                     @foreach ($students as $student)
@@ -19,8 +19,8 @@
             </label>
             <label class="px-2">
                 <span>{{ __('Book') }}</span>
-                <select class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
-                    shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select"
+                <select class="flex flex-col flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select w-[300px]"
                         id="btn-reset-book" name="book_id">
                     <option value="">None</option>
                     @foreach ($books as $book)
