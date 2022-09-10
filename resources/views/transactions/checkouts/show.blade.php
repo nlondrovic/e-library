@@ -2,8 +2,8 @@
 @section('main')
 
     <div class="heading">
-        <div class="flex flex-row justify-between">
-            <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
+        <div class="flex flex-row justify-between border-b-[1px] border-[#e4dfdf]">
+            <div class="pl-[50px] pb-[5px] header-breadcrumbs">
                 <h1> {{__('Checkout')}}</h1>
                 <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
                 <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
