@@ -8,12 +8,12 @@
 
     @if(session()->has('flash-genres-store-success'))
         <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
             <p class="text-left"> {{ session()->get('flash-genres-store-success') }} </p>
         </div>
     @elseif(session()->has('flash-genre-update-success'))
         <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
             <p class="text-left"> {{ session()->get('flash-genre-update-success') }} </p>
         </div>
     @endif

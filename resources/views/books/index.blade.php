@@ -9,12 +9,12 @@
 
     @if(session()->has('flash-book-store-success'))
         <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
             <p class="text-left"> {{ session()->get('flash-book-store-success') }} </p>
         </div>
     @elseif(session()->has('flash-book-update-success'))
         <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
+            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
             <p class="text-left"> {{ session()->get('flash-book-update-success') }} </p>
         </div>
     @endif
