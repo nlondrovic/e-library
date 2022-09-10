@@ -33,7 +33,7 @@
                             <select required class="flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select"
                                     name="student_id">
-                                <option value="">None</option>
+                                <option value="">{{ __('None') }}</option>
                                 @foreach ($students as $student)
                                     <option value="{{ $student->id }}">
                                         {{ $student->name }}
