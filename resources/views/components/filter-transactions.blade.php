@@ -1,4 +1,4 @@
-<div class="flex flex-row ml-[50px]">
+<div class="flex flex-row">
     <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get"
           class="mb-[20px] mr-[15px]">
         <div class="flex flex-row items-center">
