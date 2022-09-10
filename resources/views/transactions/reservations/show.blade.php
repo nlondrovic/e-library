@@ -2,10 +2,19 @@
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
-        <h1> {{__('Archived reservation')}}</h1>
+        @if($reservation->end_time)
+            <h1> {{__('Archived reservation')}} </h1>
+        @else
+            <h1> {{__('Active reservation')}} </h1>
+        @endif
+
         <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
         <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
-        <a href="{{ route('reservations.archived') }}">{{ __('Archived reservations') }}</a> >
+        @if($reservation->end_time)
+            <a href="{{ route('reservations.archived') }}">{{ __('Archived reservations') }}</a> >
+        @else
+            <a href="{{ route('reservations.active') }}">{{ __('Active reservations') }}</a> >
+        @endif
         <a href="{{ route('reservations.show', $reservation) }}">{{ $reservation->id }}</a>
     </div>
 
@@ -47,6 +56,11 @@
                             <div class="mt-[40px] mb-[20px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Reservation end reason')}}</span>
                                 <p class="font-medium">{{ __($reservation->end_reason->value) }}</p>
+                            </div>
+                        @else
+                            <div class="mt-[40px] mb-[20px]">
+                                <span class="text-gray-500 text-[14px]">{{__('Reservation due')}}</span>
+                                <p class="font-medium">{{ format_date($reservation->supposed_end_time) }}</p>
                             </div>
                         @endif
                     </div>
