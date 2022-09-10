@@ -2,7 +2,7 @@
     <div class="mt-[5px] flex flex-col">
         <div class="text-gray-500 mb-[5px]">
             <span class="capitalize">{{ __('Checkout') }}
-                <p class="inline font-medium text-black"> - {{format_activity_time($activity->time) }} </p>
+                <p class="inline font-medium text-black"> - {{ capitalize(format_activity_time($activity->time)) }} </p>
             </span>
         </div>
         <div>

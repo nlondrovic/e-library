@@ -29,14 +29,19 @@ function format_activity_time(string $time): string
 
     if($date->isCurrentWeek()) {
         return $date->dayName.' '.__('at').' '.$date->format('H:i');
-    } elseif($date->isLastWeek()){
+    }
+
+    if($date->isLastWeek()){
         if($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedelja") {
             return __('Last.a').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
         }
         return __('Last').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
-    } elseif(!$date->isCurrentYear()){
+    }
+
+    if(!$date->isCurrentYear()){
         return $date->translatedFormat('M jS Y - H:i');
     }
+
     return $date->format('M jS H:i');
 }
 
