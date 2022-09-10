@@ -18,7 +18,7 @@
                         {{ $activity->book->title }}
                     </a>
                 @endif
-                {{__('to')}}
+                {{__('to.l')}}
                 <a href="{{ route('librarians.show', $activity->librarian) }}" class="text-[#2196f3] hover:text-blue-600">
                     {{ $activity->librarian->name }}
                 </a><br>
