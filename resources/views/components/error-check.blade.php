@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <div class="w-[80%] ml-[50px]">
+    <div class="w-[600px] ml-[50px]">
         @foreach ($errors->all() as $error)
             <div class="flex items-center px-6 py-4 my-4 text-lg bg-red-200 rounded-lg">
                 <svg viewBox="0 0 24 24" class="w-5 h-5 mr-3 text-red-600 sm:w-5 sm:h-5">

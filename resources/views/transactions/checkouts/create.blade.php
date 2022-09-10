@@ -16,9 +16,9 @@
         </div>
     @endif
 
+    @include('components.error-check')
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
         <div class="">
-            @include('components.error-check')
             <form action="{{ route('checkouts.store', ['book_id' => $book->id]) }}" method="post">
                 @csrf
                 @method('post')
