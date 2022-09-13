@@ -169,11 +169,11 @@
                             </div>
                             {{-- Total book count --}}
                             <div class="mt-[20px]">
-                                <p>{{ __('Total number of books') }} <span class="text-red-500">*</span></p>
+                                <p>{{ __('Number of copies') }} <span class="text-red-500">*</span></p>
                                 <input required type="number" name="total_count" class="flex w-[90%] mt-2 px-2 py-2 text-base
                                             bg-white border border-gray-300 shadow-sm appearance-none focus:outline-none
                                             focus:ring-2 focus:ring-[#576cdf]" value="{{ $book->total_count }}"
-                                       placeholder="{{ __('Enter a number of book copies') }}"/>
+                                       placeholder="{{ __('Enter a number of copies') }}"/>
                                 @if($errors->first('total_count'))
                                     <p class="text-red-600">{{ $errors->first('total_count') }}</p>
                                 @endif
@@ -220,7 +220,7 @@
                         <div class="row-3">
                             {{-- Picture --}}
                             <div class="mt-[20px]">
-                                <p>{{ __('Add photo') }}</p>
+                                <p>{{ __('Add a photo') }}</p>
                                 <input type="file" name="picture" accept="image/*"
                                        onchange="loadFileBook(event)"/>
                                 <img id="image-output-book" width="360" class="mt-[20px]"

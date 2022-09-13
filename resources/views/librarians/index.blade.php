@@ -51,7 +51,7 @@
                        id="myTable">
                     <thead class="bg-[#EFF3F6]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
-                        <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Name') }}</th>
+                        <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Name and surname') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Email') }}</th>
                         <th class="px-4 py-4"></th>
                     </tr>

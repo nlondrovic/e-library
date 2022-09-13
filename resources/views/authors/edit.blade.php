@@ -27,7 +27,7 @@
                         @endif
                     </div>
                     <div class="mt-[20px]">
-                        <p class="inline-block mb-2">{{ __('About') }}</p>
+                        <p class="inline-block mb-2">{{ __('About author') }}</p>
                         <textarea name="about" rows="8" class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300
                         shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                                   placeholder="{{ __('Enter a short biography') }}">{{ $author->about }}</textarea>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="mt-[20px]">
-                    <p>{{ __('Add photo') }}</p>
+                    <p>{{ __('Add a photo') }}</p>
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" width="360" class="mt-[20px]" src="{{ asset($author->picture) }}"

@@ -20,9 +20,9 @@
             <div class="flex flex-col">
                 <div class="flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
-                        <h3>{{ __('Holding time') }}</h3>
+                        <h3>{{ __('Checkout time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __("This value defines the time in days, a book can be checked out before being checked in. After this deadline the book will be given a status of 'Overdue'.") }}
+                            {{ __('This value defines the time in days, a book can be checked out for a student. After this period the checkout will be overdue.') }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('Current value') }}: {{ $holding_time }} {{ __('day(s)') }}
@@ -40,7 +40,7 @@
                     <div>
                         <h3>{{ __('Reservation time') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __("This value defines the time in days, a book can be reserved for a student. After this deadline the reservation will be canceled.") }}
+                            {{ __('This value defines the time in days, a book can be reserved for a student. In this period a student can check out the book. After this period the reservation will be canceled.') }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('Current value') }}: {{ $reservation_time }} {{ __('day(s)') }}
@@ -60,7 +60,7 @@
                             {{ __('Books per student') }}
                         </h3>
                         <p class="pt-[15px] max-w-[400px]">
-                            {{ __("This value defines a limit of books that can be checked out or reserved for a student.") }}
+                            {{ __("This value defines a number of books that can be checked out or reserved for a student.") }}
                         </p>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('Current value') }}: {{ $books_per_student }} {{ __('book(s)') }}

@@ -22,7 +22,7 @@ class UpdateBindingRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => __('Name of the binding must be specified.')
+            'name.required' => __('Name is required.')
         ];
     }
 }

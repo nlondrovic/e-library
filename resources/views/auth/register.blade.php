@@ -14,7 +14,7 @@
 
             <!-- Name -->
             <div>
-                <x-auth.label for="name" :value="__('Name')" />
+                <x-auth.label for="name" :value="__('Name and surname')" />
 
                 <x-auth.input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
@@ -38,7 +38,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-auth.label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-auth.label for="password_confirmation" :value="__('Confirm password')" />
 
                 <x-auth.input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"

@@ -60,9 +60,9 @@ class StoreBookRequest extends FormRequest
             'script_id.exists' => __('Select an existing script.'),
             'size_id.required' => __('Size is required.'),
             'size_id.exists' => __('Select an existing size.'),
-            'total_count.required' => __('Total number of books is required.'),
-            'total_count.integer' => __('Total number of books must be an integer.'),
-            'total_count.min' => __('Total number of books must be greater than zero.')
+            'total_count.required' => __('Number of copies is required.'),
+            'total_count.integer' => __('Number of copies must be an integer.'),
+            'total_count.min' => __('Number of copies must be greater than zero.')
         ];
     }
 }

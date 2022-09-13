@@ -49,7 +49,7 @@
                 <p class="font-medium">{{ $author->name }}</p>
             </div>
             <div class="mt-[40px]">
-                <span class="text-gray-500">{{ __('About') }}</span>
+                <span class="text-gray-500">{{ __('About author') }}</span>
                 <p class="font-medium max-w-[550px]">
                     {{ $author->about }}
                 </p>

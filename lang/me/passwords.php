@@ -14,9 +14,9 @@ return [
     */
 
     'reset' => 'Vaša lozinka je resetovana!',
-    'sent' => 'Poslali smo link za resetovanje lozinke na Vašu e-mail!',
-    'throttled' => 'Sačekajte pre nego što pokušate ponovo.',
-    'token' => 'Ovaj token za resetovanje lozinke je nevažeći.',
-    'user' => "Ne možemo da pronađemo korisnika sa tom e-mail adresom.",
+    'sent' => 'Poslali smo link za resetovanje lozinke na Vašu e-mail adresu!',
+    'throttled' => 'Sačekajte prije nego što pokušate ponovo.',
+    'token' => 'Ovaj token je nevažeći.',
+    'user' => 'Ne možemo da pronađemo korisnika sa tom e-mail adresom.',
 
 ];

@@ -9,11 +9,10 @@
 
     <div class="flex flex-row pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
         <div class="mr-[30px] mt-[30px]">
-            @if(filtering())
-                <p class="mb-[20px]">
-                    {{ __('Results found') }}: {{ count($activities) }}
-                </p>
-            @endif
+            <p class="mb-[20px]">
+                {{ __('Results found') }}: {{ count($activities) }}
+            </p>
+
             <!-- Activity Cards -->
             @foreach($activities as $activity)
                 @if($activity->type == 'Checkout')
@@ -112,14 +111,14 @@
                 </div>
                 {{-- Start date --}}
                 <div class="mt-[20px]">
-                    <p>{{ __('Date - from') }}</p>
+                    <p>{{ __('Date (from)') }}</p>
                     <input type="date" name="start_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('start_date') }}"/>
                 </div>
                 {{-- End date --}}
                 <div class="mt-[20px]">
-                    <p>{{ __('Date - to') }}</p>
+                    <p>{{ __('Date (to)') }}</p>
                     <input type="date" name="end_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('end_date') }}"/>
@@ -132,7 +131,7 @@
                     </button>
                     @if(filtering())
                         <a href="{{ route(Route::currentRouteName()) }}"
-                           class="mt-[20px] ml-[30px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
+                           class="ml-[30px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                                     ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
                             <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset') }}
                         </a>

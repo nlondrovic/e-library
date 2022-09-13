@@ -1,11 +1,11 @@
 <h2 class="mt-[20px] ml-[30px]">{{ __('Book copies') }}</h2>
 <div class="mx-[30px] mt-[20px] flex flex-row">
     <div class="text-gray-500 mr-[30px]">
-        <p>{{ __('Books available') }}:</p>
+        <p>{{ __('Available') }}:</p>
         <p class="mt-[20px]">{{ __('Reserved') }}:</p>
         <p class="mt-[20px]">{{ __('Checked out') }}:</p>
         <p class="mt-[20px]">{{ __('Overdue') }}:</p>
-        <p class="mt-[20px]">{{ __('Total number') }}:</p>
+        <p class="mt-[20px]">{{ __('Total copies') }}:</p>
     </div>
     <div class="text-center pb-[30px]">
         <p class="bg-green-200 text-green-700 rounded-[10px] px-[6px] py-[2px] text-[14px]">

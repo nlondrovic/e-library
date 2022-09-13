@@ -18,7 +18,7 @@
             <div class="flex flex-row ml-[50px]">
                 <div class="w-[50%] mb-[100px]">
                     <div class="mt-[20px]">
-                        <span>{{ __('Name') }} <span class="text-red-500">*</span></span>
+                        <span>{{ __('Name and surname') }} <span class="text-red-500">*</span></span>
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="mt-[20px]">
-                    <p class="py-2 mt-2 leading-normal">{{ __('Add photo') }}</p>
+                    <p class="py-2 mt-2 leading-normal">{{ __('Add a photo') }}</p>
                     <input type="file" name="picture" accept="image/*"
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" width="360" class="mt-[20px]"

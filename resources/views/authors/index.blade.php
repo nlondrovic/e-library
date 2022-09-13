@@ -53,7 +53,7 @@
                     <thead class="bg-[#EFF3F6]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
                         <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Name') }}<a href="#"></a></th>
-                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('About') }}</th>
+                        <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('About author') }}</th>
                         <th class="px-4 py-4"></th>
                     </tr>
                     </thead>
@@ -81,7 +81,7 @@
                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                    outline-none hover:text-blue-600">
                                                     <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
-                                                    <span class="px-4 py-0">{{ __('View more') }}</span>
+                                                    <span class="px-4 py-0">{{ __('Show details') }}</span>
                                                 </a>
 
                                                 <a href="{{ route('authors.edit', $author) }}" tabindex="0"

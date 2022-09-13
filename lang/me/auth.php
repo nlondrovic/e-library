@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'failed' => 'Navedene vrijednosti se ne poklapaju sa našom evidencijom.',
-    'password' => 'Navedena lozinka je netačna.',
+    'failed' => 'Ovi podaci ne postoje u našoj bazi podataka.',
+    'password' => 'Lozinka je netačna.',
     'throttle' => 'Previše pokušaja prijave. Pokušajte ponovo za :seconds sekundi.',
 
 ];
