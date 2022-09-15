@@ -40,7 +40,7 @@
                 {{-- Type --}}
                 <div>
                     <p>{{ __('Activity type') }}</p>
-                    <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[300px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="type">
                         <option value="">None</option>
@@ -61,7 +61,7 @@
                 {{-- Book --}}
                 <div class="mt-[20px]">
                     <p>{{ __('Book') }}</p>
-                    <select class="search-select flex flex-col w-[90%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[300px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="book_id">
                         <option value="">None</option>
@@ -80,7 +80,7 @@
                 {{-- Student --}}
                 <div class="mt-[20px]">
                     <p>{{ __('Student') }}</p>
-                    <select class="search-select flex flex-col w-[100%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[300px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="student_id">
                         <option value="">None</option>
@@ -96,7 +96,7 @@
                 {{-- Librarian --}}
                 <div class="mt-[20px]">
                     <p>{{ __('Librarian') }}</p>
-                    <select class="search-select flex flex-col w-[100%] flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                    <select class="search-select flex flex-col w-[300px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                             shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf]"
                             name="librarian_id">
                         <option value="">None</option>
@@ -112,14 +112,14 @@
                 {{-- Start date --}}
                 <div class="mt-[20px]">
                     <p>{{ __('Date (from)') }}</p>
-                    <input type="date" name="start_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
+                    <input type="date" name="start_date" class="flex w-[300px] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('start_date') }}"/>
                 </div>
                 {{-- End date --}}
                 <div class="mt-[20px]">
                     <p>{{ __('Date (to)') }}</p>
-                    <input type="date" name="end_date" class="flex w-[100%] mt-2 px-2 py-2 text-base bg-white border
+                    <input type="date" name="end_date" class="flex w-[300px] mt-2 px-2 py-2 text-base bg-white border
                         border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('end_date') }}"/>
                 </div>
