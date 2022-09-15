@@ -186,7 +186,7 @@ class CheckoutController extends Controller
 
         DB::transaction(function () use ($book, $request) {
             $inputs = $request->validated();
-            $inputs['start_time'] = Carbon::parse(now());
+            $inputs['start_time'] = now();
             $inputs['checkout_librarian_id'] = auth()->id();
             $checkout = Checkout::create($inputs);
 
@@ -196,7 +196,7 @@ class CheckoutController extends Controller
                 'book_id' => $inputs['book_id'],
                 'student_id' => $inputs['student_id'],
                 'librarian_id' => $inputs['checkout_librarian_id'],
-                'time' => Carbon::now()->format('Y-m-d H:i'),
+                'time' => now(),
                 'type' => 'Checkout',
                 'activity_id' => $checkout['id']
             ]);
@@ -209,7 +209,7 @@ class CheckoutController extends Controller
     {
         DB::transaction(function () use ($checkout) {
             $checkout->update([
-                'end_time' => Carbon::parse(now()),
+                'end_time' => now(),
                 'checkin_librarian_id' => auth()->id(),
                 'checkout_end_reason_id' => 1
             ]);
@@ -221,7 +221,7 @@ class CheckoutController extends Controller
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkin_librarian_id'],
-                'time' => Carbon::now()->format('Y-m-d H:i'),
+                'time' => now(),
                 'type' => 'Checkin',
                 'activity_id' => $checkout['id']
             ]);
@@ -237,7 +237,7 @@ class CheckoutController extends Controller
 
         DB::transaction(function () use ($checkout) {
             $checkout->update([
-                'end_time' => Carbon::parse(now()),
+                'end_time' => now(),
                 'checkin_librarian_id' => auth()->id(),
                 'checkout_end_reason_id' => 2
             ]);
@@ -252,7 +252,7 @@ class CheckoutController extends Controller
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkin_librarian_id'],
-                'time' => Carbon::now()->format('Y-m-d H:i'),
+                'time' => now(),
                 'type' => 'Lost Book',
                 'activity_id' => $checkout['id']
             ]);

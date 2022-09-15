@@ -53,12 +53,12 @@
                                 <span class="text-gray-500 text-[14px]">{{__('Reservation end date')}}</span>
                                 <p class="font-medium">{{ format_date($reservation->end_time) }}</p>
                             </div>
-                            <div class="mt-[40px] mb-[20px]">
+                            <div class="mt-[40px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Reservation end reason')}}</span>
                                 <p class="font-medium">{{ __($reservation->end_reason->value) }}</p>
                             </div>
                         @else
-                            <div class="mt-[40px] mb-[20px]">
+                            <div class="mt-[20px]">
                                 <span class="text-gray-500 text-[14px]">{{__('Reservation due')}}</span>
                                 <p class="font-medium">{{ format_date($reservation->supposed_end_time) }}</p>
                             </div>

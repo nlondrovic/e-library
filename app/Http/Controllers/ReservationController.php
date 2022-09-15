@@ -124,7 +124,7 @@ class ReservationController extends Controller
                 'book_id' => $reservation['book_id'],
                 'student_id' => $reservation['student_id'],
                 'librarian_id' => $reservation['librarian_id'],
-                'time' => Carbon::now()->format('Y-m-d H:i'),
+                'time' => now(),
                 'type' => 'Reservation',
                 'activity_id' => $reservation['id']
             ]);
@@ -140,13 +140,13 @@ class ReservationController extends Controller
                 'book_id' => $reservation['book_id'],
                 'checkout_librarian_id' => auth()->id(),
                 'student_id' => $reservation['student_id'],
-                'start_time' => Carbon::parse(now())
+                'start_time' => now()
             ];
             $checkout = Checkout::create($inputs);
 
             $reservation->update([
                 'reservation_end_reason_id' => 3,
-                'end_time' => Carbon::parse(now())
+                'end_time' => now()
             ]);
 
             $book = Book::findOrFail($reservation['book_id']);
@@ -159,7 +159,7 @@ class ReservationController extends Controller
                 'book_id' => $checkout['book_id'],
                 'student_id' => $checkout['student_id'],
                 'librarian_id' => $checkout['checkout_librarian_id'],
-                'time' => Carbon::parse(now()),
+                'time' => now(),
                 'type' => 'Reservation',
                 'activity_id' => $checkout['id']
             ]);
@@ -173,7 +173,7 @@ class ReservationController extends Controller
         DB::transaction(function () use ($reservation) {
             $reservation->update([
                 'reservation_end_reason_id' => 2,
-                'end_time' => Carbon::parse(now())
+                'end_time' => now()
             ]);
 
             $book = Book::findOrFail($reservation['book_id']);
