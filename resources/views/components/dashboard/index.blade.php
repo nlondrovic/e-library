@@ -39,7 +39,23 @@
             </div>
 
             <!-- Right side -->
-            <div class="mr-[50px] ">
+            <div class="mr-[50px]">
+                <h3 class="uppercase mb-[20px] text-left">
+                    {{ __('Reservation requests') }}
+                </h3>
+
+                @if(count($reservationRequests))
+                    @include('components.dashboard.reservation-requests-table')
+                    <div class="text-right mt-[5px]">
+                        <a href="{{ route('reservationRequests.index') }}" class="text-[#2196f3] hover:text-blue-600">
+                            <i class="fas fa-calendar-alt mr-[4px]" aria-hidden="true"></i>
+                            {{ __('Show all') }}
+                        </a>
+                    </div>
+                @else
+                    @include('components.no-results-reservation-requests')
+                @endif
+
                 @include('components.dashboard.book-chart')
             </div>
         </div>

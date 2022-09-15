@@ -19,7 +19,8 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                 <a href="{{ route('dashboard') }}" aria-label="Dashboard">
                                         <i class="text-[22px] pt-[4px] pr-1 pb-[5px] fa-solid fa-chart-line rounded-[3px] text-[#707070]
                                         transition duration-300 ease-in group-hover:text-blue-600
-                                         @if(str_contains($route_name, 'dashboard')) text-[#576cdf] @endif"></i>
+                                         @if(str_contains($route_name, 'dashboard')
+                                            || str_contains($route_name, 'reservationRequests')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
                                              {{ __('Dashboard') }}

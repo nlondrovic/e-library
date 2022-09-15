@@ -12,6 +12,7 @@ use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReservationRequestController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ScriptController;
@@ -35,6 +36,10 @@ Route::get('/', function () {
 });
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
+
+Route::get('/reservationRequests', [ReservationRequestController::class, 'index'])->name('reservationRequests.index');
+Route::post('/reservationRequests/approve/{reservationRequest}', [ReservationRequestController::class, 'approve'])->name('reservationRequests.approve');
+Route::post('/reservationRequests/decline/{reservationRequest}', [ReservationRequestController::class, 'decline'])->name('reservationRequests.decline');
 
 Route::middleware(['auth'])->group(function () {
 
