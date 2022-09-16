@@ -11,7 +11,7 @@
         <div class="flex flex-row justify-between">
             <!-- Left side -->
             <div class="mr-[30px]">
-                <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">{{ __('Recent activities') }}</h3>
+                <h3 class="ml-[20px] mb-[20px] text-center pr-[30px]">{{ __('Recent activities') }}</h3>
                 <!-- Activity Cards -->
                 <div class="ml-[20px] border-[1px] px-3 py-2 rounded-[5px] shadow-lg">
                     <div class="overflow-y-auto scroll h-[630px] w-[560px]">
@@ -40,7 +40,7 @@
 
             <!-- Right side -->
             <div class="mr-[50px]">
-                <h3 class="uppercase mb-[20px] text-left">
+                <h3 class="mb-[20px] text-center">
                     {{ __('Reservation requests') }}
                 </h3>
 
