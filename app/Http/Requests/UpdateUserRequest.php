@@ -24,6 +24,10 @@ class UpdateUserRequest extends FormRequest
             $emailRule .= ",email,{$this->librarian->id}";
         }
 
+        if ($this->admin) {
+            $emailRule .= ",email,{$this->admin->id}";
+        }
+
         return [
             'name' => 'required|string',
             'jmbg' => 'required|regex:/[0-9]+/|digits:13',
