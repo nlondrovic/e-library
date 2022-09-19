@@ -11,7 +11,7 @@
         <div class="flex flex-row justify-between">
             <!-- Left side -->
             <div class="mr-[30px]">
-                <h3 class="capitalize ml-[20px] mb-[20px] text-center pr-[30px]">{{ __('Recent activities') }}</h3>
+                <h3 class="ml-[20px] mb-[20px] text-center pr-[30px]">{{ __('Recent activities') }}</h3>
                 <!-- Activity Cards -->
                 <div class="ml-[20px] border-[1px] px-3 py-2 rounded-[5px] shadow-lg">
                     <div class="overflow-y-auto scroll h-[630px] w-[560px]">
@@ -39,7 +39,23 @@
             </div>
 
             <!-- Right side -->
-            <div class="mr-[50px] ">
+            <div class="mr-[50px]">
+                <h3 class="mb-[20px] text-center">
+                    {{ __('Reservation requests') }}
+                </h3>
+
+                @if(count($reservationRequests))
+                    @include('components.dashboard.reservation-requests-table')
+                    <div class="text-right mt-[5px]">
+                        <a href="{{ route('reservationRequests.index') }}" class="text-[#2196f3] hover:text-blue-600">
+                            <i class="fas fa-calendar-alt mr-[4px]" aria-hidden="true"></i>
+                            {{ __('Show all') }}
+                        </a>
+                    </div>
+                @else
+                    @include('components.no-results-reservation-requests')
+                @endif
+
                 @include('components.dashboard.book-chart')
             </div>
         </div>
