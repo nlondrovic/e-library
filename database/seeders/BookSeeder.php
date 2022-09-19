@@ -30,7 +30,7 @@ class BookSeeder extends Seeder
                 'reserved_count' => 1
             ],
             [
-                'title' => 'Hari Poter i Dvorana tajni',
+                'title' => 'Harri Poter i Dvorana tajni',
                 'isbn' => '074-53849-123',
                 'content' => 'Hari Poter i Dvorana tajni je knjiga Dž. K. Rouling. Drugi je dio serijala Hari Poter od sedam knjiga. Roman je objavljen 2. jula 1998. u Ujedinjenom Kraljevstvu. Po knjizi je 2002. godine snimljen istoimeni film. Harija Potera na rođendan posjeti kućni vilenjak Dobi. On ga upozorava da ove godine ne ide u Hogvorts, pošto će se strašne stvari dogoditi. Hari provodi prijatno ostatak raspusta u Ronovoj kući. Na dan polaska u školu, magična barijera koja razdvaja peron 9 i tri četvrtine od svijeta Normalaca odbija da ih propusti. Hari kasnije saznaje da je Dobi začarao pregradu da bi ga spriječio da ode na Hogvorts. ',
                 'author_id' => 17,

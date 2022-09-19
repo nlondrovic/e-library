@@ -25,7 +25,8 @@
         model = routeName.substring(0, routeName.length - 1);
 
         // if not on page where search bar exists
-        if (!$('.search-input-js')) {
+        if (model !== "author" && model !== "librarian" && model !== "student" && model !== "book" && model !== "admin"
+            || routeMethod !== "index") {
             return;
         }
 

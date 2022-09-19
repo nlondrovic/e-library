@@ -26,8 +26,7 @@ class DatabaseSeeder extends Seeder
             BookSeeder::class,
             UserSeeder::class,
             CheckoutSeeder::class,
-            ReservationSeeder::class,
-            ReservationRequestSeeder::class,
+            ReservationSeeder::class
         ]);
     }
 }

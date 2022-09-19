@@ -6,7 +6,6 @@ use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\Reservation;
-use App\Models\ReservationRequest;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -20,11 +19,8 @@ class HomeController extends Controller
             ->where('end_time', null)->get());
         $activities = Activity::orderBy('id', 'desc')->take(15)->get();
 
-        $reservationRequests = ReservationRequest::where('status', 'pending')->take(5)->get();
-
         return view('components.dashboard.index',
-            compact('checkouts_count', 'reserved_count', 'overdue_count',
-                'activities', 'reservationRequests')
+            compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities')
         );
     }
 

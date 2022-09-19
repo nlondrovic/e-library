@@ -29,7 +29,7 @@
                 <div class="wrapper">
                     <div class="search-input">
                         <a href="" hidden></a>
-                        <input type="search" class="search-input-js" name="search" placeholder="{{ __('Search librarians') }}"
+                        <input type="search" name="search" placeholder="{{ __('Search librarians') }}"
                                value="{{ request()->get('search') }}" autocomplete="off">
                         <div class="autocom-box"></div>
                         <div class="search-icon"><i class="fas fa-search"></i></div>
