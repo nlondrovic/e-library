@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('New reservation'))
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
@@ -8,13 +9,6 @@
         <a href="{{ route('books.show', $book) }}">{{ $book->title }}</a> >
         <a href="{{ route('reservations.create', $book) }}">{{ __('Reserve') }}</a>
     </div>
-
-    @if(session()->has('flash-reservation-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>Success!
-            <p class="text-left"> {{ session()->get('flash-reservation-store-success') }} </p>
-        </div>
-    @endif
 
     @include('components.error-check')
     <div class="flex flex-row overflow-auto height-osnovniDetalji">
