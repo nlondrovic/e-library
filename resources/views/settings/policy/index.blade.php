@@ -1,17 +1,11 @@
 @extends('settings.index')
+@section('title', __('Policy'))
 @section('settings-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Policy') }}</a>
 @endsection
 @section('main-settings')
-
-    @if(session()->has('flash-policy-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-librarian-store-success') }} </p>
-        </div>
-    @endif
 
     <form method="post" action="{{ route('policy.update') }}">
         @csrf

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show all students'))
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
@@ -6,18 +7,6 @@
         <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
         <a href="{{ route('students.index') }}">{{ __('Students') }}</a>
     </div>
-
-    @if(session()->has('flash-student-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-student-store-success') }} </p>
-        </div>
-    @elseif(session()->has('flash-student-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-student-update-success') }} </p>
-        </div>
-    @endif
 
     <div class="scroll height-dashboard">
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">

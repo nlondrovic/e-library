@@ -1,22 +1,11 @@
 @extends('settings.index')
+@section('title', __('Show all publishers'))
 @section('settings-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
     <a href="{{ route('publishers.index') }}">{{ __('Publishers') }}</a>
 @endsection
 @section('main-settings')
-
-    @if(session()->has('flash-publisher-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-publisher-store-success') }} </p>
-        </div>
-    @elseif(session()->has('flash-publisher-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-publisher-update-success') }} </p>
-        </div>
-    @endif
 
     <div class="height-kategorije pb-[30px]">
         <div class="flex items-center py-[10px] space-x-3 rounded-lg">

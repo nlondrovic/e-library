@@ -1,22 +1,11 @@
 @extends('settings.index')
+@section('title', __('Show all genres'))
 @section('settings-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
     <a href="{{ route('genres.index') }}">{{ __('Genres') }}</a>
 @endsection
 @section('main-settings')
-
-    @if(session()->has('flash-genres-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-genres-store-success') }} </p>
-        </div>
-    @elseif(session()->has('flash-genre-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-genre-update-success') }} </p>
-        </div>
-    @endif
 
     <div class="height-kategorije pb-[30px]">
         <div class="flex items-center py-[10px] space-x-3 rounded-lg">

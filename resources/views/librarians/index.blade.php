@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show all librarians'))
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
@@ -6,18 +7,6 @@
         <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
         <a href="{{ route('librarians.index') }}">{{ __('Librarians') }}</a>
     </div>
-
-    @if(session()->has('flash-librarian-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-librarian-store-success') }} </p>
-        </div>
-    @elseif(session()->has('flash-librarian-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-librarian-update-success') }} </p>
-        </div>
-    @endif
 
     <div class="scroll height-dashboard">
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">

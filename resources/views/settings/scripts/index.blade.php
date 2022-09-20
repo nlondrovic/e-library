@@ -1,22 +1,11 @@
 @extends('settings.index')
+@section('title', __('Show all scripts'))
 @section('settings-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >
     <a href="{{ route('scripts.index') }}">{{ __('Scripts') }}</a>
 @endsection
 @section('main-settings')
-
-    @if(session()->has('flash-script-store-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-script-store-success') }} </p>
-        </div>
-    @elseif(session()->has('flash-script-update-success'))
-        <div class="flash_message success">
-            <i class="fa-solid fa-check text-[17px] mr-[8px] justify-center"></i>{{ __('Success!') }}
-            <p class="text-left"> {{ session()->get('flash-script-update-success') }} </p>
-        </div>
-    @endif
 
     <div class="height-kategorije pb-[30px]">
         <div class="flex items-center py-[10px] space-x-3 rounded-lg">
