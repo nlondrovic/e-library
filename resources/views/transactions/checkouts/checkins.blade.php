@@ -1,4 +1,5 @@
 @extends('transactions.index')
+@section('title', __('Checkins'))
 @section('transactions-title', __('Checkins'))
 @section('transactions-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
