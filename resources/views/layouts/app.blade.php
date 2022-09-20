@@ -14,7 +14,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title>{{ __('Library - ICT Cortex student project') }}</title>
+    <title> @yield('title') - {{ config('app.name') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/library-favicon.ico') }}" type="image/vnd.microsoft.icon"/>
     <!-- End Title -->
 
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
-{{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
+    {{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <!-- End Styles -->
 </head>
 
@@ -36,8 +36,13 @@
 <!-- Main content -->
 <main class="flex flex-row small:hidden">
     <!-- Sidebar -->
-@include('components.dashboard.sidebar')
-<!-- End Sidebar -->
+    @include('components.dashboard.sidebar')
+    <!-- End Sidebar -->
+
+    <!-- Checks if session has flash message -->
+    @if(session()->has('flash-success'))
+        @include('components.flash-success')
+    @endif
 
     <!-- Content -->
     <section class="w-screen h-screen py-4 pl-[60px] text-[#212121]">
