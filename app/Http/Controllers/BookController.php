@@ -65,7 +65,7 @@ class BookController extends Controller
         }
 
         Book::create($inputs);
-        return redirect()->route('books.index')->with('flash-book-store-success', __('Book created successfully!'));
+        return redirect()->route('books.index')->with('flash-success', __('Book created successfully!'));
     }
 
     public function show(Book $book)
@@ -102,12 +102,12 @@ class BookController extends Controller
         }
 
         $book->update($inputs);
-        return redirect()->route('books.show', compact('book'))->with('flash-book-update-success', __('Book updated successfully!'));
+        return redirect()->route('books.show', compact('book'))->with('flash-success', __('Book updated successfully!'));
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index');
+        return redirect()->route('books.index')->with('flash-success', __('Book deleted successfully!'));
     }
 }

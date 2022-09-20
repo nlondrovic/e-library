@@ -22,7 +22,7 @@ class ScriptController extends Controller
     public function store(StoreScriptRequest $request)
     {
         Script::create($request->validated());
-        return redirect()->route('scripts.index')->with('flash-script-store-success', __('Script created successfully!'));
+        return redirect()->route('scripts.index')->with('flash-success', __('Script created successfully!'));
     }
 
     public function edit(Script $script)
@@ -33,12 +33,12 @@ class ScriptController extends Controller
     public function update(UpdateScriptRequest $request, Script $script)
     {
         $script->update($request->validated());
-        return redirect()->route('scripts.index')->with('flash-script-update-success', __('Script updated successfully!'));
+        return redirect()->route('scripts.index')->with('flash-success', __('Script updated successfully!'));
     }
 
     public function destroy(Script $script)
     {
         $script->delete();
-        return redirect()->route('scripts.index');
+        return redirect()->route('scripts.index')->with('flash-success', __('Script deleted successfully!'));
     }
 }

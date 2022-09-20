@@ -52,7 +52,7 @@ class UserController extends Controller
         }
 
         User::create($inputs);
-        return redirect()->route('students.index')->with('flash-student-store-success', __('Student created successfully!'));
+        return redirect()->route('students.index')->with('flash-success', __('Student created successfully!'));
     }
 
     public function show(User $student)
@@ -89,7 +89,7 @@ class UserController extends Controller
         }
 
         $student->update($inputs);
-        return redirect()->route("students.show", compact('student'))->with('flash-student-update-success', __('Student updated successfully!'));
+        return redirect()->route("students.show", compact('student'))->with('flash-success', __('Student updated successfully!'));
     }
 
     public function destroy(User $student)
@@ -99,6 +99,6 @@ class UserController extends Controller
         }
 
         $student->delete();
-        return redirect()->route("students.index");
+        return redirect()->route("students.index")->with('flash-success', __('Student deleted successfully!'));
     }
 }

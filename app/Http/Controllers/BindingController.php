@@ -24,7 +24,7 @@ class BindingController extends Controller
         $inputs = $request->validated();
         Binding::create($inputs);
 
-        return redirect()->route('bindings.index')->with('flash-binding-store-success', __('Binding created successfully!'));
+        return redirect()->route('bindings.index')->with('flash-success', __('Binding created successfully!'));
     }
 
     public function edit(Binding $binding)
@@ -36,12 +36,12 @@ class BindingController extends Controller
     {
         $inputs = $request->validated();
         $binding->update($inputs);
-        return redirect()->route('bindings.index')->with('flash-binding-update-success', __('Binding updated successfully!'));
+        return redirect()->route('bindings.index')->with('flash-success', __('Binding updated successfully!'));
     }
 
     public function destroy(Binding $binding)
     {
         $binding->delete();
-        return redirect()->route('bindings.index');
+        return redirect()->route('bindings.index')->with('flash-success', __('Binding deleted successfully!'));
     }
 }
