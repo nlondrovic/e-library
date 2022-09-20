@@ -2815,6 +2815,7 @@ h4 {
     display: block;
     margin-left: 35%;
     text-align: center;
+    box-shadow: 3px 6px #eeeeee;
 
     animation: slide-up 1.25s forwards;
     animation-delay: 2.25s;
@@ -2828,7 +2829,7 @@ h4 {
 
 .success {
     color: #fff;
-    background: #54C64A;
+    background: #22bf22;
 }
 .error {
     color: #fff;
