@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Dashboard'))
 @section('main')
 
     <div class="mt-2">

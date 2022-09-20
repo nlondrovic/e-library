@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show checkout').' - '.$checkout->id)
 @section('main')
 
     <div class="heading">

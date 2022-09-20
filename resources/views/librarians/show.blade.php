@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show librarian').' - '.$librarian->name)
 @section('main')
 
     <div class="heading">

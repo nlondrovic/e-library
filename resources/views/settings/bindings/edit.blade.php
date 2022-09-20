@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Edit binding').' - '.$binding->name)
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">

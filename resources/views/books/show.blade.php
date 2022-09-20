@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show book').' - '.$book->title)
 @section('main')
 
     <div class="heading">

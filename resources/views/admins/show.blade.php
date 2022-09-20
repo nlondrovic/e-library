@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', __('Show admin').' - '.$admin->name)
 @section('main')
 
     <div class="heading">
