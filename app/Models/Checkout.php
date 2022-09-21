@@ -88,4 +88,16 @@ class Checkout extends Model
     {
         return Carbon::parse(strtotime($this->getSupposedEndTime()))->diffInDays($time);
     }
+    public function isCheckout()
+    {
+        return $this->checkout_end_reason_id==null;
+    }
+    public function isCheckin()
+    {
+        return $this->checkout_end_reason_id==1;
+    }
+    public function isLost()
+    {
+        return $this->checkout_end_reason_id==2;
+    }
 }
