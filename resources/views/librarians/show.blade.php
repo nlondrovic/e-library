@@ -10,23 +10,21 @@
                 <a href="{{ route('librarians.index') }}">{{ __('Librarians') }}</a> >
                 <a href="{{ route('librarians.show', $librarian) }}">{{ $librarian->name }}</a>
             </div>
+
             <div class="pt-[24px] mr-[30px]">
-                <a href="{{ route('checkouts.index', ['librarian_id' => $librarian]) }}"
-                   class="inline hover:text-blue-600 ml-[4px] pr-1">
-                    <i class="fas fa-exchange-alt mr-[3px]"></i>
-                    <span class="px-0 py-0"> {{ __('Transactions') }} </span>
-                </a>
                 <a href="{{ route('librarians.edit', $librarian) }}" tabindex="0"
-                   class="inline hover:text-blue-600 ml-[4px] pr-1">
-                    <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                    <span class="px-0 py-0">{{ __('Edit librarian') }}</span>
+                   class="inline hover:text-blue-600 mr-[14px]">
+                    <i class="fas fa-edit mr-[5px]"></i>
+                    <span> {{ __('Edit librarian') }} </span>
                 </a>
-                <form action="{{ route('librarians.destroy', $librarian) }}" method="post" class="inline hover:text-blue-600 ml-[4px] pr-1">
+                <form action="{{ route('librarians.destroy', $librarian) }}" method="post"
+                      class="inline hover:text-blue-600">
                     @csrf
                     @method('delete')
-                    <p tabindex="0" class="inline hover:text-blue-600">
-                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                        <button type="submit" class="py-0">{{ __('Delete librarian') }}</button>
+                    <p tabindex="0" class="inline w-full text-sm leading-5 text-left
+                                text-gray-700 outline-none hover:text-blue-600">
+                        <i class="fa fa-trash mr-[5px]"></i>
+                        <button type="submit"> {{__('Delete librarian')}} </button>
                     </p>
                 </form>
             </div>

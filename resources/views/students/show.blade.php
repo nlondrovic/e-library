@@ -13,21 +13,23 @@
 
             <div class="pt-[24px] mr-[30px]">
                 <a href="{{ route('checkouts.index', ['student_id' => $student]) }}"
-                   class="inline hover:text-blue-600 ml-[4px] pr-1">
-                    <i class="fas fa-exchange-alt mr-[3px]"></i>
-                    <span class="px-0 py-0"> {{ __('Transactions') }} </span>
+                   class="inline hover:text-blue-600 mr-[14px]">
+                    <i class="fas fa-exchange-alt mr-[5px]"></i>
+                    <span> {{ __('Transactions') }} </span>
                 </a>
                 <a href="{{ route('students.edit', $student) }}" tabindex="0"
-                   class="inline hover:text-blue-600 ml-[4px] pr-1">
-                    <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                    <span class="px-0 py-0">{{ __('Edit student') }}</span>
+                   class="inline hover:text-blue-600 mr-[14px]">
+                    <i class="fas fa-edit mr-[5px]"></i>
+                    <span> {{ __('Edit student') }} </span>
                 </a>
-                <form action="{{ route('students.destroy', $student) }}" method="post" class="inline hover:text-blue-600 ml-[4px] pr-1">
+                <form action="{{ route('students.destroy', $student) }}" method="post"
+                      class="inline hover:text-blue-600">
                     @csrf
                     @method('delete')
-                    <p tabindex="0" class="inline hover:text-blue-600">
-                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                        <button type="submit" class="py-0">{{ __('Delete student') }}</button>
+                    <p tabindex="0" class="inline w-full text-sm leading-5 text-left
+                                text-gray-700 outline-none hover:text-blue-600">
+                        <i class="fa fa-trash mr-[5px]"></i>
+                        <button type="submit"> {{__('Delete student')}} </button>
                     </p>
                 </form>
             </div>
