@@ -10,34 +10,25 @@
                 <a href="{{ route('librarians.index') }}">{{ __('Librarians') }}</a> >
                 <a href="{{ route('librarians.show', $librarian) }}">{{ $librarian->name }}</a>
             </div>
-
             <div class="pt-[24px] mr-[30px]">
-                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
-                            dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
-                    <i class="fas fa-ellipsis-v"></i>
-                </p>
-                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
-                            -translate-y-2 dropdown-knjiga-osnovni-detalji">
-                    <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
-                                divide-y divide-gray-100 rounded-md shadow-lg outline-none">
-                        <div class="py-1">
-                            <a href="{{ route('librarians.edit', $librarian) }}" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">{{ __('Edit librarian') }}</span>
-                            </a>
-                            <form action="{{ route('librarians.destroy', $librarian) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
-                                            text-gray-700 outline-none hover:text-blue-600">
-                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <button type="submit" class="px-4 py-0">{{ __('Delete librarian') }}</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <a href="{{ route('checkouts.index', ['librarian_id' => $librarian]) }}"
+                   class="inline hover:text-blue-600 ml-[4px] pr-1">
+                    <i class="fas fa-exchange-alt mr-[3px]"></i>
+                    <span class="px-0 py-0"> {{ __('Transactions') }} </span>
+                </a>
+                <a href="{{ route('librarians.edit', $librarian) }}" tabindex="0"
+                   class="inline hover:text-blue-600 ml-[4px] pr-1">
+                    <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
+                    <span class="px-0 py-0">{{ __('Edit librarian') }}</span>
+                </a>
+                <form action="{{ route('librarians.destroy', $librarian) }}" method="post" class="inline hover:text-blue-600 ml-[4px] pr-1">
+                    @csrf
+                    @method('delete')
+                    <p tabindex="0" class="inline hover:text-blue-600">
+                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                        <button type="submit" class="py-0">{{ __('Delete librarian') }}</button>
+                    </p>
+                </form>
             </div>
         </div>
     </div>

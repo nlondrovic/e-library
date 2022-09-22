@@ -11,37 +11,25 @@
                 <a href="{{ route('students.show', $student) }}">{{ $student->name }}</a>
             </div>
 
-            <div class="flex flex-row pt-[24px] mr-[30px]">
+            <div class="pt-[24px] mr-[30px]">
                 <a href="{{ route('checkouts.index', ['student_id' => $student]) }}"
-                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                   class="inline hover:text-blue-600 ml-[4px] pr-1">
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
-                    {{ __('Transactions') }}
+                    <span class="px-0 py-0"> {{ __('Transactions') }} </span>
                 </a>
-                <p class="inline cursor-pointer text-[25px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
-                    <i class="fas fa-ellipsis-v"></i>
-                </p>
-                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
-                    -translate-y-2 dropdown-knjiga-osnovni-detalji">
-                    <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200 divide-y
-                        divide-gray-100 rounded-md shadow-lg outline-none">
-                        <div class="py-1">
-                            <a href="{{ route('students.edit', $student) }}" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                <span class="px-4 py-0">{{ __('Edit student') }}</span>
-                            </a>
-                            <form action="{{ route('students.destroy', $student) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
-                                            text-gray-700 outline-none hover:text-blue-600">
-                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <button type="submit" class="px-4 py-0">{{ __('Delete student') }}</button>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                <a href="{{ route('students.edit', $student) }}" tabindex="0"
+                   class="inline hover:text-blue-600 ml-[4px] pr-1">
+                    <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
+                    <span class="px-0 py-0">{{ __('Edit student') }}</span>
+                </a>
+                <form action="{{ route('students.destroy', $student) }}" method="post" class="inline hover:text-blue-600 ml-[4px] pr-1">
+                    @csrf
+                    @method('delete')
+                    <p tabindex="0" class="inline hover:text-blue-600">
+                        <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
+                        <button type="submit" class="py-0">{{ __('Delete student') }}</button>
+                    </p>
+                </form>
             </div>
         </div>
     </div>
