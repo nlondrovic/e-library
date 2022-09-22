@@ -2768,6 +2768,9 @@ h4 {
     /*top: 0;*/
     /*left: -210%;*/
 }
+.w-\[200px\]{
+    width: 200px;
+}
 .w-\[400px\]{
     width: 400px;
 }
@@ -2840,3 +2843,5 @@ h4 {
     from {transition: translateY(0);opacity: 1}
     to {transition: translateY(-150px);opacity: 0;top:0px;}
 }
+
+

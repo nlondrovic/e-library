@@ -2,10 +2,10 @@
     bg-[#4558BE]">
     <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
         <div class="block">
-            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
+{{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
                 <div class="flex items-center">
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
-                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">
+{{--                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">--}}
                     </div>
                 </div>
             </a>
@@ -14,7 +14,7 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="flex items-center">
-                <a class="inline-block border-gray-300 mr-[10px] px-3" href="#" aria-label="Add something"
+                <a class="inline-block border-gray-300 px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">
                         <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
                             px-[11px] py-[7px]">
@@ -58,7 +58,7 @@
                 </div>
 
                 <!-- User Profile Icon -->
-                <div class="ml-[10px] relative block">
+                <div class="ml-[10px] mr-[10px] relative block">
                     <a href="#" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
                        aria-label="User profile">
                         <div class="flex items-center h-5">
@@ -81,7 +81,6 @@
                                 <span class="px-4 py-0">{{ __('My profile') }}</span>
                             </a>
 
-
                             <a href="#" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-sign-out-alt mr-[5px] ml-[5px] py-1"></i>
@@ -95,18 +94,19 @@
                     </div>
                 </div>
 
-                <div class="px-5 w-[145px]">
+                <div class="px-0 w-[145px]">
                     @foreach (Config::get('languages') as $lang => $language)
                         @if ($lang == App::getLocale())
                             <li class="nav-item dropdown">
+                                <span class="fi fi-{{ $language['flag-icon'] }}"></span>
                                 <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                             </li>
                         @else
+                            <span class="fi fi-{{ $language['flag-icon'] }}"></span>
                             <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                         @endif
                     @endforeach
                 </div>
-
             </div>
         </div>
     </div>
