@@ -11,6 +11,14 @@
             allowClear: true
         });
     });
+    $(document).ready(function () {
+        $('.search-select-multiple').select2({
+            width: 'resolve',
+            height: 'resolve',
+            placeholder: "{{ __('Select...') }}",
+            allowClear: true
+        });
+    });
 </script>
 
 <script>
