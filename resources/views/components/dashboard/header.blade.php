@@ -96,15 +96,15 @@
 
                 <div class="px-0 w-[145px]">
                     @foreach (Config::get('languages') as $lang => $language)
+                        <div>
                         @if ($lang == App::getLocale())
-                            <li class="nav-item dropdown">
                                 <span class="fi fi-{{ $language['flag-icon'] }}"></span>
                                 <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
-                            </li>
                         @else
                             <span class="fi fi-{{ $language['flag-icon'] }}"></span>
-                            <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
+                            <a class="opacity-50" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                         @endif
+                        </div>
                     @endforeach
                 </div>
             </div>
