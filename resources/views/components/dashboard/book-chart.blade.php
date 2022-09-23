@@ -23,14 +23,14 @@
                 label: "{{__('Number of books')}}",
                 data: [{{ $checkouts_count }}, {{ $reserved_count }}, {{ $overdue_count }}],
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.7)',
-                    'rgba(36, 108, 160, 0.7)',
-                    'rgba(18, 54, 79, 0.7)',
+                    'rgba(41, 153, 72, 0.75)',
+                    'rgba(45, 81, 171, 0.75)',
+                    'rgba(220, 40, 10, 0.75)',
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 0.1)',
-                    'rgba(36, 108, 160, 0.1)',
-                    'rgba(18, 54, 79, 0.1)',
+                    'rgba(41, 153, 72, 0.2)',
+                    'rgba(45, 81, 171, 0.2)',
+                    'rgba(220, 60, 10, 0.2)',
                 ],
                 borderWidth: 1,
             }]
