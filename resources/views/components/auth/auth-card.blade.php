@@ -7,18 +7,18 @@
         {{ $slot }}
     </div>
 
-    @foreach (Config::get('languages') as $lang => $language)
-        @if ($lang == App::getLocale())
-            <li class="nav-item dropdown">
-                <a class="">
-                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
-                </a>
-            </li>
-        @else
-            <a class="" href="{{ route('lang.switch', $lang) }}">
-                <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}
-            </a>
-        @endif
-    @endforeach
+{{--    @foreach (Config::get('languages') as $lang => $language)--}}
+{{--        @if ($lang == App::getLocale())--}}
+{{--            <li class="nav-item dropdown">--}}
+{{--                <a class="">--}}
+{{--                    <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        @else--}}
+{{--            <a class="" href="{{ route('lang.switch', $lang) }}">--}}
+{{--                <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}--}}
+{{--            </a>--}}
+{{--        @endif--}}
+{{--    @endforeach--}}
 
 </div>

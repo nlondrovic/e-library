@@ -17,17 +17,21 @@ class CheckoutController extends Controller
     public function checkouts(Request $request)
     {
         $checkoutsQuery = Checkout::where('end_time', null);
-        $student = null;
-        $book = null;
 
-        if ($request->get('student_id')) {
-            $checkoutsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $checkoutsQuery->whereIn('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $checkoutsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $checkoutsQuery->whereIn('checkout_librarian_id', $request->get('checkout_librarian_ids'));
+        }
+        if ($request->get('book_ids')) {
+            $checkoutsQuery->whereIn('book_id', $request->get('book_ids'));
+        }
+        if (request()->get('start_date')) {
+            $checkoutsQuery->where('start_time', '>', request()->get('start_date'));
+        }
+        if (request()->get('end_date')) {
+            $checkoutsQuery->where('end_time', '<', request()->get('end_date'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
@@ -35,13 +39,15 @@ class CheckoutController extends Controller
             return view('transactions.index');
         }
 
-        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $book_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
+        $librarian_ids = $checkoutsQuery->pluck('checkout_librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $librarian_ids)->get();
 
         return view('transactions.checkouts.index',
-            compact('checkouts', 'student', 'book', 'students', 'books')
+            compact('checkouts','students', 'books', 'checkout_librarians')
         );
     }
 
@@ -49,31 +55,41 @@ class CheckoutController extends Controller
     {
         $checkoutsQuery = Checkout::where('end_time', '!=', null)
             ->where('checkout_end_reason_id', 1);
-        $student = null;
-        $book = null;
 
-        if ($request->get('student_id')) {
-            $checkoutsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $checkoutsQuery->whereIn('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $checkoutsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $checkoutsQuery->whereIn('checkout_librarian_id', $request->get('checkout_librarian_ids'));
+        }
+        if ($request->get('checkin_librarian_ids')) {
+            $checkoutsQuery->where('checkin_librarian_id', $request->get('checkin_librarian_ids'));
+        }
+        if ($request->get('book_ids')) {
+            $checkoutsQuery->where('book_id', $request->get('book_ids'));
+        }
+        if (request()->get('start_date')) {
+            $checkoutsQuery->where('start_time', '>', request()->get('start_date'));
+        }
+        if (request()->get('end_date')) {
+            $checkoutsQuery->where('end_time', '<', request()->get('end_date'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
         }
-
-        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $book_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
+        $checkout_librarian_ids = $checkoutsQuery->pluck('checkout_librarian_id')->toArray();
+        $checkin_librarian_ids = $checkoutsQuery->pluck('checkin_librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $checkout_librarian_ids)->get();
+        $checkin_librarians = User::whereIn('id', $checkin_librarian_ids)->get();
 
         return view('transactions.checkouts.checkins',
-            compact('checkouts', 'student', 'book', 'students', 'books')
+            compact('checkouts',  'students', 'books', 'checkout_librarians', 'checkin_librarians')
         );
     }
 
@@ -83,17 +99,24 @@ class CheckoutController extends Controller
             ->where('variable', 'Holding time')->first()->value;
         $checkoutsQuery = Checkout::where('end_time', null)
             ->where('start_time', '<', Carbon::now()->subDays($holding_time)->toDateTimeString());
-        $student = null;
-        $book = null;
 
-        if ($request->get('student_id')) {
-            $checkoutsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $checkoutsQuery->where('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $checkoutsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $checkoutsQuery->where('checkout_librarian_id', $request->get('checkout_librarian_ids'));
+        }
+        if ($request->get('checkin_librarian_ids')) {
+            $checkoutsQuery->where('checkin_librarian_id', $request->get('checkin_librarian_ids'));
+        }
+        if ($request->get('book_ids')) {
+            $checkoutsQuery->where('book_id', $request->get('book_ids'));
+        }
+        if (request()->get('start_date')) {
+            $checkoutsQuery->where('start_time', '>', request()->get('start_date'));
+        }
+        if (request()->get('end_date')) {
+            $checkoutsQuery->where('end_time', '<', request()->get('end_date'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
@@ -101,13 +124,17 @@ class CheckoutController extends Controller
             return view('transactions.index');
         }
 
-        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $book_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
+        $checkout_librarian_ids = $checkoutsQuery->pluck('checkout_librarian_id')->toArray();
+        $checkin_librarian_ids = $checkoutsQuery->pluck('checkin_librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $checkout_librarian_ids)->get();
+        $checkin_librarians = User::whereIn('id', $checkin_librarian_ids)->get();
 
         return view('transactions.checkouts.overdue',
-            compact('checkouts', 'student', 'book', 'students', 'books')
+            compact('checkouts', 'students', 'books', 'checkout_librarians', 'checkin_librarians')
         );
     }
 
@@ -115,17 +142,24 @@ class CheckoutController extends Controller
     {
         $checkoutsQuery = Checkout::where('end_time', '!=', null)
             ->where('checkout_end_reason_id', 2);
-        $student = null;
-        $book = null;
 
-        if ($request->get('student_id')) {
-            $checkoutsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $checkoutsQuery->where('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $checkoutsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $checkoutsQuery->where('checkout_librarian_id', $request->get('checkout_librarian_ids'));
+        }
+        if ($request->get('checkin_librarian_ids')) {
+            $checkoutsQuery->where('checkin_librarian_id', $request->get('checkin_librarian_ids'));
+        }
+        if ($request->get('book_ids')) {
+            $checkoutsQuery->where('book_id', $request->get('book_ids'));
+        }
+        if (request()->get('start_date')) {
+            $checkoutsQuery->where('start_time', '>', request()->get('start_date'));
+        }
+        if (request()->get('end_date')) {
+            $checkoutsQuery->where('end_time', '<', request()->get('end_date'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
@@ -133,13 +167,17 @@ class CheckoutController extends Controller
             return view('transactions.index');
         }
 
-        $books_ids = $checkoutsQuery->pluck('book_id')->toArray();
+        $book_ids = $checkoutsQuery->pluck('book_id')->toArray();
         $student_ids = $checkoutsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
+        $checkout_librarian_ids = $checkoutsQuery->pluck('checkout_librarian_id')->toArray();
+        $checkin_librarian_ids = $checkoutsQuery->pluck('checkin_librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
         $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $checkout_librarian_ids)->get();
+        $checkin_librarians = User::whereIn('id', $checkin_librarian_ids)->get();
 
         return view('transactions.checkouts.lost',
-            compact('checkouts', 'student', 'book', 'students', 'books')
+            compact('checkouts', 'students', 'books', 'checkout_librarians', 'checkin_librarians')
         );
     }
 
