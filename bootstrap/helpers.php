@@ -53,10 +53,9 @@ function capitalize(string $time): string
 function filtering(): bool
 {
     return request()->get('type') || request()->get('book_id')
-        || request()->get('student_id') || request()->get('librarian_id')
-        || request()->get('student_ids') || request()->get('book_ids')
-        || request()->get('checkout_librarian_id') || request()->get('checkin_librarian_id')
-        || request()->get('checkout_librarian_ids') || request()->get('checkin_librarian_ids')
-        || request()->get('start_date') || request()->get('end_date');
-
+        || request()->get('student_id') || request()->get('librarian_id') ||
+            request()->get('students_id') || request()->get('books_id')
+            || request()->get('checkout_librarians_id') || request()->get('checkin_librarians_id')
+        || request()->get('start_date') || request()->get('end_date')
+        ||  request()->get('checkout_librarian_id') || request()->get('checkin_librarian_id');
 }
