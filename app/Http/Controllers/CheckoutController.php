@@ -33,12 +33,13 @@ class CheckoutController extends Controller
         if ($request->get('book_ids')) {
             $checkoutsQuery->whereIn('book_id', $request->get('book_ids'));
         }
-        if ($request->get('start_date')) {
-            $checkoutsQuery->where('start_time', '>', $request->get('start_date'));
+        if ($request->get('start_time')) {
+            $checkoutsQuery->where('start_time', '>', $request->get('start_time'));
         }
-        if ($request->get('end_date')) {
-            $checkoutsQuery->where('end_time', '<', $request->get('end_date'));
+        if ($request->get('end_time')) {
+            $checkoutsQuery->where('start_time', '<', $request->get('end_time'));
         }
+        
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');
@@ -74,11 +75,11 @@ class CheckoutController extends Controller
         if ($request->get('book_ids')) {
             $checkoutsQuery->where('book_id', $request->get('book_ids'));
         }
-        if ($request->get('start_date')) {
-            $checkoutsQuery->where('start_time', '>', $request->get('start_date'));
+        if ($request->get('start_time')) {
+            $checkoutsQuery->where('start_time', '>', $request->get('start_time'));
         }
-        if ($request->get('end_date')) {
-            $checkoutsQuery->where('end_time', '<', $request->get('end_date'));
+        if ($request->get('end_time')) {
+            $checkoutsQuery->where('start_time', '<', $request->get('end_time'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
@@ -118,11 +119,11 @@ class CheckoutController extends Controller
         if ($request->get('book_ids')) {
             $checkoutsQuery->where('book_id', $request->get('book_ids'));
         }
-        if ($request->get('start_date')) {
-            $checkoutsQuery->where('start_time', '>', $request->get('start_date'));
+        if ($request->get('start_time')) {
+            $checkoutsQuery->where('start_time', '>', $request->get('start_time'));
         }
-        if ($request->get('end_date')) {
-            $checkoutsQuery->where('end_time', '<', $request->get('end_date'));
+        if ($request->get('end_time')) {
+            $checkoutsQuery->where('start_time', '<', $request->get('end_time'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
@@ -160,11 +161,11 @@ class CheckoutController extends Controller
         if ($request->get('book_ids')) {
             $checkoutsQuery->where('book_id', $request->get('book_ids'));
         }
-        if ($request->get('start_date')) {
-            $checkoutsQuery->where('start_time', '>', $request->get('start_date'));
+        if ($request->get('start_time')) {
+            $checkoutsQuery->where('start_time', '>', $request->get('start_time'));
         }
-        if ($request->get('end_date')) {
-            $checkoutsQuery->where('end_time', '<', $request->get('end_date'));
+        if ($request->get('end_time')) {
+            $checkoutsQuery->where('start_time', '<', $request->get('end_time'));
         }
 
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
