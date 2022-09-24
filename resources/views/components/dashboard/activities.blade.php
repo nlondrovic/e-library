@@ -10,9 +10,11 @@
 
     <div class="flex flex-row pl-[50px] overflow-auto scroll height-dashboard pb-[30px] mt-[0px]">
         <div class="mr-[30px] mt-[30px]">
+            @if(filtering())
             <p class="mb-[20px]">
                 {{ __('Results found') }}: {{ count($activities) }}
             </p>
+            @endif
 
             <!-- Activity Cards -->
             @foreach($activities as $activity)
