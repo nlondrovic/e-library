@@ -8,13 +8,12 @@
                 <select class="flex flex-col h-[50px]flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         name="student_ids[]" multiple="multiple">
-{{--                    <option value="">{{ __('None') }}</option>--}}
                     @foreach ($students as $student)
                         <option
                             @if(request()->student_ids)
-                                @if(!array_key_exists($student->id, request()->student_ids)) selected @endif
+                                @if(in_array($student->id, request()->student_ids)) selected @endif
                             @endif
-                        value="{{ $student->id }}">
+                            value="{{ $student->id }}">
                             {{ $student->name }}
                         </option>
                     @endforeach
@@ -25,12 +24,11 @@
                 <select class="flex flex-col flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         id="btn-reset-book" name="book_ids[]" multiple="multiple">
-{{--                    <option value="">{{ __('None') }}</option>--}}
-                    @foreach ($books as $book)
+                    @foreach($books as $book)
                         <option
-                            @if(request()->book_ids)
-                                @if(!array_key_exists($book->id, request()->book_ids)) selected @endif
-                            @endif
+                        @if(request()->book_ids)
+                            @if(in_array($book->id, request()->book_ids)) selected @endif
+                        @endif
                         value="{{ $book->id }}">
                             {{ $book->title }}
                         </option>
@@ -42,11 +40,10 @@
                 <select class="flex flex-col h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         name="checkout_librarian_ids[]" multiple="multiple" style="width: 270px">
-{{--                    <option value="">{{ __('None') }}</option>--}}
                     @foreach ($checkout_librarians as $librarian)
                         <option
                             @if(request()->checkout_librarian_ids)
-                                @if(!array_key_exists($librarian->id, request()->checkout_librarian_ids)) selected @endif
+                                @if(in_array($librarian->id, request()->checkout_librarian_ids)) selected @endif
                             @endif
                         value="{{ $librarian->id }}">
                             {{ $librarian->name }}
@@ -60,11 +57,10 @@
                 <select class="flex flex-col h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         name="checkin_librarian_ids[]" multiple="multiple" style="width: 270px">
-{{--                    <option value="">{{ __('None') }}</option>--}}
                     @foreach ($checkin_librarians as $librarian)
                         <option
                             @if(request()->checkin_librarian_ids)
-                                @if(!array_key_exists($librarian->id, request()->checkin_librarian_ids)) selected @endif
+                                @if(in_array($librarian->id, request()->checkin_librarian_ids)) selected @endif
                             @endif
                         value="{{ $librarian->id }}">
                             {{ $librarian->name }}
