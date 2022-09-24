@@ -58,11 +58,13 @@
                 </div>
 
                 <!-- User Profile Icon -->
-                <div class="mr-[10px] relative block">
+                <div class="ml-[10px] mr-[10px] relative block">
                     <a href="#" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
                        aria-label="User profile">
-                        <div class="flex items-center h-5 my-2">
-                                <img class="rounded-full  h-[50px]" src="{{ auth()->user()->picture }}" alt="">
+                        <div class="flex items-center h-5">
+                            <div class="w-[40px] h-[40px] mt-[15px]">
+                                <img class="rounded-full w-[40px] h-[40px]" src="{{ auth()->user()->picture }}" alt="">
+                            </div>
                         </div>
                     </a>
                 </div>
