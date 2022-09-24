@@ -7,15 +7,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
     <div class="heading pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
         <h1> @yield('transactions-title', 'Book transactions') </h1>
         @yield('transactions-subtitle')
-
-        {{--            @if(isset(request()->student_id))--}}
-        {{--                <h3 class="pl-[50px] ml-[57px] pt-[18px]">{{__('For student:')}} <b>{{ $student->name }}</b></h3>--}}
-        {{--            @endif--}}
-
-        {{--            @if(isset(request()->book_id))--}}
-        {{--                <h3 class="pl-[50px] pt-[18px]">{{__('For book:')}} <b>{{ $book->title }}</b></h3>--}}
-        {{--            @endif--}}
-        {{--            TODO: Kako cemo prikazivati ove filtere sad kad imamo breadcumbs?--}}
     </div>
 
     <div class="flex justify-start pt-3 bg-white">
@@ -123,8 +114,8 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         </div>
 
         <div class="w-full mt-[10px] ml-2 px-2">
+            @include('components.filter-transactions')
             @if(isset($reservations) && $reservations->count() || isset($checkouts) && $checkouts->count())
-                @include('components.filter-transactions')
                 @yield('table')
             @elseif(isset(request()->book_id) || isset(request()->student_id))
                 @include('components.no-results')
