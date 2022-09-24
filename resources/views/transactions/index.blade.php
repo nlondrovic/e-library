@@ -139,6 +139,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
     <script>
         function fadeInAndOut(el) {
+            $('#no-results').toggleClass("move-down");
             const div = document.getElementById('filter-component');
             div.classList.toggle("accordionPanelHidden");
         }
