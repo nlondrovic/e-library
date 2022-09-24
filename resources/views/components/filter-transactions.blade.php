@@ -1,4 +1,4 @@
-<div class="flex flex-row accordionPanel accordionPanelHidden pb-3" id="filter-component">
+<div class="flex flex-row accordionPanel accordionPanelHidden mb-[30px]" id="filter-component">
     <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get"
           class="mb-[20px] mr-[15px]">
         <div class="flex flex-col">

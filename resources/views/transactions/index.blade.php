@@ -113,7 +113,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             </ul>
         </div>
 
-        <div class="w-full mt-[10px] ml-2 px-2 text-center">
+        <div class="w-full mt-[10px] ml-2 px-2">
             <div class="w-[100%] text-center mb-[20px]">
                 <button onclick="fadeInAndOut(this)" class="text-center" style="">Filters</button>
             </div>
