@@ -113,8 +113,13 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             </ul>
         </div>
 
-        <div class="w-full mt-[10px] ml-2 px-2">
+        <div class="w-full mt-[10px] ml-2 px-2 text-center">
+            <div class="w-[100%] text-center mb-[20px]">
+                <button onclick="fadeInAndOut(this)" class="text-center" style="">Filters</button>
+            </div>
+
             @include('components.filter-transactions')
+
             @if(isset($reservations) && $reservations->count() || isset($checkouts) && $checkouts->count())
                 @yield('table')
             @elseif(isset(request()->book_id) || isset(request()->student_id))
@@ -129,6 +134,14 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 @include('components.no-results')
             @endif
         </div>
+
     </div>
+
+    <script>
+        function fadeInAndOut(el) {
+            const div = document.getElementById('filter-component');
+            div.classList.toggle("accordionPanelHidden");
+        }
+    </script>
 
 @endsection

@@ -2846,4 +2846,21 @@ h4 {
     opacity: 50%;
 }
 
-
+ .accordionPanel {
+     opacity: 1;
+     height: 40%;
+     transition: all .6s;
+ }
+.accordionPanel.accordionPanelHidden {
+    opacity: 0;
+    height: 0px;
+    visibility: hidden;
+}
+.accordionPanelShown {
+    height: auto;
+    width: 100%;
+    opacity: 1;
+}
+.accordionPanelStyle {
+    background: #4558BE;
+}
