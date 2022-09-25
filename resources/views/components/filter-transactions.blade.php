@@ -36,7 +36,11 @@
                 </select>
             </label>
             <label class="px-2">
-                <p class="text-[15px]">{{ __('Checkout librarian') }}</p>
+                @if(\Request::is('*/activeReservations') || \Request::is('*/archivedReservations'))
+                    <p class="text-[15px]">{{ __('Librarian') }}</p>
+                @else
+                    <p class="text-[15px]">{{ __('Checkout librarian') }}</p>
+                @endif
                 <select class="flex flex-col h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         name="checkout_librarian_ids[]" multiple="multiple" style="width: 270px">
@@ -51,7 +55,7 @@
                     @endforeach
                 </select>
             </label>
-            @if(!\Request::is('*/checkouts'))
+            @if(\Request::is('*/checkins') || \Request::is('*/overdue') || \Request::is('*/lost'))
             <label class="px-2 mr-2">
                 <p class="text-[15px]">{{ __('Checkin librarian') }}</p>
                 <select class="flex flex-col h-[50px] flex p-1 my-2 py-2.5 bg-white border border-gray-300
