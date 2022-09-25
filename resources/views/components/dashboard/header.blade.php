@@ -5,12 +5,13 @@
 {{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
                 <div class="flex items-center">
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
-{{--                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">--}}
+                        <img src='{{ asset('assets/img/LibraryOfBabel.svg') }}' alt="" width="124px" height="124px">
                     </div>
                 </div>
             </a>
         </div>
     </div>
+    {{ __('Library of Fianchetto')}}
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="flex items-center">
