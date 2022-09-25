@@ -115,7 +115,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
         <div class="w-full ml-2 px-2">
             <div class="w-[100%] text-center mb-[20px]">
-                <button onclick="fadeInAndOut(this)" class="text-center text-[22px]" style="">Filters</button>
+                <button onclick="fadeInAndOut(this)" class="text-center text-[22px]" style="outline: none">Filters</button>
                 <i onclick="fadeInAndOut(this)" id="arrow-down" class="text-[17px] fa-solid fa-chevron-down"></i>
             </div>
 
@@ -123,7 +123,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
             @if(isset($reservations) && $reservations->count() || isset($checkouts) && $checkouts->count())
                 @yield('table')
-            @elseif(isset(request()->book_id) || isset(request()->student_id))
+            @elseif(isset(request()->book_ids) || isset(request()->student_ids))
                 @include('components.no-results')
                 <a href="{{ route(Route::currentRouteName()) }}" class="ml-[50px]">
                     <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
