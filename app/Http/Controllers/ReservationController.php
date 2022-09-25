@@ -20,62 +20,68 @@ class ReservationController extends Controller
     public function activeReservations(Request $request)
     {
         $reservationsQuery = Reservation::where('end_time', null);
-        $student = null;
-        $book = null;
+        $book_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
+        $librarian_ids = $reservationsQuery->pluck('librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $librarian_ids)->get();
 
-        if ($request->get('student_id')) {
-            $reservationsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $reservationsQuery->whereIn('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $reservationsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $reservationsQuery->whereIn('librarian_id', $request->get('checkout_librarian_ids'));
         }
-
+        if ($request->get('book_ids')) {
+            $reservationsQuery->whereIn('book_id', $request->get('book_ids'));
+        }
+        if ($request->get('start_time')) {
+            $reservationsQuery->where('start_time', '>', $request->get('start_time'));
+        }
+        if ($request->get('end_time')) {
+            $reservationsQuery->where('start_time', '<', $request->get('end_time'));
+        }
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($reservations->toArray())) {
             return view('transactions.index');
         }
-
-        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
-        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
-        $students = User::whereIn('id', $student_ids)->get();
-
         return view('transactions.reservations.active',
-            compact('reservations', 'student', 'book', 'students', 'books')
+            compact('reservations', 'students', 'books', 'checkout_librarians')
         );
     }
 
     public function archivedReservations(Request $request)
     {
         $reservationsQuery = Reservation::where('reservation_end_reason_id', '!=', null);
-        $student = null;
-        $book = null;
+        $book_ids = $reservationsQuery->pluck('book_id')->toArray();
+        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
+        $librarian_ids = $reservationsQuery->pluck('librarian_id')->toArray();
+        $books = Book::whereIn('id', $book_ids)->get();
+        $students = User::whereIn('id', $student_ids)->get();
+        $checkout_librarians = User::whereIn('id', $librarian_ids)->get();
 
-        if ($request->get('student_id')) {
-            $reservationsQuery->where('student_id', $request->get('student_id'));
-            $student = User::findOrFail($request['student_id']);
+        if ($request->get('student_ids')) {
+            $reservationsQuery->whereIn('student_id', $request->get('student_ids'));
         }
-
-        if ($request->get('book_id')) {
-            $reservationsQuery->where('book_id', $request->get('book_id'));
-            $book = Book::findOrFail($request['book_id']);
+        if ($request->get('checkout_librarian_ids')) {
+            $reservationsQuery->whereIn('librarian_id', $request->get('checkout_librarian_ids'));
         }
-
+        if ($request->get('book_ids')) {
+            $reservationsQuery->whereIn('book_id', $request->get('book_ids'));
+        }
+        if ($request->get('start_time')) {
+            $reservationsQuery->where('start_time', '>', $request->get('start_time'));
+        }
+        if ($request->get('end_time')) {
+            $reservationsQuery->where('start_time', '<', $request->get('end_time'));
+        }
         $reservations = $reservationsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($reservations->toArray())) {
             return view('transactions.index');
         }
-
-        $books_ids = $reservationsQuery->pluck('book_id')->toArray();
-        $student_ids = $reservationsQuery->pluck('student_id')->toArray();
-        $books = Book::whereIn('id', $books_ids)->get();
-        $students = User::whereIn('id', $student_ids)->get();
-
-        return view('transactions.reservations.archived',
-            compact('reservations', 'student', 'book', 'students', 'books')
+        return view('transactions.reservations.active',
+            compact('reservations', 'students', 'books', 'checkout_librarians')
         );
     }
 
