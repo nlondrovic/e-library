@@ -2862,8 +2862,8 @@ h4 {
  }
 .accordionPanel.accordionPanelHidden {
     opacity: 0;
-    height: 0px;
-    margin-bottom: 0px;
+    height: 0;
+    margin-bottom: 0;
     visibility: hidden;
 }
 .accordionPanelStyle {
