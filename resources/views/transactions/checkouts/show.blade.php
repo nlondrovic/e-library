@@ -7,11 +7,11 @@
             <div class="pl-[50px] pb-[5px] header-breadcrumbs">
                 <h1>
                     @if($checkout->isCheckout())
-                    Checkout
+                    {{ __('Checkout') }}
                         @elseif($checkout->isCheckin())
-                        Checkin
+                    {{ __('Checkin') }}
                     @else
-                        Book lost
+                    {{ __('Book lost') }}
                     @endif
                 </h1>
                 <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
