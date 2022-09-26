@@ -14,11 +14,25 @@
 
     @if(count($activities))
         <div class="inline-block w-[90%] mt-4 px-2 py-2">
+            @if(isset($book))
             <a href="{{ route('activities', ['book_id' => $book->id]) }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
                         text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
                         focus:outline-none focus:ring-[1px] focus:ring-gray-300  shadow-md">
                 {{ __('Show all') }}
             </a>
+                @elseif(isset($student))
+                <a href="{{ route('activities', ['student_id' => $student->id]) }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
+                        text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
+                        focus:outline-none focus:ring-[1px] focus:ring-gray-300  shadow-md">
+                    {{ __('Show all') }}
+                </a>
+                @elseif(isset($librarian))
+                <a href="{{ route('activities', ['librarian_id' => $librarian->id]) }}" class="btn-animation block text-center w-full px-4 py-2 text-sm tracking-wider
+                        text-gray-600 transition duration-300 ease-in border-[1px] border-gray-400 rounded hover:bg-gray-200
+                        focus:outline-none focus:ring-[1px] focus:ring-gray-300  shadow-md">
+                    {{ __('Show all') }}
+                </a>
+            @endif
         </div>
     @endif
 </div>
