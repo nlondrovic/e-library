@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -11,6 +12,8 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+    /*    STUDENT CONTROLLER     */
+
     public function index()
     {
         $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
@@ -60,8 +63,9 @@ class UserController extends Controller
         if (!$student->isStudent()) {
             return back();
         }
+        $activities = Activity::where('student_id', '=', $student->id)->orderBy('id', 'desc')->take(5)->get();
 
-        return view('students.show', compact('student'));
+        return view('students.show', compact('student', 'activities'));
     }
 
     public function edit(User $student)
