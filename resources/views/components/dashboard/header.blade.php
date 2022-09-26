@@ -2,11 +2,12 @@
     bg-[#4558BE]">
     <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
         <div class="block">
-{{--            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">--}}
+            <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
                 <div class="flex items-center">
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
-{{--                        <img src='{{ asset('assets/img/logo.svg') }}' alt="" width="35px" height="35px">--}}
+                        <img src='{{ asset('assets/img/logo.png') }}' alt="" height="80px">
                     </div>
+                    <h2 class="ml-[10px] text-[25px]">En passant</h2>
                 </div>
             </a>
         </div>
@@ -16,10 +17,10 @@
             <div class="flex items-center">
                 <a class="inline-block border-gray-300 px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">
-                        <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
-                            px-[11px] py-[7px]">
-                            <i class="fas fa-plus"></i>
-                        </span>
+                    <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
+                        px-[11px] py-[7px]">
+                        <i class="fas fa-plus"></i>
+                    </span>
                 </a>
                 <div
                     class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-create">
