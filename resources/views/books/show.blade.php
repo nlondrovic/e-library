@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row overflow-auto height-osnovniDetalji scroll">
+    <div class="flex flex-row overflow-auto h-full scroll">
         <div class="w-[100%]">
             <div class="pl-[50px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">
@@ -124,7 +124,7 @@
             </div>
         </div>
 
-        <div class="min-w-[25%] border-l-[1px] height-dashboard border-[#e4dfdf]">
+        <div class="min-w-[25%] border-l-[1px] h-full border-[#e4dfdf]">
             @include('components.book-copies')
             @include('components.book-recent-activity')
         </div>

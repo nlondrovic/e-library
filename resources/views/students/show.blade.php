@@ -12,7 +12,7 @@
             </div>
 
             <div class="pt-[24px] mr-[30px]">
-                <a href="{{ route('checkouts.index', ['student_id' => $student]) }}"
+                <a href="{{ route('checkouts.index', ['student_ids[]' => $student->id]) }}"
                    class="inline hover:text-blue-600 mr-[14px]">
                     <i class="fas fa-exchange-alt mr-[5px]"></i>
                     <span> {{ __('Transactions') }} </span>
@@ -36,8 +36,8 @@
         </div>
     </div>
 
-    <div class="height-ucenikProfile pb-[30px]">
-        <div class="pl-[50px] section- mt-[20px]">
+    <div class="flex flex-row overflow-auto scroll h-full pb-[30px]">
+        <div class="w-[100%] pl-[50px] mt-[20px]">
             <div class="flex flex-row">
                 <div class="mr-[30px]">
                     <div class="mt-[20px]">
@@ -62,6 +62,9 @@
                          src="{{ asset($student->picture) }}" alt="{{ __('Student image') }}">
                 </div>
             </div>
+        </div>
+        <div class="min-w-[25%] border-l-[1px] h-screen border-[#e4dfdf] ">
+            @include('components.book-recent-activity')
         </div>
     </div>
 
