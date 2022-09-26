@@ -7,7 +7,7 @@
                     <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
                         <img src='{{ asset('assets/img/logo.png') }}' alt="" height="80px">
                     </div>
-                    <h2 class="ml-[10px] text-[25px]">En passant</h2>
+                    <h2 class="ml-[10px] text-[25px]">{{ __('Library of Fianchetto') }}</h2>
                 </div>
             </a>
         </div>
