@@ -100,7 +100,7 @@
                                 <span class="fi fi-{{ $language['flag-icon'] }}"></span>
                                 <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                         @else
-                            <span class="fi fi-{{ $language['flag-icon'] }}"></span>
+                                <a class="opacity-50" href="{{ route('lang.switch', $lang) }}"><span class="fi fi-{{ $language['flag-icon'] }}"></span></a>
                             <a class="opacity-50" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                         @endif
                         </div>
