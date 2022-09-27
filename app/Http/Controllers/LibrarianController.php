@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -68,7 +69,10 @@ class LibrarianController extends Controller
             return back();
         }
 
-        return view('librarians.show', compact('librarian'));
+        $user = $librarian;
+        $activities = Activity::where('librarian_id', $librarian->id)->orderBy('id', 'desc')->take(5)->get();
+
+        return view('librarians.show', compact('librarian', 'activities', 'user'));
     }
 
     public function edit(User $librarian)

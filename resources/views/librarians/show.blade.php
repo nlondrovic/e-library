@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <div class="height-ucenikProfile pb-[30px]">
-        <div class="pl-[50px] section- mt-[20px]">
+    <div class="flex flex-row overflow-auto height-osnovniDetalji scroll">
+        <div class="w-[100%] pl-[50px] section- mt-[20px]">
             <div class="flex flex-row">
                 <div class="mr-[30px]">
                     <div class="mt-[20px]">
@@ -57,6 +57,10 @@
                          src="{{ asset($librarian->picture) }}" alt="{{ __('Librarian image') }}">
                 </div>
             </div>
+        </div>
+
+        <div class="min-w-[25%] border-l-[1px] border-[#e4dfdf]">
+            @include('components.user-recent-activity')
         </div>
 
 @endsection

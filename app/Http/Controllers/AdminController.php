@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -68,7 +69,10 @@ class AdminController extends Controller
             return back();
         }
 
-        return view('admins.show', compact('admin'));
+        $user = $admin;
+        $activities = Activity::where('librarian_id', $admin->id)->orderBy('id', 'desc')->take(5)->get();
+
+        return view('admins.show', compact('admin', 'activities', 'user'));
     }
 
     public function edit(User $admin)
