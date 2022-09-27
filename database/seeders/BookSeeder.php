@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +21,7 @@ class BookSeeder extends Seeder
                 'script_id' => 1,
                 'binding_id' => 3,
                 'publisher_id' => 1,
-                'publish_date' => '014-09-01',
+                'publish_date' => '2014-09-01',
                 'total_count' => rand(4, 15),
                 'category_id' => rand(1, 10),
                 'genre_id' => 1,
