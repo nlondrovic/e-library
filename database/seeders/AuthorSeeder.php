@@ -19,7 +19,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Mihailo Lalić',
                 'about' => 'Mihailo Lalić (7. oktobar 1914. - 30. decembar 1992.) je crnogorski pisac poznat po nizu romana koji su opisivali partizansku borbu za vrijeme drugog svetskog rata u Crnoj Gori. Započeo je knjigom pesama Stazama slobode (1948), ali se brzo okrenuo prozi, koja će postati isključiva forma umetničkog sagledavanja vremena, događaja i ljudskih sudbina. Prema njegovom scenariju snimljen je film "Svadba" 1973. u režiji Radomira Šaranovića, takođe izvršena je ekranizacija njegovog romana "Lelejska gora" 1968.',
-                'picture' => '/images/authors/1662235215053-Mihailo-Lalić.jpg'
+                'picture' => '/images/authors/1662235215053-Mihailo-Lalic.jpg'
             ],
             [
                 'name' => 'Molijer',
@@ -29,7 +29,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Danilo Kiš',
                 'about' => 'Danilo Kiš je bio srpski romanopisac, pisac pripovetki, esejista i prevodilac. Rođen je 22. februara 1935. godine u Subotici, a umro je 15. oktobra 1989. godine u Parizu. Bio je dopisni član SANU. Danilo Kiš se smatra jednim od najznačajnijih pisaca jugoslovenske i srpske književnosti. Svoje prve radove objavio je 1953. godine u časopisima i listovima, i to: ,,Oproštaj s majkom“, ,,Sjutra“ – Pjesma o Jevrejki, ,,Odjek iz djetinjstva“, ,,Susret s majkom u jesen“, „Kraju mog djetinjstva“, ,,Crveni bik“.',
-                'picture' => '/images/authors/1662235215053-Danilo-Kiš.jpg'
+                'picture' => '/images/authors/1662235215053-Danilo-Kis.jpg'
             ],
             [
                 'name' => 'Marko Miljanov Popović',
@@ -39,7 +39,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Miroslav Krleža',
                 'about' => 'Miroslav Krleža je bio hrvatski pisac i enciklopedista. Rođen je 07. jula 1893. godine u Zagrebu, gdje je i umro 29. decembra 1981. godine. Smatra se piscem najznačajnijih tekstova u hrvatskoj književnosti 20. vijeka. Pokrenuo je mnoge kulturne inicijative, a sa ciljem kritičkog osvještavanja hrvatskog društva.',
-                'picture' => '/images/authors/1662235215053-Miroslav-Krleža.jpg'
+                'picture' => '/images/authors/1662235215053-Miroslav-Krleza.jpg'
             ],
             [
                 'name' => 'Migel Servantes',
@@ -49,7 +49,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Miloš Crnjanski',
                 'about' => 'Miloš Crnjanski je bio srpski književnik i jedan od najznačajnijih stvaralaca srpske literature XX veka. Istakao se kao pesnik, pripovedač, romansijer i publicista. Bavio se i likovnom kritikom. Prvu pesmu „Sudba“ Crnjanski je objavio u somborskom dečjem listu „Golub“ 1908. godine. 1912. u sarajevskoj „Bosanskoj vili“ štampane je njegova pesma „U početku beše sjaj“.',
-                'picture' => '/images/authors/1662235215053-Miloš-Crnjanski.jpg'
+                'picture' => '/images/authors/1662235215053-Milos-Crnjanski.jpg'
             ],
             [
                 'name' => 'Lav Tolstoj',
@@ -59,7 +59,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Borisav Stanković',
                 'about' => 'Borisav Bora Stanković bio je srpski pripovedač, romansijer, dramatičar. Njegovo stvaralaštvo uglavnom se svrstava u realizam, ali ima osobine koje naginju ka naturalizmu. Novija kritika svrstava ga u začetnike moderne srpske književnosti. Njegovi romani i pripovetke oslikavaju život ljudi sa juga Srbije. Pripada grupi pripovedača koji su se pojavili na prelazu u 20. vek, Ivi Ćipiku, Petru Kočiću, Milutinu Uskokoviću i drugima.',
-                'picture' => '/images/authors/1662235215052-Borisav-Stanković.jpg'
+                'picture' => '/images/authors/1662235215052-Borisav-Stankovic.jpg'
             ],
             [
                 'name' => 'Nikolaj V. Gogolj',
@@ -69,22 +69,22 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Vilijam Šekspir',
                 'about' => 'Vilijam Šekspir bio je engleski pesnik i dramski pisac, koji se, prema više različitih izvora, smatra za najvećeg pisca na engleskom jeziku i dramaturga svetskog glasa. Opus Šekspirovih dela koja su sačuvana do danas sastoji se od 38 pozorišnih komada, 154 soneta, dve duge narativne i nekoliko drugih poema. Njegovi pozorišni komadi su prevedeni na mnoge žive jezike i prikazuju se svuda u svetu češće nego bilo koji drugi.',
-                'picture' => '/images/authors/1662235215053-Vilijam-Šekspir.jpg'
+                'picture' => '/images/authors/1662235215053-Vilijam-Sekspir.jpg'
             ],
             [
                 'name' => 'Aleksandar Sergejevič Puškin',
                 'about' => 'Aleksandar Sergejevič Puškin je bio ruski književnik. Mnogi ga smatraju za najboljeg ruskog pesnika i oca moderne ruske književnosti. Puškin je među prvima u Rusiji počeo da piše narodnim jezikom i distancirao se od romantičarske književnosti popularne u zapadnoj Evropi. Napravio je stil koji je mešao satiru, romantiku i dramu. U ranom detinjstvu o Puškinu su se starale dadilje i učitelji francuskog jezika. Znanje jezika je razvijao među članovima nižih slojeva. 1811. godine je primljen u elitnu gimnaziju u Carskom selu, koju je pohađao do 1817. godine.',
-                'picture' => '/images/authors/1662235215052-Aleksandar-Sergejevič-Puškin.jpg'
+                'picture' => '/images/authors/1662235215052-Aleksandar-Sergejevic-Puskin.jpg'
             ],
             [
                 'name' => 'Meša Selimović',
                 'about' => 'Mehmed Meša Selimović bio je bosanskohercegovački i srpski pisac. Rođen je u Tuzli 26. aprila 1910. godine, a umro je u Beogradu 11. jula 1982. godine. Meša Selimović bio je značajan pisac čiji je roman ,,Derviš i smrt“  jedan od najvažnijih književnih dijela poslijeratnog perioda. Neke od glavnih tema u njegovim djelima su odnosi između pojedinca i vlasti, života i smrti, te drugih egzistencijalnih pitanja.',
-                'picture' => '/images/authors/1662235215053-Mesa-Selimović.jpg'
+                'picture' => '/images/authors/1662235215053-Mesa-Selimovic.jpg'
             ],
             [
                 'name' => 'Ivo Andrić',
                 'about' => 'Ivo Andrić (Dolac, kod Travnika, 9. oktobar 1892 — Beograd, 13. mart 1975) bio je srpski i jugoslovenski književnik i diplomata Kraljevine Jugoslavije. Godine 1961.(10. decembra) dobio je Nobelovu nagradu za književnost „za epsku snagu kojom je oblikovao teme i prikazao sudbine ljudi tokom istorije svoje zemlje”. Njegova najpoznatija dela su pored romana Na Drini ćuprija i Travnička hronika, Prokleta avlija, Gospođica i Jelena, žena koje nema. ',
-                'picture' => '/images/authors/1662235215052-Ivo-Andrić.jpg'
+                'picture' => '/images/authors/1662235215052-Ivo-Andric.jpg'
             ],
             [
                 'name' => 'Ernest Hemingvej',
@@ -99,7 +99,7 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Petar II Petrović-Njegoš',
                 'about' => 'Petar II Petrović Njegoš (Njeguši (Cetinje) 13. novembar 1813 — Cetinje 31. oktobar 1851) bio je crnogorski vladar, vladika, pjesnik i filozof. Njegova se djela svrstavaju u red najznačajnijih dijelova crnogorske i srpske književnosi. Rođen je kao kao Radoje „Rade” Tomov Petrović, obrazovao se u nekoliko manastira u Crnoj Gori i postao je duhovni i svjetovni vođa Crne Gore nakon smrti svog strica Petra I. Njegoš je poštovan kao pjesnik i filozof, a najpoznatiji je po svojoj epskoj poemi „Gorski vijenac“, koja se smatra za remek-djelo srpske i južnoslovenske književnosti. Druga njegova važna djela su „Luča mikrokozma“, „Ogledalo srpsko“ i „Lažni car Šćepan Mali“.',
-                'picture' => '/images/authors/1662235215053-Njegoš-II.jpg'
+                'picture' => '/images/authors/1662235215053-Njegos-II.jpg'
             ],
             [
                 'name' => 'Onore de Balzak',
@@ -119,12 +119,12 @@ class AuthorSeeder extends Seeder
             [
                 'name' => 'Đovani Bokačo',
                 'about' => 'Đovani Bokačo je bio italijanski pisac. Smatra se jednim od najznačajnijih pisaca humanizma. Isto tako, bio je aktivan učesnik političkog i kulturnog života svoga vremena. Rođen je 16. juna 1313. godine u Čertaldu, gde je i umro 21. decembra 1375. godine. Kroz svoje stvaralaštvo uzvisio je sposobnost življenja, spontani prirodni nagon, iskrenost, ljudski razum i kulturu. Njegova najvažnija dela su: pustolovno-ljubavni roman „Filokolo“, realistični i psihološki roman „Elegija gospe Fijamete“, novela u stihovima „Fijezolanska priča o nimfama“, remek-delo novelistike i Bokačovo najpoznatije delo „Dekameron“, rasprava u pohvali Dantea „Život Danteov“.',
-                'picture' => '/images/authors/1662235215053-Đovani-Bokačo.jpg'
+                'picture' => '/images/authors/1662235215053-Djovani-Bokaco.jpg'
             ],
             [
                 'name' => 'Frančesto Petrarka',
                 'about' => 'Frančesko Petrarka rođen je u Arecu u Toskani. Sin je Pjetra di Parence, beležnika u Firenci koji je sebe prozvao Petrako, i majke Elete Kaniđani. Detinjstvo je proveo u Inčizi, Avinjonu i Pizi. Studirao je pravo na univerzitetu u Monpeljeu i u Bolonji. U Avinjonu je kasnije radio kao dvorski savetnik, a na papskom dvoru uspeo je da se istakne naročito svojom rečitošću, odličnim poznavanjem klasične kulture i svojim prvim pesmama na toskanskom narodnom jeziku. Za njegov boravak na dvoru vezuje se i susret sa Laurom. Godine 1330. postao je kanonik što ga je obavezivalo na celibat, ali nije morao da se zaredi, ali to ga nije sprečilo da ima dvoje dece. Putovao je, učestvovao u javnom životu, a uz to se bavio i književnošću. Bio je izaslanik pape i mnogih važnih ljudi svoga doba, a bavio se i diplomatijom. Bio je i kulturno-politički posrednik između dva najvažnija politička centra toga doba u Italiji, između Venecije i Milana. Osmog aprila godine 1341. krunisan je lovorovim vencem na Kapitolu u Rimu. Bio je poeta laureatus pre nego što je napisao mnoga dela po kojima je kasnije postao poznat. Veoma teške godine za Petrarku bile su četrdesete godine kada su preminuli neki za njega veoma važni ljudi, među njima i Laura (1348). Umro je u Arkvi 1374. godine.',
-                'picture' => '/images/authors/1662235215053-Frančesko-Petrarka.jpg'
+                'picture' => '/images/authors/1662235215053-Francesko-Petrarka.jpg'
             ],
             [
                 'name' => 'Sofokle',
