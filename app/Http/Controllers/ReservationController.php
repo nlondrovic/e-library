@@ -84,9 +84,10 @@ class ReservationController extends Controller
         $students = User::where('role_id', 3)->get();
         $min_date = Carbon::now()->addDay()->format('Y-m-d');
         $max_date = Carbon::now()->addMonth()->format('Y-m-d');
+        $activities = Activity::where('book_id', $book->id)->orderBy('id', 'desc')->take(4)->get();
 
         return view('transactions.reservations.create',
-            compact('students', 'book', 'min_date', 'max_date')
+            compact('students', 'book', 'min_date', 'max_date', 'activities')
         );
     }
 

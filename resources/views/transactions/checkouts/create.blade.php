@@ -3,7 +3,7 @@
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
-        <h1> {{__('Check out')}}</h1>
+        <h1> {{__('Check out')}} : {{ $book->title }}</h1>
         <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
         <a href="{{ route('books.index') }}">{{ __('Books') }}</a> >
         <a href="{{ route('books.show', $book) }}">{{ $book->title }}</a> >
@@ -11,15 +11,12 @@
     </div>
 
     @include('components.error-check')
-    <div class="flex flex-row overflow-auto height-osnovniDetalji">
+    <div class="flex flex-row justify-between overflow-auto height-osnovniDetalji">
         <div class="">
             <form action="{{ route('checkouts.store', ['book_id' => $book->id]) }}" method="post">
                 @csrf
                 @method('post')
-                <div class="pl-[50px] pr-[30px] pb-[30px] mt-[20px]">
-                    <div class="mt-[20px]">
-                        <h3>{{__('Check out this book')}}</h3>
-                    </div>
+                <div class="pl-[50px] pr-[30px] pb-[30px]">
                     <div class="flex flex-col justify-start">
                         {{-- Student --}}
                         <div class="mt-[20px] w-[268px]">
@@ -68,11 +65,16 @@
             </form>
         </div>
 
-        <div class="w-[50%] mb-[100px] pr-[83%]">
+        <div class="mb-[100px]">
             <div class="border-[1px] border-[#e4dfdf] w-[360px] mt-[20px]">
                 @include('components.book-copies')
             </div>
         </div>
+
+        <div class="max-w-[25%] border-l-[1px] height-dashboard border-[#e4dfdf]">
+            @include('components.book-recent-activity')
+        </div>
+
     </div>
 
 @endsection
