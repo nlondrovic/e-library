@@ -80,7 +80,7 @@ class ReservationController extends Controller
         if (empty($reservations->toArray())) {
             return view('transactions.index');
         }
-        return view('transactions.reservations.active',
+        return view('transactions.reservations.archived',
             compact('reservations', 'students', 'books', 'checkout_librarians')
         );
     }
