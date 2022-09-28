@@ -8,7 +8,7 @@ $(function () {
             sidebar.removeClass('sidebar-active');
             //make hamburger shape change
             hamburger.removeClass('fa-times');
-            hamburger.addClass('fa-bars');
+            hamburger.addClass('fa-bars-staggered');
             //hide text and arrow
             $(".sidebar-item").addClass("hidden");
             $(".sidebar-item").removeClass("inline");
@@ -22,7 +22,7 @@ $(function () {
             sidebar.addClass('sidebar-active');
             //make hamburger shape change
             hamburger.addClass('fa-times');
-            hamburger.removeClass('fa-bars');
+            hamburger.removeClass('fa-bars-staggered');
             //show text and arrow
             $(".sidebar-item").removeClass("hidden");
             $(".sidebar-item").addClass("inline");
