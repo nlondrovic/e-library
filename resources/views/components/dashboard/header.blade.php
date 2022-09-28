@@ -1,6 +1,6 @@
 <header class="z-20 small:hidden flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto
     bg-[#4558BE]">
-    <div class="logo-font inline-flex py-[18px] {{--px-[20px]--}}">
+    <div class="logo-font inline-flex py-[18px]">
         <div class="block">
             <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
                 <div class="flex items-center">
