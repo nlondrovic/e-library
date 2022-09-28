@@ -130,9 +130,9 @@
                 </table>
 
                 @if(isset($pagination))
-                    <p class="mt-[20px]">
+                    <div class="mt-[20px]">
                         {{ $students->links("pagination::tailwind") }}
-                    </p>
+                    </div>
                 @endif
 
             </div>
