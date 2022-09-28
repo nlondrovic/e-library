@@ -1,5 +1,5 @@
 <div class="p-4 pt-[15px] border-[#e4dfdf]">
-        <h4 class="text-center mb-[5px]">{{ __('Recent activities') }}</h4>
+    <h4 class="text-center mb-[5px]">{{ __('Recent activities') }}</h4>
     @foreach($activities as $activity)
         @if($activity->type == 'Checkout')
             @include('components/dashboard/checkout-card')

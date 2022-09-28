@@ -12,8 +12,6 @@ use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
-    /*    STUDENT CONTROLLER     */
-
     public function index()
     {
         $search_array = User::where('role_id', 3)->orderBy('name', 'asc')->get();
@@ -63,9 +61,11 @@ class UserController extends Controller
         if (!$student->isStudent()) {
             return back();
         }
-        $activities = Activity::where('student_id', '=', $student->id)->orderBy('id', 'desc')->take(5)->get();
 
-        return view('students.show', compact('student', 'activities'));
+        $user = $student;
+        $activities = Activity::where('student_id', $student->id)->orderBy('id', 'desc')->take(5)->get();
+
+        return view('students.show', compact('student', 'activities', 'user'));
     }
 
     public function edit(User $student)

@@ -46,7 +46,7 @@ class CheckoutController extends Controller
         }
 
         return view('transactions.checkouts.index',
-            compact('checkouts','students', 'books', 'checkout_librarians')
+            compact('checkouts', 'students', 'books', 'checkout_librarians')
         );
     }
 
@@ -88,7 +88,7 @@ class CheckoutController extends Controller
         }
 
         return view('transactions.checkouts.checkins',
-            compact('checkouts',  'students', 'books', 'checkout_librarians', 'checkin_librarians')
+            compact('checkouts', 'students', 'books', 'checkout_librarians', 'checkin_librarians')
         );
     }
 
@@ -190,9 +190,10 @@ class CheckoutController extends Controller
         $holding_time = DB::table('settings')
             ->where('variable', 'Holding time')->first()->value;
         $end_date = Carbon::now()->addDays($holding_time)->format('Y-m-d');
+        $activities = Activity::where('book_id', $book->id)->orderBy('id', 'desc')->take(4)->get();
 
         return view('transactions.checkouts.create',
-            compact('book', 'students', 'holding_time', 'end_date')
+            compact('book', 'students', 'holding_time', 'end_date', 'activities')
         );
     }
 

@@ -68,9 +68,11 @@ class LibrarianController extends Controller
         if (!$librarian->isLibrarian()) {
             return back();
         }
-        $activities = Activity::where('student_id', '=', $librarian->id)->orderBy('id', 'desc')->take(5)->get();
 
-        return view('librarians.show', compact('librarian', 'activities'));
+        $user = $librarian;
+        $activities = Activity::where('librarian_id', $librarian->id)->orderBy('id', 'desc')->take(5)->get();
+
+        return view('librarians.show', compact('librarian', 'activities', 'user'));
     }
 
     public function edit(User $librarian)

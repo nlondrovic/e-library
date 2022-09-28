@@ -1570,6 +1570,9 @@ h4 {
 .min-w-\[25\%\]{
     min-width: 25%;
 }
+.max-w-\[25\%\]{
+    max-width: 25%;
+}
 .min-w-\[40\%\]{
     min-width: 40%;
 }
