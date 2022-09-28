@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 .logo-font {
-    font-family: 'Rubik';
+    font-family: "Georgia Pro", cursive;
 }
 
 /*Button - transition*/
@@ -2874,4 +2874,7 @@ h4 {
 }
 .accordionPanelStyle {
     background: #4558BE;
+}
+.m-auto {
+    margin: auto;
 }
