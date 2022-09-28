@@ -27,7 +27,7 @@
     {{--        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <!-- End Styles -->
 </head>
-<body class="h-full" style="background-color: #e8ab6f">
+<body class="h-full" style="background-color: #dcb598">
     <main class="h-full">
         @yield('content')
     </main>
