@@ -97,11 +97,15 @@
                     @foreach (Config::get('languages') as $lang => $language)
                         <div>
                         @if ($lang == App::getLocale())
-                                <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
-                                <a class="" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
+                                <a class="" href="{{ route('lang.switch', $lang) }}">
+                                    <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
+                                    {{$language['display']}}
+                                </a>
                         @else
-                            <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
-                            <a class="opacity-50" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
+                                <a class="opacity-50" href="{{ route('lang.switch', $lang) }}">
+                                    <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
+                                    {{$language['display']}}
+                                </a>
                         @endif
                         </div>
                     @endforeach
