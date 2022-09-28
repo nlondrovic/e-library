@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 .logo-font {
-    font-family: "Georgia Pro", cursive;
+    font-family: "Rockwell Nova Light", cursive;
 }
 
 /*Button - transition*/
@@ -442,8 +442,8 @@ Use a more readable tab size (opinionated).
 */
 
 html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.15;  /* 1 */
+    -webkit-text-size-adjust: 100%;  /* 2 */
 }
 
 /*
@@ -473,7 +473,7 @@ body {
         Arial,
         sans-serif,
         'Apple Color Emoji',
-        'Segoe UI Emoji';
+        'Segoe UI Emoji' !important;
 }
 
 /*
@@ -785,8 +785,8 @@ html {
  */
 
 body {
-    font-family: inherit;
-    line-height: inherit;
+    font-family: inherit !important;
+    line-height: inherit !important;
 }
 
 /**
@@ -971,8 +971,8 @@ video {
 }
 
 body{
-    overflow: hidden;
-    font-family: 'Rubik', sans-serif;
+    overflow: hidden !important;
+    font-family: 'Rubik', sans-serif !important;
 }
 
 nav {
@@ -980,7 +980,7 @@ nav {
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 32px !important;
     color: #374151;
 }
 
@@ -988,7 +988,7 @@ a,
 p,
 th,
 tr {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 th,
@@ -2847,33 +2847,20 @@ h4 {
     from {transition: translateY(0);opacity: 1}
     to {transition: translateY(-150px);opacity: 0;top:0px;}
 }
-
 .opacity-50 {
     opacity: 50%;
 }
-
-.no-results{
-    margin-top: 0;
-    transition: all 0.6s;
-}
-.move-down{
-    margin-top: 100px;
-    transition: all .6s;
-}
- .accordionPanel {
+.accordionPanel {
      opacity: 1;
-     height: 20%;
+     height: auto;
      margin-bottom: 20px;
-     transition: all .6s;
+     transition: all .2s;
  }
 .accordionPanel.accordionPanelHidden {
     opacity: 0;
     height: 0;
     margin-bottom: 0;
     visibility: hidden;
-}
-.accordionPanelStyle {
-    background: #4558BE;
 }
 .m-auto {
     margin: auto;

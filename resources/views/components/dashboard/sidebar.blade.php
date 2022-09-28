@@ -7,7 +7,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <!-- Hamburger Icon -->
         <div
             class="cursor-pointer text-[#707070] pl-[32px] pt-[28px] pb-[27px] text-[25px] border-b-[1px] border-[#e4dfdf] ">
-            <i id="hamburger" class="hamburger-btn fas fa-bars"></i>
+            <i id="hamburger" class="hamburger-btn fas fa-bars-staggered"></i>
         </div>
         <div class="mt-[16px]">
             <ul class="text-[#2D3B48] sidebar-nav">
