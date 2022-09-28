@@ -2,9 +2,8 @@
 @section('content')
     <div class="w-[50%] h-full" style="background-color: #333; background-image: url({{ asset('assets/img/wood-pattern.jpg') }}); clip-path: polygon(71% 0, 100% 50%, 71% 100%, 0 100%, 0 0);">
         <div class="w-[50%] m-auto">
-{{--            <img src="{{ asset('assets/img/wood-pattern.jpg') }}" alt="" width="1000" height="1000">--}}
             <img src="{{ asset('assets/img/chess-table.png') }}" class="" style="position: relative; left: -20%;" width="800px" height="800px" alt="">
-            <div class="" style="color:white; position: absolute; top:45%; left: 30px; font-family: 'Javanese Text', cursive; font-size: 25px">
+            <div class="" style="color:white; position: absolute; top:45%; left: 30px; font-size: 25px">
                 <h2 style="font-size: 90px; color: white"> 404 </h2>
                 <h2 style="font-size: 35px"> {{ __('Whoops! Illegal move.') }} </h2>
                 <h2> {{ __('Stranica kojoj pokusavate pristupiti trenutno nedostupna ili ne postoji.') }} </h2>
