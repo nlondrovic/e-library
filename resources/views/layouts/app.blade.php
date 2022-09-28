@@ -14,7 +14,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title> @yield('title') - {{ config('app.name') }}</title>
+    <title> @yield('title') @ {{ config('app.name') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/svg"/>
     <!-- End Title -->
 
