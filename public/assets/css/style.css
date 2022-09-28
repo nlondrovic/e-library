@@ -2847,24 +2847,14 @@ h4 {
     from {transition: translateY(0);opacity: 1}
     to {transition: translateY(-150px);opacity: 0;top:0px;}
 }
-
 .opacity-50 {
     opacity: 50%;
 }
-
-.no-results{
-    margin-top: 0;
-    transition: all 0.6s;
-}
-.move-down{
-    margin-top: 100px;
-    transition: all .6s;
-}
- .accordionPanel {
+.accordionPanel {
      opacity: 1;
-     height: 20%;
+     height: auto;
      margin-bottom: 20px;
-     transition: all .6s;
+     transition: all .2s;
  }
 .accordionPanel.accordionPanelHidden {
     opacity: 0;
