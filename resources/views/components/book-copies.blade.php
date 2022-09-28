@@ -1,5 +1,5 @@
 <h2 class="mt-[20px] ml-[30px]">{{ __('Book copies') }}</h2>
-<div class="mx-[30px] mt-[20px] flex flex-row">
+<div class="px-[30px] mt-[20px] flex flex-row border-b-[1px]">
     <div class="text-gray-500 mr-[30px]">
         <p>{{ __('Available') }}:</p>
         <p class="mt-[20px]">{{ __('Reserved') }}:</p>

@@ -1,4 +1,4 @@
-<div class="p-4 pt-[15px] border-t-[1px] border-[#e4dfdf]">
+<div class="p-4 pt-[15px] border-[#e4dfdf]">
         <h4 class="text-center mb-[5px]">{{ __('Recent activities') }}</h4>
     @foreach($activities as $activity)
         @if($activity->type == 'Checkout')
