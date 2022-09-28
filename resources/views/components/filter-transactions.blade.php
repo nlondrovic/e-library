@@ -1,11 +1,11 @@
-<div class="flex flex-row accordionPanel accordionPanelHidden mb-[30px]" id="filter-component">
+<div class="flex flex-row accordionPanel accordionPanelHidden w-[100%]" id="filter-component">
     <form action="{{ route(Route::currentRouteName(), request()->all()) }}" method="get"
           class="mb-[20px] mr-[15px]">
         <div class="flex flex-col">
             <div class="flex flex-row items-center">
             <label class="px-2 mr-[5px]">
                 <p class="text-[15px]">{{ __('Student') }}</p>
-                <select class="flex flex-col h-[50px]flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                <select class="flex flex-col h-[50px] p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         name="student_ids[]" multiple="multiple">
                     @foreach ($students as $student)
@@ -21,7 +21,7 @@
             </label>
             <label class="px-2 mr-2">
                 <p class="text-[15px]">{{ __('Book') }}</p>
-                <select class="flex flex-col flex p-1 my-2 py-2.5 bg-white border border-gray-300
+                <select class="flex flex-col p-1 my-2 py-2.5 bg-white border border-gray-300
                     shadow-sm svelte-1l8159u focus-within:ring-2 focus-within:ring-[#576cdf] search-select-multiple w-[300px]"
                         id="btn-reset-book" name="book_ids[]" multiple="multiple">
                     @foreach($books as $book)
@@ -76,13 +76,13 @@
             </div>
             <div class="flex flex-row">
                 <div class="px-2 mt-[20px] mr-[14px]">
-                    <p class="text-[15px]">{{ __('Date (from)') }}</p>
+                    <label class="text-[15px]">{{ __('Date (from)') }}</label>
                     <input type="date" name="start_time" class="flex w-[300px] mt-2 px-2 py-2 text-base bg-white border
                             border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('start_time') }}"/>
                 </div>
                 <div class="mt-[20px]">
-                    <p class="text-[15px]">{{ __('Date (to)') }}</p>
+                    <label class="text-[15px]">{{ __('Date (to)') }}</label>
                     <input type="date" name="end_time" class="flex w-[300px] mt-2 px-2 py-2 text-base bg-white border
                             border-gray-300 shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
                            value="{{ request()->get('end_time') }}"/>
