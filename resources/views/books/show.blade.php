@@ -26,15 +26,13 @@
                     <i class="far fa-calendar-check mr-[3px]"></i>
                     {{ __('Reserve') }}
                 </a>
-                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] border-l-[1px] border-[#e4dfdf]
-                            dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
+                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
                 </p>
-                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95
-                            -translate-y-2 dropdown-knjiga-osnovni-detalji">
+                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2
+                    dropdown-knjiga-osnovni-detalji">
                     <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
-                                divide-y divide-gray-100 rounded-md shadow-lg outline-none"
-                         aria-labelledby="headlessui-menu-button-1" id="headlessui-menu-items-117" role="menu">
+                                divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                         <div class="py-1">
                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">

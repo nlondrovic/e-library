@@ -11,7 +11,7 @@
                         @elseif($checkout->isCheckin())
                     {{ __('Checkin') }}
                     @else
-                    {{ __('Book lost') }}
+                    {{ __('Lost book') }}
                     @endif
                 </h1>
                 <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
