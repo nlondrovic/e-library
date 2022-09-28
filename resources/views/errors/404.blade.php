@@ -8,7 +8,7 @@
                 <h2 style="font-size: 35px"> {{ __('Whoops! Illegal move.') }} </h2>
                 <h2> {{ __('Stranica kojoj pokusavate pristupiti trenutno nedostupna ili ne postoji.') }} </h2>
                 <div style="font-size: 30px; margin-top: 50px">
-                    </u> <label class=""> <u> {{ __('Click me to go back') }} ></u> </label>
+                    <label class=""> <u> {{ __('Click me to go back') }} ></u> </label>
                     <a href="{{ url()->previous() }}" style="color: wheat">
                         <i class="fa-solid fa-chess-knight" style="font-size: 45px"></i>
                     </a>
