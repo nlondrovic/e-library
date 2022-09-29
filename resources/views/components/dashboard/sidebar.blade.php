@@ -5,10 +5,10 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
      class="fixed z-10 flex flex-col justify-between overflow-x-hidden overflow-y-auto bg-[#EFF3F6] sidebar nav-height">
     <div class="">
         <!-- Hamburger Icon -->
-        <div
-            class="cursor-pointer text-[#707070] pl-[32px] pt-[28px] pb-[27px] text-[25px] border-b-[1px] border-[#e4dfdf] ">
-            <i id="hamburger" class="hamburger-btn fas fa-bars-staggered"></i>
+        <div class="menu-btn border-b-[1px] border-[#e4dfdf]">
+            <div id="hamburger" class="menu-btn__burger"></div>
         </div>
+
         <div class="mt-[16px]">
             <ul class="text-[#2D3B48] sidebar-nav">
                 <!-- Dashboard Icon -->

@@ -1,33 +1,33 @@
-$(function () {
-    var hamburger = $('#hamburger');
-    var sidebar = $('.sidebar');
-
-    hamburger.on('click', function () {
-        if (sidebar.hasClass('sidebar-active')) { // if menu is opened
-            //close menu by removing active class
-            sidebar.removeClass('sidebar-active');
-            //make hamburger shape change
-            hamburger.removeClass('fa-times');
-            hamburger.addClass('fa-bars-staggered');
-            //hide text and arrow
-            $(".sidebar-item").addClass("hidden");
-            $(".sidebar-item").removeClass("inline");
-            //hide/close all opened submenues
-            $('.aside-item').hide();
-            //change all arrows which are up to down
-            $('.arrow').removeClass('fa-angle-up');
-            $('.arrow').addClass('fa-angle-down');
-        } else {
+var hamburger = $('#hamburger');
+var sidebar = $('.sidebar');
+const menuBtn = document.querySelector('.menu-btn');
+let menuOpen = false;
+menuBtn.addEventListener('click', () => {
+    if(!menuOpen) {
             //open menu
             sidebar.addClass('sidebar-active');
             //make hamburger shape change
             hamburger.addClass('fa-times');
             hamburger.removeClass('fa-bars-staggered');
             //show text and arrow
-            $(".sidebar-item").removeClass("hidden");
-            $(".sidebar-item").addClass("inline");
-        }
-    });
+            $(".sidebar-item").removeClass("hidden").addClass("inline");
+        menuBtn.classList.add('open');
+        menuOpen = true;
+    } else {
+            //close menu by removing active class
+            sidebar.removeClass('sidebar-active');
+            //make hamburger shape change
+            hamburger.removeClass('fa-times');
+            hamburger.addClass('fa-bars-staggered');
+            //hide text and arrow
+            $(".sidebar-item").addClass("hidden").removeClass("inline");
+            //hide/close all opened submenues
+            $('.aside-item').hide();
+            //change all arrows which are up to down
+            $('.arrow').removeClass('fa-angle-up').addClass('fa-angle-down');
+        menuBtn.classList.remove('open');
+        menuOpen = false;
+    }
 });
 
 $(function () {
