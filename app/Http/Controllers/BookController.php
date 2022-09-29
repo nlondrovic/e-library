@@ -13,6 +13,7 @@ use App\Models\Genre;
 use App\Models\Publisher;
 use App\Models\Script;
 use App\Models\Size;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -99,6 +100,8 @@ class BookController extends Controller
             $filename = "/images/books/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/books/'), $filename);
+        } else {
+            $inputs['picture'] = Book::DEFAULT_BOOK_PICTURE_PATH;
         }
 
         $book->update($inputs);
