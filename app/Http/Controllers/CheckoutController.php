@@ -8,7 +8,6 @@ use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -39,7 +38,7 @@ class CheckoutController extends Controller
         if ($request->get('end_time')) {
             $checkoutsQuery->where('start_time', '<', $request->get('end_time'));
         }
-        
+
         $checkouts = $checkoutsQuery->orderBy('id', 'desc')->paginate(8);
         if (empty($checkouts->toArray())) {
             return view('transactions.index');

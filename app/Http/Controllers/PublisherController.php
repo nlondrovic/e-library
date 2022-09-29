@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Publisher;
 use App\Http\Requests\StorePublisherRequest;
 use App\Http\Requests\UpdatePublisherRequest;
+use App\Models\Publisher;
 
 class PublisherController extends Controller
 {

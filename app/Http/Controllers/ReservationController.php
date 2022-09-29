@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCheckoutRequest;
+use App\Http\Requests\StoreReservationRequest;
 use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\Reservation;
-use App\Http\Requests\StoreReservationRequest;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
-use \Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use function PHPUnit\Framework\isEmpty;
 
 class ReservationController extends Controller
 {

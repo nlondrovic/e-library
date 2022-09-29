@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBookRequest;
+use App\Http\Requests\UpdateBookRequest;
 use App\Models\Activity;
 use App\Models\Author;
 use App\Models\Binding;
 use App\Models\Book;
-use App\Http\Requests\StoreBookRequest;
-use App\Http\Requests\UpdateBookRequest;
 use App\Models\Category;
 use App\Models\Genre;
 use App\Models\Publisher;
 use App\Models\Script;
 use App\Models\Size;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

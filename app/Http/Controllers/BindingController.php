@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Binding;
 use App\Http\Requests\StoreBindingRequest;
 use App\Http\Requests\UpdateBindingRequest;
+use App\Models\Binding;
 
 class BindingController extends Controller
 {

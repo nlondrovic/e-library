@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Author;
 use App\Http\Requests\StoreAuthorRequest;
 use App\Http\Requests\UpdateAuthorRequest;
+use App\Models\Author;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
