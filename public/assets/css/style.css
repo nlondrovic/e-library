@@ -2,8 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 .logo-font {
-    font-family: "Rockwell Nova Light", cursive;
+    font-family: "Rubik", cursive;
 }
+/* Previous logo font: Rockwell Nova Light */
 
 /*Button - transition*/
 
@@ -13,11 +14,6 @@
 
 .btn-animation:hover {
     transform: scale(1.05);
-}
-
-/*Login - background*/
-.bg-login {
-    background-image: url('../img/login.jpg');
 }
 
 /* Sidebar transition*/

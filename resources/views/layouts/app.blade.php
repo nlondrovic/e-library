@@ -15,7 +15,8 @@
 
     <!-- Title -->
     <title> @yield('title') @ {{ config('app.name') }}</title>
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/svg"/>
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicon.ico')}}">
     <!-- End Title -->
 
     <!-- Styles -->
@@ -24,9 +25,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
-    <!-- Icon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('favicon-32x32.ico')}}">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+{{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <!-- End Styles -->
 </head>
 
