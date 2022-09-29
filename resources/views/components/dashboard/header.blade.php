@@ -15,12 +15,14 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="relative block">
-                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none" aria-label="Notification">
+                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none"
+                   aria-label="Notification">
                     <div class="flex items-center h-5">
                         <div class="_xpkakx">
-                                    <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full px-[11px] py-[7px] ">
-                                        <i class="far fa-bell"></i>
-                                    </span>
+                            <span
+                                class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full px-[11px] py-[7px] ">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -74,7 +76,7 @@
                     <a href="#" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
                        aria-label="User profile">
                         <div class="flex items-center h-5 my-2">
-                                <img class="rounded-full  h-[50px]" src="{{ auth()->user()->picture }}" alt="">
+                            <img class="rounded-full  h-[50px]" src="{{ auth()->user()->picture }}" alt="">
                         </div>
                     </a>
                 </div>
@@ -107,17 +109,17 @@
                 <div class="px-0 w-[145px]">
                     @foreach (Config::get('languages') as $lang => $language)
                         <div>
-                        @if ($lang == App::getLocale())
+                            @if ($lang == App::getLocale())
                                 <a class="" href="{{ route('lang.switch', $lang) }}">
                                     <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
                                     {{$language['display']}}
                                 </a>
-                        @else
+                            @else
                                 <a class="opacity-50" href="{{ route('lang.switch', $lang) }}">
                                     <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>
                                     {{$language['display']}}
                                 </a>
-                        @endif
+                            @endif
                         </div>
                     @endforeach
                 </div>
