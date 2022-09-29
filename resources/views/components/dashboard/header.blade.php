@@ -89,7 +89,7 @@
                             <a href="{{ route(strtolower(auth()->user()->role->name).'s.show', auth()->user()) }}"
                                tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="fas fa-file mr-[8px] ml-[5px] py-1"></i>
+                                <i class="fa-solid fa-circle-user mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('My profile') }}</span>
                             </a>
 
