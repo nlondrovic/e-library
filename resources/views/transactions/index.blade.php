@@ -123,9 +123,9 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
             @if(isset($reservations) && $reservations->count() || isset($checkouts) && $checkouts->count())
                 @yield('table')
-            @elseif(isset(request()->book_ids) || isset(request()->student_ids))
+            @elseif(isset(request()->book_ids) || isset(request()->student_ids) || isset(request()->librarian_ids))
                 @include('components.no-results')
-                <a href="{{ route(Route::currentRouteName()) }}" class="ml-[50px]">
+                <a href="{{ route(Route::currentRouteName()) }}" class="">
                     <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
                     ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
                         <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset filters') }}
