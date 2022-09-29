@@ -14,7 +14,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title> @yield('title') @ {{ config('app.name') }}</title>
+    <title> @yield('title') @ {{ __(config('app.name')) }}</title>
     <!-- Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicon.ico')}}">
     <!-- End Title -->
