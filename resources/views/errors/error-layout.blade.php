@@ -13,7 +13,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title> @yield('title') @ {{ config('app.name') }}</title>
+    <title> {{ __('Error') }} | {{ __(config('app.name')) }}</title>
     <!-- Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicon.ico')}}">
     <!-- End Title -->
@@ -27,9 +27,13 @@
     {{--        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <!-- End Styles -->
 </head>
+
 <body class="h-full" style="background-color: #dcb598">
+
     <main class="h-full">
         @yield('content')
     </main>
+
 </body>
+
 </html>

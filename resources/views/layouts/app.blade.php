@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Meta -->
     <meta charset="UTF-8"/>
@@ -14,7 +13,7 @@
     <!-- End Meta -->
 
     <!-- Title -->
-    <title> @yield('title') @ {{ __(config('app.name')) }}</title>
+    <title> @yield('title') | {{ __(config('app.name')) }}</title>
     <!-- Icon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('assets/img/favicon.ico')}}">
     <!-- End Title -->
@@ -25,18 +24,19 @@
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/search.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
-{{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
+    {{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <!-- End Styles -->
 </head>
 
 <body class="overflow-hidden small:bg-gradient-to-r small:from-green-400 small:to-blue-500">
+
 <!-- Header -->
 @include('components.dashboard.header')
 <!-- End Header -->
 
-
 <!-- Main content -->
 <main class="flex flex-row small:hidden">
+
     <!-- Sidebar -->
     @include('components.dashboard.sidebar')
     <!-- End Sidebar -->
@@ -51,9 +51,9 @@
         @yield('main')
     </section>
     <!-- End Content -->
+
 </main>
 <!-- End Main content -->
-
 
 <!-- Notification for small devices -->
 @include('components/inProgress')
