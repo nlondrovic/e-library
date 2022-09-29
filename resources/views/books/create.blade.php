@@ -242,8 +242,9 @@
                                 <p>{{ __('Add a photo') }}</p>
                                 <input type="file" name="picture" accept="image/*"
                                        onchange="loadFileBook(event)"/>
-                                <img id="image-output-book" width="360" class="mt-[20px]" alt="{{ __('Book image') }}"
-                                     src="{{ asset('/assets/img/book.jpg') }}"/>
+                                <img id="image-output-book" width="360" class="mt-[20px] p-2 border-2 border-gray-300"
+                                     alt="{{ __('Book image') }}" src="{{ asset('/assets/img/book.jpg') }}"
+                                     onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"/>
                             </div>
                         </div>
 
