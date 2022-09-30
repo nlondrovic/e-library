@@ -14,7 +14,7 @@
     </div>
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
-            <div class="relative block">
+            <div class="relative block" title="{{ __('Activities') }}">
                 <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none"
                    aria-label="Notification">
                     <div class="flex items-center h-5">
@@ -31,7 +31,7 @@
                 <a class="inline-block border-l-[1px] border-gray-300 px-3" href="#" aria-label="Add something"
                    id="dropdownCreate">
                     <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
-                        px-[11px] py-[7px]">
+                        px-[11px] py-[7px]" title="{{ __('Add a new thing') }}">
                         <i class="fas fa-plus"></i>
                     </span>
                 </a>
@@ -42,28 +42,28 @@
                         <div class="py-1">
                             <a href="{{ route('students.create') }}" tabindex="0"
                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="fas fa-users mr-[5px] ml-[3px] py-1"></i>
+                                <i class="fas fa-users mr-[1px] ml-[3px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Student') }}</span>
                             </a>
                             <a href="{{ route('books.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm
                                 leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="far fa-copy mr-[10px] ml-[5px] py-1"></i>
+                                <i class="far fa-copy mr-[3px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Book') }}</span>
                             </a>
                             <a href="{{ route('authors.create') }}" tabindex="0" class="flex w-full px-4 py-2 text-sm
                                 leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                <i class="far fa-address-book mr-[10px] ml-[5px] py-1"></i>
+                                <i class="far fa-address-book mr-[3px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Author') }}</span>
                             </a>
                             @if(auth()->user()->isAdmin())
                                 <a href="{{ route('librarians.create') }}" tabindex="0"
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                    <i class="fas fa-user-tie mr-[8px] ml-[5px] py-1"></i>
+                                    <i class="fas fa-user-tie mr-[5px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{ __('Librarian') }}</span>
                                 </a>
                                 <a href="{{ route('admins.create') }}" tabindex="0"
                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                    <i class="fas fa-user-shield mr-[8px] ml-[5px] py-1"></i>
+                                    <i class="fas fa-user-shield  ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{ __('Admin') }}</span>
                                 </a>
                             @endif
