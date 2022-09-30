@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('Show reservation').' - '.$reservation->id)
+@section('title', __('Reservation').' - '.$reservation->id)
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">

@@ -1,5 +1,5 @@
 @extends('settings.index')
-@section('title', __('Show all sizes'))
+@section('title', __('Sizes'))
 @section('settings-subtitle')
     <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
     <a href="{{ route('policy.index') }}">{{ __('Settings') }}</a> >

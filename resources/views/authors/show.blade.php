@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('Show author').' - '.$author->name)
+@section('title', __('Author').' - '.$author->name)
 @section('main')
 
     <div class="heading">
