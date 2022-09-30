@@ -2867,8 +2867,6 @@ h4 {
 .menu-btn {
     position: relative;
     display: flex;
-    /*justify-content: center;*/
-    /*align-items: center;*/
     padding-top: 47px;
     padding-left: 32px;
     width: 300px;
@@ -2878,10 +2876,9 @@ h4 {
 }
 .menu-btn__burger {
     width: 23px;
-    height: 4px;
+    height: 3px;
     background: #707070;
     border-radius: 5px;
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
     transition: all .5s ease-in-out;
 }
 .menu-btn__burger::before,
@@ -2889,17 +2886,16 @@ h4 {
     content: '';
     position: absolute;
     width: 23px;
-    height: 4px;
+    height: 3px;
     background: #707070;
     border-radius: 5px;
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);*/
     transition: all .5s ease-in-out;
 }
 .menu-btn__burger::before {
-    transform: translateY(-9px);
+    transform: translateY(-8px);
 }
 .menu-btn__burger::after {
-    transform: translateY(9px);
+    transform: translateY(8px);
 }
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger {
