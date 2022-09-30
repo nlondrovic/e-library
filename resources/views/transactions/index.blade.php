@@ -125,12 +125,12 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 @yield('table')
             @elseif(isset(request()->book_ids) || isset(request()->student_ids) || isset(request()->librarian_ids))
                 @include('components.no-results')
-                <a href="{{ route(Route::currentRouteName()) }}" class="">
-                    <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
-                        <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset filters') }}
-                    </button>
-                </a>
+{{--                <a href="{{ route(Route::currentRouteName()) }}" class="">--}}
+{{--                    <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300--}}
+{{--                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">--}}
+{{--                        <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset filters') }}--}}
+{{--                    </button>--}}
+{{--                </a>--}}
             @else
                 @include('components.no-results')
             @endif
