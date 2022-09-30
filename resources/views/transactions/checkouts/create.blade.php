@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('New checkout'))
+@section('title', __('Check out').' - '.$book->title)
 @section('main')
 
     <div class="pl-[50px] pb-[5px] border-b-[1px] border-[#e4dfdf] header-breadcrumbs">
@@ -71,7 +71,13 @@
             </div>
         </div>
 
-        <div class="max-w-[25%] border-l-[1px] height-dashboard border-[#e4dfdf]">
+        <div class="mr-[20px]">
+            <img class="p-2 border-2 border-gray-300 mt-[20px]" width="360"
+                 src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"
+                 onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'">
+        </div>
+
+        <div class="min-w-[20%] max-w-[25%] border-l-[1px] height-dashboard border-[#e4dfdf]">
             @include('components.book-recent-activity')
         </div>
 
