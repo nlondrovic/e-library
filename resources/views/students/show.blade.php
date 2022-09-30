@@ -29,7 +29,7 @@
                     <p tabindex="0" class="inline w-full text-sm leading-5 text-left
                                 text-gray-700 outline-none hover:text-blue-600">
                         <i class="fa fa-trash mr-[5px] text-red-500"></i>
-                        <button type="submit" class="text-red-500"> {{__('Delete student')}} </button>
+                        <button type="submit" class="text-red-500 btn-animation"> {{__('Delete student')}} </button>
                     </p>
                 </form>
             </div>

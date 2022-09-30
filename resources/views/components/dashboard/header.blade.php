@@ -15,7 +15,7 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="relative block" title="{{ __('Activities') }}">
-                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none"
+                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none btn-animation"
                    aria-label="Notification">
                     <div class="flex items-center h-5">
                         <div class="_xpkakx">
@@ -27,8 +27,8 @@
                     </div>
                 </a>
             </div>
-            <div class="flex items-center">
-                <a class="inline-block border-l-[1px] border-gray-300 px-3" href="#" aria-label="Add something"
+            <div class="flex items-center border-l-[1px] border-gray-300" style="height: 45px">
+                <a class="inline-block px-3 btn-animation" href="#" aria-label="Add something"
                    id="dropdownCreate">
                     <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
                         px-[11px] py-[7px]" title="{{ __('Add a new thing') }}">
@@ -73,7 +73,7 @@
 
                 <!-- User Profile Icon -->
                 <div class="mr-[10px] relative block">
-                    <a href="#" class="relative inline-block px-3 py-2 focus:outline-none" id="dropdownProfile"
+                    <a href="#" class="relative inline-block px-3 py-2 focus:outline-none btn-animation" id="dropdownProfile"
                        aria-label="User profile">
                         <div class="flex items-center h-5 my-2">
                             <img class="h-[50px] rounded-full" onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"
@@ -89,13 +89,13 @@
                         <div class="py-1">
                             <a href="{{ route(strtolower(auth()->user()->role->name).'s.show', auth()->user()) }}"
                                tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                 <i class="fa-solid fa-circle-user mr-[8px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('My profile') }}</span>
                             </a>
 
                             <a href="#" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                 <i class="fas fa-sign-out-alt mr-[5px] ml-[5px] py-1"></i>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
@@ -109,7 +109,7 @@
 
                 <div class="px-0 w-[145px]">
                     @foreach (Config::get('languages') as $lang => $language)
-                        <div>
+                        <div class="btn-animation">
                             @if ($lang == App::getLocale())
                                 <a class="" href="{{ route('lang.switch', $lang) }}">
                                     <span class="fi fi-{{ $language['flag-icon'] }} rounded-[3px]"></span>

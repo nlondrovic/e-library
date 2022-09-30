@@ -24,7 +24,7 @@
                     <p tabindex="0" class="inline w-full text-sm leading-5 text-left
                                 text-gray-700 outline-none hover:text-blue-600">
                         <i class="fa fa-trash mr-[5px] text-red-500"></i>
-                        <button type="submit" class="text-red-500"> {{__('Delete author')}} </button>
+                        <button type="submit" class="text-red-500 btn-animation" > {{__('Delete author')}} </button>
                     </p>
                 </form>
             </div>
