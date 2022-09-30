@@ -16,7 +16,7 @@
         <!-- Validation Errors -->
         <x-auth.auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('password.email') }}">
+        <form method="POST" action="{{ route('password.email') }}" id="not_filter_form">
             @csrf
 
             <!-- Email Address -->

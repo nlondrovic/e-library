@@ -12,7 +12,7 @@
     </div>
 
     <div class="scroll height-content section-content">
-        <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('scripts.update', $script) }}">
+        <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('scripts.update', $script) }}" id="not_filter_form">
             @csrf
             @method('put')
             <div class="flex flex-row ml-[30px]">

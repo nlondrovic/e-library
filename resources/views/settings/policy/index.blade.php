@@ -7,7 +7,7 @@
 @endsection
 @section('main-settings')
 
-    <form method="post" action="{{ route('policy.update') }}">
+    <form method="post" action="{{ route('policy.update') }}" id="not_filter_form">
         @csrf
         @method('PATCH')
         <div class="section- mt-[5px]">

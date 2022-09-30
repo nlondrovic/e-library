@@ -12,7 +12,7 @@
 
     <div class="scroll height-content pb-[30px] section-content">
         <form class="text-gray-700 forma" method="post" action="{{ route('books.update', $book) }}"
-              enctype="multipart/form-data">
+              enctype="multipart/form-data" id="not_filter_form">
             @csrf
             @method('put')
             <div class="flex flex-row overflow-auto height-osnovniDetalji">

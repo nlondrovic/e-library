@@ -4,7 +4,7 @@
 <!-- When a use tries to exit a unsubmitted form-->
 <script>
     var warn_on_unload = false; //default false
-    $('input,textarea,select').on('change', function () {
+    $('#not_filter_form').on('change', function () {
         //making true when user types in , or select
         warn_on_unload = true;
     });

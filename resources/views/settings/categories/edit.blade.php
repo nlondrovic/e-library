@@ -14,7 +14,7 @@
     <div class="scroll height-content section-content pl-[32px]">
         <form class="text-gray-700 forma"
               action="{{ route('categories.update', $category->id) }}"
-              method="post" enctype="multipart/form-data">
+              method="post" enctype="multipart/form-data" id="not_filter_form">
             @csrf
             @method('put')
             <div class="flex flex-row ml-[30px]">

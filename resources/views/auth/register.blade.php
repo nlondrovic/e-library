@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth.auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" id="not_filter_form">
             @csrf
 
             <!-- Name -->

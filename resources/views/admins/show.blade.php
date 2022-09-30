@@ -18,7 +18,7 @@
                     <span> {{ __('Edit admin') }} </span>
                 </a>
                 <form action="{{ route('admins.destroy', $admin) }}" method="post"
-                      class="inline hover:text-blue-600">
+                      class="inline hover:text-blue-600" id="not_filter_form">
                     @csrf
                     @method('delete')
                     <p tabindex="0" class="inline w-full text-sm leading-5 text-left

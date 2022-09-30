@@ -13,7 +13,7 @@
     <div class="scroll height-content section-content">
         <form class="text-gray-700 text-[14px] forma"
               action="{{ route('students.update', $student) }}"
-              method="post" enctype="multipart/form-data">
+              method="post" enctype="multipart/form-data" id="not_filter_form">
             @csrf
             @method('put')
             <div class="flex flex-row ml-[50px]">
