@@ -15,7 +15,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full fill-current whitespace-nowrap">
-                            <div class="transition duration-300 ease-in group-hover:text-blue-600">
+                            <div class="transition duration-300 ease-in group-hover:text-blue-600" title="{{ __('Dashboard') }}">
                                 <a href="{{ route('dashboard') }}" aria-label="Dashboard">
                                         <i class="text-[22px] pt-[4px] pr-1 pb-[5px] fa-solid fa-chart-line rounded-[3px] text-[#707070]
                                         transition duration-300 ease-in group-hover:text-blue-600
@@ -33,7 +33,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <!-- Students Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Students') }}">
                                 <a href="{{ route('students.index') }}" aria-label="Students">
                                     <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-users
                                          @if(str_contains($route_name, 'students')) text-[#576cdf] @endif"></i>
@@ -49,7 +49,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <!-- Authors Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Authors') }}">
                                 <a href="{{ route('authors.index') }}" aria-label="Authors">
                                     <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-user-pen
                                          @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
@@ -65,7 +65,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <!-- Books Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Books') }}">
                                 <a href="{{ route('books.index') }}" aria-label="Books">
                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-2 transition duration-300 ease-in group-hover:text-blue-600 text-[#707070]
                                          @if(str_contains($route_name, 'books')) text-[#576cdf] fa-solid fa-book-open @else fas fa-book @endif"></i>
@@ -81,7 +81,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <!-- Renting Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Transactions') }}">
                                 <a href="{{ route('checkouts.index') }}" aria-label="RentingBooks">
                                      <i class="text-[22px] pt-[4px] pb-[5px] pr-1 text-[#707070] fas fa-exchange-alt transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'checkouts') || str_contains($route_name, 'checkins') ||
@@ -101,7 +101,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     <!-- Librarian Icon -->
                     <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                         <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Librarians') }}">
                                 <a href="{{ route('librarians.index') }}" aria-label="Librarians">
                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-2 text-[#707070] fa-solid fa-user-tie transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'librarians')) text-[#576cdf] @endif"></i>
@@ -117,7 +117,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     <!-- Admin icon -->
                     <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                         <div class="ml-[30px]">
-                        <span class="flex justify-between w-full whitespace-nowrap">
+                        <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Admins') }}">
                                 <a href="{{ route('admins.index') }}" aria-label="RentingBooks">
                                     <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fa-solid fa-user-shield
                                          @if(str_contains($route_name, 'admins')) text-[#576cdf] @endif"></i>
@@ -140,7 +140,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
                 <a href="{{ route('policy.index') }}" aria-label="Settngs" class="ml-[30px]">
-                    <span class="whitespace-nowrap">
+                    <span class="whitespace-nowrap" title="{{ __('Settings') }}">
                         <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] pr-1 text-[#707070] fas fa-cog
                                      @if(str_contains($route_name, 'policy')||
                                         str_contains($route_name, 'categories')||
