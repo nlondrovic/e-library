@@ -1,7 +1,23 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
+<!-- When a use tries to exit a unsubmitted form-->
+<script>
+    var warn_on_unload = false; //default false
+    $('input,textarea,select').on('change', function () {
+        //making true when user types in , or select
+        warn_on_unload = true;
+    });
 
+    $(window).bind('beforeunload', function(e){
+//warns user if not saving form and closing or browsing other page
+        if(warn_on_unload )
+        {
+            return confirm('Leaving this page will cause any unsaved data to be lost.');
+        }
+    });
+</script>
+<!-- Search select  -->
 <script>
     $(document).ready(function () {
         $('.search-select').select2({
