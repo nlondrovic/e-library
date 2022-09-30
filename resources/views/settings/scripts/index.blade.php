@@ -50,8 +50,8 @@
                                             @method('delete')
                                             <button tabindex="0"
                                                     class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                                <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
-                                                <span class="px-4 py-0">{{ __('Delete script') }}</span>
+                                                <i class="fa fa-trash mr-[10px] ml-[5px] py-1 text-red-500"></i>
+                                                <span class="px-4 py-0 text-red-500">{{ __('Delete script') }}</span>
                                             </button>
                                         </form>
                                     </div>

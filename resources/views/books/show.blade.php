@@ -44,8 +44,8 @@
                                 @method('delete')
                                 <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
                                             text-gray-700 outline-none hover:text-blue-600">
-                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1"></i>
-                                    <button type="submit" class="px-4 py-0">{{ __('Delete book') }}</button>
+                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1 text-red-500"></i>
+                                    <button type="submit" class="px-4 py-0 text-red-500">{{ __('Delete book') }}</button>
                                 </p>
                             </form>
                         </div>
