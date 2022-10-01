@@ -41,7 +41,7 @@
                                         border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                     <div class="py-1">
                                         <a href="{{ route('bindings.edit', $binding) }}" tabindex="0"
-                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                             <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0 ml-[3px]">{{ __('Edit binding') }}</span>
                                         </a>
@@ -49,7 +49,7 @@
                                             @csrf
                                             @method('delete')
                                             <button type="submit" tabindex="0"
-                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="fa fa-trash mr-[5px] ml-[5px] py-1 text-red-500"></i>
                                                 <span class="px-4 py-0 text-red-500">{{ __('Delete binding') }}</span>
                                             </button>

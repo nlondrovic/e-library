@@ -45,7 +45,7 @@
                                     <div class="py-1">
                                         <a href="{{ route('categories.edit', $category) }}" tabindex="0"
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                               outline-none hover:text-blue-600">
+                                               outline-none hover:text-blue-600 btn-animation">
                                             <i class="fas fa-edit mr-[3px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0 ml-[1px]">{{ __('Edit category') }}</span>
                                         </a>
@@ -53,7 +53,7 @@
                                             @csrf
                                             @method('delete')
                                             <button type="submit" tabindex="0"
-                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="fa fa-trash mr-[5px] ml-[5px] py-1 text-red-500"></i>
                                                 <span class="px-4 py-0 text-red-500">{{ __('Delete category') }}</span>
                                             </button>
