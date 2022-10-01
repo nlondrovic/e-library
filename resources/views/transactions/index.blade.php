@@ -19,7 +19,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                  @if(str_contains($route_name, 'checkouts')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('checkouts.index') }}"
                                    class="flex items-center">
-                                    <i class="@if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] far fa-copy text-[20px]"></i>
+                                    <i class="@if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] fa-solid fa-book-bookmark text-[20px]"></i>
                                     <p class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[15px] ml-[18px]">
                                         {{__('Checkouts')}}
                                     </p>
@@ -35,7 +35,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                  @if(str_contains($route_name, 'checkins')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('checkins.index') }}"
                                    class="flex items-center">
-                                    <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-file group-hover:text-[#576cdf]"></i>
+                                    <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-square-check group-hover:text-[#576cdf]"></i>
                                     <p class="transition duration-300 ease-in text-[15px] ml-[21px] group-hover:text-[#576cdf]">
                                         {{__('Checkins')}}
                                     </p>
@@ -85,7 +85,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                  @if(str_contains($route_name, 'active')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('reservations.active') }}"
                                    class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] far fa-calendar-check transition duration-300 ease-in"></i>
+                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-list-ul transition duration-300 ease-in"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Active reservations')}}
                                     </p>
@@ -101,7 +101,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                  @if(str_contains($route_name, 'archived')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('reservations.archived') }}"
                                    class="flex items-center">
-                                    <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-calendar-alt transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
+                                    <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-list-check transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
                                     <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Archived reservations')}}
                                     </p>
