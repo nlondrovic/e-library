@@ -1,22 +1,23 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
-<!-- When a use tries to exit a unsubmitted form-->
+
+<!-- When a use tries to exit a non-submitted form-->
 <script>
-    var warn_on_unload = false; //default false
-    $('#not_filter_form').on('change', function () {
-        //making true when user types in , or select
+    let warn_on_unload = false;
+    $('#not_filter_form').keyup(function () {
+        // Making true when user types in , or select
         warn_on_unload = true;
     });
 
-    $(window).bind('beforeunload', function(e){
-//warns user if not saving form and closing or browsing other page
-        if(warn_on_unload )
-        {
+    $(window).bind('beforeunload', function (e) {
+        // Warns user if not saving form and closing or browsing other page
+        if (warn_on_unload) {
             return confirm('Leaving this page will cause any unsaved data to be lost.');
         }
     });
 </script>
+
 <!-- Search select  -->
 <script>
     $(document).ready(function () {
@@ -37,6 +38,7 @@
     });
 </script>
 
+<!--Search bar -->
 <script>
     let searchWrapper;
     let inputBox;
@@ -48,13 +50,12 @@
         routeName = routeName.split('.')[0];
         model = routeName.substring(0, routeName.length - 1);
 
-        // if not on page where search bar exists
+        // If not on page where search bar exists
         if (model !== "author" && model !== "librarian" && model !== "student" && model !== "book" && model !== "admin"
             || routeMethod !== "index") {
             return;
         }
 
-        // getting all required elements
         searchWrapper = document.querySelector(".search-input");
         inputBox = searchWrapper.querySelector("input");
         const suggBox = searchWrapper.querySelector(".autocom-box");
@@ -62,7 +63,7 @@
         let linkTag = searchWrapper.querySelector("a");
         let webLink;
 
-        // if user press any key and release
+        // If user press any key and release
         inputBox.onkeyup = (e) => {
             let userData = e.target.value; //user enetered data
             let emptyArray = [];
@@ -73,25 +74,24 @@
                     linkTag.click();
                 }
                 emptyArray = suggestions.filter((data) => {
-                    //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
+                    // Filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
                     return data.toLocaleLowerCase().includes(userData.toLocaleLowerCase());
                 });
                 emptyArray = emptyArray.map((data) => {
-                    // passing return data inside li tag
+                    // Passing return data inside li tag
                     return data = `<li>${data}</li>`;
                 });
                 searchWrapper.classList.add("active"); //show autocomplete box
                 showSuggestions(emptyArray);
                 let allList = suggBox.querySelectorAll("li");
                 for (let i = 0; i < allList.length; i++) {
-                    //adding onclick attribute in all li tag
+                    // Adding onclick attribute in all li tag
                     allList[i].setAttribute("onclick", "select(this)");
                 }
             } else {
                 searchWrapper.classList.remove("active"); //hide autocomplete box
             }
         }
-
 
         function showSuggestions(list) {
             let listData;
@@ -118,6 +118,8 @@
         document.location = url;
     }
 </script>
+
+<!-- Show more button for activities -->
 <script>
     $(document).ready(function () {
         if ($('.activity-card').length > 6) {

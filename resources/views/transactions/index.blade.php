@@ -115,8 +115,8 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
 
         <div class="w-full ml-[15px] px-2">
             <div class="w-[100%] text-center mb-[10px]">
-                <button onclick="fadeInAndOut(this)" class="text-center text-[22px]" style="outline: none">{{ __('Filters') }}</button>
-                <i onclick="fadeInAndOut(this)" id="arrow-down" class="text-[17px] fa-solid fa-chevron-down cursor-pointer"></i>
+                <button onclick="fadeInAndOut()" class="text-center text-[22px]" style="outline: none">{{ __('Filters') }}</button>
+                <i onclick="fadeInAndOut()" id="arrow-down" class="text-[17px] fa-solid fa-chevron-down cursor-pointer"></i>
             </div>
 
             @include('components.filter-transactions')
@@ -125,12 +125,6 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 @yield('table')
             @elseif(isset(request()->book_ids) || isset(request()->student_ids) || isset(request()->librarian_ids))
                 @include('components.no-results')
-{{--                <a href="{{ route(Route::currentRouteName()) }}" class="">--}}
-{{--                    <button class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300--}}
-{{--                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">--}}
-{{--                        <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset filters') }}--}}
-{{--                    </button>--}}
-{{--                </a>--}}
             @else
                 @include('components.no-results')
             @endif
@@ -139,9 +133,12 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
     </div>
 
     <script>
-        function fadeInAndOut(el) {
+        const div = document.getElementById('filter-component');
+        @if(filtering() )
+        div.classList.toggle("accordionPanelHidden");
+        @endif
+        function fadeInAndOut() {
             $('#arrow-down').toggleClass("fa-solid fa-chevron-up fa-solid fa-chevron-down");
-            const div = document.getElementById('filter-component');
             div.classList.toggle("accordionPanelHidden");
         }
     </script>
