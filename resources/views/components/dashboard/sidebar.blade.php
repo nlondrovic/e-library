@@ -135,11 +135,11 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             </ul>
         </div>
     </div>
-    <div class="sidebar-nav py-[10px] border-t-[1px] border-[#e4dfdf] pt-[23px] pb-[29px] group hover:bg-[#EFF3F6]">
-        <!-- Settings Icon -->
+    <!-- Settings Icon -->
+    <div class="sidebar-nav py-[10px] border-t-[1px] border-[#e4dfdf] pt-[23px] pb-[29px] hover:bg-[#EAEAEA]">
         <ul>
             <li class="h-[60px] pt-[18px] pb-[14px]">
-                <a href="{{ route('policy.index') }}" aria-label="Settngs" class="ml-[30px]">
+                <a href="{{ route('policy.index') }} " aria-label="Settngs" class="ml-[30px]">
                     <span class="whitespace-nowrap" title="{{ __('Settings') }}">
                         <i class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[22px] pr-1 text-[#707070] fas fa-cog
                                      @if(str_contains($route_name, 'policy')||
@@ -150,7 +150,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                         str_contains($route_name, 'sizes')||
                                         str_contains($route_name, 'scripts')) text-[#576cdf] @endif"></i>
                         <div class="hidden sidebar-item">
-                             <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                             <p class="transition duration-300 ease-in group-hover:text-blue-600  inline text-[15px] ml-[20px]">
                                  {{ __('Settings') }}</p>
                         </div>
                     </span>
