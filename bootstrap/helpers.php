@@ -55,6 +55,9 @@ function filtering(): bool
     return request()->get('type')
         || request()->get('book_ids') || request()->get('student_ids')
         || request()->get('checkout_librarian_ids') || request()->get('checkin_librarian_ids')
-        || request()->get('start_time') || request()->get('end_time');
+        || request()->get('start_time') || request()->get('end_time')
+
+        || request()->get('start_date') || request()->get('end_date')
+        || request()->get('librarian_id') || request()->get('student_id') || request()->get('book_id');
 
 }
