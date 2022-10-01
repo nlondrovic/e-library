@@ -22,7 +22,6 @@
     "Reservation requests": "Zahtjevi za rezervaciju",
     "Book statistics": "Statistika knjiga",
     "Show all": "Prikaži sve",
-
     "Show all admins": "Prikaži sve admine",
     "Show all authors": "Prikaži sve autore",
     "Show all books": "Prikaži sve knjige",
@@ -269,7 +268,6 @@
     "Librarian image": "Slika bibliotekara",
     "Admin image": "Slika admina",
     "Student image": "Slika učenika",
-
     "Reservation librarian": "Bibliotekar (rezervisao)",
     "Date of reservation": "Datum rezervacije",
     "Reservation end date": "Datum završetka rezervacije",
@@ -281,7 +279,6 @@
     "Reservation due": "Rezervacija ističe",
     "Checkout book": "Izdajte knjigu",
     "Cancel reservation": "Otkažite rezervaciju",
-
     "Start time": "Izdato",
     "End time": "Vraćeno",
     "Write-off time": "Otpisano",
@@ -377,5 +374,10 @@
     "to": "do",
     "of": "od",
     "results": "rezultata",
-    "Error": "Greška"
+    "Error": "Greška",
+    "Are you sure you want to delete this? This action is irreversible.": "Jeste li sigurni da želite da izbrišete ovo? Ova radnja se ne moze vratiti nazad.",
+    "Are you sure you want to save the changes?": "Jeste li sigurni da želite da sačuvate promjene?",
+    "Are you sure you want to checkout the book?": "Jeste li sigurni da želite da izdate knjigu?",
+    "Are you sure you want to cancel the checkout?": "Jeste li sigurni da želite obustavite izdavanje?",
+    "Are you sure you want to proceed?": "Jeste li sigurni da želite da nastavite?"
 }

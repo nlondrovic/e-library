@@ -68,7 +68,7 @@
                         <p class="ml-[10px] mt-[35px]">{{ __('book(s)') }}</p>
                     </div>
                 </div>
-                <button type="submit"
+                <button type="submit" onclick="return confirm('{{ __('Are you sure you want to save the changes?')}} ')"
                         class="btn-animation mt-[10px] text-white shadow-lg w-[150px] disabled:opacity-50
                             focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px]
                             hover:bg-[#46A149] bg-[#4CAF50]">

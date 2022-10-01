@@ -84,7 +84,8 @@
                                                 <form method="post" action="{{ route('authors.destroy', $author) }}">
                                                     @csrf
                                                     @method('delete')
-                                                    <button type="submit" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
+                                                    <button type="submit" tabindex="0" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
+                                                            class="flex w-full px-4 py-2 text-sm leading-5
                                                         text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                         <i class="fa fa-trash mr-[5px] ml-[4px] py-1 text-red-500"></i>
                                                         <span class="px-4 py-0 text-red-500">{{ __('Delete author') }}</span>
