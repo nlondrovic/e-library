@@ -16,6 +16,10 @@
             return confirm('Leaving this page will cause any unsaved data to be lost.');
         }
     });
+
+    function resetWarnOnUnload() {
+        warn_on_unload = false;
+    }
 </script>
 
 <!-- Search select  -->

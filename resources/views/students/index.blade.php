@@ -53,7 +53,8 @@
                     @foreach($students as $student)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                             <td class="flex flex-row items-center px-4 py-4">
-                                <img class="object-cover mr-2 rounded-full" width="40" src="{{ asset($student->picture) }}"
+                                <img class="object-cover mr-2 rounded-full" width="40"
+                                     src="{{ asset($student->picture) }}"
                                      onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"
                                      alt=""/>
                                 <a href="{{ route('students.show', $student) }}">
@@ -91,21 +92,21 @@
                                             <a href="{{ route('checkouts.index', ['student_ids[]' => $student->id]) }}"
                                                tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                           outline-none hover:text-blue-600 btn-animation"
+                                           outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="fas fa-exchange-alt mr-[3px]"></i>
                                                 <span class="px-4 py-0">{{ __('Transactions') }}</span>
                                             </a>
                                             <a href="{{ route('students.show', $student) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                           outline-none hover:text-blue-600 btn-animation"
+                                           outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="far fa-file mr-[5px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Show details') }}</span>
                                             </a>
                                             <a href="{{ route('students.edit', $student) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                           outline-none hover:text-blue-600 btn-animation"
+                                           outline-none hover:text-blue-600"
                                                role="menuitem">
                                                 <i class="fas fa-edit mr-[1px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Edit student') }}</span>
@@ -114,11 +115,12 @@
                                             <form action="{{ route('students.destroy', $student) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" tabindex="0" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
-                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation"
-                                                        role="menuitem">
-                                                    <i class="fa fa-trash mr-[5px] ml-1 py-1 text-red-500"></i>
-                                                    <span class="px-4 py-0 text-red-500">{{ __('Delete student') }}</span>
+                                                <button type="submit" tabindex="0"
+                                                        onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
+                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-red-500"
+                                                        role="menuitem" style="outline: none">
+                                                    <i class="fa fa-trash mr-[5px] ml-1 py-1"></i>
+                                                    <span class="px-4 py-0">{{ __('Delete student') }}</span>
                                                 </button>
                                             </form>
                                         </div>

@@ -94,37 +94,39 @@
                                             <a href="{{ route('checkouts.index', ['book_ids[]' => $book->id]) }}"
                                                tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                            outline-none hover:text-blue-600 btn-animation">
+                                                outline-none hover:text-blue-600">
                                                 <i class="fas fa-exchange-alt ml-[5px] mr-[3px]"></i>
                                                 <span class="px-4 py-0">{{ __('Transactions') }}</span>
                                             </a>
                                             <a href="{{ route('checkouts.create', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-blue-600">
                                                 <i class="far fa-hand-scissors mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Check out') }}</span>
                                             </a>
                                             <a href="{{ route('reservations.create', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-blue-600">
                                                 <i class="far fa-calendar-check mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Reserve') }}</span>
                                             </a>
                                             <a href="{{ route('books.show', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-blue-600">
                                                 <i class="far fa-file mr-[10px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Show details') }}</span>
                                             </a>
                                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-blue-600">
                                                 <i class="fas fa-edit mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Edit book') }}</span>
                                             </a>
                                             <form action="{{ route('books.destroy', $book) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button tabindex="0" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
-                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
-                                                    <i class="fa fa-trash mr-[8px] ml-[4px] py-1 text-red-500"></i>
-                                                    <span class="px-4 py-0 text-red-500">{{ __('Delete book') }}</span>
+                                                <button tabindex="0"
+                                                        onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
+                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-red-500"
+                                                        style="outline: none">
+                                                    <i class="fa fa-trash mr-[8px] ml-[4px] py-1"></i>
+                                                    <span class="px-4 py-0">{{ __('Delete book') }}</span>
                                                 </button>
                                             </form>
                                         </div>

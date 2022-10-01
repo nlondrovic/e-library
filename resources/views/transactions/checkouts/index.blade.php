@@ -52,7 +52,7 @@
                             class="absolute w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                             <div class="py-1">
                                 <a href="{{ route('checkouts.show', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600  btn-animation">
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>
@@ -60,8 +60,10 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
-                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1 btn-animation"></i>
+                                            onclick="return confirm('{{ __('Are you sure you want to check in this book?')}} ')"
+                                            style="outline: none"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Check in')}}</span>
                                     </button>
                                 </form>
@@ -69,8 +71,10 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
-                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1 btn-animation"></i>
+                                            onclick="return confirm('{{ __('Are you sure you want to write off this book?')}} ')"
+                                            style="outline: none"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-red-500">
+                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Write off')}}</span>
                                     </button>
                                 </form>

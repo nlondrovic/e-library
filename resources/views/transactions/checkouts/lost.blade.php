@@ -23,7 +23,9 @@
         @foreach($checkouts as $checkout)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                 <td class="flex flex-row items-center px-4 py-3">
-                    <img class="object-cover mr-2" width="40" onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'" src="{{ asset($checkout->book->picture) }}" alt=""/>
+                    <img class="object-cover mr-2" width="40"
+                         onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'"
+                         src="{{ asset($checkout->book->picture) }}" alt=""/>
                     <a href="{{ route('books.show', $checkout->book) }}">
                         <span class="font-medium text-center">{{ $checkout->book->title }}</span>
                     </a>
@@ -54,7 +56,7 @@
                             divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                             <div class="py-1">
                                 <a href="{{ route('checkouts.show', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>

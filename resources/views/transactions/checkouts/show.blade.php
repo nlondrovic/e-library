@@ -7,16 +7,16 @@
             <div class="pl-[50px] pb-[5px] header-breadcrumbs">
                 <h1>
                     @if($checkout->isCheckout())
-                    {{ __('Checkout') }}
-                        @elseif($checkout->isCheckin())
-                    {{ __('Checkin') }}
+                        {{ __('Checkout') }}
+                    @elseif($checkout->isCheckin())
+                        {{ __('Checkin') }}
                     @else
-                    {{ __('Lost book') }}
+                        {{ __('Lost book') }}
                     @endif
                 </h1>
                 <a href="{{ route('dashboard') }}">{{ __('Home') }}</a> >
                 <a href="{{ route('checkouts.index') }}">{{ __('Transactions') }}</a> >
-                <a href="{{ route('checkouts.show', $checkout) }}">{{ __('Checkouts') }}</a> >
+                <a href="{{ route('checkouts.index') }}">{{ __('Checkouts') }}</a> >
                 <a href="{{ route('checkouts.show', $checkout) }}">{{ $checkout->id }}</a>
             </div>
 
@@ -26,7 +26,8 @@
                         <form action="{{ route('checkIn', $checkout) }}" method="post">
                             @csrf
                             @method('post')
-                            <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                            <button type="submit" style="outline: none" class="hover:text-blue-600 inline ml-[20px] pr-[10px]"
+                                    onclick="return confirm('{{ __('Are you sure you want to check in this book?')}} ')">
                                 <i class="fas fa-redo-alt mr-[3px] "></i>
                                 {{__('Check in')}}
                             </button>
@@ -36,7 +37,8 @@
                         <form action="{{ route('writeOff', $checkout) }}" method="post">
                             @csrf
                             @method('post')
-                            <button type="submit" class="hover:text-blue-600 inline ml-[20px] pr-[10px]">
+                            <button type="submit" style="outline: none" class="hover:text-red-500 inline ml-[20px] pr-[10px]"
+                                    onclick="return confirm('{{ __('Are you sure you want to write off this book?')}} ')">
                                 <i class="far fa-calendar-check mr-[3px] "></i>
                                 {{__('Write off')}}
                             </button>

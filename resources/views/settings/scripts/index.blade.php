@@ -41,17 +41,19 @@
                                     border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                     <div class="py-1">
                                         <a href="{{ route('scripts.edit', $script) }}" tabindex="0"
-                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                           class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                             <i class="fas fa-edit mr-[3px] ml-[5px] py-1"></i>
                                             <span class="px-4 py-0 ml-[5px]">{{ __('Edit script') }}</span>
                                         </a>
                                         <form action="{{ route('scripts.destroy', $script) }}" method="post">
                                             @csrf
                                             @method('delete')
-                                            <button tabindex="0" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
-                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
-                                                <i class="fa fa-trash mr-[10px] ml-[5px] py-1 text-red-500"></i>
-                                                <span class="px-4 py-0 text-red-500">{{ __('Delete script') }}</span>
+                                            <button tabindex="0"
+                                                    onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
+                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-red-500"
+                                                    style="outline: none">
+                                                <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
+                                                <span class="px-4 py-0">{{ __('Delete script') }}</span>
                                             </button>
                                         </form>
                                     </div>

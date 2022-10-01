@@ -28,8 +28,11 @@
                     @method('delete')
                     <p tabindex="0" class="inline w-full text-sm leading-5 text-left
                                 text-gray-700 outline-none hover:text-blue-600">
-                        <i class="fa fa-trash mr-[5px] text-red-500"></i>
-                        <button type="submit" class="text-red-500" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"> {{__('Delete librarian')}} </button>
+                        <button type="submit" class="text-gray-700 hover:text-red-500" style="outline: none"
+                                onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')">
+                            <i class="fa fa-trash mr-[5px]"></i>
+                            {{__('Delete librarian')}}
+                        </button>
                     </p>
                 </form>
             </div>
