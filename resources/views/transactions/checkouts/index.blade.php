@@ -45,12 +45,12 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div
-                        class="absolute z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
+                        class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2 dropdown-knjige">
                         <div
-                            class="absolute right-20 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
+                            class="absolute right-1 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                             <div class="py-1">
                                 <a href="{{ route('checkouts.show', $checkout) }}" tabindex="0"
-                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                   class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600  btn-animation">
                                     <i class="far fa-file mr-[10px] ml-[5px] py-1"></i>
                                     <span class="px-4 py-0">{{__('Show details')}}</span>
                                 </a>
@@ -58,8 +58,8 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1"></i>
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                        <i class="fas fa-redo-alt mr-[6px] ml-[5px] py-1 btn-animation"></i>
                                         <span class="px-4 py-0">{{__('Check in')}}</span>
                                     </button>
                                 </form>
@@ -67,8 +67,8 @@
                                     @csrf
                                     @method('post')
                                     <button type="submit" tabindex="0"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1"></i>
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                                        <i class="fas fa-edit mr-[6px] ml-[5px] py-1 btn-animation"></i>
                                         <span class="px-4 py-0">{{__('Write off')}}</span>
                                     </button>
                                 </form>
