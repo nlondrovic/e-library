@@ -67,6 +67,13 @@
                                     <div class="absolute right-[50px] w-56 mt-[7px] origin-top-right bg-white border
                                         border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                         <div class="py-1">
+                                            <a href="{{ route('checkouts.index', ['checkout_librarian_ids[]' => $librarian->id]) }}"
+                                               tabindex="0"
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
+                                            outline-none hover:text-blue-600">
+                                                <i class="fas fa-exchange-alt ml-[5px] mr-[3px]"></i>
+                                                <span class="px-4 py-0">{{ __('Transactions') }}</span>
+                                            </a>
                                             <a href="{{ route('librarians.show', $librarian) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                outline-none hover:text-blue-600">

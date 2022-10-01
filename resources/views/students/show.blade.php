@@ -12,7 +12,7 @@
             </div>
 
             <div class="pt-[24px] mr-[30px]">
-                <a href="{{ route('checkouts.index', ['student_id' => $student]) }}"
+                <a href="{{ route('checkouts.index', ['student_ids[]' => $student]) }}"
                    class="inline hover:text-blue-600 mr-[14px]">
                     <i class="fas fa-exchange-alt mr-[5px]"></i>
                     <span> {{ __('Transactions') }} </span>

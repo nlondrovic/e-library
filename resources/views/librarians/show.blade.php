@@ -12,6 +12,11 @@
             </div>
 
             <div class="pt-[24px] mr-[30px]">
+                <a href="{{ route('checkouts.index', ['checkout_librarian_ids[]' => $librarian->id]) }}"
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                    <i class="fas fa-exchange-alt mr-[3px]"></i>
+                    {{ __('Transactions') }}
+                </a>
                 <a href="{{ route('librarians.edit', $librarian) }}" tabindex="0"
                    class="inline hover:text-blue-600 mr-[14px]">
                     <i class="fas fa-edit mr-[5px]"></i>
