@@ -9,7 +9,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
             <div id="hamburger" class="menu-btn__burger"></div>
         </div>
 
-        <div class="mt-[16px]">
+        <div class="">
             <ul class="text-[#2D3B48] sidebar-nav">
                 <!-- Dashboard Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
