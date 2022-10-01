@@ -50,7 +50,7 @@
                     @foreach($admins as $admin)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                             <td class="flex flex-row items-center px-4 py-4">
-                                <img class="object-cover mr-2 rounded-full" width="40" src="{{ asset($admin->picture) }}"
+                                <img class="object-cover mr-2 rounded-full h-[40px]" width="40" src="{{ asset($admin->picture) }}"
                                      onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"/>
                                 <a href="{{ route('admins.show', $admin) }}">
                                     <span class="font-medium text-center">{{ $admin->name }}</span>
