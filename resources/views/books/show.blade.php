@@ -13,29 +13,29 @@
 
             <div class="pt-[15px] mr-[30px]">
                 <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}"
-                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation">
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
                     {{ __('Transactions') }}
                 </a>
-                <a href="{{ route('checkouts.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                <a href="{{ route('checkouts.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation outline-none">
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     {{ __('Check out') }}
                 </a>
                 <a href="{{ route('reservations.create', $book) }}"
-                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation">
                     <i class="far fa-calendar-check mr-[3px]"></i>
                     {{ __('Reserve') }}
                 </a>
                 <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
                 </p>
-                <div class="z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2
+                <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2
                     dropdown-knjiga-osnovni-detalji">
                     <div class="absolute right-0 w-56 mt-[7px] origin-top-right bg-white border border-gray-200
                                 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                         <div class="py-1">
                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Edit book') }}</span>
                             </a>
@@ -43,9 +43,9 @@
                                 @csrf
                                 @method('delete')
                                 <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
-                                            text-gray-700 outline-none hover:text-blue-600">
+                                            text-gray-700 outline-none hover:text-blue-600 z-50 btn-animation">
                                     <i class="fa fa-trash mr-[5px] ml-[5px] py-1 text-red-500"></i>
-                                    <button type="submit" class="px-4 py-0 text-red-500 btn-animation">{{ __('Delete book') }}</button>
+                                    <button type="submit" class="px-4 py-0 text-red-500">{{ __('Delete book') }}</button>
                                 </p>
                             </form>
                         </div>
