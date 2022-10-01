@@ -1,7 +1,7 @@
 <div class="activity-card flex flex-row mb-[25px]">
     <div class="mt-[5px] flex flex-col">
         <div class="text-gray-500 mb-[5px]">
-            <span class="capitalize">{{ __('Reservation') }}
+            <span>{{ __('Reservation') }}
                 <p class="inline font-medium text-black"> - {{ capitalize(format_activity_time($activity->time)) }} </p>
             </span>
         </div>

@@ -62,17 +62,17 @@
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $student->email }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('checkouts.index', ['student_id' => $student->id]) }}">
+                                <a href="{{ route('checkouts.index', ['student_ids[]' => $student->id]) }}">
                                     {{ $student->getCheckedOutCount()>0 ?? $student->getCheckedOutCount() || "" }}
                                 </a>
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('overdue.index', ['student_id' => $student->id]) }}">
+                                <a href="{{ route('overdue.index', ['student_ids[]' => $student->id]) }}">
                                     {{ $student->getOverdueCount()>0 ?? $student->getOverdueCount() || "" }}
                                 </a>
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('reservations.active', ['student_id' => $student->id]) }}">
+                                <a href="{{ route('reservations.active', ['student_ids[]' => $student->id]) }}">
                                     {{ $student->getReservationsCount()>0 ?? $student->getReservationsCount() || "" }}
                                 </a>
                             </td>

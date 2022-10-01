@@ -65,17 +65,17 @@
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->category->name }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->getFreeCount() }}</td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('reservations.active', ['book_id' => $book->id]) }}">
+                                <a href="{{ route('reservations.active', ['book_ids[]' => $book->id]) }}">
                                     {{ $book->reserved_count != 0 ? $book->reserved_count : "" }}
                                 </a>
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}">
+                                <a href="{{ route('checkouts.index', ['book_ids[]' => $book->id]) }}">
                                     {{ $book->checkouts_count != 0 ? $book->checkouts_count : "" }}
                                 </a>
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap text-[#2196f3]">
-                                <a href="{{ route('overdue.index', ['book_id' => $book->id]) }}">
+                                <a href="{{ route('overdue.index', ['book_ids[]' => $book->id]) }}">
                                     {{ $book->getOverdueCount() != 0 ? $book->getOverdueCount() : "" }}
                                 </a>
                             </td>
