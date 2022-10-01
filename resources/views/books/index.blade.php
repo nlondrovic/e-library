@@ -85,7 +85,7 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </p>
                                 <div
-                                    class="absolute z-10 hidden transition-all duration-300 origin-top-right transform
+                                    class="absolute right-72 z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-knjige">
                                     <div
                                         class="absolute w-56 mt-2 origin-top-right bg-white border border-gray-200
@@ -94,27 +94,27 @@
                                             <a href="{{ route('checkouts.index', ['book_ids[]' => $book->id]) }}"
                                                tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                            outline-none hover:text-blue-600">
+                                            outline-none hover:text-blue-600 btn-animation">
                                                 <i class="fas fa-exchange-alt ml-[5px] mr-[3px]"></i>
                                                 <span class="px-4 py-0">{{ __('Transactions') }}</span>
                                             </a>
                                             <a href="{{ route('checkouts.create', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="far fa-hand-scissors mr-[6px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Check out') }}</span>
                                             </a>
                                             <a href="{{ route('reservations.create', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="far fa-calendar-check mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Reserve') }}</span>
                                             </a>
                                             <a href="{{ route('books.show', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="far fa-file mr-[10px] ml-[3px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Show details') }}</span>
                                             </a>
                                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
-                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                 <i class="fas fa-edit mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Edit book') }}</span>
                                             </a>
@@ -122,7 +122,7 @@
                                                 @csrf
                                                 @method('delete')
                                                 <button tabindex="0"
-                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                     <i class="fa fa-trash mr-[8px] ml-[4px] py-1 text-red-500"></i>
                                                     <span class="px-4 py-0 text-red-500">{{ __('Delete book') }}</span>
                                                 </button>

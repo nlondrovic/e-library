@@ -1030,6 +1030,12 @@ h4 {
 .top-\[14px\]{
     top: 14px;
 }
+.right-1{
+    right: 0.25rem;
+}
+.right-2{
+    right: 0.5rem;
+}
 .right-4{
     right: 1rem;
 }
