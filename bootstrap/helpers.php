@@ -27,18 +27,18 @@ function format_activity_time(string $time): string
     $local_language = Lang::getLocale();
     $date = \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $time)->locale($local_language);
 
-    if($date->isCurrentWeek()) {
-        return $date->dayName.' '.__('at').' '.$date->format('H:i');
+    if ($date->isCurrentWeek()) {
+        return $date->dayName . ' ' . __('at') . ' ' . $date->format('H:i');
     }
 
-    if($date->isLastWeek()){
-        if($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedelja") {
-            return __('Last.a').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
+    if ($date->isLastWeek()) {
+        if ($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedelja") {
+            return __('Last.a') . ' ' . $date->dayName . ' ' . __('at') . ' ' . $date->format('H:i');
         }
-        return __('Last').' '. $date->dayName.' '.__('at').' '.$date->format('H:i');
+        return __('Last') . ' ' . $date->dayName . ' ' . __('at') . ' ' . $date->format('H:i');
     }
 
-    if(!$date->isCurrentYear()){
+    if (!$date->isCurrentYear()) {
         return $date->translatedFormat('M jS Y - H:i');
     }
 
@@ -52,10 +52,8 @@ function capitalize(string $time): string
 
 function filtering(): bool
 {
-    return request()->get('type') || request()->get('book_id')
-        || request()->get('student_id') || request()->get('librarian_id')
-        || request()->get('student_ids') || request()->get('book_ids')
-        || request()->get('checkout_librarian_id') || request()->get('checkin_librarian_id')
+    return request()->get('type')
+        || request()->get('book_ids') || request()->get('student_ids')
         || request()->get('checkout_librarian_ids') || request()->get('checkin_librarian_ids')
         || request()->get('start_time') || request()->get('end_time');
 

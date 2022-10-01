@@ -12,8 +12,8 @@
             </div>
 
             <div class="pt-[15px] mr-[30px]">
-                <a href="{{ route('checkouts.index', ['book_id' => $book->id]) }}"
-                   class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation">
+                <a href="{{ route('checkouts.index', ['book_ids[]' => $book->id]) }}"
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px]">
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
                     {{ __('Transactions') }}
                 </a>
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div class="flex flex-row overflow-auto h-full scroll">
+    <div class="flex flex-row overflow-auto height-osnovniDetalji scroll">
         <div class="w-[100%]">
             <div class="pl-[50px] pb-[30px] mt-[20px]">
                 <div class="flex flex-row justify-between">

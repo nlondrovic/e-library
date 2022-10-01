@@ -24,7 +24,7 @@
         @foreach($reservations as $reservation)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                 <td class="flex flex-row items-center px-4 py-3">
-                    <img class="object-cover w-8 mr-2 h-11" src="{{ asset($reservation->book->picture) }}" alt=""/>
+                    <img class="object-cover mr-2" width="40" onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'" src="{{ asset($reservation->book->picture) }}" alt=""/>
                     <a href="{{ route('books.show', $reservation->book) }}">
                         <span class="font-medium text-center">{{ $reservation->book->title }}</span>
                     </a>
