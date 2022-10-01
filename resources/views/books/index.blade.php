@@ -85,7 +85,7 @@
                                     <i class="fas fa-ellipsis-v"></i>
                                 </p>
                                 <div
-                                    class="absolute right-72 z-10 hidden transition-all duration-300 origin-top-right transform
+                                    class="relative right-20 z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-knjige">
                                     <div
                                         class="absolute w-56 mt-2 origin-top-right bg-white border border-gray-200

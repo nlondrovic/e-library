@@ -35,7 +35,7 @@
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsGenre hover:text-[#606FC7]">
                                 <i class="fas fa-ellipsis-v"></i>
                             </p>
-                            <div class="absolute right-72 z-10 hidden transition-all duration-300 origin-top-right transform
+                            <div class="relative -right-80 z-10 hidden transition-all duration-300 origin-top-right transform
                                     scale-95 -translate-y-2 dropdown-genre">
                                 <div class="absolute w-56 mt-[7px] origin-top-right bg-white border
                                         border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
