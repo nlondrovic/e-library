@@ -2739,11 +2739,11 @@ h4 {
 @media (max-width: 1023px){
 
     .small\:block{
-        display: block;
+        display: block !important;
     }
 
     .small\:hidden{
-        display: none;
+        display: none !important;
     }
 
     .small\:bg-gradient-to-r{
@@ -2759,7 +2759,7 @@ h4 {
         --tw-gradient-to: #3b82f6;
     }
 }
-@media (min-width: 1536px){
+@media (min-width: 1536px) {
 
     .\32xl\:grid-cols-4{
         grid-template-columns: repeat(4, minmax(0, 1fr));
