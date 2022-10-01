@@ -35,15 +35,15 @@
                             <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsBookBind hover:text-[#606FC7]">
                                 <i class="fas fa-ellipsis-v"></i>
                             </p>
-                            <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform
+                            <div class="absolute right-72 z-10 hidden transition-all duration-300 origin-top-right transform
                                 scale-95 -translate-y-2 dropdown-book-bind">
-                                <div class="absolute right-[25px] w-56 mt-[7px] origin-top-right bg-white border
+                                <div class="absolute w-56 mt-[7px] origin-top-right bg-white border
                                         border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                     <div class="py-1">
                                         <a href="{{ route('bindings.edit', $binding) }}" tabindex="0"
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
-                                            <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0">{{ __('Edit binding') }}</span>
+                                            <i class="fas fa-edit mr-[3px] ml-[5px] py-1"></i>
+                                            <span class="px-4 py-0 ml-[5px]">{{ __('Edit binding') }}</span>
                                         </a>
                                         <form method="post" action="{{ route('bindings.destroy', $binding) }}">
                                             @csrf

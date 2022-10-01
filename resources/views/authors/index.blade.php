@@ -62,21 +62,21 @@
                                     dotsAutori hover:text-[#606FC7]">
                                         <i class="fas fa-ellipsis-v"></i>
                                     </p>
-                                    <div class="absolute z-10 hidden transition-all duration-300 origin-top-right transform
+                                    <div class="absolute right-72 z-10 hidden transition-all duration-300 origin-top-right transform
                                         scale-95 -translate-y-2 dropdown-autori">
-                                        <div class="absolute right-[55px] w-56 mt-[7px] origin-top-right bg-white border
+                                        <div class="absolute w-56 mt-[7px] origin-top-right bg-white border
                                             border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                                             <div class="py-1">
                                                 <a href="{{ route('authors.show', $author) }}" tabindex="0"
                                                    class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                                   outline-none hover:text-blue-600">
+                                                   outline-none hover:text-blue-600 btn-animation">
                                                     <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                                     <span class="px-4 py-0">{{ __('Show details') }}</span>
                                                 </a>
 
                                                 <a href="{{ route('authors.edit', $author) }}" tabindex="0"
                                                    class="flex w-full px-4 py-2 text-sm leading-5
-                                                    text-left text-gray-700 outline-none hover:text-blue-600">
+                                                    text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                     <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                                     <span class="px-4 ml-1 py-0">{{ __('Edit author') }}</span>
                                                 </a>
@@ -85,7 +85,7 @@
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit" tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5
-                                                        text-left text-gray-700 outline-none hover:text-blue-600">
+                                                        text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
                                                         <i class="fa fa-trash mr-[5px] ml-[4px] py-1 text-red-500"></i>
                                                         <span class="px-4 py-0 text-red-500">{{ __('Delete author') }}</span>
                                                     </button>
