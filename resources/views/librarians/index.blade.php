@@ -70,7 +70,7 @@
                                             <a href="{{ route('checkouts.index', ['checkout_librarian_ids[]' => $librarian->id]) }}"
                                                tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                            outline-none hover:text-blue-600">
+                                            outline-none hover:text-blue-600 btn-animation">
                                                 <i class="fas fa-exchange-alt ml-[5px] mr-[3px]"></i>
                                                 <span class="px-4 py-0">{{ __('Transactions') }}</span>
                                             </a>
