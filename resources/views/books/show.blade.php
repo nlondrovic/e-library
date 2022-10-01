@@ -17,7 +17,8 @@
                     <i class="fas fa-exchange-alt mr-[3px]"></i>
                     {{ __('Transactions') }}
                 </a>
-                <a href="{{ route('checkouts.create', $book) }}" class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation outline-none">
+                <a href="{{ route('checkouts.create', $book) }}"
+                   class="inline hover:text-blue-600 ml-[20px] pr-[10px] btn-animation outline-none">
                     <i class="far fa-hand-scissors mr-[3px]"></i>
                     {{ __('Check out') }}
                 </a>
@@ -35,7 +36,7 @@
                                 divide-y divide-gray-100 rounded-md shadow-lg outline-none">
                         <div class="py-1">
                             <a href="{{ route('books.edit', $book) }}" tabindex="0"
-                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
+                               class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                 <span class="px-4 py-0">{{ __('Edit book') }}</span>
                             </a>
@@ -43,9 +44,12 @@
                                 @csrf
                                 @method('delete')
                                 <p tabindex="0" class="flex w-full px-4 py-2 text-sm leading-5 text-left
-                                            text-gray-700 outline-none hover:text-blue-600 z-50 btn-animation">
-                                    <i class="fa fa-trash mr-[5px] ml-[5px] py-1 text-red-500"></i>
-                                    <button type="submit" class="px-4 py-0 text-red-500" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')">{{ __('Delete book') }}</button>
+                                             text-gray-700 hover:text-red-500 z-50">
+                                    <button type="submit" class="py-2 ml-[5px]" style="outline: none"
+                                            onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')">
+                                        <i class="fa fa-trash mr-[1px] py-1"></i>
+                                        <span class="px-4 py-0">{{ __('Delete book') }}</span>
+                                    </button>
                                 </p>
                             </form>
                         </div>

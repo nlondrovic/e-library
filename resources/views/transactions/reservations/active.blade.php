@@ -23,7 +23,9 @@
         @foreach($reservations as $reservation)
             <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                 <td class="flex flex-row items-center px-4 py-3">
-                    <img class="object-cover mr-2" width="40" onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'" src="{{ asset($reservation->book->picture) }}" alt=""/>
+                    <img class="object-cover mr-2" width="40"
+                         onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'"
+                         src="{{ asset($reservation->book->picture) }}" alt=""/>
                     <a href="{{ route('books.show', $reservation->book) }}">
                         <span class="font-medium text-center">{{ $reservation->book->title }}</span>
                     </a>
@@ -53,8 +55,10 @@
                                 <form method="post" action="{{ route('reservations.checkOut', $reservation) }}">
                                     @csrf
                                     @method('patch')
-                                    <button type="submit" tabindex="0" onclick="return confirm('{{ __('Are you sure you want to checkout the book?')}} ')"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                    <button type="submit" tabindex="0"
+                                            onclick="return confirm('{{ __('Are you sure you want to check out this book?')}} ')"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600"
+                                            style="outline: none">
                                         <i class="far fa-hand-scissors mr-[10px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Checkout book')}}</span>
                                     </button>
@@ -62,8 +66,10 @@
                                 <form method="post" action="{{ route('reservations.cancel', $reservation) }}" class="">
                                     @csrf
                                     @method('patch')
-                                    <button type="submit" tabindex="0" onclick="return confirm('{{ __('Are you sure you want to cancel the checkout?')}} ')"
-                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600">
+                                    <button type="submit" tabindex="0"
+                                            onclick="return confirm('{{ __('Are you sure you want to cancel this reservation?')}} ')"
+                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 hover:text-red-500"
+                                            style="outline: none">
                                         <i class="fa fa-trash mr-[10px] ml-[5px] py-1"></i>
                                         <span class="px-4 py-0">{{__('Cancel reservation')}}</span>
                                     </button>

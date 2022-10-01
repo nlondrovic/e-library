@@ -70,19 +70,19 @@
                                             <a href="{{ route('checkouts.index', ['checkout_librarian_ids[]' => $librarian->id]) }}"
                                                tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                            outline-none hover:text-blue-600 btn-animation">
+                                            outline-none hover:text-blue-600">
                                                 <i class="fas fa-exchange-alt ml-[5px] mr-[3px]"></i>
                                                 <span class="px-4 py-0">{{ __('Transactions') }}</span>
                                             </a>
                                             <a href="{{ route('librarians.show', $librarian) }}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                               outline-none hover:text-blue-600 btn-animation">
+                                               outline-none hover:text-blue-600">
                                                 <i class="far fa-file mr-[5px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0">{{ __('Show details') }}</span>
                                             </a>
                                             <a href="{{route('librarians.edit', $librarian)}}" tabindex="0"
                                                class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
-                                               outline-none hover:text-blue-600 btn-animation">
+                                               outline-none hover:text-blue-600">
                                                 <i class="fas fa-edit mr-[1px] ml-[5px] py-1"></i>
                                                 <span class="px-4 py-0 ml-1">{{ __('Edit librarian') }}</span>
                                             </a>
@@ -90,10 +90,12 @@
                                             <form action="{{ route('librarians.destroy', $librarian) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" tabindex="0" onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
-                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700 outline-none hover:text-blue-600 btn-animation">
-                                                    <i class="fa fa-trash mr-[5px] ml-[4px] py-1 text-red-500"></i>
-                                                    <span class="px-4 py-0 text-red-500">{{ __('Delete librarian') }}</span>
+                                                <button type="submit" tabindex="0"
+                                                        onclick="return confirm('{{ __('Are you sure you want to delete this? This action is irreversible.')}} ')"
+                                                        class="flex w-full px-4 py-2 text-sm leading-5 text-left  text-gray-700 hover:text-red-500"
+                                                        style="outline: none">
+                                                    <i class="fa fa-trash mr-[5px] ml-[4px] py-1"></i>
+                                                    <span class="px-4 py-0">{{ __('Delete librarian') }}</span>
                                                 </button>
                                             </form>
                                         </div>

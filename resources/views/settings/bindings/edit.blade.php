@@ -34,12 +34,12 @@
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-white text-right py-[7px] mr-[100px]">
-                        <button type="reset" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won\'t be saved.') }}')"
-                                class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none text-sm py-2.5
-                                    px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
+                        <a href="{{ url()->previous() }}" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won\'t be saved.') }}')"
+                           class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
                             {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
-                        </button>
-                        <button type="submit" onclick="return confirm('{{ __('Are you sure you want to save the changes?')}} ')"
+                        </a>
+                        <button type="submit"
+                                onclick="return confirm('{{ __('Are you sure you want to save the changes?')}} ')"
                                 class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm
                                     py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]"
                                 value="save">
@@ -50,6 +50,5 @@
             </div>
         </form>
     </div>
-
 
 @endsection

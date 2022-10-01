@@ -11,7 +11,8 @@
     </div>
 
     <div class="scroll height-content section-content">
-        <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('sizes.store') }}" id="not_filter_form">
+        <form class="text-gray-700 forma pl-[28px]" method="post" action="{{ route('sizes.store') }}"
+              id="not_filter_form">
             @csrf
             @method('post')
             <div class="flex flex-row ml-[30px]">
@@ -21,7 +22,7 @@
                         <input type="text" name="name" required
                                class="flex w-[90%] mt-2 px-2 py-2 text-base bg-white border border-gray-300 shadow-sm
                                appearance-none focus:outline-none focus:ring-2 focus:ring-[#576cdf]"
-                        placeholder="{{ __('Enter a size name') }}"/>
+                               placeholder="{{ __('Enter a size name') }}"/>
                         @if($errors->first('name'))
                             <span class="text-red-600">{{ $errors->first('name') }}</span>
                         @endif
@@ -31,14 +32,12 @@
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-white text-right py-[7px] mr-[100px]">
-                        <button type="reset" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won\'t be saved.') }}')"
-                                class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none text-sm py-2.5
-                                px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
+                        <a href="{{ url()->previous() }}" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won\'t be saved.') }}')"
+                           class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
                             {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
-                        </button>
+                        </a>
                         <button type="submit"
-                                class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm
-                                py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]">
+                                class="btn-animation shadow-lg w-[150px] disabled:opacity-50 focus:outline-none text-sm py-2.5 px-5 transition duration-300 ease-in rounded-[5px] hover:bg-[#46A149] bg-[#4CAF50]" {{--onclick="validacijaZanr()"--}}>
                             {{ __('Save') }} <i class="fas fa-check ml-[4px]"></i>
                         </button>
                     </div>

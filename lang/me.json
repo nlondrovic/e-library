@@ -375,9 +375,11 @@
     "of": "od",
     "results": "rezultata",
     "Error": "Greška",
-    "Are you sure you want to delete this? This action is irreversible.": "Jeste li sigurni da želite da izbrišete ovo? Ova radnja se ne moze vratiti nazad.",
-    "Are you sure you want to save the changes?": "Jeste li sigurni da želite da sačuvate promjene?",
-    "Are you sure you want to checkout the book?": "Jeste li sigurni da želite da izdate knjigu?",
-    "Are you sure you want to cancel the checkout?": "Jeste li sigurni da želite obustavite izdavanje?",
-    "Are you sure you want to proceed?": "Jeste li sigurni da želite da nastavite?"
+    "Are you sure you want to delete this? This action is irreversible.": "Da li ste sigurni da želite da izbrišete ovo? Ova radnja je nepovratna.",
+    "Are you sure you want to save the changes?": "Da li ste sigurni da želite da sačuvate promjene?",
+    "Are you sure you want to check out this book?": "Da li ste sigurni da želite da izdate ovu knjigu?",
+    "Are you sure you want to check in this book?": "Da li ste sigurni da želite da vratite ovu knjigu?",
+    "Are you sure you want to write off this book?": "Da li ste sigurni da želite da otpišete ovu knjigu?",
+    "Are you sure you want to cancel this reservation?": "Da li ste sigurni da želite otkažete ovu rezervaciju?",
+    "Are you sure you want to proceed?": "Da li ste sigurni da želite da nastavite?"
 }
