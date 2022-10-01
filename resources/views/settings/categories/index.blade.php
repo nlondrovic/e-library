@@ -47,7 +47,7 @@
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                outline-none hover:text-blue-600">
                                             <i class="fas fa-edit mr-[3px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0 ml-[5px]">{{ __('Edit category') }}</span>
+                                            <span class="px-4 py-0 ml-[1px]">{{ __('Edit category') }}</span>
                                         </a>
                                         <form action="{{ route('categories.destroy', $category) }}" method="post">
                                             @csrf

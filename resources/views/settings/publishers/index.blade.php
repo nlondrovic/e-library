@@ -44,7 +44,7 @@
                                            class="flex w-full px-4 py-2 text-sm leading-5 text-left text-gray-700
                                                outline-none hover:text-blue-600">
                                             <i class="fas fa-edit mr-[3px] ml-[5px] py-1"></i>
-                                            <span class="px-4 py-0 ml-[5px]">{{ __('Edit publisher') }}</span>
+                                            <span class="px-4 py-0 ml-[1px]">{{ __('Edit publisher') }}</span>
                                         </a>
                                         <form action="{{ route('publishers.destroy', $publisher) }}" method="post">
                                             @csrf
