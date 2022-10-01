@@ -78,12 +78,12 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                         </span>
                     </div>
                 </li>
-                <!-- Renting Icon -->
+                <!-- Transactions Icon -->
                 <li class="pt-[18px] pb-[14px] group hover:bg-[#EAEAEA] h-[60px]">
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Transactions') }}">
                                 <a href="{{ route('checkouts.index') }}" aria-label="RentingBooks">
-                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-1 text-[#707070] fas fa-exchange-alt transition duration-300 ease-in group-hover:text-blue-600
+                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-1 text-[#707070] fa-solid fa-repeat transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'checkouts') || str_contains($route_name, 'checkins') ||
                                             str_contains($route_name, 'lost') || str_contains($route_name, 'overdue') ||
                                             str_contains($route_name, 'reservations')) text-[#576cdf] @endif"></i>
