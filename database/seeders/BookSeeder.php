@@ -78,7 +78,7 @@ class BookSeeder extends Seeder
                 'publish_date' => '1983-02-07',
                 'total_count' => rand(4, 15),
                 'category_id' => rand(1, 10),
-                'genre_id' => 24,
+                'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0
             ],
@@ -96,7 +96,7 @@ class BookSeeder extends Seeder
                 'publish_date' => '1964-10-09',
                 'total_count' => rand(4, 15),
                 'category_id' => rand(1, 10),
-                'genre_id' => 24,
+                'genre_id' => 1,
                 'checkouts_count' => 0,
                 'reserved_count' => 0
             ], [
