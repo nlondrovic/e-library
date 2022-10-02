@@ -1,5 +1,5 @@
 <div class="relative">
-    <h3 class="uppercase mb-[20px] text-left py-[30px] text-center">
+    <h3 class="uppercase mb-[20px] text-left py-[30px] text-center text-[20px]">
         {{ __('Book statistics') }}
     </h3>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
