@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="min-w-[25%] border-l-[1px] border-[#e4dfdf]">
+        <div class="min-w-[20%] max-w-[25%] border-l-[1px] border-[#e4dfdf]">
             @include('components.user-recent-activity')
         </div>
     </div>

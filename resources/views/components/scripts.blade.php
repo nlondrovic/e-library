@@ -2,26 +2,6 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
 
-<!-- When a use tries to exit a non-submitted form-->
-<script>
-    let warn_on_unload = false;
-    $('#not_filter_form').keyup(function () {
-        // Making true when user types in , or select
-        warn_on_unload = true;
-    });
-
-    $(window).bind('beforeunload', function (e) {
-        // Warns user if not saving form and closing or browsing other page
-        if (warn_on_unload) {
-            return confirm('Leaving this page will cause any unsaved data to be lost.');
-        }
-    });
-
-    function resetWarnOnUnload() {
-        warn_on_unload = false;
-    }
-</script>
-
 <!-- Search select  -->
 <script>
     $(document).ready(function () {
