@@ -194,6 +194,10 @@
     height: calc(100% - 160px);
 }
 
+.h-100 {
+    height: 100vh;
+}
+
 /*Show More/Show less - text*/
 .addReadMore.showlesscontent .SecSec,
 .addReadMore.showlesscontent .readLess {

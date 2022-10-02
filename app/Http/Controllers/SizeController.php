@@ -23,7 +23,7 @@ class SizeController extends Controller
     {
         Size::create($request->validated());
 
-        return redirect()->route('sizes.index');
+        return redirect()->route('sizes.index')->with('flash-success', __('Size created successfully!'));;
     }
 
     public function edit(Size $size)

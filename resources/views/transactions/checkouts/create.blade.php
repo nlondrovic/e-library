@@ -53,18 +53,7 @@
                     </div>
 
                     <div class="flex flex-row bottom-50 pl-[50px] ml-[2px] w-full text-white text-right">
-                        <button type="reset"
-                                onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won\'t be saved.') }}')"
-                                class="btn-animation shadow-lg mr-[15px] focus:outline-none
-                                text-sm py-2.5 px-4 transition duration-300 ease-in bg-[#F44336] hover:bg-[#F55549] rounded-[5px]">
-                            {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
-                        </button>
-                        <button type="submit" onclick="resetWarnOnUnload(); return confirm('{{ __('Are you sure you want to proceed?')}} ')"
-                                class="btn-animation shadow-lg disabled:opacity-50
-                                    focus:outline-none text-sm py-2.5 px-4 transition duration-300 ease-in rounded-[5px]
-                                    hover:bg-[#46A149] bg-[#4CAF50]">
-                            {{ __('Save') }} <i class="fas fa-check ml-[4px]"></i>
-                        </button>
+                        @include('components.confirm-reset-buttons')
                     </div>
                 </form>
 
@@ -73,15 +62,16 @@
                         @include('components.book-copies')
                     </div>
                 </div>
-
-                <div class="mr-[20px]">
-                    <img class="p-2 border-2 border-gray-300 mt-[20px]" width="360"
-                         src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"
-                         onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'">
-                </div>
             </div>
         </div>
-        <div class="min-w-[20%] max-w-[25%] border-l-[1px] height-dashboard border-[#e4dfdf]">
+
+        <div class="mr-[50px] ml-[50px]">
+            <img class="p-2 border-2 border-gray-300 mt-[20px]" width="660"
+                 src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"
+                 onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'">
+        </div>
+
+        <div class="min-w-[20%] max-w-[25%] border-l-[1px] h-100 border-[#e4dfdf]">
             @include('components.book-recent-activity')
         </div>
 
