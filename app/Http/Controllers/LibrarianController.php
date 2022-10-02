@@ -54,8 +54,6 @@ class LibrarianController extends Controller
             $filename = "/images/users/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/users/'), $filename);
-        } else {
-            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
         }
 
         User::create($inputs);
@@ -100,8 +98,6 @@ class LibrarianController extends Controller
             $filename = "/images/users/" . Str::slug(time() . " " . $filename) . ".{$file->getClientOriginalExtension()}";
             $inputs['picture'] = $filename;
             $file->move(public_path('/images/users/'), $filename);
-        } else {
-            $inputs['picture'] = User::DEFAULT_USER_PICTURE_PATH;
         }
 
         $librarian->update($inputs);
