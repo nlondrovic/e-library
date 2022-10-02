@@ -218,7 +218,7 @@
     "Reservation time": "Rezervisano",
     "Books per student": "Broj knjiga po učeniku",
     "day(s)": "dan/a",
-    "book(s)": "knjiga",
+    "book(s)": "knjiga/e",
     "Current value": "Trenutna vrijednost",
     "This value defines the time in days, a book can be checked out for a student. After this period the checkout will be overdue.": "Ova vrijednost definiše vrijeme u danima, kada knjiga može biti izdata učeniku. Nakon ovog perioda knjiga će biti u prekoračenju.",
     "This value defines the time in days, a book can be reserved for a student. In this period a student can check out the book. After this period the reservation will be canceled.": "Ova vrijednost definiše vrijeme u danima, kada knjiga može biti rezervisana za učenika. U ovom periodu učenik može izdati knjigu. Nakon ovog perioda rezervacija će biti otkazana.",
@@ -397,5 +397,7 @@
     "Are you sure you want to proceed?": "Da li ste sigurni da želite da nastavite?",
     "Are you sure you want to cancel? The changes you made won't be saved.": "Da li ste sigurni da želite da otkažete? Izmjene neće biti sačuvane.",
     "Reservation approved!": "Rezervacija odobrena!",
-    "Reservation rejected!": "Rezervacija odbijena!"
+    "Reservation rejected!": "Rezervacija odbijena!",
+    "Period for checkouts": "Period izdavanja",
+    "Period for reservations": "Period rezervisanja"
 }
