@@ -40,8 +40,12 @@
             </div>
 
             <!-- Right side -->
-            <div class="mr-[50px] ">
+            <div class="mr-[50px]">
+                <h3 class="ml-[20px] mb-[20px] text-center pr-[30px] text-[20px]">{{ __('Reservation requests') }}</h3>
+                @include('components.dashboard.reservation-requests-table')
+
                 @include('components.dashboard.book-chart')
+
             </div>
         </div>
     </div>

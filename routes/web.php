@@ -12,6 +12,7 @@ use App\Http\Controllers\LibrarianController;
 use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\BindingController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReservationRequestController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ScriptController;
@@ -42,7 +43,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::get('/activities', [HomeController::class, 'activities'])->name('activities');
-
+    Route::get('/reservationRequests', [ReservationRequestController::class, 'index'])
+        ->name('reservationRequests.index');
+    Route::get('/reservationRequests/approve/{reservation_request}', [ReservationRequestController::class, 'approve'])
+        ->name('reservationRequests.approve');
+    Route::get('/reservationRequests/reject/{reservation_request}', [ReservationRequestController::class, 'reject'])
+        ->name('reservationRequests.reject');
 
 
     // BASIC CRUDs
@@ -62,7 +68,6 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/policy/update', [SettingsController::class, 'update'])->name('policy.update');
 
 
-
     // RESERVATIONS LISTING
 
     Route::get('/transactions/activeReservations', [ReservationController::class, 'activeReservations'])->name('reservations.active');
@@ -75,7 +80,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transactions/reservations/show/{reservation}', [ReservationController::class, 'show'])->name('reservations.show');
     Route::patch('/transactions/reservations/checkOut/{reservation}', [ReservationController::class, 'checkOut'])->name('reservations.checkOut');
     Route::patch('/transactions/reservations/cancel/{reservation}', [ReservationController::class, 'cancel'])->name('reservations.cancel');
-
 
 
     // CHECKOUTS LISTING
