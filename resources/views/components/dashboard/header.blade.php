@@ -15,10 +15,10 @@
     <div class="flex-initial">
         <div class="relative flex items-center justify-end">
             <div class="relative block" title="{{ __('Activities') }}">
-                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none btn-animation"
+                <a href="{{ route('activities') }}" class="relative inline-block px-3 py-2 focus:outline-none outline-none btn-animation"
                    aria-label="Notification">
                     <div class="flex items-center h-5">
-                        <div class="_xpkakx">
+                        <div class="">
                             <span
                                 class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full px-[11px] py-[7px] ">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
