@@ -2928,3 +2928,13 @@ h4 {
 .spin:hover{
     transform: rotate(540deg);
 }
+.try {
+    /*zoom: 0.9;*/
+    /*transform: scale(0.8);*/
+}
+@media (min-width: 1100px) and ( max-width: 1400px ){
+    .size-down {
+        transform-origin: top left;
+        transform: scale(0.75);
+    }
+}
