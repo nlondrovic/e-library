@@ -51,7 +51,7 @@
             <div class="absolute bottom-0 w-full">
                 <div class="flex flex-row">
                     <div class="inline-block w-full text-right py-[7px] mr-[100px] text-white">
-                        <button type="reset" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made wont be saved.') }}')"
+                        <button type="reset" onclick="return confirm('{{ __('Are you sure you want to cancel? The changes you made won't be saved.') }}')"
                                 class="btn-animation shadow-lg mr-[15px] w-[150px] focus:outline-none text-sm py-2.5
                                 px-5 transition duration-300 ease-in rounded-[5px] bg-[#F44336] hover:bg-[#F55549]">
                             {{ __('Cancel') }} <i class="fas fa-times ml-[4px]"></i>
