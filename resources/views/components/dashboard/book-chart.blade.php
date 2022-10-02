@@ -11,7 +11,7 @@
     </style>
 
     <div class="chartBox">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" class="mr-[70px]"></canvas>
     </div>
 
     <script>
