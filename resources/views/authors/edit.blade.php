@@ -39,7 +39,7 @@
                 </div>
                 <div class="mt-[20px]">
                     <p>{{ __('Add a photo') }}</p>
-                    <input type="file" name="picture" accept="image/*"
+                    <input type="file" name="picture" accept="image/*" class="shadow-md w-[360px]"
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" class="mt-[20px] p-2 border-2 border-gray-300"
                          width="360" src="{{ asset($author->picture) }}" alt="{{ __('Author image') }}"

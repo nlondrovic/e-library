@@ -222,7 +222,7 @@
                             {{-- Picture --}}
                             <div class="mt-[20px]">
                                 <p>{{ __('Add a photo') }}</p>
-                                <input type="file" name="picture" accept="image/*"
+                                <input type="file" name="picture" accept="image/*" class="shadow-md w-[360px]"
                                        onchange="loadFileBook(event)"/>
                                 <img id="image-output-book" width="360" class="mt-[20px] p-2 border-2 border-gray-300"
                                      src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"
