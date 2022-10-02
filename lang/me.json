@@ -394,5 +394,6 @@
     "Are you sure you want to check in this book?": "Da li ste sigurni da želite da vratite ovu knjigu?",
     "Are you sure you want to write off this book?": "Da li ste sigurni da želite da otpišete ovu knjigu?",
     "Are you sure you want to cancel this reservation?": "Da li ste sigurni da želite otkažete ovu rezervaciju?",
-    "Are you sure you want to proceed?": "Da li ste sigurni da želite da nastavite?"
+    "Are you sure you want to proceed?": "Da li ste sigurni da želite da nastavite?",
+    "Are you sure you want to cancel? The changes you made won't be saved.": "Da li ste sigurni da želite da otkažete? Izmjene neće biti sačuvane."
 }
