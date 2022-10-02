@@ -15,32 +15,32 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'checkouts')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('checkouts.index') }}"
                                    class="flex items-center">
-                                    <i class="@if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] fa-solid fa-book-bookmark text-[20px]"></i>
-                                    <p class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[15px] ml-[18px]">
+                                    <i class="ml-[3px] @if(str_contains($route_name, 'checkouts')) text-[#576cdf] @else text-[#707070] @endif transition duration-300 ease-in group-hover:text-[#576cdf] fa-solid fa-book-bookmark text-[20px]"></i>
+                                    <p class="transition duration-300 ease-in group-hover:text-[#576cdf] text-[15px] ml-[21px]">
                                         {{__('Checkouts')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'checkins')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('checkins.index') }}"
                                    class="flex items-center">
-                                    <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-square-check group-hover:text-[#576cdf]"></i>
-                                    <p class="transition duration-300 ease-in text-[15px] ml-[21px] group-hover:text-[#576cdf]">
+                                    <i class="transition duration-300 ease-in @if(str_contains($route_name, 'checkins')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-check-to-slot group-hover:text-[#576cdf]"></i>
+                                    <p class="transition duration-300 ease-in text-[15px] ml-[19px] group-hover:text-[#576cdf]">
                                         {{__('Checkins')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
@@ -48,32 +48,32 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[28px] py-1">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'overdue')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('overdue.index') }}"
                                    class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'overdue')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
-                                    <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                    <i class="group-hover:text-[#576cdf] ml-[5px] @if(str_contains($route_name, 'overdue')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fas fa-exclamation-triangle transition duration-300 ease-in "></i>
+                                    <p class="text-[15px] ml-[20px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Overdue books')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[28px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'lost')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('lost.index') }}"
                                    class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'lost')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-book-skull transition duration-300 ease-in "></i>
-                                    <p class="text-[15px] ml-[17px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                    <i class="group-hover:text-[#576cdf] ml-1.5 @if(str_contains($route_name, 'lost')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-book-skull transition duration-300 ease-in "></i>
+                                    <p class="text-[15px] ml-[21px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Lost books')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
@@ -81,32 +81,32 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                 <li class="mb-[4px] py-1">
                     <div class="w-[300px] pl-[32px]">
                         <span class="whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'active')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('reservations.active') }}"
                                    class="flex items-center">
-                                    <i class="group-hover:text-[#576cdf] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-list-ul transition duration-300 ease-in"></i>
-                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                    <i class="group-hover:text-[#576cdf] ml-[3px] @if(str_contains($route_name, 'active')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-calendar-days transition duration-300 ease-in"></i>
+                                    <p class="text-[15px] ml-[21px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Active reservations')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
                 <li class="mb-[4px]">
                     <div class="w-[300px] pl-[32px]">
                         <span class=" whitespace-nowrap w-full text-[25px] flex justify-between fill-current">
-                            <div class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
+                            <span class="group hover:bg-[#EFF3F6] py-[15px] px-[20px] w-[268px] rounded-[10px] cursor-pointer
                                  @if(str_contains($route_name, 'archived')) bg-[#EFF3F6] text-[#576cdf] @endif">
                                 <a href="{{ route('reservations.archived') }}"
                                    class="flex items-center">
-                                    <i class="@if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-list-check transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
-                                    <p class="text-[15px] ml-[19px] transition duration-300 ease-in group-hover:text-[#576cdf]">
+                                    <i class="ml-[3px] @if(str_contains($route_name, 'archived')) text-[#576cdf] @else text-[#707070] @endif text-[20px] fa-solid fa-calendar-check transition duration-300 ease-in group-hover:text-[#576cdf]"></i>
+                                    <p class="text-[15px] ml-[21px] transition duration-300 ease-in group-hover:text-[#576cdf]">
                                         {{__('Archived reservations')}}
                                     </p>
                                 </a>
-                            </div>
+                            </span>
                         </span>
                     </div>
                 </li>
