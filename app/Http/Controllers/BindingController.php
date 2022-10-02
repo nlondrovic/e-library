@@ -32,6 +32,11 @@ class BindingController extends Controller
         return view('settings.bindings.edit', compact('binding'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdateBindingRequest $request, Binding $binding)
     {
         $inputs = $request->validated();

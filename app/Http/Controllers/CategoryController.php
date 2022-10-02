@@ -31,6 +31,11 @@ class CategoryController extends Controller
         return view('settings.categories.edit', compact('category'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $inputs = $request->validated();

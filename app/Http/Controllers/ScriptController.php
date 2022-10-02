@@ -30,6 +30,11 @@ class ScriptController extends Controller
         return view('settings.scripts.edit', compact('script'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdateScriptRequest $request, Script $script)
     {
         $script->update($request->validated());

@@ -31,6 +31,11 @@ class SizeController extends Controller
         return view('settings.sizes.edit', compact('size'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdateSizeRequest $request, Size $size)
     {
         $size->update($request->validated());

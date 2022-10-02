@@ -31,6 +31,11 @@ class PublisherController extends Controller
         return view('settings.publishers.edit', compact('publisher'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdatePublisherRequest $request, Publisher $publisher)
     {
         $inputs = $request->validated();

@@ -31,6 +31,11 @@ class GenreController extends Controller
         return view('settings.genres.edit', compact('genre'));
     }
 
+    public function show()
+    {
+        return view('errors.404');
+    }
+
     public function update(UpdateGenreRequest $request, Genre $genre)
     {
         $inputs = $request->validated();
