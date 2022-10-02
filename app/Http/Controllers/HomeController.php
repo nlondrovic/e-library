@@ -6,6 +6,7 @@ use App\Models\Activity;
 use App\Models\Book;
 use App\Models\Checkout;
 use App\Models\Reservation;
+use App\Models\ReservationRequest;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -18,9 +19,10 @@ class HomeController extends Controller
         $overdue_count = count(Checkout::where('start_time', '<', Carbon::now()->subDays(20)->toDateTimeString())
             ->where('end_time', null)->get());
         $activities = Activity::orderBy('id', 'desc')->take(15)->get();
+        $reservation_requests = ReservationRequest::where('status', 'Pending')->latest()->take(5)->get();
 
         return view('components.dashboard.index',
-            compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities')
+            compact('checkouts_count', 'reserved_count', 'overdue_count', 'activities', 'reservation_requests')
         );
     }
 
