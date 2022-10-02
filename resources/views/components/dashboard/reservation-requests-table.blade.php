@@ -25,18 +25,18 @@
                 <td class="px-2 py-2 whitespace-nowrap">
                     <a href="{{ route('reservationRequests.approve', $reservation_request) }}"
                        class="hover:text-green-500 mr-[5px]">
-                        <i class="fas fa-check"></i>
+                        <i class="fas fa-check text-[17px]"></i>
                     </a>
                     <a href="{{ route('reservationRequests.reject', $reservation_request) }}"
                        class="hover:text-red-500 ">
-                        <i class="fas fa-times"></i>
+                        <i class="fas fa-times text-[17px]"></i>
                     </a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    <div class="text-right mt-[5px]">
+    <div class="text-right mt-[5px] mr-9">
         <a href="{{ route('reservationRequests.index') }}" class="text-[#2196f3] hover:text-blue-600">
             <i class="fas fa-calendar-alt mr-[4px]" aria-hidden="true"></i>
             {{ __('Show all') }}
