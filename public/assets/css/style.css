@@ -2817,17 +2817,17 @@ h4 {
 }
 .flash_message {
     width: 30%;
-    border-radius: 5px;
+    border-radius: 10px;
     position: absolute;
     height: auto;
-    padding: 1em;
-    font-size: 16px;
+    padding: 1.3em;
+    font-size: 17px;
     top: 88px;
     z-index: 1000;
     display: block;
     margin-left: 35%;
     text-align: center;
-    box-shadow: 3px 6px #eeeeee;
+    box-shadow: 3px 6px rgba(50, 170, 132, 0.1);;
 
     animation: slide-up 1.25s forwards;
     animation-delay: 2.25s;
@@ -2841,7 +2841,7 @@ h4 {
 
 .success {
     color: #fff;
-    background: #22bf22;
+    background: #32c184;
 }
 .error {
     color: #fff;
