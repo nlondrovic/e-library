@@ -35,7 +35,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                     <div class="ml-[30px]">
                         <span class="flex justify-between w-full whitespace-nowrap" title="{{ __('Students') }}">
                                 <a href="{{ route('students.index') }}" aria-label="Students">
-                                    <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-users
+                                    <i class="text-[22px] pt-[4px] pb-[5px] mr-1 transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fa-solid fa-user-graduate
                                          @if(str_contains($route_name, 'students')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
@@ -54,7 +54,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070] fas fa-user-pen
                                          @if(str_contains($route_name, 'authors')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
-                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[19px]">
                                             {{ __('Authors') }}
                                         </p>
                                     </div>
@@ -70,7 +70,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-2 transition duration-300 ease-in group-hover:text-blue-600 text-[#707070]
                                          @if(str_contains($route_name, 'books')) text-[#576cdf] fa-solid fa-book-open @else fas fa-book @endif"></i>
                                     <div class="hidden sidebar-item">
-                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                         <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[19px]">
                                             {{ __('Books') }}
                                         </p>
                                     </div>
@@ -106,7 +106,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     <i class="text-[22px] pt-[4px] pb-[5px] pr-2 text-[#707070] fa-solid fa-user-tie transition duration-300 ease-in group-hover:text-blue-600
                                          @if(str_contains($route_name, 'librarians')) text-[#576cdf] @endif"></i>
                                     <div class="hidden sidebar-item">
-                                          <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                          <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[19px]">
                                            {{__('Librarians')}}
                                         </p>
                                     </div>
@@ -122,7 +122,7 @@ $route_name = \Illuminate\Support\Facades\Route::currentRouteName();
                                     <i class="text-[22px] pt-[4px] pb-[5px] transition duration-300 ease-in group-hover:text-blue-600 text-[#707070]
                                          @if(str_contains($route_name, 'admins')) text-[#576cdf] fa-solid fa-user @else fa-solid fa-user-shield @endif"></i>
                                     <div class="hidden sidebar-item">
-                                          <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[20px]">
+                                          <p class="transition duration-300 ease-in group-hover:text-blue-600 inline text-[15px] ml-[19px]">
                                            {{ __('Admins') }}
                                         </p>
                                     </div>
