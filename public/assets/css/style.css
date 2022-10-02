@@ -2923,7 +2923,7 @@ h4 {
     transform: rotate(-45deg) translate(35px, 35px);
 }
 .spin {
-    transition: all ease-out 8s;
+    transition: all cubic-bezier(0,1.73,1,-1) 8s;
 }
 .spin:hover{
     transform: rotate(540deg);
