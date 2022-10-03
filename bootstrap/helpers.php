@@ -32,7 +32,7 @@ function format_activity_time(string $time): string
     }
 
     if ($date->isLastWeek()) {
-        if ($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedelja") {
+        if ($date->dayName == "srijeda" || $date->dayName == "subota" || $date->dayName == "nedjelja") {
             return __('Last.a') . ' ' . $date->dayName . ' ' . __('at') . ' ' . $date->format('H:i');
         }
         return __('Last') . ' ' . $date->dayName . ' ' . __('at') . ' ' . $date->format('H:i');
