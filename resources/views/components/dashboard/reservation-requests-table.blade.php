@@ -6,7 +6,7 @@
                 <td class="flex flex-row items-center px-2 py-4 xl:max-w-[250px] max-w-[180px]">
                     <img class="object-cover w-8 h-8 rounded-full" src="{{ getPictureFilePath($reservation_request->student->picture) }}"
                          alt="">
-                    <a class="truncate ml-[16px] font-medium text-center"
+                    <a class="truncate ml-[16px] font-medium text-center ml-[5px]"
                        href="{{ route('students.show', ['student' => $reservation_request->student]) }}">
                         {{ $reservation_request->student->name }}
                     </a>

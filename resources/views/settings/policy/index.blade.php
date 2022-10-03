@@ -14,7 +14,7 @@
             <div class="flex flex-col">
                 <div class="flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
-                        <h3>{{ __('Checkout time') }}</h3>
+                        <h3>{{ __('Period for checkouts') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('This value defines the time in days, a book can be checked out for a student. After this period the checkout will be overdue.') }}
                         </p>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="pl-[0px] mt-[20px] flex border-b-[1px] border-[#e4dfdf] pb-[20px]">
                     <div>
-                        <h3>{{ __('Reservation time') }}</h3>
+                        <h3>{{ __('Period for reservations') }}</h3>
                         <p class="pt-[15px] max-w-[400px]">
                             {{ __('This value defines the time in days, a book can be reserved for a student. In this period a student can check out the book. After this period the reservation will be canceled.') }}
                         </p>
