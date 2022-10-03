@@ -4,7 +4,7 @@
         @foreach($reservation_requests as $reservation_request)
             <tr class="bg-white border-b-[1px] border-[#e4dfdf]">
                 <td class="flex flex-row items-center px-2 py-4 xl:max-w-[250px] max-w-[180px]">
-                    <img class="object-cover w-8 h-8 rounded-full" src="{{ $reservation_request->student->picture }}"
+                    <img class="object-cover w-8 h-8 rounded-full" src="{{ getPictureFilePath($reservation_request->student->picture) }}"
                          alt="">
                     <a class="truncate ml-[16px] font-medium text-center"
                        href="{{ route('students.show', ['student' => $reservation_request->student]) }}">

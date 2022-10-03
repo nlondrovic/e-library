@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="ml-[100px] mt-[20px]">
-                    <img class="p-2 border-2 border-gray-300" width="360" src="{{ asset($admin->picture) }}"
+                    <img class="p-2 border-2 border-gray-300" width="360" src="{{ getPictureFilePath($admin->picture) }}"
                          alt="{{ __('Admin image') }}"
                          onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'">
                 </div>

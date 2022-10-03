@@ -61,3 +61,9 @@ function filtering(): bool
         || request()->get('librarian_id') || request()->get('student_id') || request()->get('book_id');
 
 }
+
+function getPictureFilePath(string $url): string
+{
+//    return '/public'.$url;
+    return $url;
+}
