@@ -77,7 +77,7 @@
                        aria-label="User profile">
                         <div class="flex items-center h-5 my-2">
                             <img class="h-[50px] rounded-full" onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"
-                                 src="{{ auth()->user()->picture }}" width="50" alt="">
+                                 src="{{ getPictureFilePath(auth()->user()->picture) }}" width="50" alt="">
                         </div>
                     </a>
                 </div>

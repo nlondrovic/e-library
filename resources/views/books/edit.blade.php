@@ -225,7 +225,7 @@
                                 <input type="file" name="picture" accept="image/*" class="shadow-md w-[360px]"
                                        onchange="loadFileBook(event)"/>
                                 <img id="image-output-book" width="360" class="mt-[20px] p-2 border-2 border-gray-300"
-                                     src="{{ asset($book->picture) }}" alt="{{ __('Book image') }}"
+                                     src="{{ getPictureFilePath($book->picture) }}" alt="{{ __('Book image') }}"
                                      onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'"/>
                             </div>
                         </div>

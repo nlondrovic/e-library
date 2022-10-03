@@ -68,7 +68,7 @@
 
                     <div class="ml-[100px]">
                         <img class="p-2 border-2 border-gray-300 mt-[20px]" width="360"
-                             src="{{ asset($reservation->book->picture) }}" alt="{{ __('Book image') }}"
+                             src="{{ getPictureFilePath($reservation->book->picture) }}" alt="{{ __('Book image') }}"
                              onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'">
                     </div>
                 </div>

@@ -51,7 +51,7 @@
 
         <div class="ml-[100px] mt-[20px]">
             <img class="p-2 border-2 border-gray-300" width="360" alt="{{ __('Author image') }}"
-                 src="{{asset( $author->picture) }}"
+                 src="{{ getPictureFilePath($author->picture) }}"
                  onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'">
         </div>
 

@@ -54,7 +54,7 @@
                     <input type="file" name="picture" accept="image/*" class="shadow-md w-[360px]"
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" width="360" class="mt-[20px] p-2 border-2 border-gray-300"
-                         src="{{ asset($librarian->picture) }}" alt="{{ __('Librarian image') }}"
+                         src="{{ getPictureFilePath($librarian->picture) }}" alt="{{ __('Librarian image') }}"
                          onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"/>
                 </div>
             </div>

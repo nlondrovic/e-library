@@ -55,7 +55,7 @@
                            onchange="loadFileStudent(event)"/>
                     <img id="image-output-student" width="360" class="mt-[20px] p-2 border-2 border-gray-300"
                          onerror="this.onerror=null; this.src='{{ \App\Models\User::DEFAULT_USER_PICTURE_PATH }}'"
-                         src="{{ asset($admin->picture) }}" alt="{{ __('Admin image') }}"/>
+                         src="{{ getPictureFilePath($admin->picture) }}" alt="{{ __('Admin image') }}"/>
                 </div>
             </div>
 

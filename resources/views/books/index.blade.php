@@ -55,7 +55,7 @@
                     @foreach($books as $book)
                         <tr class="hover:bg-gray-200 hover:shadow-md border-b-[1px] border-[#e4dfdf]">
                             <td class="flex flex-row items-center px-4 py-4">
-                                <img class="object-cover mr-2" width="40" src="{{ asset($book->picture) }}" alt=""
+                                <img class="object-cover mr-2" width="40" src="{{ getPictureFilePath($book->picture) }}" alt=""
                                      onerror="this.onerror=null; this.src='{{ \App\Models\Book::DEFAULT_BOOK_PICTURE_PATH }}'"/>
                                 <a href="{{ route('books.show', $book) }}">
                                     <span class="font-medium text-center">{{ $book->title }}</span>
