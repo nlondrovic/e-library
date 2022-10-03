@@ -4,6 +4,9 @@
 #### Live project [https://tim3.ictcortex.me][df1]
 #### Hosted on Heroku: [https://e-library-me.herokuapp.com][df2]
 #### Github repository: [https://github.com/jasamguli/e-library][df3]
+###### Credentials for accessing the sites:
+- Email: admin@gmail.com
+- Password: password
 ###
 ##### Requirements:
 - [Git][df4]
