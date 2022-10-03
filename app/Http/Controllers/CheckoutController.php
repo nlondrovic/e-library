@@ -237,7 +237,7 @@ class CheckoutController extends Controller
             ]);
         });
 
-        return redirect()->route('books.index')->with('flash-checkout-store-success', __('Checkout created successfully!'));
+        return redirect()->route('books.index')->with('flash-success', __('Checkout created successfully!'));
     }
 
     public function checkIn(Checkout $checkout)
@@ -262,7 +262,7 @@ class CheckoutController extends Controller
             ]);
         });
 
-        return redirect()->route('checkouts.index');
+        return redirect()->route('checkouts.index')->with('flash-success', __('Book checked in successfully!'));
     }
 
     public function writeOff(Checkout $checkout)
@@ -293,6 +293,6 @@ class CheckoutController extends Controller
             ]);
         });
 
-        return redirect()->route('checkouts.index');
+        return redirect()->route('checkouts.index')->with('flash-success', __('Book written off successfully!'));
     }
 }

@@ -399,5 +399,8 @@
     "Reservation approved!": "Rezervacija odobrena!",
     "Reservation rejected!": "Rezervacija odbijena!",
     "Period for checkouts": "Period izdavanja",
-    "Period for reservations": "Period rezervisanja"
+    "Period for reservations": "Period rezervisanja",
+    "Book written off successfully!": "Knjiga uspješno otpisana!",
+    "Book checked in successfully!": "Knjiga vraćena!",
+    "Reservation cancelled successfully!": "Rezervacija uspješno odbijena!"
 }

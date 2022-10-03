@@ -134,7 +134,7 @@ class ReservationController extends Controller
             ]);
         });
 
-        return redirect()->route('books.index')->with('flash-reservation-store-success', __('Reservation created successfully!'));
+        return redirect()->route('books.index')->with('flash-success', __('Reservation created successfully!'));
     }
 
     public function checkOut(Reservation $reservation)
@@ -169,7 +169,7 @@ class ReservationController extends Controller
             ]);
         });
 
-        return redirect()->route('reservations.active');
+        return redirect()->route('reservations.active')->with('flash-success', __('Checkout created successfully!'));
     }
 
     public function cancel(Reservation $reservation)
@@ -191,6 +191,6 @@ class ReservationController extends Controller
     {
         $book = Book::findOrFail($reservation['book_id']);
         return view('transactions.reservations.show',
-            compact('reservation', 'book'));
+            compact('reservation', 'book'))->with('flash-success', __('Reservation cancelled successfully!'));
     }
 }
