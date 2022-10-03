@@ -129,13 +129,13 @@
 
                 <div class="pt-[20px]">
                     <button type="submit" class="btn-animation inline-flex items-center text-sm py-2.5 px-5 p-[6px] transition
-                            duration-300ease-in rounded-[5px] tracking-wider text-white bg-[#1d2a4c] rounded hover:bg-[#36454F]">
+                            duration-300ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE]">
                         <i class="fas fa-search"></i>&nbsp;{{ __('Filter') }}
                     </button>
                     @if(filtering())
                         <a href="{{ route(Route::currentRouteName()) }}"
                            class="ml-[30px] btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                                    ease-in rounded-[5px] tracking-wider text-white bg-[#C84636] rounded hover:bg-[#F55549]">
+                                    ease-in rounded-[5px] tracking-wider text-white bg-[#F44336] rounded hover:bg-[#F55549]">
                             <i class="fas fa-times ml-[4px]"></i>&nbsp;{{ __('Reset') }}
                         </a>
                     @endif

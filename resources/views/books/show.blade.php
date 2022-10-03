@@ -27,7 +27,7 @@
                     <i class="far fa-calendar-check mr-[3px]"></i>
                     {{ __('Reserve') }}
                 </a>
-                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#536878]">
+                <p class="inline cursor-pointer text-[25px] py-[10px] pl-[30px] dotsKnjigaOsnovniDetalji hover:text-[#606FC7]">
                     <i class="fas fa-ellipsis-v"></i>
                 </p>
                 <div class="relative z-10 hidden transition-all duration-300 origin-top-right transform scale-95 -translate-y-2

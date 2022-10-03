@@ -1,10 +1,10 @@
 <header class="z-20 small:hidden flex items-center text-white justify-between w-full h-[71px] pr-[30px] mx-auto
-    bg-[#36454F]">
+    bg-[#4558BE]">
     <div class="logo-font inline-flex py-[18px]">
         <div class="block">
             <a href="{{ route('dashboard') }}" class="text-[20px] font-medium">
                 <div class="flex items-center">
-                    <div class="bg-[#1d2a4c] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#36454F]">
+                    <div class="bg-[#3F51B5] flex items-center justify-center w-[83px] h-[71px] mx-auto bg-[#4558BE]">
                         <img src='{{ asset('assets/img/logo.png') }}' class="spin" alt="" height="80px">
                     </div>
                     <h2 class="ml-[10px] text-[25px]">{{ __('Library of Fianchetto') }}</h2>
@@ -20,7 +20,7 @@
                     <div class="flex items-center h-5">
                         <div class="">
                             <span
-                                class="transition duration-300 ease-in bg-[#536878] text-[25px] rounded-full px-[11px] py-[7px] ">
+                                class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full px-[11px] py-[7px] ">
                                 <i class="fa-solid fa-clock-rotate-left"></i>
                             </span>
                         </div>
@@ -30,7 +30,7 @@
             <div class="flex items-center border-l-[1px] border-gray-300" style="height: 45px">
                 <a class="inline-block px-3 btn-animation" href="#" aria-label="Add something"
                    id="dropdownCreate">
-                    <span class="transition duration-300 ease-in bg-[#536878] text-[25px] rounded-full
+                    <span class="transition duration-300 ease-in bg-[#606FC7] text-[25px] rounded-full
                         px-[11px] py-[7px]" title="{{ __('Add a new thing') }}">
                         <i class="fas fa-plus"></i>
                     </span>

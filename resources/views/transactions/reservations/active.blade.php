@@ -9,7 +9,7 @@
 @section('table')
 
     <table class="overflow-hidden shadow-lg rounded-xl w-full border-[1px] border-[#e4dfdf] rezervacije" id="myTable">
-        <thead class="bg-[#E5E9EC]">
+        <thead class="bg-[#EFF3F6]">
         <tr class="border-b-[1px] border-[#e4dfdf]">
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Book')}}</th>
             <th class="relative px-4 py-4 text-sm leading-4 tracking-wider text-left">{{__('Student')}}</th>
@@ -44,7 +44,7 @@
                 <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ format_date($reservation->supposed_end_time) }}</td>
                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300
-                        dotsArhiviraneRezervacije hover:text-[#536878]">
+                        dotsArhiviraneRezervacije hover:text-[#606FC7]">
                         <i class="fas fa-ellipsis-v"></i>
                     </p>
                     <div class="relative right-20 z-10 hidden transition-all duration-300 origin-top-right transform scale-95
