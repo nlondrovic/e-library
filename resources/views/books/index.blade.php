@@ -12,7 +12,7 @@
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('books.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                       ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE] shadow-md">
+                       ease-in rounded-[5px] tracking-wider text-white bg-[#1d2a4c] rounded hover:bg-[#36454F] shadow-md">
                 <i class="fas fa-plus mr-[15px]"></i> {{ __('New book') }}
             </a>
             <form action="{{ route('books.index') }}">
@@ -38,7 +38,7 @@
         <div class="px-[50px] pt-2 bg-white mb-[30px]">
             <div class="w-full mt-2">
                 <table class="w-full overflow-hidden shadow-lg rounded-xl" id="myTable">
-                    <thead class="bg-[#EFF3F6]">
+                    <thead class="bg-[#E5E9EC]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
                         <th class="flex items-center px-4 py-4 leading-4 tracking-wider text-left">{{ __('Title') }}</th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('Author') }}</th>
@@ -81,7 +81,7 @@
                             </td>
                             <td class="px-4 py-4 text-sm leading-5 whitespace-no-wrap">{{ $book->total_count }}</td>
                             <td class="px-6 py-4 text-sm leading-5 text-right whitespace-no-wrap">
-                                <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#606FC7]">
+                                <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300 dotsKnjige hover:text-[#536878]">
                                     <i class="fas fa-ellipsis-v"></i>
                                 </p>
                                 <div

@@ -12,7 +12,7 @@
         <div class="flex items-center justify-between px-[50px] py-4 space-x-3 rounded-lg">
             <a href="{{ route('authors.create') }}"
                class="btn-animation inline-flex items-center text-sm py-2.5 px-5 transition duration-300
-                       ease-in rounded-[5px] tracking-wider text-white bg-[#3f51b5] rounded hover:bg-[#4558BE] shadow-md">
+                       ease-in rounded-[5px] tracking-wider text-white bg-[#1d2a4c] rounded hover:bg-[#36454F] shadow-md">
                 <i class="fas fa-plus mr-[15px]"></i>{{ __('New author') }}
             </a>
             <form action="{{ route('authors.index') }}">
@@ -39,7 +39,7 @@
             <div class="w-full mt-2">
                 <table class="overflow-hidden shadow-lg rounded-xl min-w-full border-[1px] border-[#e4dfdf]"
                        id="myTable">
-                    <thead class="bg-[#EFF3F6]">
+                    <thead class="bg-[#E5E9EC]">
                     <tr class="border-b-[1px] border-[#e4dfdf]">
                         <th class="px-4 py-4 leading-4 tracking-wider text-left">{{ __('Name') }}<a href="#"></a></th>
                         <th class="px-4 py-4 text-sm leading-4 tracking-wider text-left">{{ __('About author') }}</th>
@@ -59,7 +59,7 @@
                                 <td class="px-4 py-3 text-sm leading-5 whitespace-no-wrap">{{ Str::limit($author->about )}}</td>
                                 <td class="px-4 py-3 text-sm leading-5 text-right whitespace-no-wrap">
                                     <p class="inline cursor-pointer text-[20px] py-[10px] px-[30px] border-gray-300
-                                    dotsAutori hover:text-[#606FC7]">
+                                    dotsAutori hover:text-[#536878]">
                                         <i class="fas fa-ellipsis-v"></i>
                                     </p>
                                     <div class="relative right-20 z-10 hidden transition-all duration-300 origin-top-right transform
