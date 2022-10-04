@@ -1,4 +1,4 @@
-# Library of Fianchetto
+# En Passant
 ##### Admin panel for online library, made using Laravel framework + MYSQL + blade.
 ###
 #### Live project [https://tim3.ictcortex.me][df1]
